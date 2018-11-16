@@ -1,0 +1,43 @@
+% NORMAL SAMPLES USING BOX-MUELLER METHOD
+% DRAW SAMPLES FROM PROPOSAL DISTRIBUTION
+u = rand(2, 10000);
+r = sqrt(-2*log(u(1,:)));
+theta = 2*pi*u(2,:);
+x = r.*cos(theta);
+y = r.*sin(theta);
+z1=2*x+5;
+z2=2*y+5;
+
+ 
+% DISPLAY BOX-MULLER SAMPLES
+figure(1)
+% X SAMPLES
+hist(x,100)
+colormap hot;axis square
+title(sprintf('Box-Muller Samples X\n Mean = %1.2f\n Variance = %1.2f',mean(x),var(x)))
+
+ 
+% Y SAMPLES
+figure(2)
+hist(y,100)
+colormap hot;axis square
+title(sprintf('Box-Muller Samples Y\n Mean = %1.2f\n Variance = %1.2f\n',mean(y),var(y)))
+
+figure(3)
+h_z1 = hist(z1,100);
+plot(h_z1);
+colormap hot;axis square
+title(sprintf('Box-Muller Samples Z1\n Mean = %1.2f\n Variance = %1.2f\n',mean(z1),var(z1)))
+h_z1_normalised= zeros(length(h_z1));
+a=sum(h_z1);
+for i in 1:length(h_z1)
+    h_z1_normalised(i)=h_z1(i)/a;
+end
+plot(h_z1_normalised);
+colormap hot;axis square
+title(sprintf('Box-Muller Samples Z1_normalised\n Mean = %1.2f\n Variance = %1.2f\n',mean(z1),var(z1)))
+    
+
+mean(z1)
+var(z1)
+

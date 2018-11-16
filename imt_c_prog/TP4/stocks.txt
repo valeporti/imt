@@ -1,0 +1,2156 @@
+<!--[if !IE]> This has been served from cache <![endif]-->
+<!--[if !IE]> Request served from apache server: produs--i-0fe958a42aa934ee0 <![endif]-->
+<!--[if !IE]> Cached on Fri, 16 Nov 2018 20:49:32 GMT and will expire on Fri, 16 Nov 2018 20:49:29 GMT <![endif]-->
+<!--[if !IE]> token: 7061aea5-d076-4e7e-8394-94dd646aa159 <![endif]-->
+<!--[if !IE]> App Server /produs--i-05296c9ed41f53fde/ <![endif]-->
+
+<!doctype html><html lang="en"><head>
+<title>Market Indices</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><meta charset="utf-8"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="//s1.reutersmedia.net"/><link rel="dns-prefetch" href="//s2.reutersmedia.net"/><link rel="dns-prefetch" href="//s3.reutersmedia.net"/><link rel="dns-prefetch" href="//s4.reutersmedia.net"/><link rel="dns-prefetch" href="//static.reuters.com"/><link rel="dns-prefetch" href="//www.googletagservices.com"/><link rel="dns-prefetch" href="//www.googletagmanager.com"/><link rel="dns-prefetch" href="//www.google-analytics.com"/><link rel="dns-prefetch" href="//static.chartbeat.com"/><meta name="robots" content="INDEX, FOLLOW">
+
+<!-- Segment -->
+<script>
+  !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="4.0.0";
+  analytics.load("IEWBqQ8VWHijTQxb7lEBGFGS9uIJzigZ");
+  }}();
+    </script>
+
+<!-- Page hiding snippet  -->
+<style>.async-hide { opacity: 0 !important} </style>
+<script>
+(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;
+h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);
+})(window,document.documentElement,'async-hide','dataLayer',2000,{'GTM-W9SLGS':true});
+</script> 
+
+<!-- Data Layer Object Declaration -->
+<script>window.dataLayer = window.dataLayer || [];</script>
+
+<!-- New Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push(
+    {'gtm.start': new Date().getTime(),event:'gtm.js'}
+    );var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-W9SLGS');</script>
+<!-- End Google Tag Manager -->
+
+<meta name="google-site-verification" content="SVDMcE-27ZUUuh-EcZzejAJ0YIFjxD9H_nwAX6YVTw4" />
+<meta name="google-site-verification" content="H9ahVdRxjlM56O9Un526uBCSaj_izzkfUjOCS--Zpco" /><meta name="msvalidate.01" content="2055F771212E9574BFD5AF29D47FBA04" /><style>
+@font-face { font-family: 'knowledge-reg'; src: url('//static.reutersmedia.net/resources_v2/fonts/Knowledge-Regular.woff') format('woff'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'knowledge-light'; src: url('//static.reutersmedia.net/resources_v2/fonts/Knowledge-Light.woff') format('woff'); font-weight: normal; font-style: normal; }
+@font-face { font-family: 'knowledge-medium'; src: url('//static.reutersmedia.net/resources_v2/fonts/Knowledge-Medium.woff') format('woff'); font-weight: normal; font-style: normal; }
+</style>
+<script type="text/javascript" src="//www.reuters.com/reuters_bootstrap.js"></script><script type="text/javascript" src="//www.reuters.com/reuters_gpt_bootstrap.js"></script>
+<script type="text/javascript">var abp;</script><script type="text/javascript" src="//s4.reutersmedia.net/resources_v2/js/px.js?ch=1"></script><script type="text/javascript" src="//s4.reutersmedia.net/resources_v2/js/px.js?ch=2"></script>
+<script type="text/javascript">
+var parallelMediaHosts = new Array();
+parallelMediaHosts.push("s1.reutersmedia.net");parallelMediaHosts.push("s2.reutersmedia.net");parallelMediaHosts.push("s3.reutersmedia.net");parallelMediaHosts.push("s4.reutersmedia.net");</script>
+
+<meta name="DCSext.DartZone" content="us.reuters/markets/indices" />
+<meta name="analyticsAttributes.channel" content="Markets - Research & Data" />
+<meta name="analyticsAttributes.contentType" content="Markets" />
+<meta name="analyticsAttributes.contentChannel" content="Markets - Index Detail Page" />
+<meta name="analyticsAttributes.topicChannel" content="Markets" />
+<meta name="analyticsAttributes.topicSubChannel" content="Index Detail Page" />
+
+<link rel="canonical" href="https://www.reuters.com/finance/markets/index/.FCHI" />
+<meta name="analyticsAttributes.author" content="Reuters Editorial" />
+<meta name="analyticsAttributes.canonicalUrl" content="https://www.reuters.com/finance/markets/index/.FCHI" />
+<meta name="analyticsAttributes.contentTitle" content="Market Indices" />
+<meta name="analyticsAttributes.edition" content="U.S." />
+
+<meta name="author" content="Reuters Editorial" />
+<meta name="description" content="Reuters.com for the latest indices and markets news on .FCHI" />
+<meta name="keywords" content="indices,Dow Jones Industrial Average,DJIA,Nasdaq,NYSE" />
+<meta name="news_keywords" content="indices;Dow Jones Industrial Average;DJIA;Nasdaq;NYSE" />
+
+<meta property="og:description" content="Reuters.com for the latest indices and markets news on .FCHI" />
+<meta property="og:image" content="https://s4.reutersmedia.net/resources_v2/images/rcom-default.png" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:site_name" content="U.S." />
+<meta property="og:title" content="Market Indices" />
+<meta property="og:type" content="section" />
+<meta property="og:url" content="https://www.reuters.com/finance/markets/index/.FCHI" />
+
+<meta name="twitter:card" content="summary_large_image" /> 
+<meta name="twitter:description" content="Reuters.com for the latest indices and markets news on .FCHI" />
+<meta name="twitter:image" content="https://s4.reutersmedia.net/resources_v2/images/rcom-default.png" />
+<meta name="twitter:title" content="Market Indices" />
+<meta name="twitter:site" content="@Reuters" />
+<meta name="twitter:creator" content="@Reuters" />
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "WebPage",
+        "headline": "Market Indices",
+        "url": "https://www.reuters.com/finance/markets/index/.FCHI",
+        "thumbnailUrl": "",
+        "dateCreated": "",
+        "description": "Reuters.com for the latest indices and markets news on .FCHI",
+        "publisher": "Reuters",
+        "creator": [],
+        "keywords": ["indices","Dow Jones Industrial Average","DJIA","Nasdaq","NYSE","Index Detail Page"]
+    }
+</script>
+
+
+<script>
+if (abp == false || abp == '0'){ adBlocked = '0'; } else { adBlocked = '1'; }
+analytics.page('Index Detail Page', {
+    canonical_url: 'https://www.reuters.com/finance/markets/index/.FCHI',
+    content_channel: 'Markets - Index Detail Page',
+    content_type: 'Markets',
+    content_type_channel: 'Markets - Research & Data',
+    edition: 'U.S.',
+    keywords: 'indices,Dow Jones Industrial Average,DJIA,Nasdaq,NYSE',
+    topic_channel: 'Markets',
+    topic_sub_channel: 'Index Detail Page',
+    ad_blocked: adBlocked,
+    platform: 'Desktop',
+    page_view_type: 'Page Load',
+    landing_sponsored: 'false', 
+    pageView: '1'
+});
+if (document.referrer.indexOf('/article/') > -1) {
+    analytics.track('article.recirculation', {
+        canonical_url: 'https://www.reuters.com/finance/markets/index/.FCHI',
+        content_channel: 'Markets - Index Detail Page',
+        content_type: 'Markets',
+        content_type_channel: 'Markets - Research & Data',
+        edition: 'U.S.',
+        keywords: 'indices,Dow Jones Industrial Average,DJIA,Nasdaq,NYSE',
+        topic_channel: 'Markets',
+        topic_sub_channel: 'Index Detail Page',
+        ad_blocked: adBlocked,
+        platform: 'Desktop',
+        page_view_type: 'Page Load',
+        landing_sponsored: 'false', 
+        pageView: '1'
+    });
+}
+window.article_platform = 'Desktop';
+window.article_edition = 'U.S.';
+</script>
+<link rel="shortcut icon" type="image/x-icon" href="https://s3.reutersmedia.net/resources_v2/images/favicon/favicon.ico" />
+<link rel="icon" type="image/png" href="https://s3.reutersmedia.net/resources_v2/images/favicon/favicon-16x16.png" sizes="16x16" />
+<link rel="icon" type="image/png" href="https://s1.reutersmedia.net/resources_v2/images/favicon/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="https://s3.reutersmedia.net/resources_v2/images/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="stylesheet" type="text/css" href="https://s2.reutersmedia.net/resources_v2/css/core.css" />
+<link rel="stylesheet" type="text/css" href="https://s4.reutersmedia.net/resources_v2/css/core-legacy.css" />
+    <script src="https://s3.reutersmedia.net/resources_v2/js/libraries/jquery-2.2.4.min.js" type="text/javascript"></script>
+
+<script src="https://s2.reutersmedia.net/resources_v2/js/libraries/cookie.js" type="text/javascript"></script>
+<script src="https://s2.reutersmedia.net/resources_v2/js/core.js" type="text/javascript"></script>
+<script src="https://s2.reutersmedia.net/resources_v2/js/search.js" type="text/javascript"></script>
+<link href="/resources_v2/css/rcom-section.css" rel="stylesheet" />
+ <link href="/resources_v2/css/rcom-indexDetail.css" rel="stylesheet" /> 
+<script language="javascript" src="/resources_v2/js/rcom-section.js"></script>
+<style>
+.column1.gridPanel.grid7 table {clear:both;}
+.column1.gridPanel.grid8 table.dataTable,
+.column1.gridPanel.grid8 .pageNavigation { display: none; }
+</style><script type='text/javascript'>
+        var _sf_async_config = _sf_async_config || {};
+        _sf_async_config.uid = 52639; 
+        _sf_async_config.domain = 'reuters.com';  
+        _sf_async_config.topStorageDomain = 'reuters.com'; 
+        _sf_async_config.path = document.querySelector("link[rel='canonical']").getAttribute("href").replace('http://www.', '').replace('https://www.', ''); 
+        _sf_async_config.flickerControl = false;
+        var _sf_startpt = (new Date()).getTime();
+    </script><script async src='//static.chartbeat.com/js/chartbeat_mab.js'></script></head>
+<body class="BETAUS ">
+    <!-- New Google Tag Manager (noscript) -->
+         <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-W9SLGS"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> 
+    <!-- End Google Tag Manager (noscript) -->
+
+<section id="breakingNewsContainer" class="hidden"><div id="breakingNews" class="group wrap"><div class="breaking-content"><div class="breaking-news-type"></div><div class="breaking-news-content"></div></div><div class="close-btn">X</div></div></section>
+
+    <header id="headerMain">
+        <div class="container group">
+            <div class="edition-container group">
+                <div class="edition-label">Edition:</div>
+                <div class="edition-selector">
+                    <div class="edition">United States</div>
+                    <div class="edition-arrow"></div>
+                </div>
+            </div>
+            <div class="reuters-nav-main">
+                <h2 class="reuters-logo">
+                    <a href="/" title="Reuters"></a>
+                </h2>
+            </div>
+            <div id="utilities" class="utilities"></div>
+        </div>
+    </header>
+    <nav id="headerNav">
+        <div class="container group">
+            <div class="header-mini-logo">
+                    <a href="/" title="Reuters"></a>
+            </div>
+            <ul class="horizontal-list nav-list">
+                <li class="nav-item home-tab active-icon
+                                                no-subnav" id="nav-item-1">
+                                            <a href="/home" class="nav-link-sec">
+                                                <div class="home-icon"></div>
+                                                <span class="text"></span>
+                                            </a>
+                                        </li>
+                <li class="nav-item" id="nav-item-2">
+                                       <a href="/finance" class="nav-link-sec">Business</a>
+                                <div class="subnav" id="subnav-2">
+                            <div class="subnav-inset">
+                                <ul class="subnav-list">
+                                    <li><a href="/finance" class="nav-link-subsec">Business Home</a></li>
+                                        <li><a href="/legal" class="nav-link-subsec">Legal</a></li>
+                                        <li><a href="/finance/deals" class="nav-link-subsec">Deals</a></li>
+                                        <li><a href="/subjects/aerospace-and-defense" class="nav-link-subsec">Aerospace & Defense</a></li>
+                                        </ul>
+                                            <ul class="subnav-list">
+                                        <li><a href="/subjects/banks" class="nav-link-subsec">Finance</a></li>
+                                        <li><a href="/subjects/autos" class="nav-link-subsec">Autos</a></li>
+                                        <li><a href="/finance/summits" class="nav-link-subsec">Reuters Summits</a></li>
+                                        <li><a href="/z-factor" class="nav-link-subsec">The Z Factor</a></li>
+                                        </ul>
+                                            <ul class="subnav-list">
+                                        </ul>
+                            </div>
+                        </div>
+                    </li>
+                <li class="nav-item" id="nav-item-3">
+                                       <a href="/finance/markets" class="nav-link-sec">Markets</a>
+                                <div class="subnav" id="subnav-3">
+                            <div class="subnav-inset">
+                                <ul class="subnav-list">
+                                    <li><a href="/finance/markets" class="nav-link-subsec">Markets Home</a></li>
+                                        <li><a href="/finance/markets/us" class="nav-link-subsec">U.S. Markets</a></li>
+                                        <li><a href="/finance/markets/europe" class="nav-link-subsec">European Markets</a></li>
+                                        <li><a href="/finance/markets/asia" class="nav-link-subsec">Asian Markets</a></li>
+                                        </ul>
+                                            <ul class="subnav-list">
+                                        <li><a href="/finance/global-market-data" class="nav-link-subsec">Global Market Data</a></li>
+                                        <li><a href="/markets/stocks" class="nav-link-subsec">Stocks</a></li>
+                                        <li><a href="/markets/bonds" class="nav-link-subsec">Bonds</a></li>
+                                        <li><a href="/finance/currencies" class="nav-link-subsec">Currencies</a></li>
+                                        </ul>
+                                            <ul class="subnav-list">
+                                        <li><a href="/finance/commodities" class="nav-link-subsec">Commodities</a></li>
+                                        <li><a href="/finance/funds" class="nav-link-subsec">Funds</a></li>
+                                        <li><a href="/finance/EarningsUS" class="nav-link-subsec">Earnings</a></li>
+                                        <li><a href="/finance/markets/dividends" class="nav-link-subsec">Dividends</a></li>
+                                        </ul>
+                                            <ul class="subnav-list">
+                                        <li><a href="/finance/exchange-traded-funds" class="nav-link-subsec">Exchange-Traded Funds</a></li>
+                                        <li><a href="/subjects/us-lipper-awards" class="nav-link-subsec">Lipper Awards</a></li>
+                                        <li><a href="https://stockscreener.us.reuters.com/Stock/US/Index?quickscreen=gaarp" class="nav-link-subsec">Stock Screener</a></li>
+                                        <li><a href="https://funds.us.reuters.com/US/screener/screener.asp" class="nav-link-subsec">Fund Screener</a></li>
+                                        </ul>
+                                            <ul class="subnav-list">
+                                        </ul>
+                            </div>
+                        </div>
+                    </li>
+                <li class="nav-item" id="nav-item-4">
+                                       <a href="/news/world" class="nav-link-sec">World</a>
+                                <div class="subnav" id="subnav-4">
+                            <div class="subnav-inset">
+                                <ul class="subnav-list">
+                                    <li><a href="/news/world" class="nav-link-subsec">World Home</a></li>
+                                        <li><a href="/news/us" class="nav-link-subsec">U.S.</a></li>
+                                        <li><a href="/subjects/specialReports" class="nav-link-subsec">Special Reports</a></li>
+                                        <li><a href="//www.reuters.com/investigates/" class="nav-link-subsec">Reuters Investigates</a></li>
+                                        </ul>
+                                            <ul class="subnav-list">
+                                        <li><a href="/subjects/euro-zone" class="nav-link-subsec">Euro Zone</a></li>
+                                        <li><a href="/subjects/middle-east" class="nav-link-subsec">Middle East</a></li>
+                                        <li><a href="/places/china" class="nav-link-subsec">China</a></li>
+                                        <li><a href="/places/japan" class="nav-link-subsec">Japan</a></li>
+                                        </ul>
+                                            <ul class="subnav-list">
+                                        <li><a href="/places/mexico" class="nav-link-subsec">Mexico</a></li>
+                                        <li><a href="/places/brazil" class="nav-link-subsec">Brazil</a></li>
+                                        <li><a href="/places/africa" class="nav-link-subsec">Africa</a></li>
+                                        <li><a href="/places/russia" class="nav-link-subsec">Russia</a></li>
+                                        </ul>
+                                            <ul class="subnav-list">
+                                        <li><a href="/places/india" class="nav-link-subsec">India</a></li>
+                                        </ul>
+                            </div>
+                        </div>
+                    </li>
+                <li class="nav-item" id="nav-item-5">
+                                       <a href="/politics" class="nav-link-sec">Politics</a>
+                                <div class="subnav" id="subnav-5">
+                            <div class="subnav-inset">
+                                <ul class="subnav-list">
+                                    <li><a href="/politics" class="nav-link-subsec">Politics Home</a></li>
+                                        <li><a href="http://polling.reuters.com" class="nav-link-subsec">Polling Explorer</a></li>
+                                        <li><a href="/subjects/supreme-court" class="nav-link-subsec">Supreme Court</a></li>
+                                        </ul>
+                            </div>
+                        </div>
+                    </li>
+                <li class="nav-item" id="nav-item-6">
+                                       <a href="/news/technology" class="nav-link-sec">Tech</a>
+                                <div class="subnav" id="subnav-6">
+                            <div class="subnav-inset">
+                                <ul class="subnav-list">
+                                    <li><a href="/news/technology" class="nav-link-subsec">Technology Home</a></li>
+                                        <li><a href="/news/science" class="nav-link-subsec">Science</a></li>
+                                        <li><a href="/news/media" class="nav-link-subsec">Media</a></li>
+                                        <li><a href="/energy-environment" class="nav-link-subsec">Energy and Environment</a></li>
+                                        </ul>
+                                            <ul class="subnav-list">
+                                        <li><a href="/innovation" class="nav-link-subsec">Innovation</a></li>
+                                        </ul>
+                            </div>
+                        </div>
+                    </li>
+                <li class="nav-item" id="nav-item-7">
+                                       <a href="/commentary" class="nav-link-sec">Commentary</a>
+                                <div class="subnav" id="subnav-7">
+                            <div class="subnav-inset">
+                                <ul class="subnav-list">
+                                    <li><a href="/commentary" class="nav-link-subsec">Commentary Home </a></li>
+                                        <li><a href="/tools/podcasts/" class="nav-link-subsec">Podcasts</a></li>
+                                        </ul>
+                            </div>
+                        </div>
+                    </li>
+                <li class="nav-item" id="nav-item-8">
+                                       <a href="/breakingviews" class="nav-link-sec">Breakingviews</a>
+                                <div class="subnav" id="subnav-8">
+                            <div class="subnav-inset">
+                                <ul class="subnav-list">
+                                    <li><a href="/breakingviews" class="nav-link-subsec">Breakingviews Home</a></li>
+                                        <li><a href="/video/breakingviews" class="nav-link-subsec">Breakingviews Video</a></li>
+                                        </ul>
+                            </div>
+                        </div>
+                    </li>
+                <li class="nav-item" id="nav-item-9">
+                                       <a href="/finance/wealth" class="nav-link-sec">Wealth</a>
+                                <div class="subnav" id="subnav-9">
+                            <div class="subnav-inset">
+                                <ul class="subnav-list">
+                                    <li><a href="/finance/wealth" class="nav-link-subsec">Wealth Home</a></li>
+                                        <li><a href="/finance/personal-finance/retirement" class="nav-link-subsec">Retirement</a></li>
+                                        </ul>
+                            </div>
+                        </div>
+                    </li>
+                <li class="nav-item" id="nav-item-10">
+                                       <a href="/news/lifestyle" class="nav-link-sec">Life</a>
+                                <div class="subnav" id="subnav-10">
+                            <div class="subnav-inset">
+                                <ul class="subnav-list">
+                                    <li><a href="/news/health" class="nav-link-subsec">Health</a></li>
+                                        <li><a href="/news/sports/soccer" class="nav-link-subsec">Soccer</a></li>
+                                        <li><a href="/news/sports" class="nav-link-subsec">Sports</a></li>
+                                        <li><a href="/news/entertainment/arts" class="nav-link-subsec">Arts</a></li>
+                                        </ul>
+                                            <ul class="subnav-list">
+                                        <li><a href="/news/entertainment" class="nav-link-subsec">Entertainment</a></li>
+                                        <li><a href="/news/oddlyEnough" class="nav-link-subsec">Oddly Enough</a></li>
+                                        </ul>
+                            </div>
+                        </div>
+                    </li>
+                <li class="nav-item pictures-tab active-icon active-text
+                                               " id="nav-item-11">
+                                            <a href="/news/pictures" class="nav-link-sec">
+                                                <div class="pictures-icon"></div>
+                                                <span class="text">Pictures</span>
+                                            </a>
+                                        <div class="subnav" id="subnav-11">
+                            <div class="subnav-inset">
+                                <ul class="subnav-list">
+                                    <li><a href="/news/pictures" class="nav-link-subsec">Pictures Home</a></li>
+                                        <li><a href="http://widerimage.reuters.com" class="nav-link-subsec">The Wider Image</a></li>
+                                        <li><a href="http://widerimage.reuters.com/photographer" class="nav-link-subsec">Photographers</a></li>
+                                        <li><a href="/focus-360/" class="nav-link-subsec">Focus 360</a></li>
+                                        </ul>
+                                            <ul class="subnav-list">
+                                        </ul>
+                            </div>
+                        </div>
+                    </li>
+                <li class="nav-item video-tab active-icon active-text
+                                                no-subnav" id="nav-item-12">
+                                            <a href="/video" class="nav-link-sec">
+                                                <div class="video-icon"></div>
+                                                <span class="text">Video</span>
+                                            </a>
+                                        </li>
+                <li class="nav-item search-tab active-icon no-subnav"><div class="search-icon"></div></li>
+            </ul>
+            <div id="searchBar">
+                <form id="searchForm" class="search-form" name="searchbox" method="get" action="/search/news" autocomplete="off">
+                    <input id="searchfield" class="search-field" name="blob" type="text" value="" onfocus="this.value = this.value;"  size="30" maxlength="128">
+                    <span class="search-line"></span>
+                    <input type="submit" id="search-submit-button" class="search-submit-button" value="" onmousedown="if(document.forms['searchbox'].blob.value == 'Search Reuters') { document.forms['searchbox'].blob.value = ''; }">
+                    <div class="search-close-button"></div>
+                </form>
+            </div>
+            </div>
+    </nav>
+    <div class="nav-white-space"></div>
+    <div class="edition-header">
+        <div class="container">
+            <div class="selection-header"></div>
+            <ul class="edition-list">
+                <li>
+                    <div class="item"><a href="//af.reuters.com">Africa</a></div>
+                    <div class="item"><a href="//lta.reuters.com">América Latina</a></div>
+                </li>
+                <li>
+                    <div class="item"><a href="//ara.reuters.com">عربي</a></div>
+                    <div class="item"><a href="//ar.reuters.com">Argentina</a></div>
+                </li>
+                <li>
+                    <div class="item"><a href="//br.reuters.com">Brasil</a></div>
+                    <div class="item"><a href="//ca.reuters.com">Canada</a></div>
+                </li>   
+                <li>
+                    <div class="item"><a href="//cn.reuters.com" class="">中国</a></div>
+                    <div class="item"><a href="//de.reuters.com" class="">Deutschland</a></div>
+                </li>
+                <li>
+                    <div class="item"><a href="//es.reuters.com">España</a></div>
+                    <div class="item"><a href="//fr.reuters.com">France</a></div>
+                </li>
+                <li>
+                    <div class="item"><a href="//in.reuters.com" class="">India</a></div>
+                    <div class="item"><a href="//it.reuters.com">Italia</a></div>
+                </li>
+                <li>
+                    <div class="item"><a href="//jp.reuters.com" class="">日本</a></div>
+                    <div class="item"><a href="//mx.reuters.com">México</a></div>
+                </li>
+                <li>
+                    <div class="item"><a href="//ru.reuters.com">РОССИЯ</a></div>
+                    <div class="item"><a href="//uk.reuters.com" class="">United Kingdom</a></div>
+                </li> 
+                <li><div class="item"><a href="//www.reuters.com" class="active">United States</a></div></li>
+            </ul>
+        </div>
+    </div>
+    
+    <div id="content">
+            <div id="overlayForSearch"></div><div class="section bleeding" id="breakingNewsBand">
+	<div class="sectionContent">
+<div class="sectionColumns">
+
+<div class="gridPanel grid12">
+<div id="breakingNewsContent"></div>
+<script type="text/javascript">
+Reuters.utils.replaceContent("breakingNewsContent", "/assets/breakingNews", null, null);
+</script>
+</div>
+
+</div>
+
+</div>
+</div>
+<div class="section bleeding" id="bannerStrip">
+	<div class="sectionContent">
+<div class="sectionColumns">
+
+<div class="gridPanel grid12">
+<div id="div_gpt_lb"><script>
+gatherAd('div_gpt_lb', [[728, 90],[970,250],[970,180],[970,90],[1,1]], TR3.extractDartZone(), 'yes', 'leaderboard');
+</script></div><style>
+#div_gpt_lb{display: inline-block;
+position: relative;
+text-align: center;
+width: 100%;}
+
+#div_gpt_mpu, #div_gpt_home_rr1, #div_gpt_rr2, #div_gpt_article_sp3, #div_gpt_mpulow, #div_gpt_bd2{margin-bottom:20px;}
+.mpu .ad {clear:left;}
+.column2 .ad{margin-bottom: 0px !important;}
+.pageSponsor{width: 270px !important;}
+#div_gpt_mpu{float: left;}
+</style>
+</div>
+
+</div>
+
+</div>
+</div>
+<div class="section constituentData" id="topContent">
+	<div class="sectionContent">
+<div id="sectionHeader"><div id="sectionTitle"><h1>
+			<span class="prefix">Index Detail:</span>
+                CAC 40 Index<span id="topicDataInfo"></span>
+            </h1>
+	</div><style>
+#div_gpt_tradelogo{
+float: right;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+   z-index:99999;
+}
+</style><div class="linebreak"></div>
+	<div id="div_gpt_tradelogo"><div class="ad" id="tradelogo">
+
+		<script type="text/javascript">
+var dz_final = TR3.extractDartZone();
+// leaderboard
+if( 'tradelogo' == 'leaderboard'){
+    //US/UK HOME FASTLANE
+    if((TR3.extractDartZone().indexOf("us.reuters") > -1) || (TR3.extractDartZone().indexOf("uk.reuters") > -1) || (TR3.extractDartZone().indexOf("jp.reuters") > -1)){
+        if(typeof(Reuters)!='undefined' && typeof(Reuters.info)!='undefined' && typeof(Reuters.info.channel)!='undefined')
+        {displayAd_sync_fastlane(dz_final,  "storychannel=" + Reuters.info.channel + ";" + adParams2 + "" );}
+        else{ displayAd_sync_fastlane( dz_final, "" + adParams2 + "" ); }
+    }
+    else{ 
+		if(typeof(Reuters)!='undefined' && typeof(Reuters.info)!='undefined' && typeof(Reuters.info.channel)!='undefined')
+        { displayAd_sync(dz_final,  "storychannel=" + Reuters.info.channel + ";" + adParams2 + "");}
+        else{ displayAd_sync( dz_final, "" + adParams2 + "" ); }
+    }
+}
+else if('tradelogo' == 'mpu'){ googletag.cmd.push(function() { googletag.display('div_gpt_mpu'); }); }
+else if('tradelogo' == 'mpu2'){ googletag.cmd.push(function() { googletag.display('div_gpt_mpu2'); }); }
+else if('tradelogo' == 'mpulow'){ googletag.cmd.push(function() { googletag.display('div_gpt_mpulow'); }); }
+else if('tradelogo' == 'leaderboardcenter'){
+    if((TR3.extractDartZone().indexOf("us.reuters") > -1) || (TR3.extractDartZone().indexOf("uk.reuters") > -1)|| (TR3.extractDartZone().indexOf("jp.reuters") > -1)){ googletag.cmd.push(function() { googletag.display('div_gpt_lb_center'); }); }
+    else{ displayAd("div_gpt_tradelogo", dz_final, [250,36], "type=tradelogo;" + adParams2 + "" ); }
+}
+else if('tradelogo' == 'leaderboardlow'){
+        if((TR3.extractDartZone().indexOf("us.reuters") > -1) || (TR3.extractDartZone().indexOf("uk.reuters") > -1) || (TR3.extractDartZone().indexOf("jp.reuters") > -1)){ googletag.cmd.push(function() { googletag.display('div_gpt_lb_low'); }); }
+        else{ displayAd("div_gpt_tradelogo", dz_final, [250,36], "type=tradelogo;" + adParams2 + "" ); }
+}
+else{
+    if(typeof(Reuters)!='undefined' && typeof(Reuters.info)!='undefined' && typeof(Reuters.info.channel)!='undefined'){
+        displayAd("div_gpt_tradelogo", dz_final, [250,36], "type=tradelogo;storychannel=" + Reuters.info.channel+ ";" + adParams2 + "" );
+    } else{ displayAd("div_gpt_tradelogo", dz_final, [250,36], "type=tradelogo;" + adParams2 + "" ); }	
+}
+</script>
+        
+        </div>
+
+		</div><div class="linebreak"></div>
+<div class="linebreak"></div>
+	<div class="pageSponsor"><div id="div_gpt_sponsorlogo"><div class="ad" id="sponsorlogo">
+
+		<script type="text/javascript">
+var dz_final = TR3.extractDartZone();
+// leaderboard
+if( 'sponsorlogo' == 'leaderboard'){
+    //US/UK HOME FASTLANE
+    if((TR3.extractDartZone().indexOf("us.reuters") > -1) || (TR3.extractDartZone().indexOf("uk.reuters") > -1) || (TR3.extractDartZone().indexOf("jp.reuters") > -1)){
+        if(typeof(Reuters)!='undefined' && typeof(Reuters.info)!='undefined' && typeof(Reuters.info.channel)!='undefined')
+        {displayAd_sync_fastlane(dz_final,  "storychannel=" + Reuters.info.channel + ";" + adParams2 + "" );}
+        else{ displayAd_sync_fastlane( dz_final, "" + adParams2 + "" ); }
+    }
+    else{ 
+		if(typeof(Reuters)!='undefined' && typeof(Reuters.info)!='undefined' && typeof(Reuters.info.channel)!='undefined')
+        { displayAd_sync(dz_final,  "storychannel=" + Reuters.info.channel + ";" + adParams2 + "");}
+        else{ displayAd_sync( dz_final, "" + adParams2 + "" ); }
+    }
+}
+else if('sponsorlogo' == 'mpu'){ googletag.cmd.push(function() { googletag.display('div_gpt_mpu'); }); }
+else if('sponsorlogo' == 'mpu2'){ googletag.cmd.push(function() { googletag.display('div_gpt_mpu2'); }); }
+else if('sponsorlogo' == 'mpulow'){ googletag.cmd.push(function() { googletag.display('div_gpt_mpulow'); }); }
+else if('sponsorlogo' == 'leaderboardcenter'){
+    if((TR3.extractDartZone().indexOf("us.reuters") > -1) || (TR3.extractDartZone().indexOf("uk.reuters") > -1)|| (TR3.extractDartZone().indexOf("jp.reuters") > -1)){ googletag.cmd.push(function() { googletag.display('div_gpt_lb_center'); }); }
+    else{ displayAd("div_gpt_sponsorlogo", dz_final,  [250,36], "type=sponsorlogo;" + adParams2 + "" ); }
+}
+else if('sponsorlogo' == 'leaderboardlow'){
+        if((TR3.extractDartZone().indexOf("us.reuters") > -1) || (TR3.extractDartZone().indexOf("uk.reuters") > -1) || (TR3.extractDartZone().indexOf("jp.reuters") > -1)){ googletag.cmd.push(function() { googletag.display('div_gpt_lb_low'); }); }
+        else{ displayAd("div_gpt_sponsorlogo", dz_final,  [250,36], "type=sponsorlogo;" + adParams2 + "" ); }
+}
+else{
+    if(typeof(Reuters)!='undefined' && typeof(Reuters.info)!='undefined' && typeof(Reuters.info.channel)!='undefined'){
+        displayAd("div_gpt_sponsorlogo", dz_final,  [250,36], "type=sponsorlogo;storychannel=" + Reuters.info.channel+ ";" + adParams2 + "" );
+    } else{ displayAd("div_gpt_sponsorlogo", dz_final,  [250,36], "type=sponsorlogo;" + adParams2 + "" ); }	
+}
+</script>
+        
+        </div>
+
+		</div><div class="linebreak"></div>
+</div>
+</div><div class="sectionColumns">
+
+<div class="column1 gridPanel grid8">
+<script type="text/javascript">
+    function sortIndex(sortBy, sortDir) {
+        document.indexSort.sortBy.value = sortBy;
+        document.indexSort.sortDir.value = sortDir;
+         window.location.href=window.location.origin+ window.location.pathname + "?sortBy="+sortBy+"&sortDir="+sortDir;
+    }
+    function selectOneIndex(obj){
+        if(obj.options[obj.selectedIndex].value != '-1'){
+              window.location.href=window.location.href.substring(0,window.location.href.lastIndexOf("/")+1)+obj.options[obj.selectedIndex].value;
+        }
+        else{
+             return false;
+        }
+    }
+</script>
+<div class="module">
+<div class="moduleBody">
+<div class="marketSelectDropdown">
+<div class="marketSelectIndexLabel">INDEX</div>
+<div class="simpleControls">
+<form name="indexSelect" method="get">
+    <select name="symbol" onchange="selectOneIndex(this);">
+    <option value="-1">Please select one of the following:</option>
+    <option value=".TRXFLDUSP"  >             Thomson Reuters Equity US Index(.TRXFLDUSP)</option>
+        <option value=".TRXFLDGBP"  >             Thomson Reuters Equity UK Index(.TRXFLDGBP)</option>
+        <option value=".TRXFLDCAP"  >             Thomson Reuters Equity Canada Index(.TRXFLDCAP)</option>
+        <option value=".FTSE"  >             FTSE 100 Index(.FTSE)</option>
+        <option value=".FTMC"  >             FTSE 250 Index(.FTMC)</option>
+        <option value=".FTT1X"  >             FTSE techMARK 100 Index(.FTT1X)</option>
+        <option value=".GDAXI"  >             DAX Index(.GDAXI)</option>
+        <option value=".FCHI" selected="selected" >             CAC 40 Index(.FCHI)</option>
+        <option value=".BFX"  >             Bell 20 Index(.BFX)</option>
+        <option value=".AEX"  >             AEX Amsterdam Index(.AEX)</option>
+        <option value=".IBEX"  >             Ibex 35 Index(.IBEX)</option>
+        <option value=".DJI"  >             Dow Jones Industrial Average(.DJI)</option>
+        <option value=".IXIC"  >             Nasdaq Composite Index(.IXIC)</option>
+        <option value=".GSPTSE"  >             S&P/TSX Composite Index(.GSPTSE)</option>
+        <option value=".BVSP"  >             Ibovespa - Bovespa Index(.BVSP)</option>
+        <option value=".MXX"  >             MXSE IPC(.MXX)</option>
+        <option value=".HSI"  >             Hang Seng Index(.HSI)</option>
+        <option value=".N225"  >             Nikkei Stock Average 225(.N225)</option>
+        </select>
+</form>
+</div></div></div>
+
+<div id="headerQuoteContainer">
+<div class="sectionQuote">
+<div class="label">Price</div>
+<div class="dataHeader">5,025.20</div>
+</div>
+<div class="sectionQuote">
+<div class="label">Today's Change</div>
+<div><span class="dataHeader changeDown">-8.42</span> <span class="dataParenthetical changeDown">(-0.17%)</span></div>
+</div>
+<div class="sectionQuote">
+<div class="label">Open</div>
+<div class="dataHeader">5,068.64</div>
+</div>
+<div class="sectionQuote">
+<div class="label">Prev Close</div>
+<div class="dataHeader">5,033.62</div>
+</div>
+</div>
+    <table class="indexInfo" border="0" cellpadding="0" cellspacing="0">
+        <tbody>
+        <tr>
+            <td class="infoLeft">
+            <table class="dataTable" cellSpacing="0" cellPadding="0" width="98%" border="0">
+                <tr>
+                    <td class="label">Day's High</td>
+                    <td class="data">5,081.00</td>
+                </tr>
+                <tr class="stripe">
+                    <td class="label">52-wk High</td>
+                    <td class="data">5,657.44</td>
+                </tr>
+            </table>
+            </td>
+            <td class="infoRight">
+                <table class="dataTable" cellSpacing="0" cellPadding="0" width="98%" border="0">
+                <tr>
+                    <td class="label">Day's Low</td>
+                    <td class="data">4,986.19</td>
+                </tr>
+
+                <tr class="stripe">
+                    <td class="label">52-wk Low</td>
+                    <td class="data">4,896.80</td>
+                </tr>
+                </table>
+            </td>
+        </tr>
+        </tbody>
+        </table>
+    <div class="timestamp">Data as of&nbsp;Fri Nov 16, 2018 | 12:05pm EST.</div>
+<div class="dividerInlineH">&nbsp;</div>
+</div>
+
+
+
+<img src="//www.reuters.wallst.com/enhancements/chartapi/index_chart_api.asp?symbol=.FCHI&headerType=quote&width=540&height=249&duration=5" />
+<div class="pageNavigation">
+	<ul>
+		<li class="navDisabled" tns="no">Previous</li>
+					<li class="next" tns="no">
+					<a href="/finance/markets/index/.FCHI?sortBy=&sortDir=&pn=2">Next</a>
+								</li>
+			</ul>
+</div><table width="100%" cellspacing="0" cellpadding="0" border="0" class="dataTable sortable">
+            <form name="indexSort" method="get">
+            <input type="hidden" name="symbol" value=".FCHI" />
+            <input type="hidden" name="sortBy" value="" />
+            <input type="hidden" name="sortDir" value="" />
+    
+            <tr valign="top">
+                <th class="sortUp">
+  <a href="javascript:sortIndex('name', 'DESC');">Company</a>
+</th>
+<th class="data">
+  <a href="javascript:sortIndex('last', 'DESC');">Last</a>
+</th>
+<th class="data">
+  <a href="javascript:sortIndex('chgnet', 'DESC');">Chg</a>
+</th>
+<th class="data">
+  <a href="javascript:sortIndex('chgpct', 'DESC');">Chg %</a>
+</th>
+<th class="data">
+  <a href="javascript:sortIndex('vol', 'DESC');">Volume</a>
+</th>
+</tr>
+    
+            <tr class="stripe">
+                    <td>
+                    <a href="/finance/stocks/overview/ACCP.PA" class="link">
+                    Accor SA</a></td>
+                    <td class="data">39.32</td>
+                    <td class="data changeDown">-0.10</td>
+                    <td class="data changeDown">-0.25</td>
+                    <td class="data">1,170,229</td>
+                </tr>
+            <tr class="">
+                    <td>
+                    <a href="/finance/stocks/overview/AIRP.PA" class="link">
+                    Air Liquide SA</a></td>
+                    <td class="data">105.45</td>
+                    <td class="data changeDown">-1.05</td>
+                    <td class="data changeDown">-0.99</td>
+                    <td class="data">1,008,304</td>
+                </tr>
+            <tr class="stripe">
+                    <td>
+                    <a href="/finance/stocks/overview/AIR.PA" class="link">
+                    AIRBUS GROUP</a></td>
+                    <td class="data">92.89</td>
+                    <td class="data changeDown">-0.97</td>
+                    <td class="data changeDown">-1.03</td>
+                    <td class="data">1,497,327</td>
+                </tr>
+            <tr class="">
+                    <td>
+                    <a href="/finance/stocks/overview/MT.AS" class="link">
+                    ArcelorMittal SA</a></td>
+                    <td class="data">21.76</td>
+                    <td class="data changeDown">-0.00</td>
+                    <td class="data changeDown">-0.02</td>
+                    <td class="data">5,974,017</td>
+                </tr>
+            <tr class="stripe">
+                    <td>
+                    <a href="/finance/stocks/overview/ATOS.PA" class="link">
+                    Atos SA</a></td>
+                    <td class="data">72.14</td>
+                    <td class="data changeDown">-0.52</td>
+                    <td class="data changeDown">-0.72</td>
+                    <td class="data">373,378</td>
+                </tr>
+            <tr class="">
+                    <td>
+                    <a href="/finance/stocks/overview/AXAF.PA" class="link">
+                    Axa SA</a></td>
+                    <td class="data">21.60</td>
+                    <td class="data changeDown">-0.22</td>
+                    <td class="data changeDown">-0.99</td>
+                    <td class="data">7,845,964</td>
+                </tr>
+            <tr class="stripe">
+                    <td>
+                    <a href="/finance/stocks/overview/BNPP.PA" class="link">
+                    BNP Paribas SA</a></td>
+                    <td class="data">45.19</td>
+                    <td class="data changeDown">-0.30</td>
+                    <td class="data changeDown">-0.66</td>
+                    <td class="data">5,208,591</td>
+                </tr>
+            <tr class="">
+                    <td>
+                    <a href="/finance/stocks/overview/BOUY.PA" class="link">
+                    Bouygues SA</a></td>
+                    <td class="data">32.50</td>
+                    <td class="data changeUp">+0.02</td>
+                    <td class="data changeUp">+0.06</td>
+                    <td class="data">1,249,230</td>
+                </tr>
+            <tr class="stripe">
+                    <td>
+                    <a href="/finance/stocks/overview/CAPP.PA" class="link">
+                    Cap Gemini SA</a></td>
+                    <td class="data">102.80</td>
+                    <td class="data changeDown">-0.70</td>
+                    <td class="data changeDown">-0.68</td>
+                    <td class="data">763,742</td>
+                </tr>
+            <tr class="">
+                    <td>
+                    <a href="/finance/stocks/overview/CARR.PA" class="link">
+                    Carrefour SA</a></td>
+                    <td class="data">17.50</td>
+                    <td class="data changeDown">-0.01</td>
+                    <td class="data changeDown">-0.06</td>
+                    <td class="data">2,130,750</td>
+                </tr>
+            <tr class="stripe">
+                    <td>
+                    <a href="/finance/stocks/overview/SGOB.PA" class="link">
+                    Cie de Saint-Gobain SA</a></td>
+                    <td class="data">31.44</td>
+                    <td class="data changeDown">-0.16</td>
+                    <td class="data changeDown">-0.49</td>
+                    <td class="data">1,837,393</td>
+                </tr>
+            <tr class="">
+                    <td>
+                    <a href="/finance/stocks/overview/MICP.PA" class="link">
+                    Compagnie Generale des Etablissements Michelin SCA</a></td>
+                    <td class="data">89.06</td>
+                    <td class="data changeDown">-0.64</td>
+                    <td class="data changeDown">-0.71</td>
+                    <td class="data">690,537</td>
+                </tr>
+            <tr class="stripe">
+                    <td>
+                    <a href="/finance/stocks/overview/CAGR.PA" class="link">
+                    Credit Agricole SA</a></td>
+                    <td class="data">10.91</td>
+                    <td class="data changeDown">-0.08</td>
+                    <td class="data changeDown">-0.75</td>
+                    <td class="data">9,291,892</td>
+                </tr>
+            <tr class="">
+                    <td>
+                    <a href="/finance/stocks/overview/DANO.PA" class="link">
+                    Danone SA</a></td>
+                    <td class="data">65.10</td>
+                    <td class="data changeDown">-0.10</td>
+                    <td class="data changeDown">-0.15</td>
+                    <td class="data">1,998,296</td>
+                </tr>
+            <tr class="stripe">
+                    <td>
+                    <a href="/finance/stocks/overview/DAST.PA" class="link">
+                    Dassault Systemes SA</a></td>
+                    <td class="data">108.90</td>
+                    <td class="data changeUp">+1.40</td>
+                    <td class="data changeUp">+1.30</td>
+                    <td class="data">429,429</td>
+                </tr>
+            <tr class="">
+                    <td>
+                    <a href="/finance/stocks/overview/ENGIE.PA" class="link">
+                    ENGIE</a></td>
+                    <td class="data">12.20</td>
+                    <td class="data changeUp">+0.04</td>
+                    <td class="data changeUp">+0.33</td>
+                    <td class="data">6,807,612</td>
+                </tr>
+            <tr class="stripe">
+                    <td>
+                    <a href="/finance/stocks/overview/ESLX.PA" class="link">
+                    EssilorLuxottica SA</a></td>
+                    <td class="data">117.65</td>
+                    <td class="data changeUp">+0.00</td>
+                    <td class="data changeUp">+0.00</td>
+                    <td class="data">1,113,441</td>
+                </tr>
+            <tr class="">
+                    <td>
+                    <a href="/finance/stocks/overview/HRMS.PA" class="link">
+                    Hermes International SCA</a></td>
+                    <td class="data">491.00</td>
+                    <td class="data changeUp">+1.00</td>
+                    <td class="data changeUp">+0.20</td>
+                    <td class="data">53,695</td>
+                </tr>
+            <tr class="stripe">
+                    <td>
+                    <a href="/finance/stocks/overview/OREP.PA" class="link">
+                    L'Oreal SA</a></td>
+                    <td class="data">207.60</td>
+                    <td class="data changeUp">+0.20</td>
+                    <td class="data changeUp">+0.10</td>
+                    <td class="data">588,215</td>
+                </tr>
+            <tr class="">
+                    <td>
+                    <a href="/finance/stocks/overview/LEGD.PA" class="link">
+                    Legrand SA</a></td>
+                    <td class="data">53.14</td>
+                    <td class="data changeUp">+0.26</td>
+                    <td class="data changeUp">+0.49</td>
+                    <td class="data">1,013,398</td>
+                </tr>
+            <tr class="stripe">
+                    <td>
+                    <a href="/finance/stocks/overview/LVMH.PA" class="link">
+                    LVMH Moet Hennessy Louis Vuitton SA</a></td>
+                    <td class="data">264.25</td>
+                    <td class="data changeDown">-1.15</td>
+                    <td class="data changeDown">-0.43</td>
+                    <td class="data">658,945</td>
+                </tr>
+            <tr class="">
+                    <td>
+                    <a href="/finance/stocks/overview/ORAN.PA" class="link">
+                    ORANGE</a></td>
+                    <td class="data">14.66</td>
+                    <td class="data changeUp">+0.04</td>
+                    <td class="data changeUp">+0.24</td>
+                    <td class="data">8,369,337</td>
+                </tr>
+            <tr class="stripe">
+                    <td>
+                    <a href="/finance/stocks/overview/PERP.PA" class="link">
+                    Pernod Ricard SA</a></td>
+                    <td class="data">140.40</td>
+                    <td class="data changeUp">+1.45</td>
+                    <td class="data changeUp">+1.04</td>
+                    <td class="data">407,800</td>
+                </tr>
+            <tr class="">
+                    <td>
+                    <a href="/finance/stocks/overview/PEUP.PA" class="link">
+                    Peugeot SA</a></td>
+                    <td class="data">19.82</td>
+                    <td class="data changeUp">+0.04</td>
+                    <td class="data changeUp">+0.18</td>
+                    <td class="data">3,284,851</td>
+                </tr>
+            <tr class="stripe">
+                    <td>
+                    <a href="/finance/stocks/overview/PRTP.PA" class="link">
+                    PPR SA</a></td>
+                    <td class="data">389.60</td>
+                    <td class="data changeDown">-3.30</td>
+                    <td class="data changeDown">-0.84</td>
+                    <td class="data">224,806</td>
+                </tr>
+            <tr class="">
+                    <td>
+                    <a href="/finance/stocks/overview/PUBP.PA" class="link">
+                    Publicis Groupe SA</a></td>
+                    <td class="data">52.98</td>
+                    <td class="data changeUp">+0.78</td>
+                    <td class="data changeUp">+1.49</td>
+                    <td class="data">801,111</td>
+                </tr>
+            <tr class="stripe">
+                    <td>
+                    <a href="/finance/stocks/overview/RENA.PA" class="link">
+                    Renault SA</a></td>
+                    <td class="data">64.50</td>
+                    <td class="data changeDown">-0.73</td>
+                    <td class="data changeDown">-1.12</td>
+                    <td class="data">985,029</td>
+                </tr>
+            <tr class="">
+                    <td>
+                    <a href="/finance/stocks/overview/SAF.PA" class="link">
+                    Safran SA</a></td>
+                    <td class="data">108.70</td>
+                    <td class="data changeDown">-0.55</td>
+                    <td class="data changeDown">-0.50</td>
+                    <td class="data">1,017,216</td>
+                </tr>
+            <tr class="stripe">
+                    <td>
+                    <a href="/finance/stocks/overview/SASY.PA" class="link">
+                    Sanofi SA</a></td>
+                    <td class="data">79.23</td>
+                    <td class="data changeUp">+1.00</td>
+                    <td class="data changeUp">+1.28</td>
+                    <td class="data">3,059,629</td>
+                </tr>
+            <tr class="">
+                    <td>
+                    <a href="/finance/stocks/overview/SCHN.PA" class="link">
+                    Schneider Electric SA</a></td>
+                    <td class="data">63.96</td>
+                    <td class="data changeDown">-0.40</td>
+                    <td class="data changeDown">-0.62</td>
+                    <td class="data">2,083,029</td>
+                </tr>
+            </form>
+        </table>
+    
+        <div class="pageNavigation">
+	<ul>
+		<li class="navDisabled" tns="no">Previous</li>
+					<li class="next" tns="no">
+					<a href="/finance/markets/index/.FCHI?sortBy=&sortDir=&pn=2">Next</a>
+								</li>
+			</ul>
+</div></div>
+
+<div class="column2 gridPanel grid4">
+<div id="div_gpt_mpu"><script>
+gatherAd('div_gpt_mpu', [[300,250],[1,1],[300,600],[300,1050]], TR3.extractDartZone(), 'yes', 'mpu');
+</script></div><div class="linebreak"></div>
+<div class="section" id="markets-module">
+<div class="sectionContent">
+<link href="/resources_v2/css/rcom-markets-module.css" rel="stylesheet" />
+<style>
+#markets-module #mm-footer ul li:last-child {
+    border-right: none;
+}
+</style><div class="linebreak"></div>
+	<div id="mm-header"><div class="module">
+<div class="moduleHeader"><h3>Markets</h3></div>
+</div></div><!-- tab4Name is empty -->
+		<!-- tab4Target is empty -->
+		<script src="https://s4.reutersmedia.net/resources_v2/js/tabs.js"></script>
+
+<div class="linebreak"></div>
+<div id="mm-tabs"><div class="tabs">
+				<ul>
+				<li id="MM-tabs_0" class=""><span class="hrefClone">U.S.</span></li>
+					<li id="MM-tabs_1" class=""><span class="hrefClone">Europe</span></li>
+					<li id="MM-tabs_2" class=""><span class="hrefClone">Asia</span></li>
+					<li id="MM-tabs_3" class="current"><span class="hrefClone">Sectors</span></li>
+					</ul>
+				<script type="text/javascript">
+					RTR_Tabs.addTabGroup("MM-tabs", "", "standard", "", "", "");
+							RTR_Tabs.addTab("MM-tabs_0", "tab1");
+							RTR_Tabs.addTab("MM-tabs_1", "tab2");
+							RTR_Tabs.addTab("MM-tabs_2", "tab3");
+							RTR_Tabs.addTab("MM-tabs_3", "tab4");
+					RTR_Tabs.init("MM-tabs");
+				</script>
+			</div>
+			<script type="text/javascript">
+			RTR_Tabs.hiLiteTab("MM-tabs_3");
+			</script>
+			</div><style>
+
+.marketslogo {
+    left: 108px;
+    position: absolute;
+    right: 10px;
+    top: 6px;
+   z-index: 1109;
+}
+#marketslogo-bottom{margin-left:5px;}
+
+#div_gpt_mlbottom,#div_gpt_mmcommodities,#div_gpt_mmcurrencies,#div_gpt_mmindicies{
+border-left: 1px solid #cce2ea; border-right: 1px solid #cce2ea; background-color: #f0f6f9;
+}
+
+</style><style>
+#div_gpt_marketslogo{
+left: 108px;
+position: absolute;
+right: 10px;
+top: 6px;
+z-index: 999999;
+}
+</style><div id="div_gpt_marketslogo"><script>
+gatherAd('div_gpt_marketslogo', [186,24], TR3.extractDartZone(), 'no', 'marketslogo');
+</script></div>
+<div class="linebreak"></div>
+	<div id="tab1" class="hidden"><div class="module">
+		
+		<div class="moduleHeader">
+				<h3>
+					<a href="/finance/markets/indices" >
+					Market Indices</a>
+					</h3>
+			</div>
+		<div class="moduleBody">
+		<link href="https://s2.reutersmedia.net/resources_v2/css/rcom-stockSearch.css" rel="stylesheet" />
+
+<div class="module investingControlsContainer">
+<div class="moduleBody investingControls">
+    <script language="javascript" type="text/javascript">
+    function OnClickGo(inputs, symbol) {
+  	  try {
+			if(inputs.length) {
+	  	        for(var i = 0;i < inputs.length;i++) {
+	  	          if(inputs[i].checked) {
+		        	var url = inputs[i].value;
+		            url = url.replace("[ric]", symbol);
+		            document.location.href = url;
+		            break;
+		          }
+		        }
+			} else {
+				var url = inputs.value;
+				url = url.replace("[ric]", symbol);
+				document.location.href = url;
+			}
+	      }catch(e){}
+    }
+    function OnStockSearchSubmit(sId) {
+      var stockSearch = 'stockSearch_'+sId;
+      var stockSearchSymbol = 'stockSearchSymbol_'+sId;
+      var stockSearchType = 'stockSearchType_'+sId;
+      try {
+        var symbol = document.getElementById(stockSearchSymbol).value;
+        if(symbol === "" || symbol === "Enter stock symbol or name") {
+			return false;
+        } else {
+        	eval('OnClickGo(document.forms["'+stockSearch+'"].'+stockSearchType+', encodeURIComponent(symbol))');
+        }
+      }catch(e){}
+    }
+    </script>
+
+<form name="stockSearch_335" >
+	<div class="stockSearchContainer">
+		<div class="searchInput">
+				<input type="hidden" name="stockSearchType_335" value="/finance/stocks/lookup?searchType=any&search=[ric]" checked="checked" />
+				<span class="uppercase bold label">Stock Search</span>
+		</div>
+		<div class="searchInput2">
+			<div class="searchbox">
+	    		<input type="text" class="searchfield" id="stockSearchSymbol_335" name="stockSearchSymbol" value="Enter stock symbol or name" />
+                <input type="image""class="searchbutton" src="https://s3.reutersmedia.net/resources_v2/images/btn_header_go.gif" id="btnStockSearchSubmit_335"/>
+                    </div>
+    	</div>
+	</div>
+
+</form>
+</div>
+</div>
+
+<script language="javascript" type="text/javascript">
+
+		function searchSubmit_335() {
+			OnStockSearchSubmit('335');
+			return false;
+		}
+		Reuters.utils.enableSearchBox('stockSearchSymbol_335', 'Enter stock symbol or name', searchSubmit_335);
+		document.getElementById('btnStockSearchSubmit_335').onclick = searchSubmit_335;
+</script>
+<table width="100%" cellpadding="0" cellspacing="0" border="0" class="dataTable">
+	<tbody class="dataSmall">
+
+
+		<tr class="stripe"><td valign="middle"><a href="/finance/markets/index?symbol=.DJI">DOW</a></td>
+						<td class="data size8" valign="middle">25,435.71</td>
+                <td class="data dataUp" valign="middle" >
+                    <img height="6" width="11" src="https://s4.reutersmedia.net/resources_v2/images/arrowPos.gif"> 
+                             +
+                    146.44</td>
+				<td class="data" valign="middle">+0.58%</td>
+			
+			</tr>
+		<tr><td valign="middle"><a href="/finance/markets/index?symbol=.SPX">S&P 500</a></td>
+						<td class="data size8" valign="middle">2,738.71</td>
+                <td class="data dataUp" valign="middle" >
+                    <img height="6" width="11" src="https://s4.reutersmedia.net/resources_v2/images/arrowPos.gif"> 
+                             +
+                    8.51</td>
+				<td class="data" valign="middle">+0.31%</td>
+			
+			</tr>
+		<tr class="stripe"><td valign="middle"><a href="/finance/markets/index?symbol=.IXIC">NASDAQ</a></td>
+						<td class="data size8" valign="middle">7,259.23</td>
+                <td class="data dataUp" valign="middle" >
+                    <img height="6" width="11" src="https://s4.reutersmedia.net/resources_v2/images/arrowPos.gif"> 
+                             +
+                    0.19</td>
+				<td class="data" valign="middle">+0.00%</td>
+			
+			</tr>
+		<tr><td valign="middle"><a href="/finance/markets/index?symbol=.TRXFLDUSP">TR US Index</a></td>
+						<td class="data size8" valign="middle">242.44</td>
+                <td class="data dataUp" valign="middle" >
+                    <img height="6" width="11" src="https://s4.reutersmedia.net/resources_v2/images/arrowPos.gif"> 
+                             +
+                    0.92</td>
+				<td class="data" valign="middle">+0.38%</td>
+			
+			</tr>
+		</table>
+<div class="moreLink">
+				<a href="/finance/markets/indices">&#187; All Indices</a></div></div>
+		</div>
+		<div class="linebreak"></div>
+	<div id="div_gpt_mmindicies"><script>
+gatherAd('div_gpt_mmindicies',  [298,28], TR3.extractDartZone(), 'no', 'mmIndices');
+</script></div><div class="mm-currencies"><div class="module">
+		
+		<div class="moduleHeader">
+				<h3>
+					<a href="/finance/currencies" >
+					Currencies</a>
+					</h3>
+			</div>
+		<div class="moduleBody">
+		<table cellspacing="1" cellpadding="1" width="100%" border="0" id="currPairs" class="dataTable">
+<tr class="">
+    <td><a href="/finance/currencies/quote?srcAmt=1&amp;srcCurr=EUR&amp;destAmt=&amp;destCurr=USD">EUR/USD</a></td>
+		<td class="data bold">
+			1.1414</td>
+		<td class="data dataUp bold">
+			+0.78%</td>
+	</tr>
+  <tr class="stripe">
+    <td><a href="/finance/currencies/quote?srcAmt=1&amp;srcCurr=GBP&amp;destAmt=&amp;destCurr=USD">GBP/USD</a></td>
+		<td class="data bold">
+			1.2826</td>
+		<td class="data dataUp bold">
+			+0.41%</td>
+	</tr>
+  <tr class="">
+    <td><a href="/finance/currencies/quote?srcAmt=1&amp;srcCurr=USD&amp;destAmt=&amp;destCurr=JPY">USD/JPY</a></td>
+		<td class="data bold">
+			112.80</td>
+		<td class="data dataDown bold">
+			-0.72%</td>
+	</tr>
+  </tbody></table>
+ <div class="moreLink">
+				<a href="/finance/currencies">&#187; All Currencies</a></div></div>
+		</div>
+		</div>
+<div class="linebreak"></div>
+	<div id="div_gpt_mmcurrencies"><script>
+gatherAd('div_gpt_mmcurrencies',  [298,28], TR3.extractDartZone(), 'no', 'mmCurrencies');
+</script></div><div class="mm-commodities"><div class="module">
+		
+		<div class="moduleHeader">
+				<h3>
+					<a href="/finance/commodities" >
+					Commodities</a>
+					</h3>
+			</div>
+		<div class="moduleBody">
+		<table width="100%" cellpadding="0" cellspacing="0" border="0" class="dataTable"><tbody class="dataSmall">
+		<tr>
+</tr>
+
+<tr>
+			<td valign="top">
+				<a href="/finance/commodity?symbol=GCc1">
+		                	Gold</a>
+	        		</td>
+				<td class="data" valign="top">
+					1,220.90</td>
+				<td class="data changeUp" nowrap="nowrap" valign="top">
+					+8.10</td>
+				<td class="data changeUp" nowrap="nowrap" valign="top">
+					+0.67%</td>
+            </tr>
+	<tr class="stripe">
+			<td valign="top">
+				<a href="/finance/commodity?symbol=CLc1">
+		                	Oil</a>
+	        		</td>
+				<td class="data" valign="top">
+					56.71</td>
+				<td class="data changeUp" nowrap="nowrap" valign="top">
+					+0.25</td>
+				<td class="data changeUp" nowrap="nowrap" valign="top">
+					+0.44%</td>
+            </tr>
+	<tr>
+			<td valign="top">
+				<a href="/finance/commodity?symbol=Cc1">
+		                	Corn</a>
+	        		</td>
+				<td class="data" valign="top">
+					364.75</td>
+				<td class="data changeDown" nowrap="nowrap" valign="top">
+					-2.75</td>
+				<td class="data changeDown" nowrap="nowrap" valign="top">
+					-0.75%</td>
+            </tr>
+	</table>
+<div class="moreLink">
+				<a href="/finance/commodities">&#187; All Commodities</a></div></div>
+		</div>
+		</div>
+<div class="linebreak"></div>
+	<div id="div_gpt_mmcommodities"><script>
+gatherAd('div_gpt_mmcommodities',  [298,28], TR3.extractDartZone(), 'no', 'mmCommodities');
+</script></div><style>
+div#mmIndices.mmI, div#mmCurrencies.mmCu,div#mmCommodities.mmCo {
+border-left: 1px solid rgb(150, 0, 0);
+border-right: 1px solid rgb(150, 0, 0);
+}
+</style>
+<div class="linebreak"></div>
+</div><div id="tab2" class="hidden"><div class="module">
+		
+		<div class="moduleHeader">
+				<h3>
+					<a href="/finance/markets/indices" >
+					Market Indices</a>
+					</h3>
+			</div>
+		<div class="moduleBody">
+		<link href="https://s2.reutersmedia.net/resources_v2/css/rcom-stockSearch.css" rel="stylesheet" />
+
+<div class="module investingControlsContainer">
+<div class="moduleBody investingControls">
+    <script language="javascript" type="text/javascript">
+    function OnClickGo(inputs, symbol) {
+  	  try {
+			if(inputs.length) {
+	  	        for(var i = 0;i < inputs.length;i++) {
+	  	          if(inputs[i].checked) {
+		        	var url = inputs[i].value;
+		            url = url.replace("[ric]", symbol);
+		            document.location.href = url;
+		            break;
+		          }
+		        }
+			} else {
+				var url = inputs.value;
+				url = url.replace("[ric]", symbol);
+				document.location.href = url;
+			}
+	      }catch(e){}
+    }
+    function OnStockSearchSubmit(sId) {
+      var stockSearch = 'stockSearch_'+sId;
+      var stockSearchSymbol = 'stockSearchSymbol_'+sId;
+      var stockSearchType = 'stockSearchType_'+sId;
+      try {
+        var symbol = document.getElementById(stockSearchSymbol).value;
+        if(symbol === "" || symbol === "Enter stock symbol or name") {
+			return false;
+        } else {
+        	eval('OnClickGo(document.forms["'+stockSearch+'"].'+stockSearchType+', encodeURIComponent(symbol))');
+        }
+      }catch(e){}
+    }
+    </script>
+
+<form name="stockSearch_444" >
+	<div class="stockSearchContainer">
+		<div class="searchInput">
+				<input type="hidden" name="stockSearchType_444" value="/finance/stocks/lookup?searchType=any&search=[ric]" checked="checked" />
+				<span class="uppercase bold label">Stock Search</span>
+		</div>
+		<div class="searchInput2">
+			<div class="searchbox">
+	    		<input type="text" class="searchfield" id="stockSearchSymbol_444" name="stockSearchSymbol" value="Enter stock symbol or name" />
+                <input type="image""class="searchbutton" src="https://s3.reutersmedia.net/resources_v2/images/btn_header_go.gif" id="btnStockSearchSubmit_444"/>
+                    </div>
+    	</div>
+	</div>
+
+</form>
+</div>
+</div>
+
+<script language="javascript" type="text/javascript">
+
+		function searchSubmit_444() {
+			OnStockSearchSubmit('444');
+			return false;
+		}
+		Reuters.utils.enableSearchBox('stockSearchSymbol_444', 'Enter stock symbol or name', searchSubmit_444);
+		document.getElementById('btnStockSearchSubmit_444').onclick = searchSubmit_444;
+</script>
+<table width="100%" cellpadding="0" cellspacing="0" border="0" class="dataTable">
+	<tbody class="dataSmall">
+
+
+		<tr class="stripe"><td valign="middle"><a href="/finance/markets/index?symbol=.FTSE">FTSE 100</a></td>
+						<td class="data size8" valign="middle">7,013.88</td>
+                <td class="data dataDown" valign="middle" >
+                    <img height="6" width="11" src="https://s2.reutersmedia.net/resources_v2/images/arrowNeg.gif"> 
+                            -24.13</td>
+				<td class="data" valign="middle">-0.34%</td>
+			
+			</tr>
+		<tr><td valign="middle"><a href="/finance/markets/index?symbol=.GDAXI">DAX</a></td>
+						<td class="data size8" valign="middle">11,341.00</td>
+                <td class="data dataDown" valign="middle" >
+                    <img height="6" width="11" src="https://s2.reutersmedia.net/resources_v2/images/arrowNeg.gif"> 
+                            -12.67</td>
+				<td class="data" valign="middle">-0.11%</td>
+			
+			</tr>
+		<tr class="stripe"><td valign="middle"><a href="/finance/markets/index?symbol=.FCHI">CAC 40</a></td>
+						<td class="data size8" valign="middle">5,025.20</td>
+                <td class="data dataDown" valign="middle" >
+                    <img height="6" width="11" src="https://s2.reutersmedia.net/resources_v2/images/arrowNeg.gif"> 
+                            -8.42</td>
+				<td class="data" valign="middle">-0.17%</td>
+			
+			</tr>
+		<tr><td valign="middle"><a href="/finance/markets/index?symbol=.TRXFLDEXPU"> TR Europe</a></td>
+						<td class="data size8" valign="middle">162.95</td>
+                <td class="data dataUp" valign="middle" >
+                    <img height="6" width="11" src="https://s4.reutersmedia.net/resources_v2/images/arrowPos.gif"> 
+                             +
+                    1.25</td>
+				<td class="data" valign="middle">+0.77%</td>
+			
+			</tr>
+		</table>
+<div class="moreLink">
+				<a href="/finance/markets/indices">&#187; All Indices</a></div></div>
+		</div>
+		<div class="linebreak"></div>
+	<div id="div_gpt_mmindicies2"><script>
+gatherAd('div_gpt_mmindicies2',  [298,28], TR3.extractDartZone(), 'no', 'mmIndices2');
+</script></div><div class="mm-currencies"><div class="module">
+		
+		<div class="moduleHeader">
+				<h3>
+					<a href="/finance/currencies" >
+					Currencies</a>
+					</h3>
+			</div>
+		<div class="moduleBody">
+		<table cellspacing="1" cellpadding="1" width="100%" border="0" id="currPairs" class="dataTable">
+<tr class="">
+    <td><a href="/finance/currencies/quote?srcAmt=1&amp;srcCurr=EUR&amp;destAmt=&amp;destCurr=USD">EUR/USD</a></td>
+		<td class="data bold">
+			1.1414</td>
+		<td class="data dataUp bold">
+			+0.78%</td>
+	</tr>
+  <tr class="stripe">
+    <td><a href="/finance/currencies/quote?srcAmt=1&amp;srcCurr=GBP&amp;destAmt=&amp;destCurr=USD">GBP/USD</a></td>
+		<td class="data bold">
+			1.2826</td>
+		<td class="data dataUp bold">
+			+0.41%</td>
+	</tr>
+  <tr class="">
+    <td><a href="/finance/currencies/quote?srcAmt=1&amp;srcCurr=USD&amp;destAmt=&amp;destCurr=JPY">USD/JPY</a></td>
+		<td class="data bold">
+			112.80</td>
+		<td class="data dataDown bold">
+			-0.72%</td>
+	</tr>
+  </tbody></table>
+ <div class="moreLink">
+				<a href="/finance/currencies">&#187; All Currencies</a></div></div>
+		</div>
+		</div>
+<div class="linebreak"></div>
+	<div id="div_gpt_mmcurrencies2"><script>
+gatherAd('div_gpt_mmcurrencies2',  [298,28], TR3.extractDartZone(), 'no', 'mmCurrencies2');
+</script></div><div class="mm-commodities"><div class="module">
+		
+		<div class="moduleHeader">
+				<h3>
+					<a href="/finance/commodities" >
+					Commodities</a>
+					</h3>
+			</div>
+		<div class="moduleBody">
+		<table width="100%" cellpadding="0" cellspacing="0" border="0" class="dataTable"><tbody class="dataSmall">
+		<tr>
+</tr>
+
+<tr>
+			<td valign="top">
+				<a href="/finance/commodity?symbol=GCc1">
+		                	Gold</a>
+	        		</td>
+				<td class="data" valign="top">
+					1,220.90</td>
+				<td class="data changeUp" nowrap="nowrap" valign="top">
+					+8.10</td>
+				<td class="data changeUp" nowrap="nowrap" valign="top">
+					+0.67%</td>
+            </tr>
+	<tr class="stripe">
+			<td valign="top">
+				<a href="/finance/commodity?symbol=CLc1">
+		                	Oil</a>
+	        		</td>
+				<td class="data" valign="top">
+					56.71</td>
+				<td class="data changeUp" nowrap="nowrap" valign="top">
+					+0.25</td>
+				<td class="data changeUp" nowrap="nowrap" valign="top">
+					+0.44%</td>
+            </tr>
+	<tr>
+			<td valign="top">
+				<a href="/finance/commodity?symbol=Cc1">
+		                	Corn</a>
+	        		</td>
+				<td class="data" valign="top">
+					364.75</td>
+				<td class="data changeDown" nowrap="nowrap" valign="top">
+					-2.75</td>
+				<td class="data changeDown" nowrap="nowrap" valign="top">
+					-0.75%</td>
+            </tr>
+	</table>
+<div class="moreLink">
+				<a href="/finance/commodities">&#187; All Commodities</a></div></div>
+		</div>
+		</div>
+<div class="linebreak"></div>
+	<div id="div_gpt_mmcommodities2"><script>
+gatherAd('div_gpt_mmcommodities2',  [298,28], TR3.extractDartZone(), 'no', 'mmCommodities2');
+</script></div><style>
+div#mmIndices.mmI, div#mmCurrencies.mmCu,div#mmCommodities.mmCo {
+border-left: 1px solid rgb(150, 0, 0);
+border-right: 1px solid rgb(150, 0, 0);
+}
+</style>
+<div class="linebreak"></div>
+</div><div id="tab3" class="hidden"><div class="module">
+		
+		<div class="moduleHeader">
+				<h3>
+					<a href="/finance/markets/indices" >
+					Market Indices</a>
+					</h3>
+			</div>
+		<div class="moduleBody">
+		<link href="https://s2.reutersmedia.net/resources_v2/css/rcom-stockSearch.css" rel="stylesheet" />
+
+<div class="module investingControlsContainer">
+<div class="moduleBody investingControls">
+    <script language="javascript" type="text/javascript">
+    function OnClickGo(inputs, symbol) {
+  	  try {
+			if(inputs.length) {
+	  	        for(var i = 0;i < inputs.length;i++) {
+	  	          if(inputs[i].checked) {
+		        	var url = inputs[i].value;
+		            url = url.replace("[ric]", symbol);
+		            document.location.href = url;
+		            break;
+		          }
+		        }
+			} else {
+				var url = inputs.value;
+				url = url.replace("[ric]", symbol);
+				document.location.href = url;
+			}
+	      }catch(e){}
+    }
+    function OnStockSearchSubmit(sId) {
+      var stockSearch = 'stockSearch_'+sId;
+      var stockSearchSymbol = 'stockSearchSymbol_'+sId;
+      var stockSearchType = 'stockSearchType_'+sId;
+      try {
+        var symbol = document.getElementById(stockSearchSymbol).value;
+        if(symbol === "" || symbol === "Enter stock symbol or name") {
+			return false;
+        } else {
+        	eval('OnClickGo(document.forms["'+stockSearch+'"].'+stockSearchType+', encodeURIComponent(symbol))');
+        }
+      }catch(e){}
+    }
+    </script>
+
+<form name="stockSearch_810" >
+	<div class="stockSearchContainer">
+		<div class="searchInput">
+				<input type="hidden" name="stockSearchType_810" value="/finance/stocks/lookup?searchType=any&search=[ric]" checked="checked" />
+				<span class="uppercase bold label">Stock Search</span>
+		</div>
+		<div class="searchInput2">
+			<div class="searchbox">
+	    		<input type="text" class="searchfield" id="stockSearchSymbol_810" name="stockSearchSymbol" value="Enter stock symbol or name" />
+                <input type="image""class="searchbutton" src="https://s3.reutersmedia.net/resources_v2/images/btn_header_go.gif" id="btnStockSearchSubmit_810"/>
+                    </div>
+    	</div>
+	</div>
+
+</form>
+</div>
+</div>
+
+<script language="javascript" type="text/javascript">
+
+		function searchSubmit_810() {
+			OnStockSearchSubmit('810');
+			return false;
+		}
+		Reuters.utils.enableSearchBox('stockSearchSymbol_810', 'Enter stock symbol or name', searchSubmit_810);
+		document.getElementById('btnStockSearchSubmit_810').onclick = searchSubmit_810;
+</script>
+<table width="100%" cellpadding="0" cellspacing="0" border="0" class="dataTable">
+	<tbody class="dataSmall">
+
+
+		<tr class="stripe"><td valign="middle"><a href="/finance/markets/index?symbol=.N225">Nikkei</a></td>
+						<td class="data size8" valign="middle">21,680.34</td>
+                <td class="data dataDown" valign="middle" >
+                    <img height="6" width="11" src="https://s2.reutersmedia.net/resources_v2/images/arrowNeg.gif"> 
+                            -123.28</td>
+				<td class="data" valign="middle">-0.57%</td>
+			
+			</tr>
+		<tr><td valign="middle"><a href="/finance/markets/index?symbol=.HSI">Hang Seng</a></td>
+						<td class="data size8" valign="middle">26,183.53</td>
+                <td class="data dataUp" valign="middle" >
+                    <img height="6" width="11" src="https://s4.reutersmedia.net/resources_v2/images/arrowPos.gif"> 
+                             +
+                    80.19</td>
+				<td class="data" valign="middle">+0.31%</td>
+			
+			</tr>
+		<tr class="stripe"><td valign="middle"><a href="/finance/markets/index?symbol=.BSESN"> Sensex</a></td>
+						<td class="data size8" valign="middle">35,457.16</td>
+                <td class="data dataUp" valign="middle" >
+                    <img height="6" width="11" src="https://s4.reutersmedia.net/resources_v2/images/arrowPos.gif"> 
+                             +
+                    196.62</td>
+				<td class="data" valign="middle">+0.56%</td>
+			
+			</tr>
+		<tr></tr>
+		</table>
+<div class="moreLink">
+				<a href="/finance/markets/indices">&#187; All Indices</a></div></div>
+		</div>
+		<div class="linebreak"></div>
+	<div id="div_gpt_mmindicies3"><script>
+gatherAd('div_gpt_mmindicies3',  [298,28], TR3.extractDartZone(), 'no', 'mmIndices3');
+</script></div><div class="mm-currencies"><div class="module">
+		
+		<div class="moduleHeader">
+				<h3>
+					<a href="/finance/currencies" >
+					Currencies</a>
+					</h3>
+			</div>
+		<div class="moduleBody">
+		<table cellspacing="1" cellpadding="1" width="100%" border="0" id="currPairs" class="dataTable">
+<tr class="">
+    <td><a href="/finance/currencies/quote?srcAmt=1&amp;srcCurr=EUR&amp;destAmt=&amp;destCurr=USD">EUR/USD</a></td>
+		<td class="data bold">
+			1.1414</td>
+		<td class="data dataUp bold">
+			+0.78%</td>
+	</tr>
+  <tr class="stripe">
+    <td><a href="/finance/currencies/quote?srcAmt=1&amp;srcCurr=GBP&amp;destAmt=&amp;destCurr=USD">GBP/USD</a></td>
+		<td class="data bold">
+			1.2826</td>
+		<td class="data dataUp bold">
+			+0.41%</td>
+	</tr>
+  <tr class="">
+    <td><a href="/finance/currencies/quote?srcAmt=1&amp;srcCurr=USD&amp;destAmt=&amp;destCurr=JPY">USD/JPY</a></td>
+		<td class="data bold">
+			112.80</td>
+		<td class="data dataDown bold">
+			-0.72%</td>
+	</tr>
+  </tbody></table>
+ <div class="moreLink">
+				<a href="/finance/currencies">&#187; All Currencies</a></div></div>
+		</div>
+		</div>
+<div class="linebreak"></div>
+	<div id="div_gpt_mmcurrencies3"><script>
+gatherAd('div_gpt_mmcurrencies3',  [298,28], TR3.extractDartZone(), 'no', 'mmCurrencies3');
+</script></div><div class="mm-commodities"><div class="module">
+		
+		<div class="moduleHeader">
+				<h3>
+					<a href="/finance/commodities" >
+					Commodities</a>
+					</h3>
+			</div>
+		<div class="moduleBody">
+		<table width="100%" cellpadding="0" cellspacing="0" border="0" class="dataTable"><tbody class="dataSmall">
+		<tr>
+</tr>
+
+<tr>
+			<td valign="top">
+				<a href="/finance/commodity?symbol=GCc1">
+		                	Gold</a>
+	        		</td>
+				<td class="data" valign="top">
+					1,220.90</td>
+				<td class="data changeUp" nowrap="nowrap" valign="top">
+					+8.10</td>
+				<td class="data changeUp" nowrap="nowrap" valign="top">
+					+0.67%</td>
+            </tr>
+	<tr class="stripe">
+			<td valign="top">
+				<a href="/finance/commodity?symbol=CLc1">
+		                	Oil</a>
+	        		</td>
+				<td class="data" valign="top">
+					56.71</td>
+				<td class="data changeUp" nowrap="nowrap" valign="top">
+					+0.25</td>
+				<td class="data changeUp" nowrap="nowrap" valign="top">
+					+0.44%</td>
+            </tr>
+	<tr>
+			<td valign="top">
+				<a href="/finance/commodity?symbol=Cc1">
+		                	Corn</a>
+	        		</td>
+				<td class="data" valign="top">
+					364.75</td>
+				<td class="data changeDown" nowrap="nowrap" valign="top">
+					-2.75</td>
+				<td class="data changeDown" nowrap="nowrap" valign="top">
+					-0.75%</td>
+            </tr>
+	</table>
+<div class="moreLink">
+				<a href="/finance/commodities">&#187; All Commodities</a></div></div>
+		</div>
+		</div>
+<div class="linebreak"></div>
+	<div id="div_gpt_mmcommodities3"><script>
+gatherAd('div_gpt_mmcommodities3',  [298,28], TR3.extractDartZone(), 'no', 'mmCommodities3');
+</script></div><style>
+div#mmIndices.mmI, div#mmCurrencies.mmCu,div#mmCommodities.mmCo {
+border-left: 1px solid rgb(150, 0, 0);
+border-right: 1px solid rgb(150, 0, 0);
+}
+</style>
+<div class="linebreak"></div>
+</div><div id="tab4"><div class="module">
+		
+		<div class="moduleHeader">
+				<h3>
+					Sector Summary</h3>
+			</div>
+		<div class="moduleBody">
+		<table width="100%" cellpadding="0" cellspacing="0" border="0" class="dataTable">
+<tbody class="dataSmall">
+
+ <tr  >
+                            <td class="sectorTitle">
+
+                            <a href="/sectors/energy?smbl=SPDR">Energy</a>
+								</td>
+                            <td class="data sectorPercentage  changeUp">
+                                <img height="6" width="11" src="https://s4.reutersmedia.net/resources_v2/images/arrowPos.gif"> 
+                                            +0.58%
+                            </td>
+                            </tr>
+	 					<tr  class="stripe" >
+                            <td class="sectorTitle">
+
+                            <a href="/sectors/basic-materials?smbl=SPDR">Basic Materials</a>
+								</td>
+                            <td class="data sectorPercentage  changeUp">
+                                <img height="6" width="11" src="https://s4.reutersmedia.net/resources_v2/images/arrowPos.gif"> 
+                                            +0.55%
+                            </td>
+                            </tr>
+	 					<tr  >
+                            <td class="sectorTitle">
+
+                            <a href="/sectors/industrials?smbl=SPDR">Industrials</a>
+								</td>
+                            <td class="data sectorPercentage  changeUp">
+                                <img height="6" width="11" src="https://s4.reutersmedia.net/resources_v2/images/arrowPos.gif"> 
+                                            +0.08%
+                            </td>
+                            </tr>
+	 					<tr  class="stripe" >
+                            <td class="sectorTitle">
+
+                            <a href="/sectors/cyclicals?smbl=SPDR">Cyclical Goods & Services</a>
+								</td>
+                            <td class="data sectorPercentage  changeDown">
+                                <img height="6" width="11" src="https://s2.reutersmedia.net/resources_v2/images/arrowNeg.gif"> 
+                                            -0.13%
+                            </td>
+                            </tr>
+	 					<tr  >
+                            <td class="sectorTitle">
+
+                            <a href="/sectors/non-cyclicals?smbl=SPDR">Non-Cyclical Goods & Services</a>
+								</td>
+                            <td class="data sectorPercentage  changeUp">
+                                <img height="6" width="11" src="https://s4.reutersmedia.net/resources_v2/images/arrowPos.gif"> 
+                                            +0.35%
+                            </td>
+                            </tr>
+	 					<tr  class="stripe" >
+                            <td class="sectorTitle">
+
+                            <a href="/sectors/financials?smbl=SPDR">Financials</a>
+								</td>
+                            <td class="data sectorPercentage  changeUp">
+                                <img height="6" width="11" src="https://s4.reutersmedia.net/resources_v2/images/arrowPos.gif"> 
+                                            +0.31%
+                            </td>
+                            </tr>
+	 					<tr  >
+                            <td class="sectorTitle">
+
+                            <a href="/sectors/healthcare?smbl=SPDR">Healthcare</a>
+								</td>
+                            <td class="data sectorPercentage  changeUp">
+                                <img height="6" width="11" src="https://s4.reutersmedia.net/resources_v2/images/arrowPos.gif"> 
+                                            +1.09%
+                            </td>
+                            </tr>
+	 					<tr  class="stripe" >
+                            <td class="sectorTitle">
+
+                            <a href="/sectors/technology?smbl=SPDR">Technology</a>
+								</td>
+                            <td class="data sectorPercentage  changeDown">
+                                <img height="6" width="11" src="https://s2.reutersmedia.net/resources_v2/images/arrowNeg.gif"> 
+                                            -0.05%
+                            </td>
+                            </tr>
+	 					<tr  >
+                            <td class="sectorTitle">
+
+                            <a href="/sectors/telecom?smbl=SPDR">Telecoms</a>
+								</td>
+                            <td class="data sectorPercentage  changeUp">
+                                <img height="6" width="11" src="https://s4.reutersmedia.net/resources_v2/images/arrowPos.gif"> 
+                                            +0.96%
+                            </td>
+                            </tr>
+	 					<tr  class="stripe" >
+                            <td class="sectorTitle">
+
+                            <a href="/sectors/utilities?smbl=SPDR">Utilities</a>
+								</td>
+                            <td class="data sectorPercentage  changeUp">
+                                <img height="6" width="11" src="https://s4.reutersmedia.net/resources_v2/images/arrowPos.gif"> 
+                                            +1.02%
+                            </td>
+                            </tr>
+	 					</tbody>
+</table>
+</div>
+		</div>
+		<div class="linebreak"></div>
+</div><script>
+	var topStoryGrid = $('#topStory').find('.grid8');
+	if (topStoryGrid.hasClass('grid8')) {
+	    if ($('#latestHeadlines')) {
+	        $('#latestHeadlines').remove();
+	    }
+	};
+</script>
+
+
+<div id="div_gpt_mlbottom"><script>
+gatherAd('div_gpt_mlbottom', [[298,150],[300,30]], TR3.extractDartZone(), 'no', 'marketslogo-bottom');
+</script></div><div id="mm-footer"><div class="module">
+<div class="moduleBody">
+<ul>
+<li><a href="/finance/currencies">Currency Converter</a></li>
+<li><a href="/finance/stocks">Quotes</a></li>
+</ul>
+</div>
+</div></div><div class="linebreak"></div>
+	</div></div>
+<div class="linebreak"></div>
+<div class="linebreak"></div>
+	<div class="module">
+		
+		<div class="moduleHeader">
+				<h3>
+					<a href="/news/archive/marketsNews" >
+					Markets News</a>
+					</h3>
+			</div>
+		<div class="moduleBody">
+		<div class="feature"><h2><a href="/article/usa-sec-crypto-currency/update-2-u-s-regulator-settles-with-tech-startups-over-token-sale-violations-idUSL2N1XR18C"  >UPDATE 2-U.S. regulator settles with tech startups over token sale violations</a>
+	</h2><p>WASHINGTON, Nov 16 The U.S. Securities and
+Exchange Commission settled charges on Friday with two
+technology companies for improperly offering digital tokens,
+mandating that they register their offerings as securities and
+reimburse investors.</p>
+	</div><ul>
+		<li><a href="/article/usa-bonds/treasuries-u-s-yields-fall-as-fed-comments-spark-talk-of-rate-hike-end-idUSL2N1XR16B"  >TREASURIES-U.S. yields fall as Fed comments spark talk of rate hike end</a>
+	</li><li><a href="/article/technicolor-sa-ma/digital-media-company-technicolor-explores-options-including-sale-sources-idUSL2N1XR19D"  >Digital media company Technicolor explores options including sale -sources</a>
+	</li><li><a href="/article/california-wildfires/update-7-amid-progress-against-california-blaze-number-of-missing-soars-idUSL2N1XR0C8"  >UPDATE 7-Amid progress against California blaze, number of missing soars</a>
+	</li><li><a href="/article/britain-eu/update-9-uk-pm-may-defends-brexit-deal-as-opponents-plot-no-confidence-vote-idUSL8N1XR1BV"  >UPDATE 9-UK PM May defends Brexit deal as opponents plot no-confidence vote</a>
+	</li></ul>
+	<div class="moreLink">
+				<a href="/news/archive/marketsNews">&#187; More Markets News</a></div></div>
+		</div>
+		<script>
+	var topStoryGrid = $('#topStory').find('.grid8');
+	if (topStoryGrid.hasClass('grid8')) {
+	    if ($('#latestHeadlines')) {
+	        $('#latestHeadlines').remove();
+	    }
+	};
+</script>
+
+
+<div class="module inline">
+		
+		<div class="moduleHeader">
+				<h3>
+					<a href="/finance/commodities" >
+					Commodities</a>
+					</h3>
+			</div>
+		<div class="moduleBody">
+		<ul>
+	<li><a href="/article/global-precious/precious-gold-firms-as-dollar-eases-set-for-third-week-of-gains-idUSL3N1WZ546"  >PRECIOUS-Gold firms as dollar eases, set for third week of gains</a>
+	</li>
+		<li><a href="/article/global-oil/update-12-oil-rebounds-from-steep-sell-off-as-opec-partners-discuss-supply-cut-idUSL4N1XP1AE"  >UPDATE 12-Oil rebounds from steep sell-off as OPEC, partners discuss supply cut</a>
+	</li>
+		</ul>
+</div>
+		</div>
+		<div class="module">
+		
+		<div class="moduleBody">
+		<table cellspacing="1" cellpadding="0" width="100%" class="dataTable">
+    <tr class="dataSlick">
+		<th>Symbol</th>
+		<th class='data'>Last</th>
+		<th class='data'>Net Change</th>
+	</tr>
+    <tbody class="dataSmall">
+		<tr class="stripe">
+			<td>
+				ICE Brent Crude</td>
+            <td class="data">&#36;66.91</td>
+            <td class="data">&#36;0.29</td>
+            </tr>
+		<tr class="stripe">
+			<td>
+				COMEX 100oz Gold</td>
+            <td class="data">&#36;1,220.90</td>
+            <td class="data">&#36;8.10</td>
+            </tr>
+		</tbody>
+</table>
+</div>
+		</div>
+		<div class="linebreak"></div>
+<div class="section" id="currenciesRail">
+<div class="sectionContent">
+<div class="module inline">
+		
+		<div class="moduleHeader">
+				<h3>
+					<a href="/finance/currencies" >
+					Currencies</a>
+					</h3>
+			</div>
+		<div class="moduleBody">
+		<ul>
+	<li><a href="/article/britain-eu-ireland/update-3-irish-pm-says-hard-border-highly-likely-without-brexit-deal-idUSL8N1XR4KJ"  >UPDATE 3-Irish PM says hard border highly likely without Brexit deal</a>
+	</li>
+		<!--Property passed to loop has zero elements--></ul>
+</div>
+		</div>
+		<div class="module">
+		
+		<div class="moduleBody">
+		<table cellspacing="0" cellpadding="0" width="100%" class="dataTable dataTableMD">
+<tbody class="dataSmall">
+		
+		<tr>
+		<th class="left">Currency</th>
+				<th class="data"></th>
+		</tr>
+    <tr class="">
+		<td>
+<a href="/finance/currencies">
+  UK &#163;</a></td>
+				<td class="data">
+					inUSD =1.2826</td>
+			</tr>
+		<tr class="stripe">
+		<td>
+<a href="/finance/currencies">
+  Euro</a></td>
+				<td class="data">
+					inUSD =1.1414</td>
+			</tr>
+		<tr class="">
+		<td>
+<a href="/finance/currencies">
+  &#165;en</a></td>
+				<td class="data">
+					inUSD =0.0089</td>
+			</tr>
+		</tbody>
+</table>
+</div>
+		</div>
+		<div class="linebreak"></div>
+	</div></div>
+<div id="div_gpt_mpulow"><script>
+gatherAd('div_gpt_mpulow', [[300, 250],[300,600],[300,1050]], TR3.extractDartZone(), 'yes', 'mpulow');
+</script></div>
+</div>
+
+</div>
+
+</div>
+</div>
+<div class="section">
+	<div class="sectionContent">
+<div class="sectionColumns">
+
+<div class="gridPanel grid12">
+<div id="footerTopicTarget"></div><div id="footerTopics">
+<div class="sectionRelatedTopics">
+
+	<ul>
+        <h3>Related Topics: </h3>
+            <li><a href="/finance/markets" >Markets Home</a></li><li><a href="/finance/global-market-data" >Global Market Data</a></li><li><a href="/finance/markets/us" >U.S. Markets</a></li><li><a href="/finance/stocks" >Stocks</a></li><li><a href="/finance/markets/hotStocks" >Hot Stocks</a></li></ul>
+</div>
+
+	</div>
+<div class="section" id="topSections">
+<div class="sectionContent">
+<link href="/resources_v2/css/rcom-topsections.css" rel="stylesheet" />
+<div id="topSectionsLoader"></div>
+<script language="javascript">Reuters.utils.replaceContent("topSectionsLoader", "/assets/sharedModuleLoader?view=RSM-US-Top-Sections-2", null, null);</script><div class="linebreak"></div>
+	</div></div>
+</div>
+
+</div>
+
+</div>
+</div>
+</div>
+<footer>
+<section class="footer">
+	<div class="group wrap" id="">
+		<script>
+
+callAds();
+</script>
+<div id="section-follow-buttons"><span class="footer-follow">Follow Reuters: </span>
+<ul>
+    <li id="foot-twitter"><a href="//www.twitter.com/reuters" target="_blank"><span class="follow-button follow-twitter">Follow Us On Twitter</span></a></li>
+    <li id="foot-facebook"><a href="//www.facebook.com/Reuters" target="_blank"><span class="follow-button follow-facebook">Follow Us On Facebook</span></a></li>
+    <li id="foot-rssfeed"><a href="//www.reuters.com/tools/rss" target="_blank"><span class="follow-button follow-rss">Follow Us On RSS</span></a></li>
+    <li id="foot-instagram"><a href=" //instagram.com/reuters/" target="_blank"><span class="follow-button follow-instagram">Follow Us On Instagram</span></a></li>
+    <li id="foot-youtube"><a href="//www.youtube.com/user/ReutersVideo" target="_blank"><span class="follow-button follow-youtube">Follow Us On YouTube</span></a></li>
+    <li id="foot-linkedin"><a href="//www.linkedin.com/company/10256858/" target="_blank"><span class="follow-button follow-linkedin">Follow Us On LinkedIn</span></a></li>
+</ul></div><div class="footer-more-links"><span class="footer-more">Subscribe: </span>
+<a href="//www.reuters.com/tools/rss">Feeds</a> | <a href="//newslink.reuters.com/join/subscribe">Newsletters</a> | <a href="/tools/podcasts">Podcasts</a> | <a href="/tools/mobile">Apps</a> </div></div>
+	</section><section class="footer-body">
+	<div class="group wrap" id="">
+		<div class="footer-services-link"><a href="//agency.reuters.com/en.html?utm_source=website&utm_medium=reuters&utm_campaign=site-referral&utm_content=us&utm_term=0" target="_blank">Reuters News Agency</a> | <a href="//agency.reuters.com/en/platforms-delivery/reuters-brand-attribution-guidelines.html" target="_blank">Brand Attribution Guidelines</a> | <a href="//sales.reuters.com/en " target="_blank">Advertise with Us</a> | <a href="//thomsonreuters.com/en/careers.html" target="_blank">Careers</a> | <a href="/article/us-reuters-editorial-leadership/reuters-editorial-leadership-idUSKBN1KE2SD" target="_blank">Reuters Editorial Leadership</a></div><div class="disclaimer"><div class="footer-summary">
+<p>Reuters, the news and media division of <a href="//thomsonreuters.com/" target="_blank">Thomson Reuters</a>, is the world’s largest international multimedia news provider reaching more than one billion people every day. Reuters provides trusted business, financial, national, and international news to professionals via Thomson Reuters desktops, the world's media organizations, and directly to consumers at Reuters.com and via Reuters TV.  Learn more about Thomson Reuters products:</p>
+</div>
+</div><div class="product-container">
+  <a href="//financial.thomsonreuters.com/en/products/tools-applications/trading-investment-tools/eikon-trading-software.html" target="_blank">
+    <div class="product">
+      <div class="prod-title">Eikon</div>
+        <div class="prod-content">Information, analytics and exclusive news on financial markets - delivered in an intuitive desktop and mobile interface 
+        </div>
+    </div>
+  </a>
+  <a href="//financial.thomsonreuters.com/en/products/infrastructure/trading-infrastructure/elektron-enterprise-data-management.html" target="_blank">  
+    <div class="product">
+      <div class="prod-title">Elektron</div>
+        <div class="prod-content">Everything you need to empower your workflow and enhance your enterprise data management 
+      </div>
+    </div>
+  </a>
+  <a href="//risk.thomsonreuters.com/products/world-check" target="_blank">  
+    <div class="product">
+      <div class="prod-title">World-Check</div>
+      <div class="prod-content">Screen for heightened risk individuals and entities globally to help uncover hidden risks in business relationships and human networks 
+      </div>
+    </div>
+  </a>  
+  <a href="//legalsolutions.thomsonreuters.com/law-products/westlaw-legal-research/" target="_blank">
+    <div class="product">
+      <div class="prod-title">Westlaw</div>
+      <div class="prod-content">Build the strongest argument relying on authoritative content, attorney-editor expertise, and industry defining technology   
+      </div>
+    </div>
+  </a>
+  <a href="//tax.thomsonreuters.com/products/brands/onesource/" target="_blank">  
+    <div class="product">
+      <div class="prod-title">ONESOURCE</div>
+      <div class="prod-content">The most comprehensive solution to manage all your complex and ever-expanding tax and compliance needs
+      </div>
+    </div>
+  </a>
+  <a href="//tax.thomsonreuters.com/products/brands/checkpoint/" target="_blank">  
+    <div class="product prod-last">
+      <div class="prod-title">CHECKPOINT</div>
+      <div class="prod-content">The industry leader for online information for tax, accounting and finance professionals 
+      </div>
+    </div>
+  </a>  
+</div><div class="linebreak"></div>
+	<div class="footer-policy-links"><p> All quotes delayed a minimum of 15 minutes. <a href="/info/disclaimer">See here for a complete list</a> of exchanges and delays.</p>
+<div class="footer-policies"><ul>
+    
+<li class="h-links">
+<div class="reuters-copyright"><script type="text/javascript">var year = new Date();document.write('<a href="//thomsonreuters.com/copyright/">&copy;  ' + year.getFullYear() + ' Reuters. All Rights Reserved.</a>');</script></div>
+</li>
+<li class="h-links"><a href="//reuters.zendesk.com/" target="_blank">Site Feedback</a></li>
+<li class="h-links"><a href="https://reuters.zendesk.com/hc/en-us/requests/new" target="_blank">Corrections</a></li>
+<li class="h-links"><a href="/advertising-guidelines">Advertising Guidelines</a></li>
+<li class="h-links"><a href="//info.evidon.com/pub_info/285" target="_blank">Cookies</a></li>
+<li class="h-links"><a href="//www.reuters.com/terms-of-use">Terms of Use</a></li>
+<li class="h-links h-links-last"><a href="https://www.thomsonreuters.com/en/privacy-statement.html" target="_blank">Privacy Policy</a></li>
+
+</ul></div></div></div>
+	</section>
+</footer>
+
+<script src="https://s4.reutersmedia.net/resources_v2/js/core-header.js" type="text/javascript"></script>
+<script src="https://s3.reutersmedia.net/resources_v2/js/core-login.js" type="text/javascript"></script>
+<script src="https://s2.reutersmedia.net/resources_v2/js/core-tracking.js" type="text/javascript"></script>
+<script src="https://s2.reutersmedia.net/resources_v2/js/rcom-social-share.js" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript" src="//www.reuters.com/reuters_gpt_bootstrap_footer.js"></script>
+
+<script type="text/javascript">
+	$(document).ready( function() {
+		var sclTracking = new rcom_scrollTracker("Markets");
+		if( inAppleMobileDevice() ) {document.addEventListener("scroll", sclTracking, false);} else {$(window).scroll( sclTracking );}
+	});
+</script>
+
+<section>
+	<div class="group" id="">
+		<script type='text/javascript'>
+    var _sf_startpt = (new Date()).getTime();
+    var _sf_async_config = _sf_async_config || {};
+    
+    _sf_async_config.playerdomain = 'queso-cdn.prod.reuters.tv';
+    _sf_async_config.sections = 'Index Detail Page'; 
+    _sf_async_config.autoDetect = false;
+    
+    _sf_async_config.authors = 'Reuters Editorial'; 
+    _sf_async_config.type = 'Markets'; 
+
+    (function(){
+      function loadChartbeat() {
+        window._sf_endpt=(new Date()).getTime();
+        var e = document.createElement('script');
+        e.setAttribute('language', 'javascript');
+        e.setAttribute('type', 'text/javascript');
+        e.setAttribute('src', '//static.chartbeat.com/js/chartbeat_video.js');
+        document.body.appendChild(e);
+      }
+      var oldonload = window.onload;
+      window.onload = (typeof window.onload != 'function') ?
+         loadChartbeat : function() { oldonload(); loadChartbeat(); };
+    })();
+  </script>
+</div>
+	</section>
+<script type="text/javascript">
+/* 20181116214201 */ !function(e,t,n){function a(e,t){var n=W(e);if(!n)return n;if(""!=t)for(var a=0;a<t.length;a++)"^"==t.charAt(a)&&(n=n.parentNode),"<"==t.charAt(a)&&(n=n.previousElementSibling),">"==t.charAt(a)&&(n=n.nextElementSibling),"y"==t.charAt(a)&&(n=n.firstChild);return n}function r(e,t){var n=t.getBoundingClientRect(),a=e.clientX-n.left,i=e.clientY-n.top;return{x:a,y:i}}function o(e){for(var t=0,n=0;e;)t+=e.offsetLeft+e.clientLeft,n+=e.offsetTop+e.clientTop,e=e.offsetParent;return{x:t,y:n}}function d(e,t){var n=0,a=0,i=o(t);return(e.pageX||e.pageY)&&(n=e.pageX,a=e.pageY),(e.clientX||e.clientY)&&(n=e.clientX+document.body.scrollLeft+document.documentElement.scrollLeft,a=e.clientY+document.body.scrollTop+document.documentElement.scrollTop),n-=i.x,a-=i.y,{x:n,y:a}}function u(e,t){return t.getBoundingClientRect?r(e,t):d(e,t)}function l(e,t){e.addEventListener?e.addEventListener("click",t,!0):e.attachEvent&&e.attachEvent("onclick",function(){return t.call(e,window.event)})}function p(e){if("function"==typeof e.createShadowRoot)try{var t=e.createShadowRoot();t.innerHTML=atob("ICAgICAgICA8Y29udGVudD48L2NvbnRlbnQ+DQogICAgICAgIDxzdHlsZT4jamtkZnZqayB7IG1hcmdpbjogMDsgcGFkZGluZzogMDsgYmFja2dyb3VuZDogdHJhbnNwYXJlbnQ7IH1ib2R5IHttYXJnaW46IDBweCFpbXBvcnRhbnQ7fTwvc3R5bGU+DQogICAg")}catch(e){}}function s(e){c(e)}function c(e){if(e.uabp6dbsdl&&!e.uabp799Inject){e.uabp799Inject=!0,e.uabpe69Pc={},e.uabp408Oc=[],e.uabp961Av={},e.uabp961Avt={};var a=[],i="S''ponsoreᗞ",r="opacity: 0.75; font-size: 10px; position: relative; margin-top: 3px; display: block; text-align: left; font-family: knowledge-medium,sans-serif; -webkit-font-smoothing: antialiased; font-size: 12px; color: #86888b; text-transform: uppercase; letter-spacing: .2rem; ",o=/^[a-z]+/.exec(location.host);if(o)switch(o[0]){case"de":i="G''esponserТ"}var d=".k872ABr9",u=document.createElement("style");u.innerHTML=d+":before { content: '"+i+"'; "+r+" } span"+d+"{ display: block; }",document.head.appendChild(u);var l,s='div[class*="content"] > div[class*="left"] > div[class*="container"] > div[class*="body"]',c=[],f=(setInterval(function(){c=document.querySelectorAll(s)},1e3),40),g=0,b=setInterval(function(){if(a&&a.MRTop){clearInterval(b);var e=a.MRTop;if(location.pathname.indexOf("/picture/")>-1)e.style.setProperty("bottom","80px"),e.style.setProperty("position","absolute"),e.style.setProperty("left","800px");else{for(var t,n=document.querySelectorAll(".dark.group"),i=e.parentNode,r=i;i.scrollHeight-e.scrollHeight<100;)t=i.parentNode.className,r=t.indexOf("group")>-1&&t.indexOf("wrap")>-1?i:i.parentNode,i=i.parentNode;window.addEventListener&&window.addEventListener("scroll",function(t){if(r.getBoundingClientRect().bottom<-20){e.style.setProperty("position","fixed"),e.style.setProperty("top","50px");for(var a=0;a<n.length;a++){if(n[a].getBoundingClientRect().top<350&&n[a].getBoundingClientRect().bottom>0){e.style.setProperty("display","none","important");break}e.style.setProperty("display","inherit","important")}}else e.style.setProperty("position","static"),e.style.setProperty("top",null)})}}g++>=f&&clearInterval(b)},500),m=40,x=0,y=setInterval(function(){if(a&&a.ARTEND){clearInterval(y);var e,t,n=a.ARTEND,i=document.querySelector(s);window.addEventListener&&window.addEventListener("scroll",function(r){for(var o=0;o<c.length;o++)c[o].getBoundingClientRect().top<0&&c[o].getBoundingClientRect().bottom>0&&c[o]!=i&&(e=document.createElement("div"),e.style.setProperty("height","331px"),e.className="replacementSpace",t=i.querySelector(".StandardArticleBody_trustBadgeContainer"),t&&t.appendChild(e),i=c[o],t=i.querySelector(".StandardArticleBody_trustBadgeContainer"),t&&(e=t.getElementsByClassName("replacementSpace")[0],e&&t.removeChild(e)),t&&(a.ARTEND=t.appendChild(n)),window.uabpdd084.a[5123]=a.ARTEND,n=a.ARTEND,n.getElementsByTagName("img").length>0&&(n.getElementsByTagName("img")[0].src=n.getElementsByTagName("img")[0].src.replace(/&ts=\d+/,"")+"&ts="+(new Date).getTime()))})}x++>=m&&clearInterval(y)},500),w=40,R=0,B=setInterval(function(){l=document.getElementById("content")||document.getElementsByClassName("ArticlePage_container").length>0&&document.getElementsByClassName("ArticlePage_container")[0],l&&(clearInterval(B),l.insertAdjacentHTML("beforebegin",'<div id="overlayForSearch" class="StandardArticleBody_body CanvasAd_container TwoColumnLayout_column TwoColumnLayout_left"></div><div></div><div class="StandardArticleBody_body"></div><div></div>')),R++>=w&&clearInterval(B)},250);if(!e.uabp9ceFlags.welect.enabled||UABPWelect()){if(uabp9ceFlags.protectStyles){var E=uabp9ceFlags.bait,S=uabp9ceFlags.maxBait||10,z=uabp9ceFlags.ignoreBaitProps,N=function(){var e=j("style");e.type="text/css";var t=!1,n=j("style");n.type="text/css";var a=!1;return function(i,r){if(r)if("b"!==i||t)"r"===i&&(a?n.sheet.insertRule(r,0):(a=!0,A(n,r),document.body.appendChild(n)));else{if(t=!0,z)for(var o=0;o<z.length;o++)r=r.replace(new RegExp(z[o]+": [^;]+;","g"),"");r=r.replace(new RegExp("[^:;{}]+: [^;]+\\s!important;","g"),""),A(e,r),document.head.insertBefore(e,document.head.firstChild)}}}();if(E){if(E.length>S){for(var I=0,O=[0],L=[E[0]],P=1;P<S;P++){for(;O.indexOf(I)>-1;)I=n.floor(n.random()*E.length);O.push(I),L[P]=E[I]}E=L,uabp9ceFlags.bait=L}for(var T={},k=0;k<E.length;k++){var C="string"==typeof E[k]?document.querySelector(E[k]):E[k];if(C&&C instanceof Node){var _={element:C,computedStylesObj:{},recoveryClass:$(7),computedStylesTxt:""};if(_.computedStylesTxt+="."+_.recoveryClass+"{",!z||z&&z.indexOf("width")===-1){var F=getComputedStyle(C).getPropertyValue("width");_.computedStylesObj.width=F,_.computedStylesTxt+="width:"+F+";"}if(!z||z&&z.indexOf("margin-top")===-1){var F=getComputedStyle(C).getPropertyValue("margin-top");_.computedStylesObj["margin-top"]=F,_.computedStylesTxt+="margin-top:"+F+";"}if(!z||z&&z.indexOf("cursor")===-1){var F=getComputedStyle(C).getPropertyValue("cursor");_.computedStylesObj.cursor=F,_.computedStylesTxt+="cursor:"+F+";"}if(!z||z&&z.indexOf("position")===-1){var F=getComputedStyle(C).getPropertyValue("position");_.computedStylesObj.position=F,_.computedStylesTxt+="position:"+F+";"}if(!z||z&&z.indexOf("top")===-1){var F=getComputedStyle(C).getPropertyValue("top");_.computedStylesObj.top=F,_.computedStylesTxt+="top:"+F+";"}if(!z||z&&z.indexOf("margin-bottom")===-1){var F=getComputedStyle(C).getPropertyValue("margin-bottom");_.computedStylesObj["margin-bottom"]=F,_.computedStylesTxt+="margin-bottom:"+F+";"}if(!z||z&&z.indexOf("left")===-1){var F=getComputedStyle(C).getPropertyValue("left");_.computedStylesObj.left=F,_.computedStylesTxt+="left:"+F+";"}if(!z||z&&z.indexOf("text-align")===-1){var F=getComputedStyle(C).getPropertyValue("text-align");_.computedStylesObj["text-align"]=F,_.computedStylesTxt+="text-align:"+F+";"}if(!z||z&&z.indexOf("display")===-1){var F=getComputedStyle(C).getPropertyValue("display");_.computedStylesObj.display=F,_.computedStylesTxt+="display:"+F+";"}if(!z||z&&z.indexOf("margin")===-1){var F=getComputedStyle(C).getPropertyValue("margin");_.computedStylesObj.margin=F,_.computedStylesTxt+="margin:"+F+";"}if(!z||z&&z.indexOf("right")===-1){var F=getComputedStyle(C).getPropertyValue("right");_.computedStylesObj.right=F,_.computedStylesTxt+="right:"+F+";"}if(!z||z&&z.indexOf("padding-left")===-1){var F=getComputedStyle(C).getPropertyValue("padding-left");_.computedStylesObj["padding-left"]=F,_.computedStylesTxt+="padding-left:"+F+";"}if(!z||z&&z.indexOf("padding-right")===-1){var F=getComputedStyle(C).getPropertyValue("padding-right");_.computedStylesObj["padding-right"]=F,_.computedStylesTxt+="padding-right:"+F+";"}if(!z||z&&z.indexOf("direction")===-1){var F=getComputedStyle(C).getPropertyValue("direction");_.computedStylesObj.direction=F,_.computedStylesTxt+="direction:"+F+";"}if(!z||z&&z.indexOf("max-width")===-1){var F=getComputedStyle(C).getPropertyValue("max-width");_.computedStylesObj["max-width"]=F,_.computedStylesTxt+="max-width:"+F+";"}if(!z||z&&z.indexOf("height")===-1){var F=getComputedStyle(C).getPropertyValue("height");_.computedStylesObj.height=F,_.computedStylesTxt+="height:"+F+";"}if(!z||z&&z.indexOf("z-index")===-1){var F=getComputedStyle(C).getPropertyValue("z-index");_.computedStylesObj["z-index"]=F,_.computedStylesTxt+="z-index:"+F+";"}if(!z||z&&z.indexOf("bottom")===-1){var F=getComputedStyle(C).getPropertyValue("bottom");_.computedStylesObj.bottom=F,_.computedStylesTxt+="bottom:"+F+";"}if(!z||z&&z.indexOf("visibility")===-1){var F=getComputedStyle(C).getPropertyValue("visibility");_.computedStylesObj.visibility=F,_.computedStylesTxt+="visibility:"+F+";"}if(!z||z&&z.indexOf("transition")===-1){var F=getComputedStyle(C).getPropertyValue("transition");_.computedStylesObj.transition=F,_.computedStylesTxt+="transition:"+F+";"}if(!z||z&&z.indexOf("float")===-1){var F=getComputedStyle(C).getPropertyValue("float");_.computedStylesObj.float=F,_.computedStylesTxt+="float:"+F+";"}_.computedStylesTxt+="} ",T[E[k]]=_,N("b",".ydzglsfyfx{width: 760px;margin-top: 45px;cursor: pointer;position: relative;top: -305px;margin-bottom: 10px;left: -125px;text-align: left !important;display: none;margin: 0px auto;right: 19px;padding-left: 20px;padding-right: 20px;direction: rtl;max-width: initial;height: 284px;z-index: 9;bottom: 80px;visibility: hidden;transition: top 1s ease-in 0s;float: left;} .tmhymdj{width: 760px;margin-top: 15px;cursor: pointer;display: initial;text-align: center;position: relative;top: -475px;margin: 0 auto;right: -2px;max-width: initial;margin-bottom: 10px;left: -125px;z-index: 1;visibility: hidden;} .usngqiupfu{width: 300px;position: relative;text-align: center;display: block;cursor: pointer;margin: 0px auto;top: -270px;right: -2px;margin-bottom: 10px;left: 640px;max-width: initial;z-index: 10;} .aswaziseh{text-align: center;width: 970px;cursor: pointer;display: initial;position: relative;margin: 0 auto;top: -270px;right: -2px;margin-bottom: 20px;left: 800px;} .cmroupaxya{text-align: center;width: 970px;cursor: pointer;display: initial;margin: 0px auto;position: relative;top: -273px;} .roxixsycm{text-align: center;width: 970px;position: absolute;display: none;margin: 30px auto;cursor: pointer;top: -270px;} .denedwwid{text-align: center;width: 970px;position: relative;display: none;margin: 30px auto;cursor: pointer;top: -15px;} .kqmykczhbz{width: 1100px;position: relative;text-align: left !important;display: initial;margin: 0px auto;cursor: pointer;} .soxalpyobp{width: 940px;position: relative;display: none;text-align: center;cursor: pointer;} .gdwkzttdo{width: 1100px;position: relative;text-align: center;cursor: pointer;display: none;} .tabdca{width: 940px;position: relative;cursor: pointer;display: none;} .dalwoiwa{width: 300px;position: static;cursor: pointer;} .vozkggodro{position: static;} .krknkkponq{position: absolute;} .rqlnfu{position: absolute;} .fsfuspb{position: absolute;} "),N("r",_.computedStylesTxt),C.className+=" "+_.recoveryClass,C.className+=" ydzglsfyfx",C.className+=" tmhymdj",C.className+=" usngqiupfu",C.className+=" aswaziseh",C.className+=" cmroupaxya",C.className+=" roxixsycm",C.className+=" denedwwid",C.className+=" kqmykczhbz",C.className+=" soxalpyobp",C.className+=" gdwkzttdo",C.className+=" tabdca",C.className+=" dalwoiwa",C.className+=" vozkggodro",C.className+=" krknkkponq",C.className+=" rqlnfu",C.className+=" fsfuspb"}}}}var H=!1;if(e.uabpf35newinject||e.uabp9ceFlags.newInject)for(var D,W=document.styleSheets,V=0;V<W.length;V++)try{if(W[V].cssRules){if(W[V].href&&(e.uabpf35newinject3||e.uabp9ceFlags.newInject3))continue;H=!0;var q=W[V];if(e.uabpf35newinject2||e.uabp9ceFlags.newInject2)for(var U in q.cssRules)if(q.cssRules.hasOwnProperty(U)&&q.cssRules[U].selectorText.indexOf("plista")>-1){H=!1;break}if(e.uabpf35newinject4||e.uabp9ceFlags.newInject4){D=Object.values(W[V].ownerNode.attributes);for(var X=0;X<D.length;X++)if(D[X].nodeName.indexOf("data-styled-components")>-1){H=!1;break}}if(H){try{setTimeout(h(q,a),500)}catch(e){}break}}}catch(e){}if(!e.uabpf35newinject&&!e.uabp9ceFlags.newInject||!H){var J=j("style");J.type="text/css",A(J,"#pKSnrj {width: 760px;margin-top: 45px;}#pKSnrj img {cursor: pointer;}.o9TjgdDu {width: 760px;position: relative;top: -305px;}.WcFyRlmww {margin-bottom: 10px;margin-top: 15px;}@media screen and (min-width: 375px) {.WcFyRlmww:before {left: -125px;}}@media screen and (max-width: 374px) {.WcFyRlmww:before {text-align: left !important;}}@media screen and (max-width: 375px) {.lbtn45cz {display: none;}}.WcFyRlmww img {cursor: pointer;display: initial;}.lbtn45cz {text-align: center;margin: 0px auto;right: 19px;position: relative;top: -475px;width: 300px;}.YDhgPtef {position: relative;padding-left: 20px;padding-right: 20px;text-align: center;}#fPvwdyigSh {}.Xlbeauifvc {direction: rtl;display: block;}.Xlbeauifvc img {cursor: pointer;}#CEYJJn {text-align: center;margin: 0 auto;width: 970px;}#CEYJJn img {cursor: pointer;max-width: initial;display: initial;}.n3287jDj {text-align: center;width: 970px;margin: 0px auto;right: -2px;position: relative;top: -270px;}.RgDVIhT {text-align: center;margin: 0 auto;width: 970px;}.RgDVIhT img {cursor: pointer;max-width: initial;display: initial;}.n3287jDj {text-align: center;width: 970px;margin: 0px auto;right: -2px;position: relative;top: -270px;}#yIoWQvP {position: absolute;}.vDxvYGB:empty {display: none;}.vDxvYGB {width: 1100px;margin: 30px auto;position: relative;}@media screen and (max-width: 1200px) {.vDxvYGB {width: 940px;}}.MGhvVemqT {position: relative;}#HhBVCe:empty {height: 284px; display: none;}#HhBVCe {width: 1100px;margin: 30px auto;position: relative;}@media screen and (max-width: 1200px) {#HhBVCe {width: 940px;}}.hNtIzftzzA {margin-bottom: 10px;}@media screen and (min-width: 375px) {.hNtIzftzzA:before {left: -125px;}}@media screen and (max-width: 374px) {.hNtIzftzzA:before {text-align: left !important;}}.hNtIzftzzA img {cursor: pointer;display: initial;}@media screen and (max-width: 330px) {.eF09jDhm {display: none;}}.eF09jDhm {text-align: center;margin: 0px auto;right: -2px;position: relative;top: -273px;width: 300px;}#HdeuJlPE {position: relative;text-align: center;margin-bottom: 10px;}.gXEIBdJXN {position: static;z-index: 9;}.gXEIBdJXN img {cursor: pointer;}.kvt67r8h {position: static;top: -270px;}#TzKCGDUxL img {cursor: pointer;}.uhWNHwnbgu img {cursor: pointer;}#VjnbRu {bottom: 80px;position: absolute;margin-bottom: 20px;}#VjnbRu img {cursor: pointer;}#VjnbRu:empty {display: none;visibility: hidden;}@media screen and (max-width: 1200px) {#VjnbRu {left: 640px;}}@media screen and (min-width: 1201px) {#VjnbRu {left: 800px;}}#cANMyBInv {position: absolute;z-index: 1;transition: top 1s ease-in 0s;}#cANMyBInv img {cursor: pointer;max-width: initial;}@media screen and (max-width: 919px) {#cANMyBInv {display: none;visibility: hidden;}}.s912CDz8 {top: -15px;position: absolute; z-index: 10;}.cMSxuW {}.cMSxuW img {cursor: pointer;}.GNFkeHgnU {float: left;}@media print {.YDhgPtef,#fPvwdyigSh,.Xlbeauifvc,#yIoWQvP,.vDxvYGB,.MGhvVemqT,#HhBVCe,#HdeuJlPE,#VjnbRu,.cMSxuW,.GNFkeHgnU,#pKSnrj,.WcFyRlmww,#CEYJJn,.RgDVIhT,.hNtIzftzzA,.gXEIBdJXN,#TzKCGDUxL,.uhWNHwnbgu,#cANMyBInv{display:none;}} .uabpHid {display:none !important;}"),M(ue,J),setTimeout(v(a),0)}(e.uabpdd08isableab||e.uabp9ceFlags.disableAb)&&p(t.documentElement)}}}function f(e,t){if(t<0)return f(e,t+26);for(var n="",a=0;a<e.length;a++){var i=e[a];if(i.match(/[a-z]/i)){var r=e.charCodeAt(a);r>=65&&r<=90?i=String.fromCharCode((r-65+t)%26+65):r>=97&&r<=122&&(i=String.fromCharCode((r-97+t)%26+97))}n+=i}return n}function h(t,n){e[f("fmdsqfEtqqf",-12)]=t;for(var a="#pKSnrj {width: 760px;margin-top: 45px;}#pKSnrj img {cursor: pointer;}.o9TjgdDu {width: 760px;position: relative;top: -305px;}.WcFyRlmww {margin-bottom: 10px;margin-top: 15px;}@media screen and (min-width: 375px) {.WcFyRlmww:before {left: -125px;}}@media screen and (max-width: 374px) {.WcFyRlmww:before {text-align: left !important;}}@media screen and (max-width: 375px) {.lbtn45cz {display: none;}}.WcFyRlmww img {cursor: pointer;display: initial;}.lbtn45cz {text-align: center;margin: 0px auto;right: 19px;position: relative;top: -475px;width: 300px;}.YDhgPtef {position: relative;padding-left: 20px;padding-right: 20px;text-align: center;}#fPvwdyigSh {}.Xlbeauifvc {direction: rtl;display: block;}.Xlbeauifvc img {cursor: pointer;}#CEYJJn {text-align: center;margin: 0 auto;width: 970px;}#CEYJJn img {cursor: pointer;max-width: initial;display: initial;}.n3287jDj {text-align: center;width: 970px;margin: 0px auto;right: -2px;position: relative;top: -270px;}.RgDVIhT {text-align: center;margin: 0 auto;width: 970px;}.RgDVIhT img {cursor: pointer;max-width: initial;display: initial;}.n3287jDj {text-align: center;width: 970px;margin: 0px auto;right: -2px;position: relative;top: -270px;}#yIoWQvP {position: absolute;}.vDxvYGB:empty {display: none;}.vDxvYGB {width: 1100px;margin: 30px auto;position: relative;}@media screen and (max-width: 1200px) {.vDxvYGB {width: 940px;}}.MGhvVemqT {position: relative;}#HhBVCe:empty {height: 284px; display: none;}#HhBVCe {width: 1100px;margin: 30px auto;position: relative;}@media screen and (max-width: 1200px) {#HhBVCe {width: 940px;}}.hNtIzftzzA {margin-bottom: 10px;}@media screen and (min-width: 375px) {.hNtIzftzzA:before {left: -125px;}}@media screen and (max-width: 374px) {.hNtIzftzzA:before {text-align: left !important;}}.hNtIzftzzA img {cursor: pointer;display: initial;}@media screen and (max-width: 330px) {.eF09jDhm {display: none;}}.eF09jDhm {text-align: center;margin: 0px auto;right: -2px;position: relative;top: -273px;width: 300px;}#HdeuJlPE {position: relative;text-align: center;margin-bottom: 10px;}.gXEIBdJXN {position: static;z-index: 9;}.gXEIBdJXN img {cursor: pointer;}.kvt67r8h {position: static;top: -270px;}#TzKCGDUxL img {cursor: pointer;}.uhWNHwnbgu img {cursor: pointer;}#VjnbRu {bottom: 80px;position: absolute;margin-bottom: 20px;}#VjnbRu img {cursor: pointer;}#VjnbRu:empty {display: none;visibility: hidden;}@media screen and (max-width: 1200px) {#VjnbRu {left: 640px;}}@media screen and (min-width: 1201px) {#VjnbRu {left: 800px;}}#cANMyBInv {position: absolute;z-index: 1;transition: top 1s ease-in 0s;}#cANMyBInv img {cursor: pointer;max-width: initial;}@media screen and (max-width: 919px) {#cANMyBInv {display: none;visibility: hidden;}}.s912CDz8 {top: -15px;position: absolute; z-index: 10;}.cMSxuW {}.cMSxuW img {cursor: pointer;}.GNFkeHgnU {float: left;}@media print {.YDhgPtef,#fPvwdyigSh,.Xlbeauifvc,#yIoWQvP,.vDxvYGB,.MGhvVemqT,#HhBVCe,#HdeuJlPE,#VjnbRu,.cMSxuW,.GNFkeHgnU,#pKSnrj,.WcFyRlmww,#CEYJJn,.RgDVIhT,.hNtIzftzzA,.gXEIBdJXN,#TzKCGDUxL,.uhWNHwnbgu,#cANMyBInv{display:none;}} .uabpHid {display:none !important;}".replace(new RegExp(atob("fVxzK30="),"g"),function(e){return"}}"}),i=a.replace(new RegExp(e.atob("fVtefV0="),"g"),function(e){return e[0]+"randomString"+e[1]}).split("randomString"),r=0;r<i.length;r++)e[f("fmdsqfEtqqf",-12)][f("uzeqdfDgxq",-12)](i[r],e[f("fmdsqfEtqqf",-12)].cssRules.length);setTimeout(v(n),0)}function v(e){var t=[];x(e,t),y(e,t),w()}function g(e,t){if(e&&t)for(var n=Object.keys(t),a=0;a<n.length;a++)"[object Array]"===Object.prototype.toString.call(t[n[a]])?e.style.setProperty(n[a],t[n[a]],"important"):e.style.setProperty(n[a],t[n[a]],"")}function b(e){if(e&&0!==e.children.length&&(""!==e.id||""!==e.class)){var t=e.children[0],n=e.id?"#"+e.id:"."+e.className.trim().replace(" ","."),a=n.substr(1)+"_",i=e.getBoundingClientRect(),r=t.getBoundingClientRect(),o=r.x-i.x+r.width,d=W(n+"_");if(!d){var u=a;d=j("style"),d.id=u,d.className=u,document.head.appendChild(d),window.addEventListener("resize",function(e){b(this)}.bind(e))}d.innerHTML.indexOf(o+"px")===-1&&(d.innerHTML=n+":after { width: "+o+"px; } ")}}function m(e,t){if("[object Array]"!==!Object.prototype.toString.call(e))for(var n=0;n<e.length;n++){if((e[n].selector||e[n].selectorAll)&&!e[n].skipSelectorCSS)for(var a=V(e[n].selector||e[n].selectorAll),i=0;i<a.length&&(g(a[i],e[n].cssApply),!e[n].selector);i++);e[n].function&&"function"==typeof e[n].function&&e[n].function(),e[n].applyAdText&&"function"==typeof b&&b(t)}}function x(t,n){if(e.uabp0a7Mobile){var i=a(".ArticlePage_ad-wrap","");if(i){var r=j("div");n.ARTENDREUTERSMOBILEWrapper=r,t.ARTENDREUTERSMOBILEWrapper=r,H(r,"YDhgPtef "),C(i,r),e.uabpdd084.w[5589]=r}}if(!e.uabp0a7Mobile){var i=a('div[class*="content"] > div[class*="left"] > div[class*="container"] > div[class*="body"]',"");if(i){var r=j("div");n.ARTENDWrapper=r,t.ARTENDWrapper=r,D(r,"fPvwdyigSh"),H(r,"ZXEzzivZ "),i.nextSibling?C(i.nextSibling,r):M(i.parentNode,r),e.uabpdd084.w[5629]=r}}if(!e.uabp0a7Mobile){var i=n.ARTENDWrapper;if(i){var r=j("Vahht");n.ARTENDWrapperChild=r,t.ARTENDWrapperChild=r,H(r,"Xlbeauifvc "),M(i,r),e.uabpdd084.w[5501]=r;var o=j("div");A(o,"<div> </div>"),X(o.childNodes,function(e,t){C(r,t)})}}if(!e.uabp0a7Mobile&&(location.search.indexOf("spacer=true")>-1||location.hash.indexOf("spacer=true")>-1)){var i=a("#spacerElement","");if(i){var r=j("div");n.BILLHomeWrapper=r,t.BILLHomeWrapper=r,D(r,"yIoWQvP"),H(r,"QOWunvCIvk "),M(i,r),e.uabpdd084.w[5870]=r}}if(!e.uabp0a7Mobile&&(location.search.indexOf("spacer=true")>-1||location.hash.indexOf("spacer=true")>-1)){var i=n.BILLHomeWrapper;if(i){var r=j("div");n.BILLHomeWrapperChild=r,t.BILLHomeWrapperChild=r,H(r,"vDxvYGB "),i.firstChild?C(i.firstChild,r):M(i,r),e.uabpdd084.w[5871]=r}}if(!e.uabp0a7Mobile&&""===location.search&&""===location.hash){var i=a(""+function(){return document.querySelector(".sec-top-overflow")?".sec-top-overflow":"#content > #overlayForSearch, .CanvasAd_container"}(),"");if(i){var r=j("div");n.BILLWrapper=r,t.BILLWrapper=r,H(r,"MGhvVemqT "),i.nextSibling?C(i.nextSibling,r):M(i.parentNode,r),e.uabpdd084.w[5627]=r}}if(!e.uabp0a7Mobile&&""===location.search&&""===location.hash){var i=n.BILLWrapper;if(i){var r=j("div");n.BILLWrapperChild=r,t.BILLWrapperChild=r,D(r,"HhBVCe"),H(r,"YogrKKOg "),m([{selector:".sec-top-overflow",cssApply:{"margin-bottom":"0"}}],r),i.firstChild?C(i.firstChild,r):M(i,r),e.uabpdd084.w[5118]=r}}if(e.uabp0a7Mobile){var i=a(".StandardArticleBody_container","");if(i){var r=j("div");n.MRMobileWrapper=r,t.MRMobileWrapper=r,D(r,"HdeuJlPE"),m([{selector:".StandardArticleBody_container",cssApply:{"padding-bottom":"20px"}}],r),i.nextSibling?C(i.nextSibling,r):M(i.parentNode,r),e.uabpdd084.w[5613]=r}}if(!e.uabp0a7Mobile&&location.pathname.indexOf("/news/picture/")>-1){var i=a(".mainSlideshow #div_gpt_mpu","");if(i){var r=j("div");n.MRTopPictureWrapper=r,t.MRTopPictureWrapper=r,D(r,"VjnbRu"),H(r,"NXHrVWyn "),m([{selector:"#div_gpt_mpu",cssApply:{display:"none"}}],r),C(i,r),e.uabpdd084.w[5770]=r}}if(location.href.indexOf("/article/")>-1){var i=a('div[class*="content"] > div[class*="left"] + div[class*="right"]',"");if(i){var r=j("div");n.RightRailImageWrapper=r,t.RightRailImageWrapper=r,H(r,"cMSxuW "),C(i,r),e.uabpdd084.w[5628]=r}}if(location.href.indexOf("/article/")>-1){var i=n.RightRailImageWrapper;if(i){var r=j("div");n.RightRailImageWrapperChild=r,t.RightRailImageWrapperChild=r,H(r,"GNFkeHgnU "),M(i,r),e.uabpdd084.w[5121]=r;var o=j("div");A(o,"<div> </div> <div> </div> <div> </div>"),X(o.childNodes,function(e,t){C(r,t)})}}}function y(t,n){if(e.uabp097Ptl=9,e.uabpeddPl=0,location.href.indexOf("/article/")>-1){var i=n.ARTENDWrapperChild,r=!1;i?q(Q("2uhvrxufhv2u2Bp@83)g@53493;38)w@7)l@;456348;:5)z@344)u@[ZXWQ"+e.uabp254Rnd,-3),function(){if(R(),!r){r=!0;var n=this;if(!(n.height<2)){var a=i,o=j("div");t.ARTEND=o,D(o,"pKSnrj"),H(o,"oHwUQy ");var d=n;l(d,function(t,n){if(!e.uabpe69Pc[5123]){t.preventDefault(),t.stopPropagation();for(var n=u(t,this),a=0;a<e.uabp408Oc.length;a++){var i=e.uabp408Oc[a];if(5123==i.p&&n.x>=i.x&&n.x<i.x+i.w&&n.y>=i.y&&n.y<i.y+i.h){if(i.u){var r=i.t.length>0?i.t:"_self";r=0==t.button&&t.ctrlKey?"_blank":r,Y(e,i.u,r,!0)}return}}var o=[Q("2uhvrxufhv2u2Bp@43)g@5349453<)w@7)l@939<<55<97)z@336)u@XLSMX"+e.uabp254Rnd,-3),Q("2uhvrxufhv2u2Bp@<9)g@53483;43)w@;)l@6;8855658;)z@335)u@FPRME"+e.uabp254Rnd,-3),Q("2uhvrxufhv2u2Bp@;3)g@53493<48)w@5)l@447;666563)z@343)u@JX]NS"+e.uabp254Rnd,-3),Q("2uhvrxufhv2u2Bp@46)g@534:3839)w@4)l@43943449<:)z@337)u@NUFFP"+e.uabp254Rnd,-3),Q("2uhvrxufhv2u2Bp@49)g@534;3;54)w@:)l@9973;5997<)z@344)u@NILIE"+e.uabp254Rnd,-3),Q("2uhvrxufhv2u2Bp@84)g@534:3<39)w@;)l@:67<;85;46)z@344)u@LQRPO"+e.uabp254Rnd,-3)],d=o[2*Math.floor(3*n.y/this.offsetHeight)+Math.floor(2*n.x/this.offsetWidth)];Y(e,d,0==t.button&&t.ctrlKey?"_blank":"_self")}}),M(o,n),M(a,o),e.uabpdd084.a[5123]=o;var p=j("div");A(p,'<div class="k872ABr9 o9TjgdDu"> </div>'),X(p.childNodes,function(e,t){_(o,t)}),ae(o,5123,Q("2uhvrxufhv2u2Bp@58)g@53493436)w@9)l@9;;:74:68<)z@339)u@EUSNO"+e.uabp254Rnd,-3))}}},R):R()}else R();if(e.uabp0a7Mobile){var o=n.ARTENDREUTERSMOBILEWrapper,d=!1;o?q(Q("2uhvrxufhv2u2Bp@67)g@534:3:56)w@4)l@46<7949<99)z@33:)u@GKWJF"+e.uabp254Rnd,-3),function(){if(R(),!d){d=!0;var n=this;if(!(n.height<2)){var a=o,i=j("div");t.ARTENDREUTERSMOBILE=i,H(i,"WcFyRlmww ");var r=n;l(r,function(t,n){if(!e.uabpe69Pc[5588]){t.preventDefault(),t.stopPropagation();for(var n=u(t,this),a=0;a<e.uabp408Oc.length;a++){var i=e.uabp408Oc[a];if(5588==i.p&&n.x>=i.x&&n.x<i.x+i.w&&n.y>=i.y&&n.y<i.y+i.h){if(i.u){var r=i.t.length>0?i.t:"_self";r=0==t.button&&t.ctrlKey?"_blank":r,Y(e,i.u,r,!0)}return}}var o=[Q("2uhvrxufhv2u2Bp@;3)g@5348364;)w@:)l@57;:44349<)z@33:)u@YXJ]O"+e.uabp254Rnd,-3),Q("2uhvrxufhv2u2Bp@8:)g@534:355:)w@5)l@79:<7;4846)z@33;)u@YTOII"+e.uabp254Rnd,-3),Q("2uhvrxufhv2u2Bp@;9)g@534:455:)w@4)l@96485493<4)z@339)u@EPGTL"+e.uabp254Rnd,-3),Q("2uhvrxufhv2u2Bp@<5)g@534:434:)w@7)l@85<6:6:8<5)z@336)u@YMW[F"+e.uabp254Rnd,-3),Q("2uhvrxufhv2u2Bp@74)g@53483955)w@4)l@4738843637)z@336)u@JRPUQ"+e.uabp254Rnd,-3)],d=o[1*Math.floor(5*n.y/this.offsetHeight)+Math.floor(1*n.x/this.offsetWidth)];Y(e,d,0==t.button&&t.ctrlKey?"_blank":"_self")}}),M(i,n),M(a,i),e.uabpdd084.a[5588]=i;var p=j("div");A(p,'<div class="tl982k8d"> </div> <div class="E89jd9je"> </div> <div class="R0b783dj"> </div> <span class="R0b783dj"> </span>'),X(p.childNodes,function(e,t){C(i,t)});var p=j("div");A(p,'<div class="k872ABr9 lbtn45cz"> </div>'),X(p.childNodes,function(e,t){_(i,t)}),ae(i,5588,Q("2uhvrxufhv2u2Bp@<;)g@5348354<)w@9)l@:;45858668)z@334)u@ES\\VN"+e.uabp254Rnd,-3))}}},R):R()}else R();if(""===location.search&&""===location.hash){var p=n.BILLWrapperChild,s=!1;p?q(Q("2uhvrxufhv2u2Bp@93)g@5348444:)w@9)l@:;<:847559)z@336)u@JPQGM"+e.uabp254Rnd,-3),function(){if(R(),!s){s=!0;var n=this;if(!(n.height<2)){var a=p,i=j("div");t.BILL=i,D(i,"CEYJJn"),H(i,"CBMMKau ");var r=n;l(r,function(t,n){if(!e.uabpe69Pc[5119]){t.preventDefault(),t.stopPropagation();for(var n=u(t,this),a=0;a<e.uabp408Oc.length;a++){var i=e.uabp408Oc[a];if(5119==i.p&&n.x>=i.x&&n.x<i.x+i.w&&n.y>=i.y&&n.y<i.y+i.h){if(i.u){var r=i.t.length>0?i.t:"_self";r=0==t.button&&t.ctrlKey?"_blank":r,Y(e,i.u,r,!0)}return}}var o=[Q("2uhvrxufhv2u2Bp@4:)g@53493554)w@<)l@:9:54;:346)z@344)u@NQNEX"+e.uabp254Rnd,-3),Q("2uhvrxufhv2u2Bp@:5)g@534;3<47)w@;)l@7<45;<<9<8)z@336)u@ZR[EE"+e.uabp254Rnd,-3),Q("2uhvrxufhv2u2Bp@9;)g@534;4543)w@<)l@445995699;)z@344)u@YIP]F"+e.uabp254Rnd,-3),Q("2uhvrxufhv2u2Bp@;7)g@534;444;)w@9)l@49:635<446)z@33;)u@KNHZV"+e.uabp254Rnd,-3),Q("2uhvrxufhv2u2Bp@44)g@534:4357)w@5)l@8856963;88)z@343)u@JLS\\I"+e.uabp254Rnd,-3),Q("2uhvrxufhv2u2Bp@46)g@534;3553)w@9)l@548588<574)z@336)u@FUWKP"+e.uabp254Rnd,-3),Q("2uhvrxufhv2u2Bp@7:)g@534:3955)w@;)l@496;:46543)z@33:)u@MZXPY"+e.uabp254Rnd,-3),Q("2uhvrxufhv2u2Bp@58)g@534:363:)w@6)l@:6936577:7)z@334)u@Q[TVS"+e.uabp254Rnd,-3),Q("2uhvrxufhv2u2Bp@<9)g@534;3:4<)w@9)l@:;6<;5:967)z@33:)u@\\UHSP"+e.uabp254Rnd,-3),Q("2uhvrxufhv2u2Bp@83)g@53493;3;)w@6)l@:<<6:9<<<;)z@337)u@OJF[S"+e.uabp254Rnd,-3),Q("2uhvrxufhv2u2Bp@5;)g@534;3457)w@6)l@:568<5834;)z@338)u@Q\\WPH"+e.uabp254Rnd,-3),Q("2uhvrxufhv2u2Bp@;4)g@53483864)w@6)l@<567445;;;)z@339)u@LXTTS"+e.uabp254Rnd,-3)],d=o[12*Math.floor(1*n.y/this.offsetHeight)+Math.floor(12*n.x/this.offsetWidth)];Y(e,d,0==t.button&&t.ctrlKey?"_blank":"_self")}}),M(i,n),M(a,i),e.uabpdd084.a[5119]=i;var o=j("div");A(o,'<div class="k872ABr9 n3287jDj"> </div>'),X(o.childNodes,function(e,t){_(i,t)}),m([{function:function(){window.uabpLRqt=!0;var e=t.BILLWrapper;e&&(e.style.cssText="position:relative;width:100%;border:none;min-height:1px;background: #ececec;-ms-flex-align: center;align-items: center;-ms-flex-pack: center;justify-content: center;overflow: hidden;")}}],i),ae(i,5119,Q("2uhvrxufhv2u2Bp@;6)g@534:3<56)w@4)l@48;89775:3)z@339)u@[O\\M["+e.uabp254Rnd,-3))}}},R):R()}else R();if(location.search.indexOf("spacer=true")>-1||location.hash.indexOf("spacer=true")>-1){var c=n.BILLHomeWrapperChild,f=!1;c?q(Q("2uhvrxufhv2u2Bp@77)g@53493:4<)w@9)l@4:7;9;78<5)z@339)u@L\\M[H"+e.uabp254Rnd,-3),function(){if(R(),!f){f=!0;var n=this;if(!(n.height<2)){var a=c,i=j("div");t.BILLHome=i,D(i,"kFCTCEzavK"),H(i,"RgDVIhT ");var r=n;l(r,function(t,n){if(!e.uabpe69Pc[5872]){t.preventDefault(),t.stopPropagation();for(var n=u(t,this),a=0;a<e.uabp408Oc.length;a++){var i=e.uabp408Oc[a];if(5872==i.p&&n.x>=i.x&&n.x<i.x+i.w&&n.y>=i.y&&n.y<i.y+i.h){if(i.u){var r=i.t.length>0?i.t:"_self";r=0==t.button&&t.ctrlKey?"_blank":r,Y(e,i.u,r,!0)}return}}var o=[Q("2uhvrxufhv2u2Bp@:6)g@53493;56)w@4)l@5:8734:<56)z@344)u@QYKNH"+e.uabp254Rnd,-3),Q("2uhvrxufhv2u2Bp@<8)g@53483;44)w@:)l@;874664;78)z@339)u@SYMFF"+e.uabp254Rnd,-3),Q("2uhvrxufhv2u2Bp@;9)g@534:373;)w@<)l@:5<9754;::)z@337)u@MYGZR"+e.uabp254Rnd,-3),Q("2uhvrxufhv2u2Bp@77)g@534:4439)w@9)l@:;785543:3)z@334)u@PUN]N"+e.uabp254Rnd,-3),Q("2uhvrxufhv2u2Bp@59)g@534;3:43)w@7)l@99<475776;)z@335)u@Y\\GT["+e.uabp254Rnd,-3),Q("2uhvrxufhv2u2Bp@46)g@534;4348)w@;)l@:63:853885)z@33:)u@JZN[G"+e.uabp254Rnd,-3),Q("2uhvrxufhv2u2Bp@85)g@534;435<)w@9)l@64<;::636;)z@334)u@RIIEX"+e.uabp254Rnd,-3),Q("2uhvrxufhv2u2Bp@54)g@534:4338)w@;)l@:3:3654387)z@336)u@F\\M[V"+e.uabp254Rnd,-3),Q("2uhvrxufhv2u2Bp@7;)g@53483448)w@8)l@86:49448:;)z@338)u@KP[W]"+e.uabp254Rnd,-3),Q("2uhvrxufhv2u2Bp@63)g@534;3;58)w@4)l@559:;47:38)z@338)u@QSVT]"+e.uabp254Rnd,-3),Q("2uhvrxufhv2u2Bp@;6)g@53493647)w@6)l@55:5954<<;)z@33;)u@HTL[H"+e.uabp254Rnd,-3),Q("2uhvrxufhv2u2Bp@<3)g@534;3553)w@8)l@565:659<85)z@33:)u@QGO]F"+e.uabp254Rnd,-3)],d=o[12*Math.floor(1*n.y/this.offsetHeight)+Math.floor(12*n.x/this.offsetWidth)];Y(e,d,0==t.button&&t.ctrlKey?"_blank":"_self")}}),M(i,n),M(a,i),e.uabpdd084.a[5872]=i;var o=j("div");A(o,'<div class="k872ABr9 n3287jDj"> </div>'),X(o.childNodes,function(e,t){_(i,t)}),m([{function:function(){window.uabpLRqt=!0;var e=t.BILLHomeWrapper;e&&(e.style.cssText="position:absolute;width:100%;border:none;min-height:1px;background: #ececec;-ms-flex-align: center;align-items: center;-ms-flex-pack: center;justify-content: center;overflow: hidden;")}}],i),ae(i,5872,Q("2uhvrxufhv2u2Bp@95)g@53493;38)w@8)l@849<958<<3)z@33;)u@LJYRY"+e.uabp254Rnd,-3))}}},R):R()}else R();if(e.uabp0a7Mobile){var h=n.MRMobileWrapper,v=!1;h?q(Q("2uhvrxufhv2u2Bp@5<)g@534:3636)w@4)l@:96;365:7:)z@334)u@]PZIO"+e.uabp254Rnd,-3),function(){if(R(),!v){v=!0;var n=this;if(!(n.height<2)){var a=h,i=j("div");t.MRMobile=i,H(i,"hNtIzftzzA ");var r=n;l(r,function(t,n){if(!e.uabpe69Pc[5614]){t.preventDefault(),t.stopPropagation();for(var n=u(t,this),a=0;a<e.uabp408Oc.length;a++){var i=e.uabp408Oc[a];if(5614==i.p&&n.x>=i.x&&n.x<i.x+i.w&&n.y>=i.y&&n.y<i.y+i.h){if(i.u){var r=i.t.length>0?i.t:"_self";r=0==t.button&&t.ctrlKey?"_blank":r,Y(e,i.u,r,!0)}return}}var o=[Q("2uhvrxufhv2u2Bp@66)g@53493:48)w@7)l@4746:5:5:;)z@335)u@VZY\\F"+e.uabp254Rnd,-3),Q("2uhvrxufhv2u2Bp@47)g@534:3837)w@6)l@;7<58;3445)z@335)u@PXLGU"+e.uabp254Rnd,-3),Q("2uhvrxufhv2u2Bp@94)g@5349445:)w@<)l@:596:654::)z@33;)u@\\RPWR"+e.uabp254Rnd,-3)],d=o[1*Math.floor(3*n.y/this.offsetHeight)+Math.floor(1*n.x/this.offsetWidth)];Y(e,d,0==t.button&&t.ctrlKey?"_blank":"_self")}}),M(i,n),M(a,i),e.uabpdd084.a[5614]=i;var o=j("div");A(o,'<div class="tl982k8d"> </div> <div class="E89jd9je"> </div> <div class="R0b783dj"> </div> <span class="R0b783dj"> </span>'),X(o.childNodes,function(e,t){C(i,t)});var o=j("div");A(o,'<div class="k872ABr9 eF09jDhm"> </div>'),
+X(o.childNodes,function(e,t){_(i,t)}),ae(i,5614,Q("2uhvrxufhv2u2Bp@98)g@534:3:3:)w@<)l@45344454<:)z@336)u@LJPOK"+e.uabp254Rnd,-3))}}},R):R()}else R();if(location.pathname.indexOf("/article/")!==-1||e.uabp0a7Mobile||location.pathname.indexOf("/news/picture/")!==-1)R();else{var g=a("#div_gpt_mpu, #ad-div-mpu","^"),b=!1;g?q(Q("2uhvrxufhv2u2Bp@83)g@534:4346)w@8)l@5<97943;<3)z@33<)u@SLISM"+e.uabp254Rnd,-3),function(){if(R(),!b){b=!0;var n=this;if(!(n.height<2)){var a=g,i=j("div");t.MRTop=i,H(i,"gXEIBdJXN ");var r=n;l(r,function(t,n){if(!e.uabpe69Pc[5120]){t.preventDefault(),t.stopPropagation();for(var n=u(t,this),a=0;a<e.uabp408Oc.length;a++){var i=e.uabp408Oc[a];if(5120==i.p&&n.x>=i.x&&n.x<i.x+i.w&&n.y>=i.y&&n.y<i.y+i.h){if(i.u){var r=i.t.length>0?i.t:"_self";r=0==t.button&&t.ctrlKey?"_blank":r,Y(e,i.u,r,!0)}return}}var o=[Q("2uhvrxufhv2u2Bp@75)g@534;3945)w@6)l@5477863;7;)z@344)u@VQXVW"+e.uabp254Rnd,-3),Q("2uhvrxufhv2u2Bp@<:)g@534:3:5;)w@4)l@48588669:8)z@339)u@ZXOPG"+e.uabp254Rnd,-3),Q("2uhvrxufhv2u2Bp@8:)g@534;3<54)w@<)l@9;;<544;86)z@33:)u@WPN\\J"+e.uabp254Rnd,-3)],d=o[1*Math.floor(3*n.y/this.offsetHeight)+Math.floor(1*n.x/this.offsetWidth)];Y(e,d,0==t.button&&t.ctrlKey?"_blank":"_self")}}),M(i,n),C(a,i),e.uabpdd084.a[5120]=i;var o=j("div");A(o,'<div class="k872ABr9 kvt67r8h"> </div>'),X(o.childNodes,function(e,t){_(i,t)}),ae(i,5120,Q("2uhvrxufhv2u2Bp@8;)g@53483444)w@9)l@6395:55<:<)z@344)u@HYUNG"+e.uabp254Rnd,-3))}}},R):R()}if(e.uabp0a7Mobile){var x=a("body > section.module.top-news-module",""),y=!1;x?q(Q("2uhvrxufhv2u2Bp@44)g@5348433:)w@;)l@954;;4774:)z@336)u@NLJPE"+e.uabp254Rnd,-3),function(){if(R(),!y){y=!0;var n=this;if(!(n.height<2)){var a=x,i=j("div");t.MRTopMobile=i,D(i,"TzKCGDUxL");var r=n;l(r,function(t,n){if(!e.uabpe69Pc[5528]){t.preventDefault(),t.stopPropagation();for(var n=u(t,this),a=0;a<e.uabp408Oc.length;a++){var i=e.uabp408Oc[a];if(5528==i.p&&n.x>=i.x&&n.x<i.x+i.w&&n.y>=i.y&&n.y<i.y+i.h){if(i.u){var r=i.t.length>0?i.t:"_self";r=0==t.button&&t.ctrlKey?"_blank":r,Y(e,i.u,r,!0)}return}}var o=[Q("2uhvrxufhv2u2Bp@:6)g@534;343<)w@7)l@43;7645977)z@336)u@OXYZE"+e.uabp254Rnd,-3),Q("2uhvrxufhv2u2Bp@<;)g@534:3963)w@4)l@<94:;<8;45)z@336)u@GNYJI"+e.uabp254Rnd,-3),Q("2uhvrxufhv2u2Bp@44)g@53493:44)w@8)l@7::89596<8)z@33:)u@VHFNZ"+e.uabp254Rnd,-3)],d=o[1*Math.floor(3*n.y/this.offsetHeight)+Math.floor(1*n.x/this.offsetWidth)];Y(e,d,0==t.button&&t.ctrlKey?"_blank":"_self")}}),M(i,n),C(a,i),e.uabpdd084.a[5528]=i;var o=j("div");A(o,'<div class="k872ABr9"> </div>'),X(o.childNodes,function(e,t){_(i,t)}),ae(i,5528,Q("2uhvrxufhv2u2Bp@4:)g@534:3:37)w@8)l@63<;44;869)z@337)u@ZGOSR"+e.uabp254Rnd,-3))}}},R):R()}else R();if(!e.uabp0a7Mobile&&location.pathname.indexOf("/news/picture/")>-1){var B=n.MRTopPictureWrapper,E=!1;B?q(Q("2uhvrxufhv2u2Bp@8<)g@53484534)w@;)l@8;8<764<<:)z@337)u@ZVXKF"+e.uabp254Rnd,-3),function(){if(R(),!E){E=!0;var n=this;if(!(n.height<2)){var a=B,i=j("div");t.MRTopPicture=i,H(i,"uhWNHwnbgu ");var r=n;l(r,function(t,n){if(!e.uabpe69Pc[5771]){t.preventDefault(),t.stopPropagation();for(var n=u(t,this),a=0;a<e.uabp408Oc.length;a++){var i=e.uabp408Oc[a];if(5771==i.p&&n.x>=i.x&&n.x<i.x+i.w&&n.y>=i.y&&n.y<i.y+i.h){if(i.u){var r=i.t.length>0?i.t:"_self";r=0==t.button&&t.ctrlKey?"_blank":r,Y(e,i.u,r,!0)}return}}var o=[Q("2uhvrxufhv2u2Bp@6<)g@53494339)w@4)l@;;<4;66658)z@336)u@TSLHP"+e.uabp254Rnd,-3),Q("2uhvrxufhv2u2Bp@44)g@534;3<4;)w@4)l@8:6467:853)z@33;)u@I\\MJY"+e.uabp254Rnd,-3),Q("2uhvrxufhv2u2Bp@;6)g@53483:39)w@5)l@:7;;74749;)z@344)u@FTLS["+e.uabp254Rnd,-3)],d=o[1*Math.floor(3*n.y/this.offsetHeight)+Math.floor(1*n.x/this.offsetWidth)];Y(e,d,0==t.button&&t.ctrlKey?"_blank":"_self")}}),M(i,n),M(a,i),e.uabpdd084.a[5771]=i;var o=j("div");A(o,'<div class="k872ABr9 kvt67r8h"> </div>'),X(o.childNodes,function(e,t){_(i,t)}),ae(i,5771,Q("2uhvrxufhv2u2Bp@99)g@534;3937)w@5)l@6;56;4<<94)z@33:)u@\\OMJR"+e.uabp254Rnd,-3))}}},R):R()}else R();if(e.uabp0a7Mobile)R();else{var S=n.RightRailImageWrapperChild,z=!1;S?q(Q("2uhvrxufhv2u2Bp@:6)g@5348363<)w@:)l@:8:8;7<75;)z@33;)u@PFWEG"+e.uabp254Rnd,-3),function(){if(R(),!z){z=!0;var n=this;if(!(n.height<2)){var a=S,i=j("div");t.RightRailImage=i,D(i,"cANMyBInv");var r=n;l(r,function(t,n){if(!e.uabpe69Pc[5122]){t.preventDefault(),t.stopPropagation();for(var n=u(t,this),a=0;a<e.uabp408Oc.length;a++){var i=e.uabp408Oc[a];if(5122==i.p&&n.x>=i.x&&n.x<i.x+i.w&&n.y>=i.y&&n.y<i.y+i.h){if(i.u){var r=i.t.length>0?i.t:"_self";r=0==t.button&&t.ctrlKey?"_blank":r,Y(e,i.u,r,!0)}return}}var o=[Q("2uhvrxufhv2u2Bp@5:)g@534:3;5:)w@4)l@486894687;)z@33<)u@RKSII"+e.uabp254Rnd,-3),Q("2uhvrxufhv2u2Bp@;3)g@53493446)w@6)l@9459;4<896)z@334)u@JREER"+e.uabp254Rnd,-3),Q("2uhvrxufhv2u2Bp@:3)g@534;3835)w@4)l@46454477<:)z@344)u@SR\\RE"+e.uabp254Rnd,-3),Q("2uhvrxufhv2u2Bp@<<)g@53483847)w@8)l@44643489:3)z@33:)u@FFVOV"+e.uabp254Rnd,-3),Q("2uhvrxufhv2u2Bp@44)g@534;3737)w@8)l@56563495<9)z@343)u@QYN[V"+e.uabp254Rnd,-3)],d=o[1*Math.floor(5*n.y/this.offsetHeight)+Math.floor(1*n.x/this.offsetWidth)];Y(e,d,0==t.button&&t.ctrlKey?"_blank":"_self")}}),M(i,n),M(a,i),e.uabpdd084.a[5122]=i;var o=j("div");A(o,'<span class="R0b783dj"> </span> <div class="xgRt9xyY"> </div> <div class="A8JD8jn3"> </div> <div class="R0b783dj"> </div> <div class="R0b783dj"> </div>'),X(o.childNodes,function(e,t){C(i,t)});var o=j("div");A(o,'<div class="k872ABr9 s912CDz8"> </div>'),X(o.childNodes,function(e,t){_(i,t)}),m([{function:function(){if(!window.uabp0a7Mobile){var e=!1;window.scrollBy(0,10);setTimeout(function(){window.scrollBy(0,-10),setTimeout(function(){window.scrollBy(0,10),setTimeout(function(){window.scrollBy(0,-10)},0)},2e3)},0);window.addEventListener&&window.addEventListener("scroll",function(n){var a=t.RightRailImage;if(a){var i=a.parentNode;if(i){!e&&document.querySelector("iframe[src*='prod.reuters.tv/new/index.html?autoplay=true']")&&(a.style.setProperty("margin-top","187px"),e=!0);var r=document.querySelector(".k872ABr9.s912CDz8");i.getBoundingClientRect().top<35?(a.style.setProperty("position","fixed"),a.style.setProperty("top","35px"),r&&(r.style.setProperty("position","fixed"),r.style.setProperty("top","20px"))):(a.style.setProperty("position","absolute"),a.style.setProperty("top",null),r&&(r.style.setProperty("position","absolute"),r.style.setProperty("top","-15px")))}}})}}}],i),ae(i,5122,Q("2uhvrxufhv2u2Bp@7<)g@534;4353)w@6)l@;33:<5;375)z@337)u@PFUQQ"+e.uabp254Rnd,-3))}}},R):R()}(e.uabpautorecov||e.uabp9ceFlags.autoRecov)&&ne(),w()}function w(){X(V(".RightRail_sticky-container"),function(e,t){t.className.indexOf(" uabpHid")<0&&(t.className+=" uabpHid")})}function R(){e.uabpeddPl++,e.uabpeddPl>=e.uabp097Ptl&&(B(),de=!1)}function B(){var t=function(t){if(null!==t.data&&"object"==typeof t.data)try{var n=t.data,a=document.createElement("a");if(a.href=t.origin,window.location.hostname!=a.hostname)return;if("cc"==n.c)X(V(n.d+" > *"),function(e,t){F(t)});else if("cs"==n.c)if(e[f("fmdsqfEtqqf",-12)])for(var i=e[f("fmdsqfEtqqf",-12)],r=n.d.replace(new RegExp(atob("fVxzK30="),"g"),function(e){return"}}"}),o=r.replace(new RegExp(e.atob("fVtefV0="),"g"),function(e){return e[0]+"randomString"+e[1]}).split("randomString"),d=0;d<o.length;d++)i[f("uzeqdfDgxq",-12)](o[d],i.cssRules.length);else{var i=j("style");i.type="text/css",A(i,n.d),M(ue,i)}else if("pc"==n.c)e.uabpe69Pc[n.d]=!0;else if("oc"==n.c)e.uabp408Oc.push(n.d);else if("ac"==n.c){var u=W(n.d.slc),i=j("div");i.innerHTML=n.d.cnt,X(i.childNodes,function(e,t){u.appendChild(t)})}else if("js"==n.c){var i=j("script");A(i,n.d),M(le,i)}else if("if"==n.c){var i=j("iframe");i.src=n.d,i.style.display="none",M(le,i)}}catch(e){}};e.addEventListener("message",t,!1);var n=j("iframe");n.src=Q("2uhvrxufhv2u2Bp@66)g@5349393<)w@4)l@:34;57334;)z@336)u@MFHXV"+e.uabp254Rnd,-3),n.style.display="none",M(le,n)}function E(t,n){if(e.uabpba3Track)return!1;e.uabpba3Track=!0;var a=function(){G(this)||s(e)};(t||n)&&q(Q("2uhvrxufhv2u2Bp@8:)g@53494436)w@:)l@<83769879<)z@338)u@HXZ]Y"+e.uabp254Rnd,-3)),t?n?U(Q("2uhvrxufhv2u2Bp@74)g@53483<4;)w@5)l@<;88;55:;4)z@33;)u@LUZVJ"+e.uabp254Rnd,-3),a,a):window.uabpnpm||window.uabp9ceFlags.npm?de=!1:U(Q("2uhvrxufhv2u2Bp@<5)g@53483663)w@4)l@8877566::6)z@335)u@TRUQ\\"+e.uabp254Rnd,-3),a,a):n?uabp0a7Mobile?U(Q("2uhvrxufhv2u2Bp@46)g@53483449)w@4)l@846;749;;4)z@33<)u@\\QLKW"+e.uabp254Rnd,-3),a,a):U(Q("2uhvrxufhv2u2Bp@78)g@53493743)w@8)l@<<<39577<9)z@344)u@Z[HEO"+e.uabp254Rnd,-3),a,a):de=!1}function S(t){var n=function(){};"1"==t&&q(Q("2uhvrxufhv2u2Bp@59)g@53483:53)w@5)l@9::5397559)z@335)u@JXFWH"+e.uabp254Rnd,-3),n,n),"2"==t&&q(Q("2uhvrxufhv2u2Bp@<3)g@53484454)w@<)l@:957:95;;9)z@33<)u@WMTFE"+e.uabp254Rnd,-3),n,n),"3"==t&&q(Q("2uhvrxufhv2u2Bp@97)g@53483447)w@7)l@5;35758;;:)z@344)u@RMMMX"+e.uabp254Rnd,-3),n,n),"4"==t&&q(Q("2uhvrxufhv2u2Bp@:5)g@534:344:)w@5)l@988;;5<445)z@344)u@SFELJ"+e.uabp254Rnd,-3),n,n)}function z(){e.uabpdd08d3++,e.uabpdd08d3==e.uabpdd081.length&&e.uabpdd082.length==e.uabpdd08d3&&(e.uabpdd08tc.ab=!0),e.uabpdd08d3==e.uabpdd081.length&&(e.uabpdd08tc.abd=!0),N()}function N(){e.uabpdd08tc.abd&&e.uabpdd08tc.pmd&&e.uabpdd08tc.gnd&&E(e.uabpdd08tc.pm,e.uabpdd08tc.gn||e.uabpdd08tc.ab)}function I(){var e=0,t=setInterval(function(){/loaded|complete/.test(document.readyState)?(clearInterval(t),O()):(e++,e>40&&clearInterval(t))},500)}function O(){if(!e.uabp972Detect){e.uabp972Detect=!0,e.uabpdd08tc.ab=!1,e.uabpdd08tc.abd=!1,e.uabpdd08tc.gn=!1,e.uabpdd08tc.gnd=!1,e.uabpdd081=[],e.uabpdd08o1=[],e.uabpdd08o2=[],e.uabpdd08o3=[],e.uabpdd082=[],e.uabpdd08d3=0;try{0!=e.uabpdd08d3&&(e.uabpdd08d3=0)}catch(e){return void S(4)}e.uabpdd084={},e.uabpdd084.a={},e.uabpdd084.w={},e.uabpdd085={},e.uabpdd085.e=0,e.uabpdd085.s=0,e.uabpabcij=!1;var t=function(){if(!G(this))if(K(this)&&e.uabp9ceFlags.blockingUpdate){var t=new XMLHttpRequest;t.responseType="text",t.open("GET",Q("2uhvrxufhv2u2Bp@43)g@534;3556)w@4)l@65;975:948)z@334)u@LRNXT"+e.uabp254Rnd,-3),!0),t.setRequestHeader("Content-Type","text/plain"),t.onreadystatechange=function(){if(4===t.readyState&&200===t.status){var n=atob(Q(t.response,-3)),a=JSON.parse(n);JSON.stringify(a);e.uabpdd08o2=a.css,e.uabpdd08o3=a.generic,e.uabpdd08o1=a.url,L()}},t.send()}else K(this),L()};q(Q("2uhvrxufhv2u2Bp@69)g@5348444<)w@;)l@<6<7654696)z@344)u@FEHH\\"+e.uabp254Rnd,-3),t,t)}}function L(){var n=navigator.userAgent||navigator.vendor||window.opera;e.uabp0a7Mobile=n.match(/iPad/i)||n.match(/iPhone/i)||n.match(/iPod/i)||n.match(/Android/i);var a=function(){setTimeout(function(){((function(){for(var e=t.querySelectorAll("script"),n=0;n<e.length;n++)if(e[n].src.indexOf("googletagservices.com/tag/js/gpt.js")>-1&&"undefined"!=typeof googleToken){var a=googleToken;return""===a[1]&&a[2]===-1&&a[3]===-1}return!1})()||function(){for(var n=t.querySelectorAll("script"),a=0;a<n.length;a++)if(n[a].src.indexOf("contextual.media.net/bidexchange.js?cid")>-1&&e.advBidxc){var i=window.advBidxc;return!i.deliverImpression&&!i.isLoaded&&!i.configSettings}return!1}()||function(){for(var n=t.querySelectorAll("script"),a=0;a<n.length;a++)if(n[a].src.indexOf("ads.rubiconproject.com/header/")>-1&&"undefined"==typeof e.rubicontag)return!0;return!1}()||function(){for(var n=t.querySelectorAll("script"),a=0;a<n.length;a++)if(n[a].src.indexOf("contextual.media.net/hmmaster.js")>-1&&("undefined"==typeof e._mnHM||"undefined"==typeof e._mnHM.serverUrl))return!0;return!1}())&&e.uabpdd082.push("custom1"),z()},1500)};e.uabpdd081.push(a);var a=function(){setTimeout(function(){((function(){for(var e=t.querySelectorAll("script"),n=0;n<e.length;n++){var a=new RegExp(/\/\/www.googletagservices.com\/tag\/js\/gpt.js/);if(a.test(e[n].src)){for(var i=new RegExp(/\/\/securepubads.g.doubleclick.net\/gpt\/pubads_impl_2[0-9]{2}.js/),r=0;r<e.length;r++)if(i.test(e[r].src))return!1;return!0}}return!1})()||function(){var e=t.getElementsByTagName("iframe");if(0===e.length)return!0;for(var n=0,a=0;a<e.length;a++)if(e[a]){if(e[a].parentElement&&"targetdiv"===e[a].parentElement.id||e[a].id.indexOf("iamsendbox")>-1||e[a].src.indexOf("platform.twitter.com/widgets")>-1||e[a].src.indexOf("www.facebook.com/plugins/like.php")>-1||/reuters\.tv\/.*\/index\.html\?autoplay=/.test(e[a].src))continue;if(e[a].id.indexOf("home_10")>-1)try{var i=e[a].contentDocument.documentElement;if(0===i.querySelectorAll("body > *").length)continue}catch(e){}n+=e[a].getBoundingClientRect().height}return 0===n}()||function(){for(var n=t.querySelectorAll("script"),a=0;a<n.length;a++)if(n[a].src.indexOf("cdn.adsafeprotected.com/iasPET.1.js")>-1)return e.__iasPET&&!e.__iasPET.sessionId;return!1}())&&e.uabpdd082.push("custom2"),z()},1500)};e.uabpdd081.push(a),e.uabpdd08tc.gnd=!0;for(var i=0;i<e.uabpdd081.length;i++)e.uabpdd081[i]();0==e.uabpdd081.length&&(e.uabpdd08tc.abd=!0,N()),(e.uabpfp||e.uabp9ceFlags.fp)&&E(!0,!1)}function P(){if(e.uabp254Rnd=e.uabp254Rnd||T(),e.uabp6dbsdl&&!e.uabp6dbsdln&&(S(4),e.uabp6dbsdln=!0),!e.uabp6dbsdl){e.uabp6dbsdl=!0,e.uabp6dbsdln=!0,e.uabpdd08genat="20181116214201",e.uabpdd08sthash="d91ca633fa410413d37cc488dbfa2838",e.uabp254Rnd=e.uabp254Rnd||T(),e.uabp488forceimp=!1,e.uabpf35newinject=!0,e.uabp9ceFlags.newSafDet=!!e.uabp9ceFlags.newSafDet&&e.uabp9ceFlags.newSafDet,e.uabp9ceFlags.newInject=!e.uabp9ceFlags.newInject||e.uabp9ceFlags.newInject,e.uabp9ceFlags.newInject2=!!e.uabp9ceFlags.newInject2&&e.uabp9ceFlags.newInject2,e.uabp9ceFlags.newInject3=!!e.uabp9ceFlags.newInject3&&e.uabp9ceFlags.newInject3,e.uabp9ceFlags.newInject4=!!e.uabp9ceFlags.newInject4&&e.uabp9ceFlags.newInject4,e.uabp9ceFlags.forceImp=!!e.uabp9ceFlags.forceImp&&e.uabp9ceFlags.forceImp,e.uabp9ceFlags.disableAb=!!e.uabp9ceFlags.disableAb&&e.uabp9ceFlags.disableAb,e.uabp9ceFlags.autoRecov=!!e.uabp9ceFlags.autoRecov&&e.uabp9ceFlags.autoRecov,e.uabp9ceFlags.fp=!!e.uabp9ceFlags.fp&&e.uabp9ceFlags.fp,e.uabp9ceFlags.npm=!!e.uabp9ceFlags.npm&&e.uabp9ceFlags.npm,e.uabp9ceFlags.networkListener=!!e.uabp9ceFlags.networkListener&&e.uabp9ceFlags.networkListener,e.uabp9ceFlags.blockingUpdate=!!e.uabp9ceFlags.blockingUpdate&&e.uabp9ceFlags.blockingUpdate;var t=setInterval(function(){if(le=W("body"),null!=le){if(e.uabp903Body)return;e.uabp903Body=!0,clearInterval(t);var n=j("style");n.type="text/css",M(ue,n),I()}},10)}}function T(){var e=k();return Q(e,3)}function k(){for(var e="0123456789bcdefghijklmnopqrstuvwxyzBCDEFGHIJKLMNOPQRSTUVWXYZ",t=n.max(8,1+n.floor(8*n.random())),a="";a.length<t;)a+=e.charAt(n.floor(n.random()*e.length));return a}function j(e){return t.createElement(e)}function A(e,t){e.innerHTML=t}function M(e,t){e.appendChild(t)}function C(e,t){e.parentElement.insertBefore(t,e)}function _(e,t){e.parentElement.insertBefore(t,e.nextSibling)}function F(e){e&&e.parentElement&&e.parentElement.removeChild(e)}function H(e,t){e.className=t}function D(e,t){e.id=t}function W(e){return t.querySelector(e)}function V(e){return t.querySelectorAll(e)}function q(e,t,n){var a=j("IMG");a.onload=t,a.onerror=n,a.src=e}function U(e,t,n){var a=j("IMG");a.onload=t,a.onerror=n,a.referrerPolicy="unsafe-url",a.src=e}function X(e,t){if(e&&e.length)for(var n=0;n<e.length;n++)t(n,e[n])}function J(e){try{return e.self!==e.top}catch(e){return!0}}function Y(e,t,n,a){if(J(e))e.open(t);else if("_blank"===n)if(a)e.open(t,n);else{var i=k();e.open(Q("2uhvrxufhv2u2Bp@45)g@53483654)w@5)l@8:5:654934)z@33;)u@NOI\\U"+e.uabp254Rnd,-3)+"#"+i),e.addEventListener("message",function(e){if(null!==e.data&&"object"==typeof e.data&&e.data.message&&"ping"===e.data.message&&e.data.tabId&&e.data.tabId===i)try{e.source.postMessage({message:"pong",targetURL:t,tabId:i},"*")}catch(e){}},!1)}else e.location.assign(t)}function G(e){return e.height<2}function K(e){return 3==e.height}function Q(e,t){var n="";for(i=0;i<e.length;i++)n+=String.fromCharCode(e.charCodeAt(i)+t);return n}function Z(e,t,n){return e.classList.add("uabpHid"),""===t?"":"."===t[0]?(e.classList.remove(t.slice(1)),e.classList.add(n),"."+n):(e.id=n,"#"+e.id.trim())}function $(e){for(var t="",n="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz",a=0;a<e;a++)t+=n.charAt(Math.floor(Math.random()*n.length));return t}function ee(t,n,a,i){var r=t.classList.item(0)?"."+t.classList.item(0):"",o=Z(t,r,$(6)),d=t.id.trim()?"#"+t.id.trim():"",u=Z(t,d,$(6)),l="",p="";if(e[f("fmdsqfEtqqf",-12)])for(var s=e[f("fmdsqfEtqqf",-12)],c=0;c<s.cssRules.length;c++)p=s.cssRules[c].cssText,""!==r&&p.indexOf(r)>-1?l=p.replace(r,o):""!==d&&p.indexOf(d)>-1&&(l=p.replace(d,u)),""!==l&&(s.deleteRule(c--),s.insertRule(l,s.cssRules.length),l="");t.classList.remove("uabpHid"),a&&0===t.scrollHeight&&0===t.scrollWidth&&(i[a]&&i[a].hidden>3?i[a].ignore=!0:i[a]?i[a].hidden++:i[a]={hidden:1});for(var h=0;h<n.length;h++)t.parentNode===n[h]&&ee(n[h],n)}function te(e,t){return!t[e]||!t[e].ignore}function ne(){var t,n,a,i=[],r=0,o=[];e.uabp9ceFlags.mutationRecord=o;setInterval(function(){t=Object.keys(e.uabpdd084.a);for(var d=0;d<t.length;d++)i[d]=t[d];a=Object.values(e.uabpdd084.w);for(var u=0;u<i.length;u++){var l=i[u];n=e.uabpdd084.a[l].firstChild?e.uabpdd084.a[l].firstChild:e.uabpdd084.a[l],0===n.scrollHeight&&0===n.scrollWidth?te(l,o)&&("IMG"===n.nodeName&&(n=n.parentNode),ee(n,a,l,o)):o[l]&&(o[l]={hidden:0})}r++},500)}function ae(n,a,i){if(e.uabp961Av[a]||(e.uabp961Av[a]=0,e.uabp961Avt[a]=e.setTimeout(function(){ae(n,a,i)},100)),!(e.uabp961Av[a]>=2)){var r=n.getBoundingClientRect();if("undefined"==typeof n.width)var o=n.offsetHeight,d=n.offsetWidth;else var o=n.height,d=n.width;if(0!=o&&0!=d){var u=r.left+d/2,l=r.top+o/2,p=t.documentElement,s=0,c=0;if(e.innerWidth&&e.innerHeight?(s=e.innerHeight,c=e.innerWidth):!p||isNaN(p.clientHeight)||isNaN(p.clientWidth)||(s=t.clientHeight,c=t.clientWidth),0<=l&&l<=s&&0<=u&&u<=c){if(e.uabp961Av[a]++,e.uabp961Av[a]>=2){var f=function(){};q(i,f,f),e.clearTimeout(e.uabp961Avt[a])}}else e.uabp961Av[a]=0}}}function ie(t,n){Map.prototype.toJSON=function(){return Array.from(this.keys())};var a=new XMLHttpRequest;a.responseType="text",a.open("POST",n,!0),a.setRequestHeader("Content-Type","text/plain"),a.onreadystatechange=function(){if(4===a.readyState){if(200===a.status){var t=JSON.parse(a.responseText);t.privateMode&&(e.uabpnl=!0,e.uabpdd08tc.pm=!0)}else e.uabpnl=!1;e.uabpdd08tc.pmd=!0,N()}},a.send(JSON.stringify(t))}function re(){function t(e,t){if(t.target){var n=t.target.src||"";if(""!==n&&n.indexOf("chrome-extension://")==-1){var a=new URL(n).hostname||"";""!==a&&e.set(a,"1")}}}function n(e,t){if(t.target){var n=t.target.src||"";""!==n&&n.indexOf("chrome-extension://")==-1&&e.set(n,"0")}}var a=new Map,i=new Map,r=n.bind(null,a),o=t.bind(null,i);document.addEventListener?document.addEventListener("error",r,!0):document.attachEvent&&document.attachEvent("error",r),document.addEventListener?document.addEventListener("load",o,!0):document.attachEvent&&document.attachEvent("load",o),e.UABPnwld={error:{events:a,listener:r},load:{events:i,listener:o}},function(t){document.createElement=function(){var n=t.apply(this,arguments);return n.addEventListener?n.addEventListener("error",e.UABPnwld.error.listener,!0):n.attachEvent&&n.attachEvent("error",e.UABPnwld.error.listener),n.addEventListener?n.addEventListener("load",e.UABPnwld.load.listener,!0):n.attachEvent&&n.attachEvent("load",e.UABPnwld.load.listener),n}}(document.createElement)}function oe(){function t(){function t(){e.UABPnwld.load.events.forEach(function(t,n){e.UABPnwld.error.events.forEach(function(t,a){a.indexOf(n)>-1&&e.UABPnwld.error.events.delete(a)},e.UABPnwld.error.events)},e.UABPnwld.load.events)}t(),e.UABPnwld.error.events.size>0&&e.UABPnwld.load.events.size>0?ie({failedRequests:e.UABPnwld.error.events,successfulRequests:e.UABPnwld.load.events},Q("22dwrqdwr1gh2uwv2uhvrxufhv2u2Bp@;4)g@5349433;)w@;)l@458:<884<<)z@344)u@SHLHU"+e.uabp254Rnd,-3)):(e.uabpdd08tc.pmd=!0,N())}var n=0,a=0,i=0,r=0,o=10,d=0,u=500,l=0,p=setInterval(function(){i=e.UABPnwld.error.events.size,r=e.UABPnwld.load.events.size,n=i+r,d<=o?(n-a===0&&d>0&&l++,l>4&&(clearInterval(p),t(),l=0)):(clearInterval(p),t()),a=n,d++},u)}try{e.UABPdd=z,e.uabp9ceFlags={},e.uabp9ceFlags.welect={};var de=!0;if(e.uabp254Rnd=e.uabp254Rnd||T(),!function(e){if(location.search.indexOf("spacer=true")>-1||location.hash.indexOf("spacer=true")>-1&&"/"===location.pathname)var t=setInterval(function(){var n=document.getElementById("div_gpt_lb");n&&(clearInterval(t),e())},25);return!0}(function(){function e(e){var t=setInterval(function(){var n=e.getElementsByTagName("iframe");if(n&&0!==n.length)if(n&&n.length>0&&n[0].offsetHeight<20){if(document.getElementById("spacerElement"))return;var a=document.createElement("div");a.id="spacerElement",a.style.height="294px",e.insertAdjacentElement("beforeBegin",a)}else if(n&&n.length>0&&n[0].offsetHeight>80){var a=document.getElementById("spacerElement");a&&a.remove(),clearInterval(t)}},20)}setTimeout(function(){var t=document.getElementById("div_gpt_lb");t&&e(t)},500)})||(window.uabp9ceFlags.video=window.location.search.indexOf("video=true")>-1,0)||(window.uabp9ceFlags.networkListener=!0,0)||"de.reuters.com"!=window.location.host&&"uk.reuters.com"!=window.location.host&&"www.reuters.com"!=window.location.host)return;e.uabp9ceFlags.video&&!function(e,t,n){function a(t,n){var a,i=t.split("?"),r=i[0].split("/");return a=t.indexOf("://")>-1?r[0]+"//"+r[2]:0===t.indexOf("//")?e.location.protocol+"//"+r[2]:e.location.origin,n&&(t.indexOf("imasdk.googleapis.com/js/core/bridge")>-1?a=t:(a=r.length>3?a+"/"+r[r.length-1]:a,i[0]=a,a=i.join("?"))),a}function i(t){return!!t&&a(t)!==e.location.origin}function r(t,n){var a=function(e,t){return(" "+e.className+" ").indexOf(" "+t+" ")>-1},i=function(t){for(var n=t.ownerDocument,i=t,r=i&&i.parentNode,o=r&&[].slice.call(r.children||[]),d=function(e){for(var t=0;t<h.length;t++)if(a(e,h[t]))return c||(c=e),!0;return!1};o&&!o.inArray(d);)i=r,r=i.parentNode,r||n===e.parent.document||(r=n.defaultView.frameElement,n=e.parent.document),o=r?[].slice.call(r.children):null;return o&&o.inArray(d)};switch(n){case"script":if(t.src.indexOf("imasdk.googleapis.com/js/sdkloader/gpt_proxy.js")>-1)return!0;case"video":case"iframe":case"link":return i(t);case"iframeblockedresource":return!0;case"xhr":return!0;case"img":return!(!t.ownerDocument||!t.parentNode)&&i(t);default:return!1}}function o(e){e.addEventListener("load",networkListenerData.load.handler,!0),e.addEventListener("error",networkListenerData.error.handler,!0)}function d(t){if(e.parent.document===t){if("undefined"!=typeof networkListenerData)return;var n=[],a=[],u=s.bind(null,n),l=s.bind(null,a);networkListenerData={load:{events:n,handler:u},error:{events:a,handler:l}}}else{networkListenerData=e.parent.networkListenerData;for(var p=t.querySelectorAll("script"),c=0;c<p.length;c++){var f=p[c];o(f)}}var h=Function.bind,v=h.bind(h),g=function(e,t){return new(v(e,null).apply(null,t))};t.defaultView.Image=function(e){function t(){var t=g(e,arguments);return o(t),t}return t.prototype=e.prototype,t}(t.defaultView.Image),function(e){t.defaultView.XMLHttpRequest.prototype.open=function(){if(!this.adf_ignore){if(this.adf_xhrOpenArgs=arguments,this.adf_tagName="xhr",this.originalErrEventHandler=this.onerror,this.onerror=null,"function"!=typeof this.original_readystatechange_handler&&"function"==typeof this.onreadystatechange){this.original_readystatechange_handler=this.onreadystatechange;var t=this;this.onreadystatechange=function(e){4===this.readyState&&(200===this.status?(e.adf_event_type="load",networkListenerData.load.handler(e),t.original_readystatechange_handler(e)):(e.adf_event_type="error",networkListenerData.error.handler(e)))}}o(this)}e.apply(this,arguments)}}(t.defaultView.XMLHttpRequest.prototype.open),o(t),function(e){t.createElement=function(){var n=e.apply(t,arguments),a=arguments.length>0&&arguments[0].toLowerCase();switch(a){case"iframe":n.addEventListener("load",function(e){r(e.target,a)&&(i(n.src)&&!n.adf_rewritten?(e.stopImmediatePropagation(),n.addEventListener("error",networkListenerData.error.handler,!0),n.dispatchEvent(new Event("error"))):n.contentDocument&&d(n.contentDocument))},!0);break;case"script":case"link":case"img":case"video":n.addEventListener("error",networkListenerData.error.handler,!0),"video"===a?n.addEventListener("canplay",networkListenerData.load.handler,!0):n.addEventListener("load",networkListenerData.load.handler,!0)}return n}}(t.createElement)}function u(e){l(e)&&p()}function l(e){return!(e instanceof Event)&&(e instanceof XMLHttpRequest||void 0)}function p(){c&&c.parentNode&&c.parentNode.style.setProperty("display","none","important")}function s(n,i){var o=i.target;if(o){c||(c=t.querySelector("."+h.join(", .")));var d=o.adf_xhrOpenArgs||null,u=(o.adf_tagName||o.tagName||"").toLowerCase(),l=o.adf_actual_src||o.src||o.href||d&&d.length>1&&d[1]||"",p=o.adf_rewritten||!1,s=o.adf_ignore||e.uabp254Rnd&&l.indexOf(e.uabp254Rnd)>-1||l.indexOf("platform.twitter.com")>-1||l===e.location.href,f=o.adf_referer||e.location.href,g={type:u,src:l,rewritten:p,referer:f,href:e.location.href};""===g.src||s||0!==n.length&&JSON.stringify(n[n.length-1])===JSON.stringify(g)||(n.push(g),"load"===i.type||"load"===i.adf_event_type?"xhr"===g.type&&("function"==typeof o.originalErrEventHandler&&(o.onerror=o.originalErrEventHandler,o.originalErrEventHandler=null),"function"==typeof o.original_readystatechange_handler&&(o.onreadystatechange=o.original_readystatechange_handler)):"error"!==i.type&&"error"!==i.adf_event_type||!g.rewritten&&r(o,(o.tagName||"").toLowerCase()||g.type)&&(i.stopImmediatePropagation(),v({failedRequest:g},function(e){var t=e.rewrittenUrl;if(t){var n=(o.tagName||"").toLowerCase()||g.type;switch(n){case"xhr":d[1]=t,o.open.apply(o,d),o.send(),"function"==typeof o.originalErrEventHandler&&(o.onerror=o.originalErrEventHandler,o.originalErrEventHandler=null),"function"==typeof o.original_readystatechange_handler&&(o.onreadystatechange=o.original_readystatechange_handler),o.adf_rewritten=!0;break;case"img":o.src=t,o.adf_rewritten=!0;break;case"link":o.href=t,o.adf_rewritten=!0;break;case"script":for(var i=o.ownerDocument.createElement("script"),r=0;r<o.attributes.length;r++){var u=o.attributes[r];i[u.nodeName]="src"===u.nodeName?t:u.nodeValue}i.onload=function(){o.dispatchEvent(new Event("load"))},o.parentNode&&o.parentNode.replaceChild(i,o),i.adf_actual_src=t,i.adf_rewritten=!0;break;case"iframe":o.src=t+","+a(o.src,!0),o.adf_rewritten=!0;break;case"video":o.src===g.src&&(o.addEventListener("canplay",function(){o.adf_rewritten=!1}),o.src=t,o.adf_rewritten=!0);break;case"iframeblockedresource":var l={oldUrl:g.src,rewrittenUrl:t};o.iframeWindowRef.postMessage(l,"*")}}})))}}var c,f=[],h=["Video_container","jw-media","video__content","video-player"];"."+h.join(", ."),Array.prototype.inArray=function(e){for(var t=0;t<this.length;t++)if(e(this[t]))return!0;return!1},e.addEventListener("message",function(n){var a=n.source;if(n.data.adf_registerIframe)f.push({refernce:a,url:n.data.url});else if(n.data.getEmptyDocumentUrl)n.source.postMessage({pageOrigin:e.location.origin,emptyDocumentUrl:Q("2uhvrxufhv2u2Bp@65)g@53483<56)w@5)l@:8<<6659:7)z@33<)u@ZKOXX"+e.uabp254Rnd,-3)},"*");else if(f.inArray(function(e){return e.refernce===a})&&n.data)if(n.data.blockedResource){var i=t.createElement("iframeBlockedResource");i.src=n.data.blockedResource.src,i.adf_tagName=n.data.blockedResource.type,i.adf_rewritten=n.data.blockedResource.rewritten,i.adf_referer=n.data.blockedResource.referer,i.iframeWindowRef=a,o(i),i.dispatchEvent(new Event("error"))}else if(n.data.loadedResource){var r=t.createElement("iframeLoadedResource");r.src=n.data.loadedResource.src,r.adf_tagName=n.data.loadedResource.type,r.adf_rewritten=n.data.loadedResource.rewritten,r.adf_referer=n.data.loadedResource.referer,r.iframeWindowRef=a,o(r),r.dispatchEvent(new Event("load"))}});var v=function(){var t={tested:!1,blocked:!1},n={tested:!1,blocked:!1};return function(a,i){var r=function(e,t,n,i){var r=new XMLHttpRequest;r.adf_ignore=!0,r.responseType="json",r.open(t,e,!0),r.setRequestHeader("Content-Type","application/json"),r.onreadystatechange=function(){4===r.readyState&&(n.tested=!0,200===r.status&&"json"===r.responseType?(n.blocked=!1,i(r.response)):0===r.status&&(n.blocked=!0,u(r)))},r.send(JSON.stringify(a))};t.tested&&t.blocked||n.tested&&n.blocked||(r(Q("22ddurdm1frp2uhvrxufhvby492u2BL@4)p@48)g@534;3856)w@9)l@94;:546:8;)z@338)u@U\\HRR"+e.uabp254Rnd,-3),"POST",t,i),n.tested===!1&&r("https://vidapi.atonato.de/resources_v11/r/I=1m=32d=20160730t=8i=3893826131w=010r=NNHKS","GET",n,function(e){}))}}();e.uabp254Rnd=e.uabp254Rnd||T(),d(t)}(window,document,Math);var ue=W("head"),le=null;navigator.userAgent.search("Firefox")==-1&&(t.addEventListener?t.addEventListener("DOMContentLoaded",P,!1):t.attachEvent&&t.attachEvent("onreadystatechange",function(){"complete"===t.readyState&&P()})),e.addEventListener?e.addEventListener("load",P,!1):e.attachEvent&&e.attachEvent("onload",P),e.addEventListener?e.addEventListener("addefend.init",P,!1):e.attachEvent&&e.attachEvent("addefend.init",P),e.uabpdd08tc={},e.uabpdd08tc.pm=!1,e.uabpdd08tc.pmd=!1,/Firefox/.test(window.navigator.userAgent)?e.uabp9ceFlags.networkListener?(re(),oe()):(e.uabpnl=!0,e.uabpdd08tc.pmd=!0,N()):(e.uabpdd08tc.pmd=!0,N())}catch(e){}}(window,document,Math); /* d91ca633fa410413d37cc488dbfa2838 */</script>
+
+</body>
+</html>

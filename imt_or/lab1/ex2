@@ -1,0 +1,22 @@
+var  x11  >= 0;
+var  x12  >= 0;
+var  x13  >= 0;
+var  x21  >= 0;
+var  x22  >= 0;
+var  x23  >= 0;
+minimize  cost: 225 * x11 + 153 * x12 + 162 * x13 + 225 *
+x21 + 162 * x22 + 126 * x23;
+s.t. supply1: x11 + x12 + x13  <= 350;
+s.t. supply2: x21 + x22 + x23  <= 650;
+s.t. demand1: x11 + x21  >= 300;
+s.t. demand2: x12 + x22  >= 300;
+s.t. demand3: x13 + x23  >= 300;
+solve;
+display  x11;
+display  x12;
+display  x13;
+display  x21;
+display  x22;
+display  x23;
+display  cost;
+end;

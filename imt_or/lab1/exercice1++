@@ -1,0 +1,82 @@
+set I; # canning  plants
+set J; # markets
+
+
+
+param a{i in I};
+/*  capacity  of  plant i in cases  */
+param b{j in J};
+/*  demand  at  market j in cases  */
+param d{i in I, j in J};
+/*  distance  in  thousands  of miles  */
+param f;
+/*  freight  in USD  per  case  per  thousand  miles  */
+param c{i in I, j in J} := f * d[i,j];
+/*  transport  cost in  thousands  of USD  per  case */
+
+param z{i in I, j in J};
+/*  fixed cost in  thousands  of USD  per  case */
+
+var x{i in I, j in J} >= 0;
+
+/*  shipment  quantities  in cases  */
+var y{i in I} binary;
+
+minimize  cost: sum{i in I, j in J} (c[i,j]*x[i,j] + z[i]*y[i]);
+/*  total  transportation  costs  in  thousands  of  dollars  */
+
+s.t. supply{i in I}: sum{j in J} x[i,j] <= a[i];
+/*  observe  supply  limit  at plant i */
+s.t. demand{j in J}: sum{i in I} x[i,j] >= b[j]*y[j];
+/*  satisfy  demand  at  market j */
+s.t. capacity: sum{i in I} y[i] = 3;
+
+solve;
+display x;
+display  cost;
+
+data;
+set I := HA HB HC HD HE HF HG HH;
+set J := GA GB GC GD GE GF GG GH GL GM;
+
+param a :=  HA    200
+	    HB    300
+ 	    HC    150
+	    HD    180
+ 	    HE    280
+	    HF    270
+ 	    HG    200
+ 	    HH    220;
+param b :=  GA    80
+            GB    50	  
+            GC    82
+            GD    43
+            GE    96	
+            GF    107	  
+            GG    88
+            GH    42
+            GL    65	
+            GM    38;	
+
+
+param d :   	GA	GB	GC	GD	GE	GF	GG	GH	GI	GJ :=
+HA		18	14	12	16	19	17	14	18	11	13
+HB		12	15	17	19	13	10	15	14	16	14
+HC    		11	12	12	20	19	20	12	15	13	16
+HD    		11	18	10	10	11	15	13	15	10	15
+HE  	  	10	14	20	10	10	16	18	16	15	15
+HF  	  	12	14	20	14	15	10	12	15	17	13
+HG   	 	13	17	19	15	12	12	12	14	20	14
+HH    		11	10	12	18	18	17	19	20	15	10;	
+
+param f := 90;
+
+param z :=  HA    684
+	    HB    977
+ 	    HC    563
+	    HD    612
+ 	    HE    950
+	    HF    928
+ 	    HG    750
+ 	    HH    766;
+end;

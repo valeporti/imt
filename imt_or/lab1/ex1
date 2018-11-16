@@ -1,0 +1,13 @@
+var x1  >= 0;
+var x2  >= 0;
+maximize  obj: 3*x1 + 5*x2;
+s.t. c1 : x1  <= 4;
+s.t. c2 : x2  <= 6;
+s.t. c3 : 3*x1 +2*x2  <= 18;
+printf "------ Start  solving  -----\n";
+solve;
+printf "------ End  solving  -----\n";
+display  x1;
+display  x2;
+display  obj;
+end;

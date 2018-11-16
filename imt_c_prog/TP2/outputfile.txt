@@ -1,0 +1,10 @@
+Hello, please provide text and press enter when finished.
+Hola, cómo estás?
+
+Please type 0 if you want to get your text to upper case or 1 to lower case.
+
+Here are the words that you gave after changing the case :
+hola, cómo estás?
+
+Total of words: 3
+Average number of letters per word: 5.666667
