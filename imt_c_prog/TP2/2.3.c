@@ -2,8 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
-
-void changeLettersUpperOrLower (int lower_or_upper, int text_char_counter, char *text);
+#include "tp2helpers.h"
 
 void main(int argc, char **argv)
 {
@@ -99,16 +98,5 @@ void main(int argc, char **argv)
 	free(text);
 
 
-}
-
-void changeLettersUpperOrLower (int lower_or_upper, int text_char_counter, char *text) {
-
-	for (int i = 0; i < text_char_counter - 1; i ++) {
-		if (lower_or_upper == 0) {
-			text[i] = toupper(text[i]);
-		} else {
-			text[i] = tolower(text[i]);
-		}
-	}
 }
 

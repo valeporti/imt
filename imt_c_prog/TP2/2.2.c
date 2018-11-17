@@ -27,32 +27,16 @@ void main(int argc, char **argv)
 		}	
 	}
 
-	/* Assign random values to the matrix rand() % 50 */
-	for (i = 0; i < n; i++) {
-		for (j = 0; j < n; j ++) {
-			matrix[i][j] = (float)rand()/(float)(RAND_MAX/10); /* https://stackoverflow.com/questions/13408990/how-to-generate-random-float-number-in-c */
-			printf("%f ", matrix[i][j]);
-		}	
-		printf("\n");
-	}
+	assign_random_values_to_float_matrix(matrix, n);
 
-	/* Transpose */
-	for (i = 0; i < n; i++) {
-		for (j = i + 1; j < n; j ++) {
-			exchange(&matrix[i][j], &matrix[j][i]);
-		}	
-	}
+	print_matrix(matrix, n);
+
+	transpose_matrix(matrix, n);
 
 	printf("\n");
 	printf("Transposed matrix\n\n");
 
-	/* Just print final values */
-	for (i = 0; i < n; i++) {
-		for (j = 0; j < n; j ++) {
-			printf("%f ", matrix[i][j]);
-		}	
-		printf("\n");
-	}
+	print_matrix(matrix, n);
 
 	/* Free allocated space */
 	for (i = 0; i < n; i++) {

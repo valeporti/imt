@@ -1,2 +1,2 @@
-Hola, cómo estás?
-1
+Salut, tout va bien?
+0
