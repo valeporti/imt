@@ -14,9 +14,9 @@ void main() {
   // presentation
   printf("\nThe trading balances that this program knows/uses are:\n*taking as pivot the USD dollar\n");
   printf("----------------------------\n");
-  printf("USD = %f\n", USD);
-  printf("1 USD = %f EURO\n", EURO);
-  printf("1 USD = %f ENGLISH POUND\n", POUND);
+  printf("USD = %f %s\n", USD, get_value_form_char('U'));
+  printf("1 %s = %f %s\n", get_value_form_char('U'), EURO, get_value_form_char('E'));
+  printf("1 %s = %f %s\n", get_value_form_char('U'), POUND, get_value_form_char('P'));
   printf("----------------------------\n");
 
   // get in contact with user
@@ -57,13 +57,12 @@ void main() {
   printf("Please, indicate the trading balance you want to perform.\n");
   printf("FROM (write one: 'E' or 'U' or 'P', to indicate Euro or USD dollar or Pound)\n");
   scanf(" %c", &from);
-  printf("FROM (write one: 'E' or 'U' or 'P', to indicate Euro or USD dollar or Pound)\n");
+  printf("TO (write one: 'E' or 'U' or 'P', to indicate Euro or USD dollar or Pound)\n");
   scanf(" %c", &to);
   printf("Quantity to transform (number):\n");
   scanf(" %f", &number);
 
   // calculations
-
   int size_av_tr = 2;
   char available_trades[] = {'P', 'E'};
   char pivot = 'U';

@@ -26,8 +26,6 @@ void main() {
 			printf("a %i, b %i XOR %i \n", a, b, a ^ b);
 		}
 	}
-
-	
 }
 
  
