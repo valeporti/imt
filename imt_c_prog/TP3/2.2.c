@@ -17,8 +17,8 @@ void main() {
 		num_bytes = ftell(bf);
 		num_float_pairs = num_bytes / (sizeof(float) * 2);
 		floats = (float*) malloc(sizeof(float) * num_bytes);
-		printf("file contains bytes: %i\n", num_bytes);
-		printf("file contains x: %i\n", num_float_pairs);
+		//printf("file contains bytes: %i\n", num_bytes);
+		//printf("file contains x: %i\n", num_float_pairs);
 
 		x = (float*)malloc(sizeof(float) * num_float_pairs);
 		y = (float*)malloc(sizeof(float) * num_float_pairs);
@@ -45,6 +45,8 @@ void main() {
 
 		fclose(bf);
 		fclose(output);
+		free(floats);
+		free(float_read);
 		free(x);
 		free(y);
 

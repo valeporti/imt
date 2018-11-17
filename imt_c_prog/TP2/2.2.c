@@ -1,12 +1,9 @@
 #include<stdio.h>
 #include <stdlib.h>
-
-void exchange(float *x, float *y);
+#include "tp2helpers.h"
 
 void main(int argc, char **argv)
 {
-
-
 	int count_arguments = argc; /* 1 for just the program name */
 	int n;
 
@@ -20,7 +17,8 @@ void main(int argc, char **argv)
 	
 	float **matrix;
 	int i, j;
-	/* Creqte function filled with wero values */
+	/* Create function filled with zero values */
+	
 	matrix = (float**)malloc(sizeof(float*) * n); /* Allocate memory for n rows */
 	for (i = 0; i < n; i++) {
 		matrix[i] = (float*)malloc(sizeof(float) * n); /* Allocate memory for n cols */
@@ -28,7 +26,6 @@ void main(int argc, char **argv)
 			matrix[i][j] = 0;
 		}	
 	}
-
 
 	/* Assign random values to the matrix rand() % 50 */
 	for (i = 0; i < n; i++) {
@@ -62,18 +59,4 @@ void main(int argc, char **argv)
 		free(matrix[i]);
 	}
 	free(matrix);
-
 }
-
- 
-void exchange (float *x, float *y)
-{
-	float temp; /* = null */
-
-	temp = *x; /* dont loose x */
-	*x = *y; /* assign y */
-	*y = temp; /* get temp value */
-}
-
-
-

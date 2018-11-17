@@ -1,11 +1,13 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
+#include "tp3helpers.h"
 
 void main(int argc, char **argv) {
 	
 	int count_arguments = argc;
-	float mean, std_dev, samples, sum, *x, *y, min, max;
+	float mean, std_dev, samples, sum, *x, *y;
+	FILE *output;
 	
 	if (count_arguments != 4) {
 		printf("Sorry, we didn't received the expected number of arguments\n");
@@ -19,29 +21,9 @@ void main(int argc, char **argv) {
 	x = (float*)malloc(sizeof(float) * samples);
 	y = (float*)malloc(sizeof(float) * samples);
 
-	/* calculate standard dev */
-	/* https://ncalculators.com/statistics/normal-distribution-calculator.htm */
-	float step, cum_step, first, second;
-
-	
-	step = (mean * std_dev * 2) / (float)samples;
-	min = mean - mean * std_dev;
-	cum_step = min;
-	printf("steps %f\n", step);
-	
-	first = (1 / (std_dev * sqrt(2 * M_PI)));
-	
-	printf("first: %f\n", first);
-	for (int i = 0; i < samples; i ++) {
-		x[i] = cum_step + step;
-		second = exp(-pow(x[i] - mean, 2) / (2 * std_dev * std_dev));
-		printf("second: %f\n", second);
-		y[i] =  first * second;
-		cum_step += step;
-	}
+	calculate_gauss_points(x, y, mean, std_dev, samples);
 
 	/* print values in file */
-	FILE *output;
 	output = fopen("2.1.gauss", "w");
 	for (int i = 0; i < samples; i ++) {
 		fprintf(output, "%f %f\n", x[i], y[i]);
