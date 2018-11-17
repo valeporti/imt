@@ -11,4 +11,4 @@ sorting_helpers.o: sorting_helpers.c
 	gcc -c sorting_helpers.c
 
 clean:
-	rm 2.1.o helpers.o sorting_helpers.o
+	rm *.o

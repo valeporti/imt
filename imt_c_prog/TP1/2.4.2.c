@@ -2,6 +2,13 @@
 #include<stdio.h>
 #include <ctype.h>
 #include "conv_helpers.h"
+#include<assert.h> /* BUT https://www.softwariness.com/articles/assertions-in-cpp/ */
+
+#ifdef	NDEBUG
+#define assert_condition(x, true_msg);
+#else
+#define assert_condition(x, true_msg) (x) ? printf("Success %s.%i: \u2714 - %s\n", __FILE__, __LINE__, true_msg) : assert(x);
+#endif
 
 void main() {
 
@@ -22,6 +29,8 @@ void main() {
   // get in contact with user
   printf("\nWould you like to use your own balances?\nInstructions\n--> for YES write 'Y', for NO 'N'\n");
   scanf(" %c", &own_balance);
+
+  assert_condition(1, "printed instructions");
 
   // handle input and retrieve values if necessary
   switch(toupper(own_balance))
@@ -47,6 +56,8 @@ void main() {
   }
   printf("\n");
 
+  assert_condition(1, "Got correct input or transformed it");
+
   char from;
   char to;
   float from_calc;
@@ -62,6 +73,8 @@ void main() {
   printf("Quantity to transform (number):\n");
   scanf(" %f", &number);
 
+  assert_condition(1, "Grabbed values to do calculations");
+
   // calculations
   int size_av_tr = 2;
   char available_trades[] = {'P', 'E'};
@@ -71,5 +84,6 @@ void main() {
   char* from_sign = get_value_form_char(from);
   char* to_sign = get_value_form_char(to);
   printf("\n-----> Result... : %f %s = %f %s\n", number, from_sign, result, to_sign);
+  assert_condition(1, "Success on calculations");
   
 }

@@ -22,4 +22,4 @@ tp3helpers.o: tp3helpers.c
 	gcc -c tp3helpers.c
 
 clean:
-	rm tp3helpers.o 2.1.o 2.2.o 2.3.o 
+	rm *.o 

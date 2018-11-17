@@ -1,6 +1,13 @@
 /* libraries */
 #include<stdio.h>
 #include <ctype.h>
+#include<assert.h> /* BUT https://www.softwariness.com/articles/assertions-in-cpp/ */
+
+#ifdef	NDEBUG
+#define assert_condition(x);
+#else
+#define assert_condition(x) (x) ? printf("Success %s.%i: \u2714\n", __FILE__, __LINE__) : assert(x);
+#endif
 
 /* main */
 void main() {
@@ -13,4 +20,5 @@ void main() {
         }  
         printf("\n");
     } 
+    assert_condition(1);
 }
