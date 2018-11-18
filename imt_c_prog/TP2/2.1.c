@@ -30,7 +30,7 @@ void main(int argc, char **argv)
 	exchange(&a,&b);
 	printf(" the value of a and b afterr swapping %f and %f\n", a, b);
 
-	//assert_condition((int merds(sas) { return 1;}) , "Correct exchange");
+	//assert_condition(1 , "Correct exchange");
 
 	assert_condition(1, "END");
 }
