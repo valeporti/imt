@@ -31,21 +31,37 @@ param alpha;/* Annuity factor for investment costs (1/a) */
 param source;
 
 /* DEFINITIONS */
-param REVENUE{i in I, j in J} := lamda * c_rev[i, j] * D[i, j]; /* EUROS / a */
+param REVENUE{i in I, j in J} := lamda * x[i, j] * c_rev[i, j] * D[i, j]; /* EUROS / a */
 
-/* ?T_flh[0]? */ param HEAT_GEN_COST{i in I} := (1 / beta) * T_flh[source] * c_heat[i];
+param HEAT_GEN_COST{i in I} := (1 / beta) * T_flh[source] * c_heat[i];
 
-param MAINT_COST{i in I, j in J} := c_om[i, j] * l[i, j];
+param MAINT_COST{i in I, j in J} := c_om[i, j] * l[i, j];  
 
 param FIXED_INV_COST{i in I, j in J} := alpha * x[i, j] * c_fix * l[i, j]; 
 
-param VAR_INV_COST{i in I, j in J} := alpha * x[i, j] * c_var * l[i, j];;
+param VAR_INV_COST{i in I, j in J} := alpha * x[i, j] * c_var * l[i, j];
 
-param UNMET_DEM_PENALITY{i in I, j in J} := (1 - x[i, j]) * P;
+param UNMET_DEM_PENALITY{i in I, j in J} := (1 - x[i, j]) * (d[i, j] - (tl_fix[i, j] * l[i, j] + tl_var[i, j] * l[i, j]));
 
 
 /* variables */
 var x{i in I, j in J} binary;
 
-/* CONDITIONALS */
+/* CONSTRAINTS */
+s.t. tree_structure{i in I}: sum{j in J} I = sum{i in I, j in J} x[i, j];
+
+s.t. unidirectionality{i in I, j in J}: x[i, j] + x[j, i] <= 1;
+
+s.t. demand_satisfaction{}: /* ??? */
+
+s.t. flow_equilibrium_at_each_vertex{} /* Pin i->j == P j->k */
+
+s.t. edge_capacity: sum{i in I, /* Pin i->j <= Cmax * xij */
+
+s.t. source_structural{j in J}: sum{i in I} x[i, j] = 0;
+
+s.t. source_heat_generation{j in J}: /* Pin ij <= Q max */
+
+s.t. tour_elimination {j in J}: sum{i in I} x[i,j] <= 1;
+  
 
