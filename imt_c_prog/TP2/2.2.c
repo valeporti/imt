@@ -1,6 +1,13 @@
 #include<stdio.h>
 #include <stdlib.h>
 #include "tp2helpers.h"
+#include<assert.h> /* BUT https://www.softwariness.com/articles/assertions-in-cpp/ */
+
+#ifdef	NDEBUG
+#define assert_condition(x, true_msg);
+#else
+#define assert_condition(x, true_msg) (x) ? printf("Success %s.%i: \u2714 - %s\n", __FILE__, __LINE__, true_msg) : assert(x);
+#endif
 
 void main(int argc, char **argv)
 {
@@ -14,6 +21,8 @@ void main(int argc, char **argv)
 		scanf(" %i",&n);
 		printf("\n");
 	}
+
+	assert_condition(n != 0, "N value Captured");
 	
 	float **matrix;
 	int i, j;
@@ -27,11 +36,17 @@ void main(int argc, char **argv)
 		}	
 	}
 
+	assert_condition(1, "Memory created for 2 dimensional matrix with zeros");
+
 	assign_random_values_to_float_matrix(matrix, n);
+
+	assert_condition(1, "Random variables assigned to squared matrix");
 
 	print_matrix(matrix, n);
 
 	transpose_matrix(matrix, n);
+
+	assert_condition(1, "Transposed Matrix, done");
 
 	printf("\n");
 	printf("Transposed matrix\n\n");
@@ -43,4 +58,7 @@ void main(int argc, char **argv)
 		free(matrix[i]);
 	}
 	free(matrix);
+
+	assert_condition(1, "Freed memory from matrix");
+	assert_condition(1, "END");
 }

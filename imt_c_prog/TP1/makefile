@@ -78,3 +78,6 @@ myfirstprogram.o: myfirstprogram.c
 
 clean: 
 	rm *.o
+
+clear: 
+	rm *.o *.out *.hello

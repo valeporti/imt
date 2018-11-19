@@ -3,6 +3,13 @@
 #include <string.h>
 #include <ctype.h>
 #include "tp2helpers.h"
+#include<assert.h>
+
+#ifdef	NDEBUG
+#define assert_condition(x, true_msg);
+#else
+#define assert_condition(x, true_msg) (x) ? printf("Success %s.%i: \u2714 - %s\n", __FILE__, __LINE__, true_msg) : assert(x);
+#endif
 
 void main(int argc, char **argv)
 {
@@ -10,6 +17,8 @@ void main(int argc, char **argv)
 	int text_char_counter = 0, words_counter = 1, c;
 	enum upper_lower {upper, lower};
 	enum upper_lower u_l;
+
+	assert_condition(1, "Started Progam");
 
 	/* ask the user to provide text */
 	printf("Hello, please provide text and press enter when finished.\n");
@@ -26,6 +35,7 @@ void main(int argc, char **argv)
 		if (c == 32) { words_counter ++; }
 		text = (char*)realloc(text, sizeof(char) * (text_char_counter + 1));
 	}
+	assert_condition(1, "Text in array");
 	//printf("text lenght : %i\n", text_char_counter);
 	//printf("words : %i\n", words_counter);
 	//printf("The text you typed: ");
@@ -36,7 +46,9 @@ void main(int argc, char **argv)
 	/* to lower or to upper */
 	printf("\nPlease type 0 if you want to get your text to upper case or 1 to lower case.\n");
 	scanf(" %u", &u_l);
+	assert_condition(u_l >= 0, "Got Upper OR Lower variable");
 	changeLettersUpperOrLower(u_l, text_char_counter, text);
+	assert_condition(1, "Done lower or Upper function");
 	printf("\nHere are the words that you gave after changing the case :\n");
 	for (int i = 0; i < text_char_counter; i ++) {
 		printf("%c",text[i]);
@@ -84,6 +96,7 @@ void main(int argc, char **argv)
 			letter_word ++;
 		}
 	}	
+	assert_condition(1, "Rearanged matrix on a tree of words");
 
 	printf("\nTotal of words: %i", words_counter);
 	float avg_letter_per_word = ((float)text_char_counter - (float)words_counter) / (float)words_counter;
@@ -94,9 +107,11 @@ void main(int argc, char **argv)
 		free(arr_strings[i]);
 	}
 	free(arr_strings);
+	assert_condition(1, "Freed memory from matrix");
 
 	free(text);
 
-
+	assert_condition(1, "Freed memory of text");
+	assert_condition(1, "END");
 }
 

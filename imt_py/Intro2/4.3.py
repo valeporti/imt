@@ -8,3 +8,6 @@ if os.path.exists("./mobydick.txt"):
     if (match) : 
       print(match)
   f.close()
+
+# ([A-Z])(\w+)|(![a-z])(\2)
+# https://regex101.com/

@@ -2,6 +2,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include<assert.h>
+
+#ifdef	NDEBUG
+#define assert_condition(x, true_msg);
+#else
+#define assert_condition(x, true_msg) (x) ? printf("Success %s.%i: \u2714 - %s\n", __FILE__, __LINE__, true_msg) : assert(x);
+#endif
 
 #define MAX_FNAME_LENGTH 256
 
@@ -47,24 +54,29 @@ void file_packing(char *packed_file_name, int num_of_files, char **array_of_name
 		/* try to open */
 		to_pck = fopen(array_of_names[i], "r");
 		if (to_pck == NULL) { continue; }
+		assert_condition(1, "Opened File to compress");
 
 		/* Search info */
 		fseek(to_pck, 0, SEEK_END);
+		assert_condition(ftell(to_pck), "Read bytes / Non empty to pack file");
 		to_pck_stct.num_of_bytes = ftell(to_pck);
 		strncpy(to_pck_stct.filename, array_of_names[i], strlen(array_of_names[i]));
 		to_pck_stct.filename[strlen(array_of_names[i])] = '\0'; /* add the ending of string character */
 		/* restore file pointer */
 		fseek(to_pck, 0, SEEK_SET);
+		assert_condition(!ftell(to_pck), "Reinitialized pointer on to_pack file");
 
 		/* prepare the packing / unpacking file to receive new bytes */
 		fwrite((const void*) &to_pck_stct.num_of_bytes, sizeof(to_pck_stct.num_of_bytes), 1, pck);
 		fwrite((const void*) &to_pck_stct.filename, sizeof(to_pck_stct.filename), 1, pck);
+		assert_condition(1, "Writen titles on destiny file");
 
 		/* Read Through content and copy it to main file */
 		for (int c = 0; c < to_pck_stct.num_of_bytes; c ++) {
 			fread(&byte_to_write, sizeof(char), 1, to_pck);
 			fwrite((const void*) &byte_to_write, sizeof(unsigned char), 1, pck);
 		}
+		assert_condition(1, "Ended passing each byte to destiny file");
 
     printf("%i.- Packed %s file with %i bytes\n", file_counter ++, to_pck_stct.filename, to_pck_stct.num_of_bytes);
 		
@@ -72,6 +84,7 @@ void file_packing(char *packed_file_name, int num_of_files, char **array_of_name
 	}
 
 	fclose(pck);
+	assert_condition(1, "Closed all used files");
   
 }
 
@@ -85,14 +98,18 @@ void file_unpacking(char *packed_file_name) {
 	pck = fopen(packed_file_name, "r");
 
 	if (pck == NULL) { printf("issue op"); return; }
+	assert_condition(1, "Opened File to uncompress");
   printf("\n Unpacking/Uncompressing...\n");
 
 	fseek(pck, 0, SEEK_END);
+	assert_condition(ftell(pck), "Read bytes / Non empty pack file");
 	total_bytes = ftell(pck);
 	//if (total_bytes < sizeof(to_unpck_stct.num_of_bytes) + sizeof(to_unpck_stct.filename)) { return; }
 	fseek(pck, 0, SEEK_SET);
-
+	assert_condition(!ftell(pck), "Reinitialized pointer on pack file");
+	
 	system("mkdir ./unpacked"); /* new directory, where to store unpacked files */
+	assert_condition(1, "Created or Already existant directory");
 
 	for (i = 0; i < total_bytes; i ++) {
 
@@ -116,6 +133,8 @@ void file_unpacking(char *packed_file_name) {
 		i += c + sizeof(to_unpck_stct.num_of_bytes) + sizeof(to_unpck_stct.filename);
 		file_counter ++;
 	}
+	assert_condition(1, "Ended unpacking");
 	printf("\n");
 	fclose(pck);
+	assert_condition(1, "Closed all used files");
 }

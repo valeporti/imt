@@ -41,3 +41,6 @@ tp2helpers.o: tp2helpers.c
 
 clean: 
 	rm *.o
+
+clear: 
+	rm *.o *.out
