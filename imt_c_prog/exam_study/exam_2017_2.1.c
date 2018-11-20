@@ -21,7 +21,8 @@ void print_char(char an_array[], int n) {
 }
 
 void main() {
-  float arr[10] = {5,8,3,4,5,6,7,8,9,1};
+  float arr[10] = {5,8,3,4,5,6,7,8,9,1}, *arr2;
+  arr2 = &arr;
   char *arr1 = (char*)malloc(10);
   strcpy(arr1, "abcdefghi");
   int n = 10;
@@ -33,7 +34,7 @@ void main() {
   }
   for (int i=0; i<n; i++)
   {
-    printf("mem add %p val %f \n", arr+i, *(arr+i));
+    printf("mem add %li valu %f \n", arr2++, *arr2);
     //an_array = an_array + i;
   }
 
