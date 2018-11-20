@@ -19,7 +19,7 @@ void main(int argc, char **argv) {
 	assert_condition(1, "Start Program");
 	
 	if (count_arguments != 4) {
-		printf("Sorry, we didn't received the expected number of arguments\n");
+		printf("Sorry, we didn't received the expected number of arguments\nProgram Usage: ./2.1.out mean standard_deviation #_samples\nfor example: ./2.1.out 3 0.6 20");
 		return;
 	}
 

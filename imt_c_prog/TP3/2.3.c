@@ -14,7 +14,7 @@ void main(int argc, char **argv) {
 
 	assert_condition(1, "START");
 	
-	if (argc == 1) {
+	if (argc <= 2) {
 		printf("Program usage is as follows.\n");
 		printf("For compressing a file type: ./2.3.out -c file_to_compress_1 file_to_compress_3 ...\n");
 		printf("For decompressing a file type: ./2.3.out -d file_to_decompress\n");

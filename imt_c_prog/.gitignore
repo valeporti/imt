@@ -4,3 +4,6 @@
 *.hello
 unpacked
 *.txt
+*.gauss 
+*.floats 
+compressed.bin

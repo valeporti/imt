@@ -17,7 +17,7 @@ int equal_airplanes(struct airplane a1, struct airplane a2) {
 }
 
 void main() {
-  struct airplane a1, a2;
+  struct airplane a1, a2, a3;
 
   a1.name = (char*)malloc(sizeof(char) * 256);
   strncpy(a1.name,"losasasl", 6);
@@ -36,7 +36,9 @@ void main() {
 
 
   
-  if (equal_airplanes(a1, a2)) { printf("equals\n"); } else { printf("equalsNOT\n"); }
+  //if (equal_airplanes(a1, a2)) { printf("equals\n"); } else { printf("equalsNOT\n"); }
+
+  printf("%li\n", sizeof(a3));
 
   struct airplane planes[2][3];
   int i, j;
@@ -44,7 +46,7 @@ void main() {
   {
     for(j = 0; j<3; j++)
     {
-      printf("%li \n", planes[i][j]);
+      printf("%li \n", &(planes[i][j]));
     }
   }
 }
