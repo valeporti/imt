@@ -42,3 +42,4 @@ show()
 boys = top1000[top1000.sex == 'M']
 df = boys[boys.year == 2010]
 prop_cumsum = df.sort_values(by='prop',ascending=False).prop.cumsum()
+

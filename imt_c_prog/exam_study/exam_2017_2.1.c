@@ -6,7 +6,7 @@ void print_arr(float an_array[], int n) {
   int i = 0;
   for (i=1; i<=n; i++)
   {
-    printf("mem add %f \n", *an_array);
+    printf("mem add %li \n", an_array);
     an_array ++ ;
   }
 }
@@ -34,10 +34,10 @@ void main() {
   }
   for (int i=0; i<n; i++)
   {
-    printf("mem add %li valu %f \n", arr2++, *arr2);
+    //printf("mem add %li valu %f \n", arr2++, *arr2);
     //an_array = an_array + i;
   }
 
-  //print_arr(arr, n);
+  print_arr(arr, n);
   //print_char(arr1,n);
 }
