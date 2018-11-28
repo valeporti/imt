@@ -52,13 +52,12 @@ var P_out{i in I, j in J} >= 0;
 
 /* Objective Function */
 minimize Z: 
-	(sum{i in I, j in J: i<>j} (c_rev[i, j] * D[i, j] * x[i, j] * lamda)) +
-	(T_flh * c_heat[source] / beta) * (sum{j in J} (P_in[source, j])) +
-	(sum{i in I, j in J: i<>j} c_om[i, j] * l[i, j] * x[i, j]) + 
-	(sum{i in I, j in J: i<>j} c_fix[i, j] * l[i, j] * alpha * x[i, j]) + 
-	(sum{i in I, j in J: i<>j} c_var[i, j] * l[i, j] * alpha * P_in[i, j]) + 
-	0.5 * (sum{i in I, j in J: i<>j} (p_umd[i, j] * D[i, j])*(1 - x[i, j] - x[j, i]));
-	
+	(sum{j in J: j <> source} (P_in[source, j])) * (T_flh * c_heat[source] / beta) + /* TotalHeatGenerationCost */
+	(sum{i in I, j in J: i<>j} c_om[i, j] * l[i, j] * x[i, j]) + /* TotalMaintenanceCost */
+	(sum{i in I, j in J: i<>j} c_fix[i, j] * l[i, j] * alpha * x[i, j]) + /* TotalFixedInvestmentCost */
+	(sum{i in I, j in J: i<>j} c_var[i, j] * l[i, j] * alpha * P_in[i, j]) + /* TotalVariableInvestmentCost */
+	(sum{i in I, j in J: i<>j} (0.5 * p_umd[i, j] * D[i, j]*(1 - x[i, j] - x[j, i]))) - /* UnmetDemandPenalty */
+	(sum{i in I, j in J: i<>j} (c_rev[i, j] * D[i, j] * x[i, j] * lamda)); /* TotalRevenue */
 
 /* CONSTRAINTS */
 s.t. tree_structure: total_vertices - 1 = sum{i in I, j in J: i<>j} x[i, j];
@@ -67,18 +66,21 @@ s.t. unidirectionality{i in I, j in J: i<>j}: x[i, j] + x[j, i] <= 1;
 
 s.t. demand_satisfaction{i in I, j in J: i<>j}: eta[i, j] * P_in[i, j] - P_out[i, j] = x[i, j] * delta[i, j]; /* "Always make the variables met in an equation" */
 
-s.t. flow_equilibrium_at_each_vertex{j in J: j <> source}: sum{i in I: i<>j} P_in[i, j] = sum{i in I: i<>j} P_out[j, i];/* Pin i->j == P j->k */  /* HOW TO */
-
-s.t. edge_capacity{i in I, j in J: i<>j}: P_in[i, j] <= C_max[i, j] * x[i, j];
-
+s.t. flow_equilibrium_at_each_vertex{j in J: j <> source}: sum{i in I: i<>j} P_in[j, i] = sum{i in I: i<>j} P_out[i, j]; /* Pin i->j == P j->k */  /* HOW TO */
+/* before it was inversed i and j */
+s.t. edge_capacity{i in I, j in J: i<>j}: P_in[i, j] <= 10 * C_max[i, j] * x[i, j];
+/* the 10, where dit it come from? */
 s.t. source_structural: sum{i in I: i <> source} x[i, source] = 0;
 
 s.t. source_heat_generation: sum{j in J: j <> source} P_in[source, j] <= Q_max;
 
-s.t. tour_elimination{i in I}: sum{j in J: j <> i} x[j, i] >= 1;
+s.t. tour_elimination{i in I: i <> source}: sum{j in J: j <> i} x[j, i] >= 1;
+/* added i <> source */
 
 /* solving instructions */
 solve;
+display P_out;
+display P_in;
 display x;
 display Z;
 
@@ -86,12 +88,12 @@ display Z;
 data;
 set I := 1 2 3 4 5 6 7 8;
 set J := 1 2 3 4 5 6 7 8;
-param source := 4;
+param source := 5; /* it's 4 in file */
 param T_flh := 1800;
 param alpha := 0.067;
 param beta := 0.7;
 param lamda := 0.7 ; /* (gamma in the doc) */
-param Q_max := 3000;
+param Q_max := 30000; 
 param fixed_unit_cost := 100;
 param node_coord_x :=
 	1	10
