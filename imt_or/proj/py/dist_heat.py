@@ -23,12 +23,12 @@ C_max = helpers.read_excel_data(excel_file, 'Cmax')
 Q_max = helpers.read_excel_data(excel_file, 'SourceMaxCap')[0][0]
 
 source_num = helpers.read_excel_data(excel_file, 'SourceNum')[0][0]
-number_of_nodes = 8
+number_of_nodes = 5
 
 ## GA Algorithm Implementation
 population_size = 3
 
-# POPULATION
+# POPULATION INITIALIZATION
 population = helpers.get_tree_based_population(population_size, number_of_nodes)
 print(population)
 

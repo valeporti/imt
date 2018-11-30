@@ -17,7 +17,7 @@ def create_prufer_sequence(number_nodes):
   arr = [random.randint(0, number_nodes - 1) for i in range(number_nodes - 2)]
   return arr
 
-def prufer_to_tree(prufer_arr):
+def prufer_to_tree(prufer_arr): # https://hamberg.no/erlend/posts/2010-11-06-prufer-sequence-compact-tree-representation.html
   tree = []
   T = range(0, len(prufer_arr)+2)
 
@@ -41,5 +41,3 @@ def prufer_to_tree(prufer_arr):
   tree.append((last[0],last[1]))
 
   return tree
-  
-
