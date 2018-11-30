@@ -75,6 +75,7 @@ s.t. source_structural: sum{i in I: i <> source} x[i, source] = 0;
 s.t. source_heat_generation: sum{j in J: j <> source} P_in[source, j] <= Q_max;
 
 s.t. tour_elimination{i in I: i <> source}: sum{j in J: j <> i} x[j, i] >= 1;
+/* would this work?? s.t. tour_elimination{i in I}: sum{j in J: j <> i} x[j, i] <= 1; */
 /* added i <> source */
 
 /* solving instructions */
