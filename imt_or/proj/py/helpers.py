@@ -1,5 +1,6 @@
 import pandas as pd
 import random
+import math
 
 # DATA FUNCTIONS
 def read_excel_data(filename, sheet_name):
@@ -7,10 +8,29 @@ def read_excel_data(filename, sheet_name):
   values = data.values
   return values
 
+def distance_between_edges_matrix(coordinates, number_nodes) :
+  matrix = []
+  for j in range(number_nodes):
+    arr = []
+    for i in range(number_nodes):
+      distance = distance_between_two_coordinates(coordinates[j], coordinates[i])
+      arr.append(distance)
+
+    matrix.append(arr)
+
+  return matrix
+
+def distance_between_two_coordinates(c1, c2) :
+  distance = math.sqrt((c1[0] - c2[0]) * (c1[0] - c2[0]) + (c1[1] - c2[1]) * (c1[1] - c2[1]))
+  return distance
+
 # POPULATION FUNCTIONS
 def get_tree_based_population(N, number_nodes):
   population_arr = []
-  for n in range(N): population_arr.append(create_prufer_sequence(number_nodes))
+  for n in range(N): 
+    individual = {'prufer': [], 'tree': [], 'flow': {}, 'evaluation': 0}
+    individual['prufer'] = create_prufer_sequence(number_nodes)
+    population_arr.append(individual)
   return population_arr
 
 def create_prufer_sequence(number_nodes):

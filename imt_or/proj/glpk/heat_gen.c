@@ -67,9 +67,9 @@ s.t. unidirectionality{i in I, j in J: i<>j}: x[i, j] + x[j, i] <= 1;
 s.t. demand_satisfaction{i in I, j in J: i<>j}: eta[i, j] * P_in[i, j] - P_out[i, j] = x[i, j] * delta[i, j]; /* "Always make the variables met in an equation" */
 
 s.t. flow_equilibrium_at_each_vertex{j in J: j <> source}: sum{i in I: i<>j} P_in[j, i] = sum{i in I: i<>j} P_out[i, j]; /* Pin i->j == P j->k */  /* HOW TO */
-/* before it was inversed i and j */
+/* before, it was inversed i and j */
 s.t. edge_capacity{i in I, j in J: i<>j}: P_in[i, j] <= 10 * C_max[i, j] * x[i, j];
-/* the 10, where dit it come from? */
+/* the 10, where did it come from? */
 s.t. source_structural: sum{i in I: i <> source} x[i, source] = 0;
 
 s.t. source_heat_generation: sum{j in J: j <> source} P_in[source, j] <= Q_max;
