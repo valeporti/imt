@@ -1,0 +1,27 @@
+clear all
+close all
+clc
+
+samples = 1000;
+points_in_graph = 50;
+U = rand(samples, 1);
+V = rand(samples, 1);
+sigma = 0.5;
+
+X = sqrt(U.^2 + V.^2);
+
+%histogram(X, points_in_graph)
+%X_ploted_norm = histogram(X, 'Normalization','probability');
+
+figure(1)
+plot(X)
+figure(2)
+histogram(X, points_in_graph)
+figure(3)
+histogram(X, 'Normalization','probability')
+
+X_histo = histogram(X, points_in_graph, 'Normalization','probability')
+
+
+
+r=@(x) (x/(sigma^2))*exp(-(x^2/(2*(sigma^2)))); 
