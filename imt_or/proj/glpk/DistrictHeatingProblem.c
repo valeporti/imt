@@ -80,6 +80,13 @@ display x;
 display Pin;
 display Pout;
 display cost;
+display TotalRevenue;
+display TotalHeatGenerationCost;
+display TotalMaintenanceCost;
+display TotalFixedInvestmentCost;
+display TotalVariableInvestmentCost;
+display UnmetDemandPenalty;
+display ObjectiveValue;
 
 
 /***--------------- Inputs and Data -----------------***/
