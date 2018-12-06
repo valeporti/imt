@@ -25,13 +25,56 @@ def distance_between_two_coordinates(c1, c2) :
   return distance
 
 # POPULATION FUNCTIONS
-def get_tree_based_population(N, number_nodes):
+def get_tree_based_population(N, number_nodes, source):
   population_arr = []
   for n in range(N): 
     individual = {'prufer': [], 'tree': [], 'flow': {}, 'evaluation': 0}
     individual['prufer'] = create_prufer_sequence(number_nodes)
+    #individual['tree'] = prufer_to_tree(individual['prufer'])
+    individual['tree'] = [(0,3), (1,0), (2,1), (3,7), (4,2), (4,5), (5,6)]
+    individual['flow'] = get_flow_from_tree(source, individual['tree'])
     population_arr.append(individual)
   return population_arr
+
+def get_flow_from_tree(source, tree):
+
+  remaining_tree = tree[:] # in order to be able to manipulate it and maintain the original one
+  flow = {'root': source, 'leaves': [], 'tree': {}}
+  find_path_on_tree([source], remaining_tree, -1, flow)
+
+  return flow
+
+def find_path_on_tree(nodes, remaining_tree, parent, flow):
+
+  if len(nodes) == 0 : # recursion end condition
+    flow['leaves'].append(parent) # as is the en of recursion, means it's a leaf
+    return -1
+
+  for node in nodes:
+    children = search_node_children(remaining_tree, node) # get children of node, remove
+    # already information of a particular node, add it to the flow dictionary
+    flow['tree'][node] = {'parent': -1, 'child': []}
+    flow['tree'][node]['child'] = children
+    flow['tree'][node]['parent'] = parent
+    # recursion, next node analysis (children, parent)
+    find_path_on_tree(children, remaining_tree, node, flow) 
+
+
+def search_node_children(remaining_tree, node) :
+
+  children = []
+  length = len(remaining_tree)
+  i = 0
+
+  while i < length:
+    edge = remaining_tree[i]
+    if node in edge:
+      children.append(edge[0] if (edge[0] != node) else edge[1])
+      remaining_tree.remove(edge)
+      length -= 1 # update lenght since removed element
+      i -= 1 # update index since removed element
+    i += 1
+  return children
 
 def create_prufer_sequence(number_nodes):
   arr = [random.randint(0, number_nodes - 1) for i in range(number_nodes - 2)]
