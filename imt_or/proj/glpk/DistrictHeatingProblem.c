@@ -87,6 +87,7 @@ display TotalFixedInvestmentCost;
 display TotalVariableInvestmentCost;
 display UnmetDemandPenalty;
 display ObjectiveValue;
+display sum{(i,j) in E} Pin[i,j];
 
 
 /***--------------- Inputs and Data -----------------***/

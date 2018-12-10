@@ -39,7 +39,7 @@ def get_tree_based_population(N, number_nodes, source):
 def get_flow_from_tree(source, tree):
 
   remaining_tree = tree[:] # in order to be able to manipulate it and maintain the original one
-  flow = {'root': source, 'leaves': [], 'tree': {}}
+  flow = {'root': source, 'leaves': [], 'flow_tree': {}}
   find_path_on_tree([source], remaining_tree, -1, flow)
 
   return flow
@@ -53,9 +53,9 @@ def find_path_on_tree(nodes, remaining_tree, parent, flow):
   for node in nodes:
     children = search_node_children(remaining_tree, node) # get children of node, remove
     # already information of a particular node, add it to the flow dictionary
-    flow['tree'][node] = {'parent': -1, 'child': []}
-    flow['tree'][node]['child'] = children
-    flow['tree'][node]['parent'] = parent
+    flow['flow_tree'][node] = {'parent': -1, 'child': []}
+    flow['flow_tree'][node]['child'] = children
+    flow['flow_tree'][node]['parent'] = parent
     # recursion, next node analysis (children, parent)
     find_path_on_tree(children, remaining_tree, node, flow) 
 

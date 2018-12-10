@@ -12,3 +12,38 @@ x[5,3].val = 1
 x[5,6].val = 1
 
 x[6,7].val = 1
+
+
+Pin[1,4].val = 588.636069902953
+
+Pin[2,1].val = 878.571068643205
+
+Pin[3,2].val = 1171.32672644406
+
+Pin[4,8].val = 302.281025558721
+
+Pin[5,3].val = 1450.20730690339
+
+Pin[5,6].val = 547.266377162461
+
+Pin[6,7].val = 276.690944842393
+
+5214.97951945718
+
+
+Display statement at line 82
+cost.val = 25785278.8659918
+Display statement at line 83
+TotalRevenue.val = 33894.7
+Display statement at line 84
+TotalHeatGenerationCost.val = 25681804.509418
+Display statement at line 85
+TotalMaintenanceCost.val = 1400
+Display statement at line 86
+TotalFixedInvestmentCost.val = 9284.324
+Display statement at line 87
+TotalVariableInvestmentCost.val = 23469.7325737445
+Display statement at line 88
+UnmetDemandPenalty.val = 103215
+Display statement at line 89
+ObjectiveValue.val = 25785278.8659918
