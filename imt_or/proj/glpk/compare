@@ -47,3 +47,21 @@ Display statement at line 88
 UnmetDemandPenalty.val = 103215
 Display statement at line 89
 ObjectiveValue.val = 25785278.8659918
+
+
+# MINE 
+Display statement at line 102
+Z.val = 25887159.5685251
+Display statement at line 103
+TotalRevenue.val = 33894.7
+Display statement at line 104
+TotalHeatGenerationCost.val = 25934740.5303373
+Display statement at line 105
+TotalMaintenanceCost.val = 1414.2135623731
+Display statement at line 106
+TotalFixedInvestmentCost.val = 9378.58351304716
+Display statement at line 107
+TotalVariableInvestmentCost.val = 23941.941112412
+Display statement at line 108
+UnmetDemandPenalty.val = 103215
+Model has been successfully processed

@@ -3,7 +3,7 @@ import evaluation
 import crossover_mutation as cm
 import math
 import pprint as pp
-
+from operator import itemgetter, attrgetter
 
 # DATA
 excel_file = 'smalldata.xlsx'
@@ -16,6 +16,7 @@ DATA = {
   'c_om': helpers.read_excel_data(excel_file, 'com'),
   'c_heat': helpers.read_excel_data(excel_file, 'cheat'),
   'c_var': helpers.read_excel_data(excel_file, 'cvar'),
+  'c_fix': helpers.read_excel_data(excel_file, 'cfix'),
   'p_umd': helpers.read_excel_data(excel_file, 'pumd'),
   'v_var': helpers.read_excel_data(excel_file, 'vvar'),
   'v_fix': helpers.read_excel_data(excel_file, 'vfix'),
@@ -34,7 +35,7 @@ DATA = {
 
 
 ## GA Algorithm Implementation
-population_size = 1
+population_size = 10
 iterations = 1
 
 # POPULATION INITIALIZATION
@@ -43,9 +44,11 @@ population = helpers.get_tree_based_population(population_size, number_of_nodes,
 for i in range(iterations):
   # EVALUATION OF INDIVUDUALS IN POPULATION
   evaluation.evaluate(population, DATA)
+  #pp.pprint(population)
 
   # SELECTION
-
+  sorted_population = sorted(population, key=itemgetter('evaluation'))
+  
   # CROSSOVER AND MUTATION
 
   # NEXT GENERATION

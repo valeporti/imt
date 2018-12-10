@@ -78,12 +78,34 @@ s.t. tour_elimination{i in I: i <> source}: sum{j in J: j <> i} x[j, i] >= 1;
 /* would this work?? s.t. tour_elimination{i in I}: sum{j in J: j <> i} x[j, i] <= 1; */
 /* added i <> source */
 
+/* -----------------  TO Debug --------------------- */
+var UnmetDemandPenalty;
+s.t. const9: UnmetDemandPenalty = sum{i in I, j in J: i<>j} (0.5 * p_umd[i, j] * D[i, j]*(1 - x[i, j] - x[j, i]));
+var TotalVariableInvestmentCost;
+s.t. const10: TotalVariableInvestmentCost = sum{i in I, j in J: i<>j} c_var[i, j] * l[i, j] * alpha * P_in[i, j];
+var TotalHeatGenerationCost;
+s.t. const11: TotalHeatGenerationCost = sum{j in J: j <> source} P_in[source, j] * (T_flh * c_heat[source] / beta);
+var TotalMaintenanceCost;
+s.t. const12: TotalMaintenanceCost = sum{i in I, j in J: i<>j} c_om[i, j] * l[i, j] * x[i, j];
+var TotalFixedInvestmentCost;
+s.t. const13: TotalFixedInvestmentCost = sum{i in I, j in J: i<>j} c_fix[i, j] * l[i, j] * alpha * x[i, j];
+var TotalRevenue;
+s.t. const14: TotalRevenue = sum{i in I, j in J: i<>j} (c_rev[i, j] * D[i, j] * x[i, j] * lamda);
+/* -----------------  TO Debug --------------------- */
+
+
 /* solving instructions */
 solve;
 display P_out;
 display P_in;
 display x;
 display Z;
+display TotalRevenue;
+display TotalHeatGenerationCost;
+display TotalMaintenanceCost;
+display TotalFixedInvestmentCost;
+display TotalVariableInvestmentCost;
+display UnmetDemandPenalty;
 
 /* DATA */
 data;
