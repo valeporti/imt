@@ -15,20 +15,12 @@ plot(line_vector, X_ffts_log)
 
 %Q.2.1
 freq_on_graph = [220.5 442.1 663.3 885.6 1108 1332 1556];
-n = length(freq_on_graph) - 1;
-freq_diff = zeros(n);
-sum = 0;
+n = length(freq_on_graph);
+E_n = zeros(n);
 for i=1:n
-    freq_diff(i) = freq_on_graph(i+1) - freq_on_graph(i);
-    sum = sum + freq_diff(i);
-end
-f_1 = sum / n
-
-E_n = zeros(n + 1);
-for i=1:n+1
     E_n(i) = 1200 * (log2(freq_on_graph(i)) - log2(i * freq_on_graph(1)));
 end
-
+f_1 = freq_on_graph(1)
 E_n
 
 [x,Fs]=audioread('piano2.wav');
@@ -46,20 +38,12 @@ plot(line_vector, X_ffts_log)
 
 %Q.2.3
 freq_on_graph = [217.9 443 668.1 892.7 1118 1347 1572];
-n = length(freq_on_graph) - 1;
-freq_diff = zeros(n);
-sum = 0;
+n = length(freq_on_graph);
+E_n = zeros(n);
 for i=1:n
-    freq_diff(i) = freq_on_graph(i+1) - freq_on_graph(i);
-    sum = sum + freq_diff(i);
-end
-f_1 = sum / n
-
-E_n = zeros(n + 1);
-for i=1:n+1
     E_n(i) = 1200 * (log2(freq_on_graph(i)) - log2(i * freq_on_graph(1)));
 end
-
+f_1 = freq_on_graph(1)
 E_n
 
 
