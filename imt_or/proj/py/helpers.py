@@ -1,6 +1,7 @@
 import pandas as pd
 import random
 import math
+from sympy.combinatorics.prufer import Prufer
 
 # DATA FUNCTIONS
 def read_excel_data(filename, sheet_name):
@@ -28,13 +29,27 @@ def distance_between_two_coordinates(c1, c2) :
 def get_tree_based_population(N, number_nodes, source):
   population_arr = []
   for n in range(N): 
-    individual = {'prufer': [], 'tree': [], 'flow': {}, 'evaluation': 0}
+    individual = create_new_individual()
     individual['prufer'] = create_prufer_sequence(number_nodes)
-    individual['tree'] = prufer_to_tree(individual['prufer'])
-    #individual['tree'] = [(0,3), (1,0), (2,1), (3,7), (4,2), (4,5), (5,6)]
-    individual['flow'] = get_flow_from_tree(source, individual['tree'])
     population_arr.append(individual)
   return population_arr
+
+def generate_tree_flow(population, source) :
+  for individual in population: 
+    #individual['prufer'] = [5, 4, 2, 1, n, 3]
+    individual['tree'] = prufer_to_tree(individual['prufer'])
+    #individual['tree'] = [(0,3), (1,0), (2,1), (3,7), (4,2), (4,5), (5,6)]
+    #individual['prufer'] = Prufer(individual['tree']).prufer_repr
+    individual['flow'] = get_flow_from_tree(source, individual['tree'])
+
+def create_new_individual() :
+  return {'prufer': [], 'tree': [], 'flow': {}, 'evaluation': 0}
+
+def initialize_individual(individual) :
+  individual['prufer'] = []
+  individual['tree'] = []
+  individual['flow'] = {}
+  individual['evaluation'] = 0
 
 def get_flow_from_tree(source, tree):
 

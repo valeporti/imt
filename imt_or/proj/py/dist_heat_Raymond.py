@@ -1,4 +1,4 @@
-import helpers
+import helpers_Raymond as helpers
 import evaluation
 import crossover_mutation as cm
 import math
@@ -15,6 +15,7 @@ c_om = helpers.read_excel_data(excel_file, 'com')
 c_heat = helpers.read_excel_data(excel_file, 'cheat')
 c_var = helpers.read_excel_data(excel_file, 'cvar')
 p_umd = helpers.read_excel_data(excel_file, 'pumd')
+c_fix = helpers.read_excel_data(excel_file, 'cfix')
 v_var = helpers.read_excel_data(excel_file, 'vvar')
 v_fix = helpers.read_excel_data(excel_file, 'vfix')
 T_flh = helpers.read_excel_data(excel_file, 'Tflh')
@@ -35,7 +36,7 @@ distance_matrix = helpers.distance_between_edges_matrix(nodes_coord, number_of_n
 #print(DATA)
 
 ## GA Algorithm Implementation
-population_size = 3
+population_size = 1
 
 print(distance_matrix)
 # POPULATION INITIALIZATION
@@ -62,12 +63,19 @@ print(' ')
 for i in range(len(population)):
 
 	print(population[i]['prufer'])
-	prufer_to_tree = helpers.prufer_to_tree(population[i]['prufer'])
-	revenue = evaluation.calculate_revenue(c_rev,c_rev,Gamma,prufer_to_tree)
-	unmmet_demand = evaluation.calculate_unmet_demand_penalty(edges_peak_demand,distance_matrix,v_fix,v_var,prufer_to_tree)
+	#prufer_to_tree = helpers.prufer_to_tree(population[i]['prufer'])
+	prufer_to_tree = [(0,3), (1,0), (2,1), (3,7), (4,2), (4,5), (5,6)]
+	revenue = helpers.calculate_revenue(c_rev,c_rev,Gamma,prufer_to_tree)
+	unmmet_demand = helpers.calculate_unmet_demand_penalty(edges_peak_demand,p_umd,prufer_to_tree)
+	fixed_investment_cost = helpers.calculate_fixed_investment_cost(Alpha,c_fix,distance_matrix,prufer_to_tree)
+	maitenance_cost = helpers.calculate_maitenance_cost(c_om,distance_matrix,prufer_to_tree)
+
 	print(prufer_to_tree)
 	print(revenue)
 	print(unmmet_demand)
+	print('vals')
+	print(fixed_investment_cost)
+	print(maitenance_cost)
 	
 
 #prufer_Of_individual = helpers.prufer_to_tree(population[0]['prufer']

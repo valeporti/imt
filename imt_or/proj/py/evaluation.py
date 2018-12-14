@@ -3,7 +3,9 @@ import pprint as pp
 import numpy as np
 
 def evaluate(population, DATA):
+  sum_ev = 0
   for individual in population:
+    if (individual['evaluation'] != 0) : continue 
     Total_P_in = calculate_power_flow(individual['flow'], individual['tree'], DATA)
     heat_generation_cost = get_tree_heat_generation_cost(DATA['Betta'], DATA['T_flh'], DATA['c_heat'], DATA['P_in'], DATA['source'], individual['flow'])
     revenue = calculate_revenue(DATA['c_rev'], DATA['edges_annual_demand'], DATA['Lamda'], individual['tree'])
@@ -19,8 +21,8 @@ def evaluate(population, DATA):
     #print(unmet_demand_penalty)
     total_expenses = (heat_generation_cost + maintenance_cost + fixed_investment_cost + variable_investment_cost + unmet_demand_penalty) - revenue
     individual['evaluation'] = total_expenses
-
-  
+    sum_ev += total_expenses
+  return sum_ev
 
 def get_tree_unmet_demand_penalty(p_umd, edges_annual_demand, tree, number_of_nodes) :
   unmet_demand_penalty = 0
