@@ -2,27 +2,23 @@ import helpers
 import pprint as pp
 import numpy as np
 
-def evaluate(population, DATA):
-  sum_ev = 0
-  for individual in population:
-    if (individual['evaluation'] != 0) : continue 
-    Total_P_in = calculate_power_flow(individual['flow'], individual['tree'], DATA)
-    heat_generation_cost = get_tree_heat_generation_cost(DATA['Betta'], DATA['T_flh'], DATA['c_heat'], DATA['P_in'], DATA['source'], individual['flow'])
-    revenue = calculate_revenue(DATA['c_rev'], DATA['edges_annual_demand'], DATA['Lamda'], individual['tree'])
-    maintenance_cost = get_tree_maintenance_cost(DATA['c_om'], DATA['distance'], individual['tree'])
-    fixed_investment_cost = get_fixed_investment_cost(DATA['c_fix'], DATA['distance'], DATA['Alpha'], individual['tree'])
-    variable_investment_cost = get_tree_variable_investment_cost(DATA['c_var'], DATA['distance'], DATA['Alpha'], DATA['P_in'], individual['tree'])
-    unmet_demand_penalty = get_tree_unmet_demand_penalty(DATA['p_umd'], DATA['edges_annual_demand'], individual['tree'], DATA['number_of_nodes'])
-    #print(revenue)
-    #print(heat_generation_cost)
-    #print(maintenance_cost)
-    #print(fixed_investment_cost)
-    #print(variable_investment_cost)
-    #print(unmet_demand_penalty)
-    total_expenses = (heat_generation_cost + maintenance_cost + fixed_investment_cost + variable_investment_cost + unmet_demand_penalty) - revenue
-    individual['evaluation'] = total_expenses
-    sum_ev += total_expenses
-  return sum_ev
+def evaluate(individual, DATA):
+  Total_P_in = calculate_power_flow(individual['flow'], individual['tree'], DATA)
+  heat_generation_cost = get_tree_heat_generation_cost(DATA['Betta'], DATA['T_flh'], DATA['c_heat'], DATA['P_in'], DATA['source'], individual['flow'])
+  revenue = calculate_revenue(DATA['c_rev'], DATA['edges_annual_demand'], DATA['Lamda'], individual['tree'])
+  maintenance_cost = get_tree_maintenance_cost(DATA['c_om'], DATA['distance'], individual['tree'])
+  fixed_investment_cost = get_fixed_investment_cost(DATA['c_fix'], DATA['distance'], DATA['Alpha'], individual['tree'])
+  variable_investment_cost = get_tree_variable_investment_cost(DATA['c_var'], DATA['distance'], DATA['Alpha'], DATA['P_in'], individual['tree'])
+  unmet_demand_penalty = get_tree_unmet_demand_penalty(DATA['p_umd'], DATA['edges_annual_demand'], individual['tree'], DATA['number_of_nodes'])
+  """ print(revenue)
+  print(heat_generation_cost)
+  print(maintenance_cost)
+  print(fixed_investment_cost)
+  print(variable_investment_cost)
+  print(unmet_demand_penalty) """
+  total_expenses = (heat_generation_cost + maintenance_cost + fixed_investment_cost + variable_investment_cost + unmet_demand_penalty) - revenue
+  DATA['P_in'] = []
+  return total_expenses
 
 def get_tree_unmet_demand_penalty(p_umd, edges_annual_demand, tree, number_of_nodes) :
   unmet_demand_penalty = 0
@@ -39,7 +35,7 @@ def get_tree_variable_investment_cost(c_var, distance, Alpha, P_in, tree) :
 
 def get_fixed_investment_cost(c_fix, distance, Alpha, tree) :
   investment_cost = 0
-  for edge in tree : investment_cost += c_fix[edge[0]][edge[1]] * distance[edge[0]][edge[1]]
+  for edge in tree : investment_cost += c_fix[edge[1]][edge[0]] * distance[edge[1]][edge[0]]
   return investment_cost * Alpha
 
 def get_tree_maintenance_cost(c_om, distance, tree) :
@@ -80,7 +76,6 @@ def find_edge_power_flow(nodes, remaining_tree, parent, DATA, P_in_arr):
     
   return P_in
 
-#calculate revenue
 def calculate_revenue(c_rev, annual_demand, lamda, prufer_to_tree):
   total_revenue = 0
   for item in prufer_to_tree: 
@@ -91,7 +86,6 @@ def calculate_revenue(c_rev, annual_demand, lamda, prufer_to_tree):
   scaled_total_revenue = lamda * total_revenue
   return  scaled_total_revenue
 
-#calculate unmet demand penalty
 def calculate_unmet_demand_penalty(factor, c_umd, annual_demand, tree):
   total_umt_dem_pen = 0
   for edge in tree:

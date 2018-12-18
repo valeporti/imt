@@ -3,14 +3,16 @@ import evaluation
 import crossover
 import selection
 import mutation
+import mutation_Raymond
 import math
+import time
+import hybrid
 import pprint as pp
 from operator import itemgetter, attrgetter
 import random
 
 # DATA
 excel_file = 'smalldata.xlsx'
-
 nodes_coord = helpers.read_excel_data(excel_file, 'NodesCord')
 number_of_nodes = len(nodes_coord)
 distance_matrix = helpers.distance_between_edges_matrix(nodes_coord, number_of_nodes)
@@ -31,32 +33,56 @@ DATA = {
   'edges_annual_demand': helpers.read_excel_data(excel_file, 'EdgesDemandAnnual'),
   'C_max': helpers.read_excel_data(excel_file, 'Cmax'),
   'Q_max': helpers.read_excel_data(excel_file, 'SourceMaxCap')[0][0],
-  'source': helpers.read_excel_data(excel_file, 'SourceNum')[0][0],
+  'source': helpers.read_excel_data(excel_file, 'SourceNum')[0][0] - 1,
   'distance': distance_matrix,
   'number_of_nodes': number_of_nodes
 }
 
 
-## GA Algorithm Implementation
-POPULATION_SIZE = 100
+## CONTSTANTS
+POPULATION_SIZE = 1000
 ITERATIONS = 20
 MINIMUM_IMPROVEMENT_TOLERANCE = 0.05
+MAX_STATIC_IMPROVEMENT = 7
+MUTATION_ALLELE_FLIP_OPT = 1
+MUTATION_INSERTION_OPT = 2
+MUTATION_DISPLACEMENT_OPT = 3
+MUTATION_INVERSMENT_OPT = 4
+MUTATION_DISPLACED_INVERSION_OPT = 5
+MUTATION_INVASIVE_ALLELE_FLIP_OPT = 6
+KNOWN_BEST_ANSWER_FOR_SMALL_DATA = 26038797
+
+
+## GA Algorithm Implementation
 best_solutions = []
-proposed_config = {'elitism': 10, 'crossover': 70, 'mutation': 20 }
+proposed_config = {'elitism': 10, 'crossover': 40, 'mutation': 40, 'hybrid': 10 }
 tolerance_best  = 0
 best_solutions_opt_counter = 0
+start = time.time()
 
 # POPULATION INITIALIZATION
 population = helpers.get_tree_based_population(POPULATION_SIZE, DATA['number_of_nodes'], DATA['source'])
 
 for i in range(ITERATIONS):
 
+  #arr1 = [1, 2, 3, 4, 5, 6]
+  #arr2 = [8, 9, 10, 11, 12, 13]
+  
+  #mutation.inv_and_or_disp_M(0, arr1, len(arr1))
+  #print(arr1)
+
   from_individual = 0
   new_population = []
   
   # EVALUATION OF INDIVUDUALS IN POPULATION
-  helpers.generate_tree_flow(population, DATA['source'])
-  sum_evalutation = evaluation.evaluate(population, DATA)
+  sum_evalutation = 0
+  for individual in population:
+    if (individual['evaluation'] != 0) : continue # already available flow, tree and evaluation values (elements form elitism)
+    helpers.generate_tree_flow(individual, DATA['source'])
+    individual['evaluation'] = evaluation.evaluate(individual, DATA)
+    sum_evalutation += individual['evaluation']
+  
+  #pp.pprint(population)
 
   # SELECTION
   sorted_population = sorted(population, key=itemgetter('evaluation'))
@@ -68,8 +94,8 @@ for i in range(ITERATIONS):
 
   # CROSSOVER
   for i in range(from_individual, from_individual + math.floor(POPULATION_SIZE * (proposed_config['crossover'])/ 100), 2) :
-    index_parent_1 = selection.select_roulette(POPULATION_SIZE, probabilities)
-    index_parent_2 = selection.select_roulette(POPULATION_SIZE, probabilities)
+    index_parent_1 = selection.select_roulette(POPULATION_SIZE, probabilities, 0.5, probabilities[0])
+    index_parent_2 = selection.select_roulette(POPULATION_SIZE, probabilities, 0, probabilities[0])
     children = crossover.crossover(0, sorted_population[index_parent_1]['prufer'], sorted_population[index_parent_2]['prufer'], DATA['number_of_nodes'] - 2)
 
     new_population.append(helpers.create_new_individual())
@@ -80,29 +106,44 @@ for i in range(ITERATIONS):
   # MUTATION
   from_individual += math.floor(POPULATION_SIZE * (proposed_config['crossover'])/ 100)
   for i in range(from_individual, from_individual + math.floor(POPULATION_SIZE * (proposed_config['mutation'])/ 100)) :
-    index_chromosome = selection.select_roulette(POPULATION_SIZE, probabilities)
-    chromosome = mutation.mutation(1, sorted_population[index_chromosome]['prufer'], DATA['number_of_nodes'] - 2)
+    index_chromosome = selection.select_roulette(POPULATION_SIZE, probabilities, 0, probabilities[0])
+    chromosome = mutation.mutation(MUTATION_DISPLACED_INVERSION_OPT, sorted_population[index_chromosome]['prufer'], DATA['number_of_nodes'] - 2)
     new_population.append(helpers.create_new_individual())
     new_population[i]['prufer'] = chromosome
 
-  # HYBRID PROPOSAL
+  # HYBRID 2-opt
+  from_individual += math.floor(POPULATION_SIZE * (proposed_config['mutation'])/ 100)
+  for i in range(0, math.floor(POPULATION_SIZE * (proposed_config['hybrid'])/ 100)) :
+    index_chromosome = selection.select_roulette(POPULATION_SIZE, probabilities, 0.5, probabilities[0])
+    session_best_individual = sorted_population[index_chromosome].copy()
+    hybrid.opt_2(DATA, session_best_individual)
+    new_population.append(session_best_individual)
 
   # NEXT GENERATION
+  #print('thispop')
+  #for n in range(2):
+  #  pp.pprint(sorted_population[n])
   population = new_population[:]
 
   # TERMINATION CRITERIA
   best_len = len(best_solutions)
   tolerance_best += abs(best_solutions[best_len - 2]['evaluation'] - best_solutions[best_len - 1]['evaluation']) / best_solutions[best_len - 1]['evaluation']
-  print(tolerance_best)
-  if (best_solutions[best_len - 1]['evaluation'] == best_solutions[best_len - 2]['evaluation'] or tolerance_best < MINIMUM_IMPROVEMENT_TOLERANCE) :
+  #print(tolerance_best)
+  if (best_solutions[best_len - 1]['evaluation'] == best_solutions[best_len - 2]['evaluation']) :
     best_solutions_opt_counter += 1
+  #elif (tolerance_best < MINIMUM_IMPROVEMENT_TOLERANCE):
+  #  best_solutions_opt_counter += 1
   else :
     best_solutions_opt_counter = 0
+    tolerance_best = 0
   
-  if best_solutions_opt_counter == 10 : break
+  if best_solutions_opt_counter == MAX_STATIC_IMPROVEMENT : break
 
-pp.pprint(best_solutions)
-
+for n in range(len(best_solutions)):
+  pp.pprint(best_solutions[n]['evaluation'])
+pp.pprint(best_solutions[len(best_solutions)-1])
+end = time.time()
+print(end - start)
 
 #for n in range(POPULATION_SIZE):
 #  pp.pprint(sorted_population[n]['evaluation'])

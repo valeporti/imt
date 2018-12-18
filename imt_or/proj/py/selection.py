@@ -1,7 +1,7 @@
 import random
 
-def select_roulette(size, probabilities):
-  rand = random.uniform(0,probabilities[0])
+def select_roulette(size, probabilities, min_percentage, max_percentage):
+  rand = random.uniform(min_percentage, max_percentage)
   for j in range (size) :
     if (j + 1 < size and rand > probabilities[j + 1]) :
       return j

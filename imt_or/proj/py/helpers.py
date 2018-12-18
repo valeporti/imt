@@ -34,13 +34,12 @@ def get_tree_based_population(N, number_nodes, source):
     population_arr.append(individual)
   return population_arr
 
-def generate_tree_flow(population, source) :
-  for individual in population: 
-    #individual['prufer'] = [5, 4, 2, 1, n, 3]
-    individual['tree'] = prufer_to_tree(individual['prufer'])
-    #individual['tree'] = [(0,3), (1,0), (2,1), (3,7), (4,2), (4,5), (5,6)]
-    #individual['prufer'] = Prufer(individual['tree']).prufer_repr
-    individual['flow'] = get_flow_from_tree(source, individual['tree'])
+def generate_tree_flow(individual, source) : 
+  #individual['prufer'] = [5, 4, 2, 1, 0, 3]
+  individual['tree'] = prufer_to_tree(individual['prufer'])
+  #individual['tree'] = [(0,3), (1,0), (2,1), (3,7), (4,2), (4,5), (5,6)]
+  #individual['prufer'] = Prufer(individual['tree']).prufer_repr
+  individual['flow'] = get_flow_from_tree(source, individual['tree'])
 
 def create_new_individual() :
   return {'prufer': [], 'tree': [], 'flow': {}, 'evaluation': 0}
