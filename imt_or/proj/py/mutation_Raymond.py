@@ -74,12 +74,12 @@ def shift(L, start, end, insert_at):
 		cutrray.append(L[i])
 	for i in range(start-1,-1,-1):
 		rem_array.append(L[i])
-	if start != len(L):
+	if start != len(L) - 1:
 		print('say what')
-		for i in range(len(L),end,-1):
+		for i in range(len(L) - 1,end,-1):
 			rem_array.append(L[i])
 	else:
-		for i in range(end,len(L),1):
+		for i in range(end,len(L) - 1,1):
 			rem_array.append(L[i])
 	#print('Cut array'+ str(cutrray))
 	#print('Rem array'+ str(rem_array))
@@ -102,11 +102,11 @@ def shift_dis_inversion(L, start, end, insert_at):
 		cutrray.append(L[i])
 	for i in range(start-1,-1,-1):
 		rem_array.append(L[i])
-	if start != len(L):
-		for i in range(len(L),end,-1):
+	if start != len(L) - 1:
+		for i in range(len(L) - 1,end,-1):
 			rem_array.append(L[i])
 	else:
-		for i in range(end,len(L),1):
+		for i in range(end,len(L) - 1,1):
 			rem_array.append(L[i])
 	#print('Cut array'+ str(cutrray))
 	#print('Rem array'+ str(rem_array))

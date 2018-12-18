@@ -54,7 +54,7 @@ def min_max_rand_CO(parent_1, parent_2, length):
   for i in range(start_pos, end_pos):
     child1.append(parent_1[i])
   child2 = [item for item in parent_2 if item not in child1]
-  return child1, child2
+  return parent_2[:start_pos] + child1, child2
 
 
 

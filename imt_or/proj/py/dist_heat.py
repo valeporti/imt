@@ -11,7 +11,7 @@ import pprint as pp
 from operator import itemgetter, attrgetter
 import random
 
-# DATA
+""" # DATA
 excel_file = 'smalldata.xlsx'
 nodes_coord = helpers.read_excel_data(excel_file, 'NodesCord')
 number_of_nodes = len(nodes_coord)
@@ -36,114 +36,138 @@ DATA = {
   'source': helpers.read_excel_data(excel_file, 'SourceNum')[0][0] - 1,
   'distance': distance_matrix,
   'number_of_nodes': number_of_nodes
-}
+} """
 
 
 ## CONTSTANTS
-POPULATION_SIZE = 1000
-ITERATIONS = 20
-MINIMUM_IMPROVEMENT_TOLERANCE = 0.05
-MAX_STATIC_IMPROVEMENT = 7
+POPULATION_SIZE = 1
+ITERATIONS = 1
+MINIMUM_IMPROVEMENT_TOLERANCE = 0.02
+MAX_STATIC_IMPROVEMENT = 5
+CROSSOVER_SINGLE_POINT = 1
+CROSSOVER_SECOND_POINT = 2
+CROSSOVER_RAND_SINGLE_POINT = 3
 MUTATION_ALLELE_FLIP_OPT = 1
 MUTATION_INSERTION_OPT = 2
 MUTATION_DISPLACEMENT_OPT = 3
 MUTATION_INVERSMENT_OPT = 4
 MUTATION_DISPLACED_INVERSION_OPT = 5
 MUTATION_INVASIVE_ALLELE_FLIP_OPT = 6
+MUTATION_RAND_DISPLACEMENT = 7
+MUTATION_RAND_DISPLACED_INVERSION = 8
 KNOWN_BEST_ANSWER_FOR_SMALL_DATA = 26038797
 
+PROPOSED_CONFIG = {'elitism': 4, 'crossover': 43, 'mutation': 43, 'hybrid': 10 }
 
 ## GA Algorithm Implementation
-best_solutions = []
-proposed_config = {'elitism': 10, 'crossover': 40, 'mutation': 40, 'hybrid': 10 }
-tolerance_best  = 0
-best_solutions_opt_counter = 0
-start = time.time()
+def genetic_algorithm_district_heating (DATA, iterations, population_size, proposed_config = PROPOSED_CONFIG, first_CO = CROSSOVER_RAND_SINGLE_POINT, second_CO = CROSSOVER_SECOND_POINT, first_M = MUTATION_INVASIVE_ALLELE_FLIP_OPT, second_M = MUTATION_DISPLACED_INVERSION_OPT) :
 
-# POPULATION INITIALIZATION
-population = helpers.get_tree_based_population(POPULATION_SIZE, DATA['number_of_nodes'], DATA['source'])
+  start = time.time()
+  best_solutions = []
+  best_solutions_opt_counter = 0
 
-for i in range(ITERATIONS):
-
-  #arr1 = [1, 2, 3, 4, 5, 6]
-  #arr2 = [8, 9, 10, 11, 12, 13]
+  # POPULATION INITIALIZATION
+  population = helpers.get_tree_based_population(population_size, DATA['number_of_nodes'], DATA['source'])
   
-  #mutation.inv_and_or_disp_M(0, arr1, len(arr1))
-  #print(arr1)
+  for it in range(iterations):
 
-  from_individual = 0
-  new_population = []
-  
-  # EVALUATION OF INDIVUDUALS IN POPULATION
-  sum_evalutation = 0
-  for individual in population:
-    if (individual['evaluation'] != 0) : continue # already available flow, tree and evaluation values (elements form elitism)
-    helpers.generate_tree_flow(individual, DATA['source'])
-    individual['evaluation'] = evaluation.evaluate(individual, DATA)
-    sum_evalutation += individual['evaluation']
-  
-  #pp.pprint(population)
-
-  # SELECTION
-  sorted_population = sorted(population, key=itemgetter('evaluation'))
-  best_solutions.append(sorted_population[0])
-  probabilities = selection.get_probability_list(sum_evalutation, sorted_population)
-
-  from_individual = math.floor(proposed_config['elitism'] * POPULATION_SIZE / 100)
-  new_population = sorted_population[:from_individual]
-
-  # CROSSOVER
-  for i in range(from_individual, from_individual + math.floor(POPULATION_SIZE * (proposed_config['crossover'])/ 100), 2) :
-    index_parent_1 = selection.select_roulette(POPULATION_SIZE, probabilities, 0.5, probabilities[0])
-    index_parent_2 = selection.select_roulette(POPULATION_SIZE, probabilities, 0, probabilities[0])
-    children = crossover.crossover(0, sorted_population[index_parent_1]['prufer'], sorted_population[index_parent_2]['prufer'], DATA['number_of_nodes'] - 2)
-
-    new_population.append(helpers.create_new_individual())
-    new_population.append(helpers.create_new_individual())
-    new_population[i]['prufer'] = children[0]
-    new_population[i+1]['prufer'] = children[1]
+    """ arr1 = [1, 2, 3, 4, 5, 6]
+    arr2 = [8, 9, 10, 11, 12, 13]
     
-  # MUTATION
-  from_individual += math.floor(POPULATION_SIZE * (proposed_config['crossover'])/ 100)
-  for i in range(from_individual, from_individual + math.floor(POPULATION_SIZE * (proposed_config['mutation'])/ 100)) :
-    index_chromosome = selection.select_roulette(POPULATION_SIZE, probabilities, 0, probabilities[0])
-    chromosome = mutation.mutation(MUTATION_DISPLACED_INVERSION_OPT, sorted_population[index_chromosome]['prufer'], DATA['number_of_nodes'] - 2)
-    new_population.append(helpers.create_new_individual())
-    new_population[i]['prufer'] = chromosome
+    arr_new = mutation.mutation(7, arr1, len(arr1))
+    arr_new2 = mutation.mutation(3, arr1, len(arr1))
+    print('arr1.: ')
+    print(arr_new)
+    print(arr_new2)
+    children = crossover.crossover(4, arr1, arr2, len(arr1))
+    print(children) """
 
-  # HYBRID 2-opt
-  from_individual += math.floor(POPULATION_SIZE * (proposed_config['mutation'])/ 100)
-  for i in range(0, math.floor(POPULATION_SIZE * (proposed_config['hybrid'])/ 100)) :
-    index_chromosome = selection.select_roulette(POPULATION_SIZE, probabilities, 0.5, probabilities[0])
-    session_best_individual = sorted_population[index_chromosome].copy()
-    hybrid.opt_2(DATA, session_best_individual)
-    new_population.append(session_best_individual)
+    from_individual = 0
+    total_done = 0
+    new_population = []
+    
+    # EVALUATION OF INDIVUDUALS IN POPULATION
+    sum_evalutation = 0
+    for individual in population:
+      if (individual['evaluation'] != 0) : continue # already available flow, tree and evaluation values (elements form elitism)
+      helpers.generate_tree_flow(individual, DATA['source'])
+      individual['evaluation'] = evaluation.evaluate(individual, DATA)
+      sum_evalutation += individual['evaluation']
+    
+    # SELECTION
+    sorted_population = sorted(population, key=itemgetter('evaluation'))
+    best_solutions.append(sorted_population[0])
+    probabilities = selection.get_probability_list(sum_evalutation, sorted_population)
 
-  # NEXT GENERATION
-  #print('thispop')
-  #for n in range(2):
-  #  pp.pprint(sorted_population[n])
-  population = new_population[:]
+    from_individual = math.floor(proposed_config['elitism'] * population_size / 100)
+    new_population = sorted_population[:from_individual]
+    total_done += from_individual
+    
+    # CROSSOVER
+    total = math.floor(population_size * (proposed_config['crossover'])/ 100)
+    rand_single_limit = total / 2
+    crossover_index = 0
+    while (crossover_index < total) :
+      index_parent_1 = selection.select_roulette(population_size, probabilities, 0, probabilities[0])
+      index_parent_2 = selection.select_roulette(population_size, probabilities, 0, probabilities[0])
+      if (crossover_index < rand_single_limit) :
+        children = crossover.crossover(CROSSOVER_SINGLE_POINT, sorted_population[index_parent_1]['prufer'], sorted_population[index_parent_2]['prufer'], DATA['number_of_nodes'] - 2)
+      else :
+        children = crossover.crossover(CROSSOVER_SECOND_POINT, sorted_population[index_parent_1]['prufer'], sorted_population[index_parent_2]['prufer'], DATA['number_of_nodes'] - 2)
+      new_individual_1 = helpers.create_new_individual()
+      new_individual_2 = helpers.create_new_individual()
+      new_individual_1['prufer'] = children[0]
+      new_individual_2['prufer'] = children[1]
+      new_population.append(new_individual_1)
+      new_population.append(new_individual_2)
+      crossover_index += 2
+      total_done += 2
+    
+    # MUTATION
+    from_individual += math.floor(population_size * (proposed_config['crossover'])/ 100)
+    total = math.floor(population_size * (proposed_config['mutation'])/ 100)
+    invasive_mutation_limit = total / 2
+    mutation_index = 0
+    while mutation_index < total :
+      new_individual = helpers.create_new_individual()
+      index_chromosome = selection.select_roulette(population_size, probabilities, 0, probabilities[0])
+      if (mutation_index < invasive_mutation_limit) :
+        new_individual['prufer'] = mutation.mutation(MUTATION_INVASIVE_ALLELE_FLIP_OPT, sorted_population[index_chromosome]['prufer'], DATA['number_of_nodes'] - 2)
+      else :
+        new_individual['prufer'] = mutation.mutation(MUTATION_DISPLACED_INVERSION_OPT, sorted_population[index_chromosome]['prufer'], DATA['number_of_nodes'] - 2)
+      new_population.append(new_individual)
+      mutation_index += 1
+      total_done += 1
 
-  # TERMINATION CRITERIA
-  best_len = len(best_solutions)
-  tolerance_best += abs(best_solutions[best_len - 2]['evaluation'] - best_solutions[best_len - 1]['evaluation']) / best_solutions[best_len - 1]['evaluation']
-  #print(tolerance_best)
-  if (best_solutions[best_len - 1]['evaluation'] == best_solutions[best_len - 2]['evaluation']) :
-    best_solutions_opt_counter += 1
-  #elif (tolerance_best < MINIMUM_IMPROVEMENT_TOLERANCE):
-  #  best_solutions_opt_counter += 1
-  else :
-    best_solutions_opt_counter = 0
-    tolerance_best = 0
+    # HYBRID 2-opt
+    from_individual += math.floor(population_size * (proposed_config['mutation'])/ 100)
+    total = math.floor(population_size * (proposed_config['hybrid'])/ 100)
+    hybrid_index = 0
+    while hybrid_index < total : 
+      index_chromosome = selection.select_roulette(population_size, probabilities, 0, probabilities[0])
+      session_best_individual = sorted_population[index_chromosome].copy()
+      hybrid.opt_2(DATA, session_best_individual)
+      new_population.append(session_best_individual)
+      hybrid_index += 1
+      total_done += 1
+
+    # NEXT GENERATION
+    population = new_population[:]
+
+    # TERMINATION CRITERIA
+    best_len = len(best_solutions)
+    improvement_percentage = abs(best_solutions[best_len - 2]['evaluation'] - best_solutions[best_len - 1]['evaluation']) / best_solutions[best_len - 1]['evaluation']
+    if (improvement_percentage < MINIMUM_IMPROVEMENT_TOLERANCE) :
+      best_solutions_opt_counter += 1
+    else :
+      best_solutions_opt_counter = 0
+    
+    if best_solutions_opt_counter == MAX_STATIC_IMPROVEMENT : break # equal results in several iterations
+
+  end = time.time()
+
+  return { 'best': best_solutions, 'duration': end - start }
   
-  if best_solutions_opt_counter == MAX_STATIC_IMPROVEMENT : break
-
-for n in range(len(best_solutions)):
-  pp.pprint(best_solutions[n]['evaluation'])
-pp.pprint(best_solutions[len(best_solutions)-1])
-end = time.time()
-print(end - start)
 
 #for n in range(POPULATION_SIZE):
 #  pp.pprint(sorted_population[n]['evaluation'])
