@@ -4,7 +4,7 @@ import random
 def crossover(option, parent_1, parent_2, length) :
   children = []
   if (option == 0) :
-    choice = random.randint(0, 2)
+    choice = random.randint(0, 3)
     if (choice == 0) :
       children = single_point_CO(parent_1, parent_2, length)
     elif (choice == 1) :
@@ -12,15 +12,19 @@ def crossover(option, parent_1, parent_2, length) :
     elif (choice == 2) :
       children = rand_single_CO(parent_1, parent_2, length)
     elif (choice == 3) :
-      children = min_max_rand_CO(parent_1, parent_2, length)
+      children = rand_two_CO(parent_1, parent_2, length)
+    elif (choice == 4) :
+      children = uniform_CO(parent_1, parent_2, length)
   elif (option == 1) :
-    children = single_point_CO(parent_1, parent_2, length)
-  elif (option == 2) :
-    children = second_point_CO(parent_1, parent_2, length)
-  elif (option == 3) :
     children = rand_single_CO(parent_1, parent_2, length)
+  elif (option == 2) :
+    children = rand_two_CO(parent_1, parent_2, length)
+  elif (option == 3) :
+    children = uniform_CO(parent_1, parent_2, length)
   elif (option == 4) :
-    children = min_max_rand_CO(parent_1, parent_2, length)
+    children = single_point_CO(parent_1, parent_2, length)
+  elif (option == 5) :
+    children = second_point_CO(parent_1, parent_2, length)
   else :
     print('else')
 
@@ -44,21 +48,26 @@ def rand_single_CO(parent_1, parent_2, length):
   pos = random.randint(0, length)
   return parent_1[:pos] + parent_2[pos:], parent_2[:pos] + parent_1[pos:]
 
-def min_max_rand_CO(parent_1, parent_2, length):
+def rand_two_CO(parent_1, parent_2, length):
   pos_a = random.randint(0, length)
   pos_b = random.randint(0, length)
-  child1 = []
-  child2 = []
   start_pos = min(pos_a, pos_b)
   end_pos = max(pos_a, pos_b)
-  for i in range(start_pos, end_pos):
-    child1.append(parent_1[i])
-  child2 = [item for item in parent_2 if item not in child1]
-  return parent_2[:start_pos] + child1, child2
+  child_1 = parent_1[:start_pos] + parent_2[start_pos:end_pos] + parent_1[end_pos:]
+  child_2 = parent_2[:start_pos] + parent_1[start_pos:end_pos] + parent_2[end_pos:]
+  return child_1, child_2
 
+def uniform_CO(parent_1, parent_2, length):
+  arr = [random.randint(0,1) for i in range(length)]
+  child_1 = []
+  child_2 = []
+  for i in range(length) :
+    if (arr[i] == 1) :
+      child_1.append(parent_1[i])
+      child_2.append(parent_2[i])
+    else :
+      child_1.append(parent_2[i])
+      child_2.append(parent_1[i])
+  return child_1, child_2
 
-
-#def k_point_CO(parent_1, parent_2, length, k):
-#  len_point = math.floor(length / k)
-#  if (len_point == 0) : return parent_1, parent_2
  

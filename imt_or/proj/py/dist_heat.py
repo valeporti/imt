@@ -43,10 +43,13 @@ DATA = {
 POPULATION_SIZE = 1
 ITERATIONS = 1
 MINIMUM_IMPROVEMENT_TOLERANCE = 0.02
-MAX_STATIC_IMPROVEMENT = 5
-CROSSOVER_SINGLE_POINT = 1
-CROSSOVER_SECOND_POINT = 2
-CROSSOVER_RAND_SINGLE_POINT = 3
+MAX_STATIC_IMPROVEMENT = 7
+CROSSOVER_RAND_SINGLE_POINT = 1
+CROSSOVER_RAND_TWO_POINT = 2
+CROSSOVER_UNIFORM = 3
+CROSSOVER_SINGLE_POINT = 4
+CROSSOVER_TWO_POINT = 5
+CROSSOVER_UNIFORM = 3
 MUTATION_ALLELE_FLIP_OPT = 1
 MUTATION_INSERTION_OPT = 2
 MUTATION_DISPLACEMENT_OPT = 3
@@ -60,7 +63,7 @@ KNOWN_BEST_ANSWER_FOR_SMALL_DATA = 26038797
 PROPOSED_CONFIG = {'elitism': 4, 'crossover': 43, 'mutation': 43, 'hybrid': 10 }
 
 ## GA Algorithm Implementation
-def genetic_algorithm_district_heating (DATA, iterations, population_size, proposed_config = PROPOSED_CONFIG, first_CO = CROSSOVER_RAND_SINGLE_POINT, second_CO = CROSSOVER_SECOND_POINT, first_M = MUTATION_INVASIVE_ALLELE_FLIP_OPT, second_M = MUTATION_DISPLACED_INVERSION_OPT) :
+def genetic_algorithm_district_heating (DATA, iterations, population_size, hybrid_outside, proposed_config = PROPOSED_CONFIG, first_CO = CROSSOVER_RAND_TWO_POINT, second_CO = CROSSOVER_RAND_TWO_POINT, first_M = MUTATION_INVASIVE_ALLELE_FLIP_OPT, second_M = MUTATION_DISPLACED_INVERSION_OPT) :
 
   start = time.time()
   best_solutions = []
@@ -68,7 +71,9 @@ def genetic_algorithm_district_heating (DATA, iterations, population_size, propo
 
   # POPULATION INITIALIZATION
   population = helpers.get_tree_based_population(population_size, DATA['number_of_nodes'], DATA['source'])
-  
+  sorted_population = []
+  probabilities = []
+
   for it in range(iterations):
 
     """ arr1 = [1, 2, 3, 4, 5, 6]
@@ -79,7 +84,7 @@ def genetic_algorithm_district_heating (DATA, iterations, population_size, propo
     print('arr1.: ')
     print(arr_new)
     print(arr_new2)
-    children = crossover.crossover(4, arr1, arr2, len(arr1))
+    children = crossover.crossover(5, arr1, arr2, len(arr1))
     print(children) """
 
     from_individual = 0
@@ -111,9 +116,9 @@ def genetic_algorithm_district_heating (DATA, iterations, population_size, propo
       index_parent_1 = selection.select_roulette(population_size, probabilities, 0, probabilities[0])
       index_parent_2 = selection.select_roulette(population_size, probabilities, 0, probabilities[0])
       if (crossover_index < rand_single_limit) :
-        children = crossover.crossover(CROSSOVER_SINGLE_POINT, sorted_population[index_parent_1]['prufer'], sorted_population[index_parent_2]['prufer'], DATA['number_of_nodes'] - 2)
+        children = crossover.crossover(first_CO, sorted_population[index_parent_1]['prufer'], sorted_population[index_parent_2]['prufer'], DATA['number_of_nodes'] - 2)
       else :
-        children = crossover.crossover(CROSSOVER_SECOND_POINT, sorted_population[index_parent_1]['prufer'], sorted_population[index_parent_2]['prufer'], DATA['number_of_nodes'] - 2)
+        children = crossover.crossover(second_CO, sorted_population[index_parent_1]['prufer'], sorted_population[index_parent_2]['prufer'], DATA['number_of_nodes'] - 2)
       new_individual_1 = helpers.create_new_individual()
       new_individual_2 = helpers.create_new_individual()
       new_individual_1['prufer'] = children[0]
@@ -132,24 +137,25 @@ def genetic_algorithm_district_heating (DATA, iterations, population_size, propo
       new_individual = helpers.create_new_individual()
       index_chromosome = selection.select_roulette(population_size, probabilities, 0, probabilities[0])
       if (mutation_index < invasive_mutation_limit) :
-        new_individual['prufer'] = mutation.mutation(MUTATION_INVASIVE_ALLELE_FLIP_OPT, sorted_population[index_chromosome]['prufer'], DATA['number_of_nodes'] - 2)
+        new_individual['prufer'] = mutation.mutation(first_M, sorted_population[index_chromosome]['prufer'], DATA['number_of_nodes'] - 2)
       else :
-        new_individual['prufer'] = mutation.mutation(MUTATION_DISPLACED_INVERSION_OPT, sorted_population[index_chromosome]['prufer'], DATA['number_of_nodes'] - 2)
+        new_individual['prufer'] = mutation.mutation(second_M, sorted_population[index_chromosome]['prufer'], DATA['number_of_nodes'] - 2)
       new_population.append(new_individual)
       mutation_index += 1
       total_done += 1
 
     # HYBRID 2-opt
-    from_individual += math.floor(population_size * (proposed_config['mutation'])/ 100)
-    total = math.floor(population_size * (proposed_config['hybrid'])/ 100)
-    hybrid_index = 0
-    while hybrid_index < total : 
-      index_chromosome = selection.select_roulette(population_size, probabilities, 0, probabilities[0])
-      session_best_individual = sorted_population[index_chromosome].copy()
-      hybrid.opt_2(DATA, session_best_individual)
-      new_population.append(session_best_individual)
-      hybrid_index += 1
-      total_done += 1
+    if (not hybrid_outside) :
+      from_individual += math.floor(population_size * (proposed_config['mutation'])/ 100)
+      total = math.floor(population_size * (proposed_config['hybrid'])/ 100)
+      hybrid_index = 0
+      while hybrid_index < total : 
+        index_chromosome = selection.select_roulette(population_size, probabilities, 0, probabilities[0])
+        session_best_individual = sorted_population[index_chromosome].copy()
+        session_best_individual = hybrid.opt_2(DATA, session_best_individual)
+        new_population.append(session_best_individual)
+        hybrid_index += 1
+        total_done += 1
 
     # NEXT GENERATION
     population = new_population[:]
@@ -163,6 +169,29 @@ def genetic_algorithm_district_heating (DATA, iterations, population_size, propo
       best_solutions_opt_counter = 0
     
     if best_solutions_opt_counter == MAX_STATIC_IMPROVEMENT : break # equal results in several iterations
+
+  # last evaluation
+  sum_evalutation = 0
+  for individual in population:
+    if (individual['evaluation'] != 0) : continue # already available flow, tree and evaluation values (elements form elitism)
+    helpers.generate_tree_flow(individual, DATA['source'])
+    individual['evaluation'] = evaluation.evaluate(individual, DATA)
+    sum_evalutation += individual['evaluation']
+
+  sorted_population = sorted(population, key=itemgetter('evaluation'))
+  best_solutions.append(sorted_population[0])
+  
+  if (hybrid_outside) :
+    probabilities = selection.get_probability_list(sum_evalutation, sorted_population)
+    total = math.floor(population_size * (hybrid_outside)/ 100)
+    hybrid_index = 0
+    while hybrid_index < total : 
+      index_chromosome = selection.select_roulette(len(sorted_population), probabilities, 0, probabilities[0])
+      session_best_individual = sorted_population[index_chromosome]
+      hybrid.opt_2(DATA, session_best_individual)
+      hybrid_index += 1
+    sorted_population = sorted(population, key=itemgetter('evaluation'))
+    best_solutions.append(sorted_population[0])
 
   end = time.time()
 

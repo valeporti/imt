@@ -2,6 +2,7 @@ import pandas
 import numpy
 import pprint
 import pylab as pl
+import os
 import matplotlib.pyplot as plt
 
 big_data = [

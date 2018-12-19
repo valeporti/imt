@@ -5,7 +5,7 @@ def select_roulette(size, probabilities, min_percentage, max_percentage):
   for j in range (size) :
     if (j + 1 < size and rand > probabilities[j + 1]) :
       return j
-    if (j + 1 == size):
+    elif (j + 1 == size):
       return j
 
 def get_probability_list(total_fit, population):
