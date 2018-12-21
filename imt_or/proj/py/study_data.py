@@ -15,67 +15,79 @@ FILE_3_SUB = 'figures/no_hybrid_dyn_CO_M/'
 # best configuration M [1,1], [6,1], []
 FILE_4 = 'data/genetic_hybrid_study_out_in.pkl'
 FILE_4_SUB = 'figures/hybrid_out_in/'
-FILE_5 = 'data/opt_genetic_hybrid_study_out_in.pkl'
-FILE_5_SUB = 'figures/opt_hybrid_out_in/'
-FILE_6 = 'data/opt_genetic_study_test_methods_0hybrid.pkl'
-FILE_6_SUB = 'figures/opt_test_methods_0hybrid/'
+
+FILE_5 = 'data/err_ga_st_hyout_hyin.pkl'
+FILE_5_SUB = 'figures/err_ga_st_hyout_hyin/' #opt_hybrid_out_in
+
+## FROM HERE!!!! (BEFORE ERRORS)
+FILE_6 = 'data/ga_st_NOhybrids_methods_study.pkl'
+FILE_6_SUB = 'figures/ga_st_NOhybrids_methods_study/' #opt_test_methods_0hybrid
 # best configuration CO [2,3]
 # best configuration M [1,1], [4,1], []
-FILE_7 = 'data/opt_genetic_hybrid_study_out_in_none.pkl'
-FILE_7_SUB = 'figures/opt_hybrid_out_in_none/'
-FILE_8 = 'data/study_various_repetitions.pkl'
-FILE_8_SUB = 'figures/study_various_repetitions/'
+FILE_7 = 'data/ga_st_hyout_hyin_hynone.pkl'
+FILE_7_SUB = 'figures/ga_st_hyout_hyin_hynone/' #opt_hybrid_out_in_none
+FILE_8 = 'data/err_study_various_repetitions.pkl'
+FILE_8_SUB = 'figures/err_study_various_repetitions/'#study_various_repetitions
 FILE_9 = 'data/opt_study_various_repetitions.pkl'
 FILE_9_SUB = 'figures/opt_study_various_repetitions/'
-FILE_10 = 'data/opt_duration_study_various_repetitions.pkl'
-FILE_10_SUB = 'figures/opt_duration_study_various_repetitions/'
+FILE_10 = 'data/ga_st_repeat_conf_300_smalldata.pkl'
+FILE_10_SUB = 'figures/ga_st_repeat_conf_300_smalldata/' #opt_duration_study_various_repetitions
 
+FILE_11 = 'data/ga_st_repeat_conf_50_largedata.pkl'
+FILE_11_SUB = 'figures/ga_st_repeat_conf_50_largedata/' #opt_study_50_large
+
+FILE_12 = 'data/ga_st_repeat_conf_20_smalldata.pkl'
+FILE_12_SUB = 'figures/ga_st_repeat_conf_20_smalldata/' #opt_pop_small_20try
+#See if method has a lot of influence
+FILE_13 = 'data/opt_pop_large_10try_invasiveflip.pkl'
+FILE_13_SUB = 'figures/opt_pop_large_10try_invasiveflip/'
+
+FILE_14 = 'data/ga_st_2000_pop_largedata.pkl'
+FILE_14_SUB = 'figures/ga_st_2000_pop_largedata/' #opt_pop_large_10try
+# populations small
+FILE_15 = 'data/pop_100_small.pkl'
+FILE_15_SUB = 'figures/pop_100_small/'
+FILE_16 = 'data/pop_200_small.pkl'
+FILE_16_SUB = 'figures/pop_200_small/'
+FILE_17 = 'data/pop_300_small.pkl'
+FILE_17_SUB = 'figures/pop_300_small/'
+FILE_18 = 'data/pop_2050_large.pkl'
+FILE_18_SUB = 'figures/pop_2050_large/'
 
 figures_directory = FILE_9_SUB
-data_directory = FILE_9
+data_directory = FILE_14
 
-if not os.path.exists(figures_directory):
-  os.makedirs(figures_directory)
+""" if not os.path.exists(figures_directory):
+  os.makedirs(figures_directory) """
 
 df = pandas.read_pickle(data_directory)
 
+print(df.describe())
+
+
+# STUDY VARIOUS REPETITIONS DIFFETENT POPULATION
+# for small data
+""" df1 = pandas.read_pickle(FILE_15)
+df2 = pandas.read_pickle(FILE_16)
+df3 = pandas.read_pickle(FILE_17)
+print(df3.describe()) """
+# for large data
+""" df1 = pandas.read_pickle(FILE_14)
+df2 = pandas.read_pickle(FILE_11)
+df3 = pandas.read_pickle(FILE_18)
+frames = [df1, df2, df3]
+df = pandas.concat(frames)
+df.boxplot(column='evaluation', by=['population'])
+plt.savefig(figures_directory + 'boxplot_pop_small.eps', dpi=100)
+pprint.pprint(df3['best'][0])
+print(df3.describe  """
+
 #%%cell
 # STUDY VARIOUS REPETITIONS SAME CONFIGURATION
-df.boxplot(column='evaluation')
+""" df.boxplot(column='evaluation')
 plt.savefig(figures_directory + 'boxplot_small.eps', dpi=100)
-#print(df.describe())
-#eval_col = df['evaluation']
-#print(eval_col.describe())
-#print(eval_col.describe()['min'])
-#df['count'] = df.groupby('evaluation').value()
-#print(df)
-
-
-grouped = df.groupby(['evaluation']).size()
-
-print(grouped)
-print(df['evaluation'].min())
-plt.figure()
-print(grouped.values)
-""" grouped.hist()
-plt.savefig(figures_directory + 'histrogram.eps', dpi=100) """
-grouped.plot.scatter(x='evaluation', y='hybrid')
-plt.figure()
-plt.savefig(figures_directory + 'scatter.pdf', dpi=100)
-
-
-""" frequency = np.array(df['evaluation'].value_counts())
-freq_vals = np.array(frequency.index.tolist())
-freq_index = range(len(frequency))
-freq_s = pandas.Series(freq_vals, index=freq_index)
-
-#freq_df = pandas.DataFrame(data=[np.array(freq_vals), np.array(frequency.values)], index=freq_index, columns=['evaluation', 'count'])
-
-#frequency.hist(range=None, normed=False, weights=None)
-#plt.savefig(figures_directory + 'histrogram.eps', dpi=100)
-#x = frequency[0] """
-
-
+print(df)
+print(df.describe()) """
 
 #%%cell
 # STUDY HYBRID

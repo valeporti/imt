@@ -3,6 +3,33 @@ import random
 import math
 #from sympy.combinatorics.prufer import Prufer
 
+def get_data(file_name):
+  excel_file = file_name
+  nodes_coord = read_excel_data(excel_file, 'NodesCord')
+  number_of_nodes = len(nodes_coord)
+  distance_matrix = distance_between_edges_matrix(nodes_coord, number_of_nodes)
+  return {
+    'c_rev': read_excel_data(excel_file, 'crev'),
+    'c_om': read_excel_data(excel_file, 'com'),
+    'c_heat': read_excel_data(excel_file, 'cheat'),
+    'c_var': read_excel_data(excel_file, 'cvar'),
+    'c_fix': read_excel_data(excel_file, 'cfix'),
+    'p_umd': read_excel_data(excel_file, 'pumd'),
+    'v_var': read_excel_data(excel_file, 'vvar'),
+    'v_fix': read_excel_data(excel_file, 'vfix'),
+    'T_flh': read_excel_data(excel_file, 'Tflh')[0][0],
+    'Betta': read_excel_data(excel_file, 'Betta')[0][0],
+    'Lamda': read_excel_data(excel_file, 'Gamma')[0][0],
+    'Alpha': read_excel_data(excel_file, 'Alpha')[0][0],
+    'edges_peak_demand': read_excel_data(excel_file, 'EdgesDemandPeak'),
+    'edges_annual_demand': read_excel_data(excel_file, 'EdgesDemandAnnual'),
+    'C_max': read_excel_data(excel_file, 'Cmax'),
+    'Q_max': read_excel_data(excel_file, 'SourceMaxCap')[0][0],
+    'source': read_excel_data(excel_file, 'SourceNum')[0][0] - 1,
+    'distance': distance_matrix,
+    'number_of_nodes': number_of_nodes
+  }
+
 # DATA FUNCTIONS
 def read_excel_data(filename, sheet_name):
   data = pd.read_excel(filename, sheet_name=sheet_name, header=None)

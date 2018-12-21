@@ -3,7 +3,6 @@ import evaluation
 import crossover
 import selection
 import mutation
-import mutation_Raymond
 import math
 import time
 import hybrid
@@ -101,6 +100,7 @@ def genetic_algorithm_district_heating (DATA, iterations, population_size, hybri
     
     # SELECTION
     sorted_population = sorted(population, key=itemgetter('evaluation'))
+    len_sorted_pop = len(sorted_population)
     best_solutions.append(sorted_population[0])
     probabilities = selection.get_probability_list(sum_evalutation, sorted_population)
 
@@ -113,8 +113,8 @@ def genetic_algorithm_district_heating (DATA, iterations, population_size, hybri
     rand_single_limit = total / 2
     crossover_index = 0
     while (crossover_index < total) :
-      index_parent_1 = selection.select_roulette(population_size, probabilities, 0, probabilities[0])
-      index_parent_2 = selection.select_roulette(population_size, probabilities, 0, probabilities[0])
+      index_parent_1 = selection.select_roulette(len_sorted_pop, probabilities, 0, probabilities[0])
+      index_parent_2 = selection.select_roulette(len_sorted_pop, probabilities, 0, probabilities[0])
       if (crossover_index < rand_single_limit) :
         children = crossover.crossover(first_CO, sorted_population[index_parent_1]['prufer'], sorted_population[index_parent_2]['prufer'], DATA['number_of_nodes'] - 2)
       else :
@@ -135,7 +135,7 @@ def genetic_algorithm_district_heating (DATA, iterations, population_size, hybri
     mutation_index = 0
     while mutation_index < total :
       new_individual = helpers.create_new_individual()
-      index_chromosome = selection.select_roulette(population_size, probabilities, 0, probabilities[0])
+      index_chromosome = selection.select_roulette(len_sorted_pop, probabilities, 0, probabilities[0])
       if (mutation_index < invasive_mutation_limit) :
         new_individual['prufer'] = mutation.mutation(first_M, sorted_population[index_chromosome]['prufer'], DATA['number_of_nodes'] - 2)
       else :
@@ -150,7 +150,7 @@ def genetic_algorithm_district_heating (DATA, iterations, population_size, hybri
       total = math.floor(population_size * (proposed_config['hybrid'])/ 100)
       hybrid_index = 0
       while hybrid_index < total : 
-        index_chromosome = selection.select_roulette(population_size, probabilities, 0, probabilities[0])
+        index_chromosome = selection.select_roulette(len_sorted_pop, probabilities, 0, probabilities[0])
         session_best_individual = sorted_population[index_chromosome].copy()
         session_best_individual = hybrid.opt_2(DATA, session_best_individual)
         new_population.append(session_best_individual)
