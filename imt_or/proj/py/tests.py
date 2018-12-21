@@ -4,13 +4,14 @@ import pprint as pp
 import pandas 
 import numpy
 import math
+import os
 from operator import itemgetter, attrgetter
-import pylab as pl
+#import pylab as pl
 import matplotlib.pyplot as plt
 import time
 
 # DATA
-excel_file = 'smalldata.xlsx'
+excel_file = 'largedata.xlsx'
 nodes_coord = helpers.read_excel_data(excel_file, 'NodesCord')
 number_of_nodes = len(nodes_coord)
 distance_matrix = helpers.distance_between_edges_matrix(nodes_coord, number_of_nodes)
@@ -36,10 +37,9 @@ DATA = {
   'number_of_nodes': number_of_nodes
 }
 
-
 ## CONTSTANTS
-POPULATION_SIZE = 300 # 100 * round(math.log(number_of_nodes^2.5))
-ITERATIONS = 20
+POPULATION_SIZE = math.ceil(number_of_nodes**2 * (2/3) * math.log(number_of_nodes) / 10) * 10
+ITERATIONS = 6 * math.floor(math.log(number_of_nodes))
 MINIMUM_IMPROVEMENT_TOLERANCE = 0.02
 MAX_STATIC_IMPROVEMENT = 5
 CROSSOVER_RAND_SINGLE_POINT = 1
@@ -49,37 +49,116 @@ CROSSOVER_SINGLE_POINT = 4
 CROSSOVER_TWO_POINT = 5
 MUTATION_ALLELE_FLIP = 1
 MUTATION_INSERTION = 2
-MUTATION_DISPLACEMENT = 3
-MUTATION_INVERSMENT = 4
-MUTATION_DISPLACED_INVERSION = 5
+MUTATION_DISPLACEMENT = 3 #
+MUTATION_INVERSION = 4
+MUTATION_DISPLACED_INVERSION = 5 #
 MUTATION_INVASIVE_ALLELE_FLIP = 6
 MUTATION_RAND_DISPLACEMENT = 7
 MUTATION_RAND_DISPLACED_INVERSION = 8
 KNOWN_BEST_ANSWER_FOR_SMALL_DATA = 26038797
-PROPOSED_CONFIG = {'elitism': 10, 'crossover': 40, 'mutation': 40, 'hybrid': 10 }
+PROPOSED_CONFIG = {'elitism': 10, 'crossover': 52, 'mutation': 28, 'hybrid': 10 }
 
 
 # try with percentages of elite, crossover, mutatuon, elitism
 # try with different combinations of algorithms for mutation and crossover
 
+def run_GA(tries, DATA, C_1, C_2, M_1, M_2, itera, pop_size, hy_out, conf, dir, file) :
+  all_iterations = []
+
+  for i in range(tries) :
+    # Defined configuration, several tries
+    results = dist_heat.genetic_algorithm_district_heating(DATA, itera, pop_size, hy_out, conf, C_1, C_2, M_1, M_2)
+    best_solutions = results['best']
+    best_solutions = sorted(best_solutions, key=itemgetter('evaluation'))
+    all_iterations.append({'crossover': conf['crossover'], 'mutation': conf['mutation'],'crossover_1': C_1,'crossover_2': C_2,'mutation_1': M_1, 'mutation_2': M_2,'elitism': conf['elitism'],'hybrid': conf['hybrid'],'hybrid_outside' : hy_out, 'best': best_solutions[0], 'duration': results['duration'], 'evaluation': best_solutions[0]['evaluation'],'population': pop_size,'iterations': itera,})
+    print('eval best solution: ' + str(best_solutions[0]['evaluation']))
+    print('duration: ' + str(results['duration']))
+    print('try #' + str(i))
+  
+  if not os.path.exists(dir + '/'):
+    os.makedirs(dir + '/')
+
+  all_iterations = sorted(all_iterations, key=itemgetter('evaluation'))
+  series_big_data = pandas.Series(all_iterations)
+  data_frame_big_data = pandas.DataFrame(all_iterations, index=series_big_data.index, columns=['evaluation', 'best', 'population', 'iterations', 'duration', 'hybrid', 'hybrid_outside', 'mutation', 'elitism', 'crossover', 'crossover_1', 'crossover_2', 'mutation_1', 'mutation_2'])
+  data_frame_big_data.to_pickle(dir + '/' + file + '.pkl')
+
 #%%cell
 # ONE TRY
-""" results = dist_heat.genetic_algorithm_district_heating(DATA, 
-  1, # iterations
-  300, # population size
+"""
+chosen_crossover_algorithms = [CROSSOVER_RAND_TWO_POINT, CROSSOVER_UNIFORM] #2,3
+chosen_mutation_algorithms = [MUTATION_INVERSION, MUTATION_ALLELE_FLIP]
+
+ start = time.time()
+results = dist_heat.genetic_algorithm_district_heating(DATA, 
+  ITERATIONS, # iterations
+  POPULATION_SIZE, # population size
   0, # HYBRID_OUTSIDE 0 -> FALSE [1 - 100]%
   PROPOSED_CONFIG, 
-  CROSSOVER_SINGLE_POINT, 
-  CROSSOVER_RAND_SINGLE_POINT, 
-  MUTATION_RAND_DISPLACEMENT, 
-  MUTATION_RAND_DISPLACEMENT)
-pp.pprint(results['best']) """
+  chosen_crossover_algorithms[0], 
+  chosen_crossover_algorithms[1], 
+  chosen_mutation_algorithms[0], 
+  chosen_mutation_algorithms[1])
+best_solutions = results['best']
+best_solutions = sorted(best_solutions, key=itemgetter('evaluation'))
+pp.pprint(best_solutions[0])
+print(POPULATION_SIZE)
+print(ITERATIONS)
+end = time.time()
+print('duration: ' + str(end-start))
+ """
+#%%cell
+
+""" TRIES = 20
+all_iterations = []
+chosen_crossover_algorithms = [CROSSOVER_RAND_TWO_POINT, CROSSOVER_UNIFORM] #2,3
+chosen_mutation_algorithms = [MUTATION_INVERSION, MUTATION_ALLELE_FLIP]
+
+for i in range(TRIES) :
+  # Defined configuration, several tries
+  results = dist_heat.genetic_algorithm_district_heating(DATA, 
+    ITERATIONS, # iterations
+    4000, # population size
+    0, # HYBRID_OUTSIDE 0 -> FALSE [1 - 100]%
+    PROPOSED_CONFIG, 
+    chosen_crossover_algorithms[0], 
+    chosen_crossover_algorithms[1], 
+    chosen_mutation_algorithms[0], 
+    chosen_mutation_algorithms[1])
+  best_solutions = results['best']
+  best_solutions = sorted(best_solutions, key=itemgetter('evaluation'))
+  all_iterations.append({
+      'crossover': PROPOSED_CONFIG['crossover'], 
+      'mutation': PROPOSED_CONFIG['mutation'],
+      'crossover_1': chosen_crossover_algorithms[0],
+      'crossover_2': chosen_crossover_algorithms[1],
+      'mutation_1': chosen_mutation_algorithms[0], 
+      'mutation_2': chosen_mutation_algorithms[1],
+      'elitism': PROPOSED_CONFIG['elitism'],
+      'hybrid': PROPOSED_CONFIG['hybrid'],
+      'hybrid_outside' : 0,
+      'best': best_solutions[0], 
+      'duration': results['duration'], 
+      'evaluation': best_solutions[0]['evaluation'],
+      'population': POPULATION_SIZE,
+      'iterations': ITERATIONS,
+    })
+  print(best_solutions[0]['evaluation'])
+  print(results['duration'])
+  print(i)
+
+all_iterations = sorted(all_iterations, key=itemgetter('evaluation'))
+
+series_big_data = pandas.Series(all_iterations)
+data_frame_big_data = pandas.DataFrame(all_iterations, index=series_big_data.index, columns=['evaluation', 'best', 'population', 'iterations', 'duration', 'hybrid', 'hybrid_outside', 'mutation', 'elitism', 'crossover', 'crossover_1', 'crossover_2', 'mutation_1', 'mutation_2'])
+
+data_frame_big_data.to_pickle('data/proposed_study2.pkl') """
 
 
 #%%cell
 # STUDY HYBRID
-chosen_crossover_algorithms = [CROSSOVER_RAND_TWO_POINT, CROSSOVER_UNIFORM] #2,3
-chosen_mutation_algorithms = [CROSSOVER_SINGLE_POINT, MUTATION_ALLELE_FLIP] #4,1
+""" chosen_crossover_algorithms = [CROSSOVER_RAND_TWO_POINT, CROSSOVER_UNIFORM] #2,3
+chosen_mutation_algorithms = [MUTATION_INVERSION, MUTATION_ALLELE_FLIP] #4,1
 
 big_data = []
 
@@ -183,14 +262,14 @@ sorted_big_data = sorted(big_data, key=itemgetter('evaluation'))
 series_big_data = pandas.Series(sorted_big_data)
 data_frame_big_data = pandas.DataFrame(sorted_big_data, index=series_big_data.index, columns=['evaluation', 'hybrid', 'hybrid_outside', 'mutation', 'elitism', 'crossover', 'crossover_1', 'crossover_2', 'mutation_1', 'mutation_2'])
 
-data_frame_big_data.to_pickle('data/genetic_hybrid_study.pkl')
+data_frame_big_data.to_pickle('data/genetic_hybrid_study.pkl') """
 
 #%%cell
 # FIND BEST METHODS AND CONFIGURATION
 """ TRIES = 3
 
 available_crossover_algorithms = [CROSSOVER_RAND_SINGLE_POINT, CROSSOVER_RAND_TWO_POINT, CROSSOVER_UNIFORM]
-available_mutation_algorithms = [MUTATION_ALLELE_FLIP, MUTATION_INSERTION, MUTATION_DISPLACEMENT, MUTATION_INVERSMENT, MUTATION_DISPLACED_INVERSION, MUTATION_INVASIVE_ALLELE_FLIP, MUTATION_RAND_DISPLACEMENT, MUTATION_RAND_DISPLACED_INVERSION]
+available_mutation_algorithms = [MUTATION_ALLELE_FLIP, MUTATION_INSERTION, MUTATION_DISPLACEMENT, MUTATION_INVERSION, MUTATION_DISPLACED_INVERSION, MUTATION_INVASIVE_ALLELE_FLIP, MUTATION_RAND_DISPLACEMENT, MUTATION_RAND_DISPLACED_INVERSION]
 
 big_data = []
 

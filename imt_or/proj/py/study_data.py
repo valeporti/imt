@@ -22,10 +22,17 @@ FILE_6_SUB = 'figures/opt_test_methods_0hybrid/'
 # best configuration CO [2,3]
 # best configuration M [1,1], [4,1], []
 FILE_7 = 'data/opt_genetic_hybrid_study_out_in_none.pkl'
-FILE_7_SUB = 'figures/opt_hybrid_out_in_none'
+FILE_7_SUB = 'figures/opt_hybrid_out_in_none/'
+FILE_8 = 'data/study_various_repetitions.pkl'
+FILE_8_SUB = 'figures/study_various_repetitions/'
+FILE_9 = 'data/opt_study_various_repetitions.pkl'
+FILE_9_SUB = 'figures/opt_study_various_repetitions/'
+FILE_10 = 'data/opt_duration_study_various_repetitions.pkl'
+FILE_10_SUB = 'figures/opt_duration_study_various_repetitions/'
 
-figures_directory = FILE_7_SUB
-data_directory = FILE_7
+
+figures_directory = FILE_9_SUB
+data_directory = FILE_9
 
 if not os.path.exists(figures_directory):
   os.makedirs(figures_directory)
@@ -33,10 +40,48 @@ if not os.path.exists(figures_directory):
 df = pandas.read_pickle(data_directory)
 
 #%%cell
+# STUDY VARIOUS REPETITIONS SAME CONFIGURATION
+df.boxplot(column='evaluation')
+plt.savefig(figures_directory + 'boxplot_small.eps', dpi=100)
+#print(df.describe())
+#eval_col = df['evaluation']
+#print(eval_col.describe())
+#print(eval_col.describe()['min'])
+#df['count'] = df.groupby('evaluation').value()
+#print(df)
+
+
+grouped = df.groupby(['evaluation']).size()
+
+print(grouped)
+print(df['evaluation'].min())
+plt.figure()
+print(grouped.values)
+""" grouped.hist()
+plt.savefig(figures_directory + 'histrogram.eps', dpi=100) """
+grouped.plot.scatter(x='evaluation', y='hybrid')
+plt.figure()
+plt.savefig(figures_directory + 'scatter.pdf', dpi=100)
+
+
+""" frequency = np.array(df['evaluation'].value_counts())
+freq_vals = np.array(frequency.index.tolist())
+freq_index = range(len(frequency))
+freq_s = pandas.Series(freq_vals, index=freq_index)
+
+#freq_df = pandas.DataFrame(data=[np.array(freq_vals), np.array(frequency.values)], index=freq_index, columns=['evaluation', 'count'])
+
+#frequency.hist(range=None, normed=False, weights=None)
+#plt.savefig(figures_directory + 'histrogram.eps', dpi=100)
+#x = frequency[0] """
+
+
+
+#%%cell
 # STUDY HYBRID
-print(df)
-df.boxplot(column='evaluation', by=['hybrid', 'hybrid_outside'])
-plt.savefig(figures_directory + 'boxplot_hybrid.eps', dpi=100)
+
+""" df.boxplot(column='evaluation', by=['hybrid', 'hybrid_outside'])
+plt.savefig(figures_directory + 'boxplot_hybrid.eps', dpi=100) """
 
 #%%cell
 # STUDY CROSSOVER FILES 1-3

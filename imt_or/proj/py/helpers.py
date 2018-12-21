@@ -1,7 +1,7 @@
 import pandas as pd
 import random
 import math
-from sympy.combinatorics.prufer import Prufer
+#from sympy.combinatorics.prufer import Prufer
 
 # DATA FUNCTIONS
 def read_excel_data(filename, sheet_name):

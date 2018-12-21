@@ -215,5 +215,5 @@ plt.savefig('figures/scatter-eval-elit'+'.pdf', dpi=100)
 
 data_frame_big_data.to_pickle('data/genetic_study.pkl')
 
-new_data = pandas.read_pickle('data/genetic_study.pkl')
+new_data = pandas.read_pickle('data/proposed_study.pkl')
 print(new_data)
