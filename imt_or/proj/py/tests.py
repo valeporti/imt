@@ -63,6 +63,10 @@ PROPOSED_CONFIG = {'elitism': 10, 'crossover': 52, 'mutation': 28, 'hybrid': 10 
 # try with different combinations of algorithms for mutation and crossover
 
 def run_GA(tries, DATA, C_1, C_2, M_1, M_2, itera, pop_size, hy_out, conf, dir, file) :
+  
+  if not os.path.exists(dir + '/'):
+    os.makedirs(dir + '/')
+  
   all_iterations = []
 
   for i in range(tries) :
@@ -75,9 +79,6 @@ def run_GA(tries, DATA, C_1, C_2, M_1, M_2, itera, pop_size, hy_out, conf, dir, 
     print('duration: ' + str(results['duration']))
     print('try #' + str(i))
   
-  if not os.path.exists(dir + '/'):
-    os.makedirs(dir + '/')
-
   all_iterations = sorted(all_iterations, key=itemgetter('evaluation'))
   series_big_data = pandas.Series(all_iterations)
   data_frame_big_data = pandas.DataFrame(all_iterations, index=series_big_data.index, columns=['evaluation', 'best', 'population', 'iterations', 'duration', 'hybrid', 'hybrid_outside', 'mutation', 'elitism', 'crossover', 'crossover_1', 'crossover_2', 'mutation_1', 'mutation_2'])
