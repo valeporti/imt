@@ -1,3 +1,4 @@
+#%%
 COLOUR_FIGURE = False
 
 from matplotlib import pyplot as plt
@@ -7,10 +8,17 @@ features = data['data']
 feature_names = data['feature_names']
 species = data['target_names'][data['target']]
 
+#print(features)
+#print(feature_names)
+print(species)
+
 setosa = (species == 'setosa')
 features = features[~setosa]
 species = species[~setosa]
 virginica = species == 'virginica'
+
+#print(features)
+#print(setosa)
 
 t = 1.75
 p0,p1 = 3,2

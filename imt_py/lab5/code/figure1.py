@@ -1,3 +1,4 @@
+#%%
 import numpy as np
 from sklearn.datasets import load_iris
 from matplotlib import pyplot as plt
