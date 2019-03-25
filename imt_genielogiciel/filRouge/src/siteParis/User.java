@@ -4,9 +4,54 @@ package siteParis;
 public class User {
 
 	/**
+	 * @uml.property  name="auth"
+	 */
+	private boolean auth;
+
+	/**
+	 * @uml.property  name="nom"
+	 */
+	private String nom;
+
+	/**
 	 * @uml.property  name="password"
 	 */
 	private String password;
+
+	/**
+	 * @uml.property  name="prenom"
+	 */
+	private String prenom;
+
+	/**
+	 * @uml.property  name="pseudo"
+	 */
+	private String pseudo;
+
+	/**
+	 * @param password TODO
+	 */
+	public boolean authenticate(String password){
+		
+		return false;	
+	}
+
+			
+	/**
+	 */
+	public boolean comparePassword(){
+		return false;	
+	}
+
+	
+	/**
+	 * Getter of the property <tt>nom</tt>
+	 * @return  Returns the nom.
+	 * @uml.property  name="nom"
+	 */
+	public String getNom() {
+		return nom;
+	}
 
 	/**
 	 * Getter of the property <tt>password</tt>
@@ -18,18 +63,22 @@ public class User {
 	}
 
 	/**
-	 * Setter of the property <tt>password</tt>
-	 * @param password  The password to set.
-	 * @uml.property  name="password"
+	 * Getter of the property <tt>prenom</tt>
+	 * @return  Returns the prenom.
+	 * @uml.property  name="prenom"
 	 */
-	public void setPassword(String password) {
-		this.password = password;
+	public String getPrenom() {
+		return prenom;
 	}
 
-	/**
-	 * @uml.property  name="auth"
+	/** 
+	 * Getter of the property <tt>username</tt>
+	 * @return  Returns the username.
+	 * @uml.property  name="pseudo"
 	 */
-	private boolean auth;
+	public String getPseudo() {
+		return pseudo;
+	}
 
 	/** 
 	 * Getter of the property <tt>authentifie</tt>
@@ -49,59 +98,6 @@ public class User {
 		this.auth = auth;
 	}
 
-			
-	/**
-	 */
-	public boolean comparePassword(){
-		return false;	
-	}
-
-	
-	/**
-	 * @param password TODO
-	 */
-	public boolean authenticate(String password){
-		
-		return false;	
-	}
-
-	/**
-	 * @uml.property  name="pseudo"
-	 */
-	private String pseudo;
-
-	/** 
-	 * Getter of the property <tt>username</tt>
-	 * @return  Returns the username.
-	 * @uml.property  name="pseudo"
-	 */
-	public String getPseudo() {
-		return pseudo;
-	}
-
-	/** 
-	 * Setter of the property <tt>username</tt>
-	 * @param username  The username to set.
-	 * @uml.property  name="pseudo"
-	 */
-	public void setPseudo(String pseudo) {
-		this.pseudo = pseudo;
-	}
-
-	/**
-	 * @uml.property  name="nom"
-	 */
-	private String nom;
-
-	/**
-	 * Getter of the property <tt>nom</tt>
-	 * @return  Returns the nom.
-	 * @uml.property  name="nom"
-	 */
-	public String getNom() {
-		return nom;
-	}
-
 	/**
 	 * Setter of the property <tt>nom</tt>
 	 * @param nom  The nom to set.
@@ -112,17 +108,12 @@ public class User {
 	}
 
 	/**
-	 * @uml.property  name="prenom"
+	 * Setter of the property <tt>password</tt>
+	 * @param password  The password to set.
+	 * @uml.property  name="password"
 	 */
-	private String prenom;
-
-	/**
-	 * Getter of the property <tt>prenom</tt>
-	 * @return  Returns the prenom.
-	 * @uml.property  name="prenom"
-	 */
-	public String getPrenom() {
-		return prenom;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 	/**
@@ -132,6 +123,15 @@ public class User {
 	 */
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
+	}
+
+	/** 
+	 * Setter of the property <tt>username</tt>
+	 * @param username  The username to set.
+	 * @uml.property  name="pseudo"
+	 */
+	public void setPseudo(String pseudo) {
+		this.pseudo = pseudo;
 	}
 
 }

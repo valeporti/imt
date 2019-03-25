@@ -71,7 +71,6 @@ public class TestMetier {
 
 	}		
 
-
 	public static void testValiditePasswordGestionnaire () {
 
 		System.out.println("\n testValiditePasswordGestionnaire");
@@ -1135,7 +1134,7 @@ public class TestMetier {
 		testInscrireDesinscrireJoueur();
 //		testCrediterDebiterJoueur();
 //		testAjouterCompetition();
-//		testMiserVainqueur();
+//		testMiserVainqueur();0
 //		testSolderVainqueur();
 //		testConsulterCompetitions();
 //		testConsulterCompetiteurs();

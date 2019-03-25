@@ -4,7 +4,6 @@ package siteParis;
 import java.util.LinkedList;
 import java.util.Collection;
 import java.util.UUID;
-import java.util.Iterator;
 
 /**
  * 
@@ -222,7 +221,16 @@ public class SiteDeParisMetier {
 	 * 
 	 */
 	public long desinscrireJoueur(String nom, String prenom, String pseudo, String passwordGestionnaire) throws MetierException, JoueurInexistantException, JoueurException {
-		return 0;
+		
+		if (nom == null || prenom == null || pseudo == null) throw new JoueurException();
+		this.validitePasswordGestionnaire(passwordGestionnaire);
+		if (!this.existingPlayer(nom, prenom, pseudo)) throw new JoueurInexistantException();
+		
+		Player p = this.getPlayer(nom, prenom, pseudo);
+		long jetons =  p.getJetonsQuantity();
+		players.remove(p);
+		return jetons;
+		
 	}
 
 
@@ -269,7 +277,13 @@ public class SiteDeParisMetier {
 	 */
 	public String inscrireJoueur(String nom, String prenom, String pseudo, String passwordGestionnaire) throws MetierException, JoueurExistantException, JoueurException {
 		
-		if (!this.equalpassword(passwordGestionnaire)) throw new JoueurException();
+		
+		if (nom == null || prenom == null || pseudo == null) throw new JoueurException();
+		this.validitePasswordGestionnaire(passwordGestionnaire);
+		if (!this.equalpassword(passwordGestionnaire)) throw new MetierException();
+		if (this.existingPlayer(nom, prenom, pseudo)) throw new JoueurExistantException();
+		if (!nom.matches("^[a-zA-Z]+$") || !prenom.matches("^[a-zA-Z]+$")) throw new JoueurException();
+		if (!pseudo.matches("^[a-zA-Z]{4,}$")) throw new JoueurException();
 		
 		
 		Player joueur = new Player(nom, prenom, pseudo);
@@ -284,11 +298,16 @@ public class SiteDeParisMetier {
 		this.players.add(player);
 	}
 	
+	
 	public boolean existingPlayer (String nom, String prenom, String pseudo) {
-		for (Iterator i = this.players.iterator(); i.hasNext();) {
-			
+		for (Player p: players) {
+			if (nom.equals(p.getNom()) && prenom.equals(p.getPrenom()) || pseudo.equals(p.getPseudo())) {
+				return true;
+			}
 		}
+		return false;
 	}
+	
 
 	/**
 	 * miserVainqueur  (parier sur une compétition, en désignant un vainqueur).
@@ -327,6 +346,15 @@ public class SiteDeParisMetier {
 	
 	public void setPlayers() {
 		this.players = new LinkedList<Player>();
+	}
+	
+	public Player getPlayer(String nom, String prenom, String pseudo) {
+		for (Player p: players) {
+			if (nom.equals(p.getNom()) && prenom.equals(p.getPrenom()) || pseudo.equals(p.getPseudo())) {
+				return p;
+			}
+		}
+		return null;
 	}
 	
 	public void setPassword(String pass) {
@@ -383,6 +411,7 @@ public class SiteDeParisMetier {
 	protected void validitePasswordGestionnaire(String passwordGestionnaire) throws MetierException {
 	    if (passwordGestionnaire==null) throw new MetierException();
 	    if (!passwordGestionnaire.matches("[0-9A-Za-z]{8,}")) throw new MetierException();
+	    if (this.passwordGestionnaire != null && !this.passwordGestionnaire.equals(passwordGestionnaire)) throw new MetierException();
 	}
 
 	protected boolean equalpassword(String p) { return p.equals(this.passwordGestionnaire); }

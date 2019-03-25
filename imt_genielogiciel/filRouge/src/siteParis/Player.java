@@ -14,14 +14,14 @@ public class Player extends User {
 	/**
 	 * @uml.property  name="jetonsQuantity"
 	 */
-	private int jetonsQuantity;
+	private long jetonsQuantity;
 
 	/**
 	 * Getter of the property <tt>jetonsQuantity</tt>
 	 * @return  Returns the jetonsQuantity.
 	 * @uml.property  name="jetonsQuantity"
 	 */
-	public int getJetonsQuantity() {
+	public long getJetonsQuantity() {
 		return jetonsQuantity;
 	}
 
