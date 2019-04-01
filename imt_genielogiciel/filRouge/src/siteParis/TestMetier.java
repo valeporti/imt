@@ -429,11 +429,11 @@ public class TestMetier {
 
 			try {
 				siteDeParisMetier.ajouterCompetition("finaleRG2044", new DateFrancaise(4, 8, 20441), new String [] {"Clijsters"}, new String("ilesCaimans"));
-				System.out.println("l'ajout d'une compétition avec un seul compétiteur    n'a pas levé l'exception CompetitionException ");
+				System.out.println("l'ajout d'une compétition avec un seul compétiteur n'a pas levé l'exception CompetitionException ");
 			}
 			catch (CompetitionException e) { }
 			catch (Exception e) { 
-				System.out.println("l'ajout d'une compétition avec un seul compétiteur   n'a pas levé l'exception CompetitionException mais " + e.getClass().getName());
+				System.out.println("l'ajout d'une compétition avec un seul compétiteur n'a pas levé l'exception CompetitionException mais " + e.getClass().getName());
 			}
 
 
@@ -518,7 +518,82 @@ public class TestMetier {
 
 		System.out.println("\n testCrediterDebiterJoueur");
 
+		try {
+									
+			// construction correcte d'un site
 
+			SiteDeParisMetier siteDeParisMetier = new SiteDeParisMetier(new String("ilesCaimans"));
+
+			// inscription correcte de joueurs 
+
+			String passwdBernard = siteDeParisMetier.inscrireJoueur(new String("Prou"), new String("Bernard"), new String("nanard"), new String("ilesCaimans"));			
+			String passwdFrancoise = siteDeParisMetier.inscrireJoueur(new String("Prou"), new String("Francoise"), new String("fanfan"), new String("ilesCaimans"));			
+			String passwdPascal = siteDeParisMetier.inscrireJoueur(new String("Prou"), new String("Pascal"), new String("pascal"), new String("ilesCaimans"));
+			String passwdMorgane = siteDeParisMetier.inscrireJoueur(new String("Prou"), new String("Morgane"), new String("momo"), new String("ilesCaimans"));
+			String passwdAureliane = siteDeParisMetier.inscrireJoueur(new String("Prou"), new String("Aureliane"), new String("aure"), new String("ilesCaimans"));
+			String passwdSylvain = siteDeParisMetier.inscrireJoueur(new String("Nadou"), new String("Sylvain"), new String("zinzin"), new String("ilesCaimans"));
+
+			// CREDITER
+			try {
+				siteDeParisMetier.crediterJoueur("Prou", "Bernard", "nanard", -2, "ilesCaimans");
+			} 
+			catch (CrediterException e) { }
+			catch (Exception e) { 
+				System.out.println("l'ajout d'une compétition avec somme négative n'a pas levé l'exception CrediterException mais " + e.getClass().getName());	
+			}
+			try {
+				siteDeParisMetier.crediterJoueur("Prou", "Bernard", "nanard", 0, "ilesCaimans");
+			} 
+			catch (CrediterException e) { }
+			catch (Exception e) { 
+				System.out.println("l'ajout d'une compétition avec somme zero n'a pas levé l'exception CrediterException mais " + e.getClass().getName());	
+			}
+			
+			siteDeParisMetier.crediterJoueur("Prou", "Bernard", "nanard", 30, "ilesCaimans");
+			Player joueur = siteDeParisMetier.getExistingPlayer("Prou", "Bernard", "nanard");
+			if (joueur.getJetonsQuantity() != 30) {
+				System.out.println("l'ajout de jetons ne déclare pas bien la quantité");
+			}
+			
+			siteDeParisMetier.crediterJoueur("Prou", "Bernard", "nanard", 30, "ilesCaimans");
+			if (joueur.getJetonsQuantity() != 60) {
+				System.out.println("l'ajout de jetons ne additionne pas bien");
+			}
+			
+			// 	DEBITER
+			try {
+				siteDeParisMetier.debiterJoueur("Prou", "Bernard", "nanard", -2, "ilesCaimans");
+			} 
+			catch (DebiterException e) { }
+			catch (Exception e) { 
+				System.out.println("le crédit avec somme négative n'a pas levé l'exception DebiterException mais " + e.getClass().getName());	
+			}
+			try {
+				siteDeParisMetier.debiterJoueur("Prou", "Bernard", "nanard", 0, "ilesCaimans");
+			} 
+			catch (DebiterException e) { }
+			catch (Exception e) { 
+				System.out.println("le crédit avec somme zero n'a pas levé l'exception DebiterException mais " + e.getClass().getName());	
+			}
+			try {
+				siteDeParisMetier.debiterJoueur("Prou", "Bernard", "nanard", 100, "ilesCaimans");
+			} 
+			catch (DebiterException e) { }
+			catch (Exception e) { 
+				System.out.println("Le débit d'une somme supérieure à l'existante n'a pas levé l'exception DebiterException mais " + e.getClass().getName());	
+			}
+			
+			
+			siteDeParisMetier.debiterJoueur("Prou", "Bernard", "nanard", 30, "ilesCaimans");
+			if (joueur.getJetonsQuantity() != 30) {
+				System.out.println("l'ajout de jetons ne déclare pas bien la quantité");
+			}
+			
+		}
+		catch (Exception e) {
+			System.out.println("\n Exception imprévue en Credited Debiter Joueur: " + e);
+			e.printStackTrace();
+		}
 
 	}
 
@@ -528,6 +603,37 @@ public class TestMetier {
 	public static void testMiserVainqueur () {
 
 		System.out.println("\n testMiserVainqueur");
+		
+		try {
+			
+			// construction correcte d'un site
+
+			SiteDeParisMetier siteDeParisMetier = new SiteDeParisMetier(new String("ilesCaimans"));
+
+			// inscription correcte de joueurs 
+
+			String passwdBernard = siteDeParisMetier.inscrireJoueur(new String("Prou"), new String("Bernard"), new String("nanard"), new String("ilesCaimans"));			
+			String passwdFrancoise = siteDeParisMetier.inscrireJoueur(new String("Prou"), new String("Francoise"), new String("fanfan"), new String("ilesCaimans"));			
+			String passwdPascal = siteDeParisMetier.inscrireJoueur(new String("Prou"), new String("Pascal"), new String("pascal"), new String("ilesCaimans"));
+			String passwdMorgane = siteDeParisMetier.inscrireJoueur(new String("Prou"), new String("Morgane"), new String("momo"), new String("ilesCaimans"));
+			String passwdAureliane = siteDeParisMetier.inscrireJoueur(new String("Prou"), new String("Aureliane"), new String("aure"), new String("ilesCaimans"));
+			String passwdSylvain = siteDeParisMetier.inscrireJoueur(new String("Nadou"), new String("Sylvain"), new String("zinzin"), new String("ilesCaimans"));
+
+			// miserVainqueur(String pseudo, String passwordJoueur, long miseEnJetons, String competition, String vainqueurEnvisage)
+			
+			try {
+			
+			}
+			//catch
+			catch (Exception e) { 
+				System.out.println("un joueur mal initialisé (null) n'a pas levé JoueurException mais " + e.getClass().getName());	
+			}
+			
+		}
+		catch (Exception e) {
+			System.out.println("\n Exception imprévue en Credited Debiter Joueur: " + e);
+			e.printStackTrace();
+		}
 
 
 	}
@@ -1132,9 +1238,9 @@ public class TestMetier {
 		testConstructeurSiteDeParisMetier();
 		testValiditePasswordGestionnaire();
 		testInscrireDesinscrireJoueur();
-//		testCrediterDebiterJoueur();
-//		testAjouterCompetition();
-//		testMiserVainqueur();0
+		testCrediterDebiterJoueur();
+		testAjouterCompetition();
+		testMiserVainqueur();
 //		testSolderVainqueur();
 //		testConsulterCompetitions();
 //		testConsulterCompetiteurs();

@@ -3,7 +3,6 @@ package siteParis;
 
 import java.util.LinkedList;
 import java.util.Collection;
-import java.util.UUID;
 
 /**
  * 
@@ -75,6 +74,16 @@ public class SiteDeParisMetier {
 
 
 
+	public void addCompetition(Competition competition) {
+		this.competitions.add(competition);
+	}
+
+	public void addPlayer(Player player) {
+		this.players.add(player);
+	}
+
+
+
 	/**
 	 * ajouter une compétition.  
 	 * 
@@ -96,7 +105,22 @@ public class SiteDeParisMetier {
 	 */
 	public void ajouterCompetition(String competition, DateFrancaise dateCloture, String [] competiteurs, String passwordGestionnaire) throws MetierException, CompetitionExistanteException, CompetitionException  {
 
+		if (competition == null || dateCloture == null) throw new CompetitionException();
+		this.validitePasswordGestionnaire(passwordGestionnaire);
+		if (!this.equalpassword(passwordGestionnaire)) throw new MetierException();
+		if (competiteurs == null) throw new MetierException();
+		this.validateCompetitionName(competition);
+		// la compétition doit avoir plus de 1 competiteur
+		if (competiteurs.length < 2) throw new CompetitionException();
+		this.validateCompetiteurNom(competiteurs);
+		this.validateCompetiteurRepete(competiteurs);
+		if (dateCloture.estDansLePasse()) throw new CompetitionException();
+		if (this.existingCompetition(competition)) throw new CompetitionExistanteException();
+		
+		Competition c = new Competition(competition, dateCloture, competiteurs);
+		this.addCompetition(c);
 	}
+
 
 	/**
 	 * connaître  la liste des noms des compétiteurs d'une compétition.  
@@ -170,9 +194,28 @@ public class SiteDeParisMetier {
 	 * si <code>nom</code>, <code>prenom</code>,  <code>pseudo</code> sont invalides.
 	 * @throws JoueurInexistantException   levée si il n'y a pas de joueur  avec les mêmes nom,  prénom et pseudo.
 	 */
-	public void crediterJoueur(String nom, String prenom, String pseudo, long sommeEnJetons, String passwordGestionnaire) throws MetierException, JoueurException, JoueurInexistantException {
+	public void crediterJoueur(String nom, String prenom, String pseudo, long sommeEnJetons, String passwordGestionnaire) throws MetierException, JoueurException, JoueurInexistantException, CrediterException {
 
+		if (nom == null || prenom == null || pseudo == null) throw new JoueurException();
+		this.validitePasswordGestionnaire(passwordGestionnaire);
+		if (!this.equalpassword(passwordGestionnaire)) throw new MetierException();
+		if (!this.existingPlayer(nom, prenom, pseudo)) throw new JoueurInexistantException();
+		if (sommeEnJetons <= 0) throw new CrediterException();
+		
+		Player joueur = getExistingPlayer(nom, prenom, pseudo);
+		
+		joueur.addJetons(sommeEnJetons);
+		
 	}
+
+
+
+
+
+
+
+
+	// Les méthodes avec mot de passe utilisateur
 
 
 	/**
@@ -195,10 +238,26 @@ public class SiteDeParisMetier {
 	 * 
 	 */
 
-	public void debiterJoueur(String nom, String prenom, String pseudo, long sommeEnJetons, String passwordGestionnaire) throws  MetierException, JoueurInexistantException, JoueurException {
+	public void debiterJoueur(String nom, String prenom, String pseudo, long sommeEnJetons, String passwordGestionnaire) throws  MetierException, JoueurInexistantException, JoueurException, DebiterException {
 
+		if (nom == null || prenom == null || pseudo == null) throw new JoueurException();
+		this.validitePasswordGestionnaire(passwordGestionnaire);
+		if (!this.equalpassword(passwordGestionnaire)) throw new MetierException();
+		if (!this.existingPlayer(nom, prenom, pseudo)) throw new JoueurInexistantException();
+		if (sommeEnJetons <= 0) throw new DebiterException();
+		
+		Player joueur = getExistingPlayer(nom, prenom, pseudo);
+		
+		if (joueur.getJetonsQuantity() < sommeEnJetons) throw new DebiterException();
+		
+		joueur.takeOutJetons(sommeEnJetons);
+		
 	}
 
+
+    
+
+	// Les méthodes sans mot de passe
 
 
 	/**
@@ -231,19 +290,39 @@ public class SiteDeParisMetier {
 		players.remove(p);
 		return jetons;
 		
+	} 
+
+	protected boolean equalpassword(String p) { return p.equals(this.passwordGestionnaire); }
+	
+	public boolean existingCompetition (String competition) {
+		for (Competition c: competitions) {
+			//System.out.println("checking: " + c.getNom() + " == " +  competition );
+			if (competition.equals(c.getNom())) {
+				return true;
+			}
+		}
+		return false;
 	}
-
-
-
-
-
-
-
-
-	// Les méthodes avec mot de passe utilisateur
-
-
-
+	
+	
+	public boolean existingPlayer (String nom, String prenom, String pseudo) {
+		for (Player p: players) {
+			if (nom.equals(p.getNom()) && prenom.equals(p.getPrenom()) || pseudo.equals(p.getPseudo())) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	public boolean existingPlayer (String pseudo, String pass) {
+		for (Player p: players) {
+			if (pseudo.equals(p.getPseudo()) && pass.equals(p.getPassword())) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
 	/**
 	 * Getter of the property <tt>competition</tt>
 	 * @return  Returns the competition.
@@ -252,12 +331,34 @@ public class SiteDeParisMetier {
 	public LinkedList<Competition> getCompetitions() {
 		return competitions;
 	}
+	
+	public Player getExistingPlayer (String nom, String prenom, String pseudo) {
+		for (Player p: players) {
+			if (nom.equals(p.getNom()) && prenom.equals(p.getPrenom()) || pseudo.equals(p.getPseudo())) {
+				return p;
+			}
+		}
+		return null;
+	}
+	
 
-
-    
-
-	// Les méthodes sans mot de passe
-
+	public Player getPlayer(String nom, String prenom, String pseudo) {
+		for (Player p: players) {
+			if (nom.equals(p.getNom()) && prenom.equals(p.getPrenom()) || pseudo.equals(p.getPseudo())) {
+				return p;
+			}
+		}
+		return null;
+	}
+	
+	public Player getPlayer(String pseudo, String password) {
+		for (Player p: players) {
+			if (pseudo.equals(p.getPseudo()) && password.equals(p.getPassword())) {
+				return p;
+			}
+		}
+		return null;
+	}
 
 	/**
 	 * inscrire un joueur. 
@@ -288,27 +389,13 @@ public class SiteDeParisMetier {
 		
 		Player joueur = new Player(nom, prenom, pseudo);
 		addPlayer(joueur);
+		String new_password = joueur.setPassword();
 		
-		return UUID.randomUUID().toString();
-	} 
-
+		return new_password;
+	}
+	
 	public boolean isEmptyPlayers() { return players.size() == 0; }
 	
-	public void addPlayer(Player player) {
-		this.players.add(player);
-	}
-	
-	
-	public boolean existingPlayer (String nom, String prenom, String pseudo) {
-		for (Player p: players) {
-			if (nom.equals(p.getNom()) && prenom.equals(p.getPrenom()) || pseudo.equals(p.getPseudo())) {
-				return true;
-			}
-		}
-		return false;
-	}
-	
-
 	/**
 	 * miserVainqueur  (parier sur une compétition, en désignant un vainqueur).
 	 * Le compte du joueur est débité du nombre de jetons misés.
@@ -333,8 +420,16 @@ public class SiteDeParisMetier {
 	 */
     public void miserVainqueur(String pseudo, String passwordJoueur, long miseEnJetons, String competition, String vainqueurEnvisage) throws MetierException, JoueurInexistantException, CompetitionInexistanteException, CompetitionException, JoueurException  {
 
+    	if (pseudo == null) throw new JoueurException();
+    	if (miseEnJetons < 0) throw new MetierException();
+    	if (!existingPlayer(pseudo, passwordJoueur)) throw new JoueurInexistantException();
+    	
+    	Player joueur = this.getPlayer(pseudo, passwordJoueur);
+    	
+    	if (!this.existingCompetition(competition)) throw new CompetitionInexistanteException();
+    	
 	}
-
+	
 	/**
 	 * Setter of the property <tt>competition</tt>
 	 * @param competition  The competition to set.
@@ -344,22 +439,17 @@ public class SiteDeParisMetier {
 		this.competitions = new LinkedList<Competition>();
 	}
 	
-	public void setPlayers() {
-		this.players = new LinkedList<Player>();
-	}
-	
-	public Player getPlayer(String nom, String prenom, String pseudo) {
-		for (Player p: players) {
-			if (nom.equals(p.getNom()) && prenom.equals(p.getPrenom()) || pseudo.equals(p.getPseudo())) {
-				return p;
-			}
-		}
-		return null;
-	}
-	
 	public void setPassword(String pass) {
 		this.passwordGestionnaire = pass;
 	}
+
+	public void setPlayers() {
+		this.players = new LinkedList<Player>();
+	}
+
+
+
+
 
 	/**
 	 * solder une compétition vainqueur (compétition avec vainqueur).  
@@ -396,10 +486,31 @@ public class SiteDeParisMetier {
 
 	}
 
-
-
-
-
+	protected void validateCompetiteurNom(String [] noms) throws CompetitionException {
+		for (String n : noms) {
+			if (n == null || n.length() < 4 || !n.matches("^[a-zA-Z]+$")) throw new CompetitionException();
+		}	
+	}
+	
+	protected void validateCompetiteurRepete(String [] noms) throws CompetitionException {
+		for (String n : noms) {
+			int count = 0;
+			for (String nom : noms) {
+				//System.out.println("checking: " + n + " == " +  nom );
+				if (n.equals(nom)) ++ count ;
+				//System.out.println("checking: " + count );
+				if (count > 1) throw new CompetitionException();
+			}
+		}	
+	}
+	
+	protected void validateCompetitionName(String competition) throws CompetitionException {
+		//System.out.println("checking: " + competition);
+		if (competition == null) throw new CompetitionException();
+		if (competition.length() < 4) throw new CompetitionException();
+		if (!competition.matches("^[a-zA-Z0-9]+$")) throw new CompetitionException();		
+	}
+	
 	/**
 	 * vérifier la validité du password du gestionnaire.
 	 * 
@@ -413,9 +524,6 @@ public class SiteDeParisMetier {
 	    if (!passwordGestionnaire.matches("[0-9A-Za-z]{8,}")) throw new MetierException();
 	    if (this.passwordGestionnaire != null && !this.passwordGestionnaire.equals(passwordGestionnaire)) throw new MetierException();
 	}
-
-	protected boolean equalpassword(String p) { return p.equals(this.passwordGestionnaire); }
-		
 
 }
 
