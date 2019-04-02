@@ -2,6 +2,7 @@ package siteParis;
 
 import java.util.Collection;
 import java.util.LinkedList;
+import java.util.Arrays;
 
 
 public class Competition {
@@ -9,12 +10,14 @@ public class Competition {
 	/**
 	 * @uml.property  name="competitors"
 	 */
-	private String[] competitors;
+	private LinkedList<String> competitors;
 
 	/**
 	 * @uml.property  name="date"
 	 */
 	private DateFrancaise date;
+	
+	private boolean solde;
 
 	/**
 	 * @uml.property  name="description"
@@ -38,14 +41,24 @@ public class Competition {
 		this.paris = new LinkedList<Pari>();
 		this.setCompetitors(competiteurs);
 		this.description = null;
+		this.setSolde(false);
 	}
+	
+	protected boolean competiteurExistant (String competiteur) {
+		for (String c: this.getCompetitors()) {
+			if (competiteur.equals(c)) {
+				return true;
+			}
+		}
+		return false;
+	}  
 
 	/**
 	 * Getter of the property <tt>competitors</tt>
 	 * @return  Returns the competitors.
 	 * @uml.property  name="competitors"
 	 */
-	public String[] getCompetitors() {
+	public LinkedList<String> getCompetitors() {
 		return competitors;
 	}
 
@@ -75,6 +88,10 @@ public class Competition {
 	public String getNom() {
 		return nom;
 	}
+	
+	public boolean getSolde() {
+		return this.solde;
+	}
 
 	/**
 	 * Getter of the property <tt>paris</tt>
@@ -91,7 +108,7 @@ public class Competition {
 	 * @uml.property  name="competitors"
 	 */
 	public void setCompetitors(String[] competitors) {
-		this.competitors = competitors;
+		this.competitors = new LinkedList(Arrays.asList(competitors));
 	}
 
 	/**
@@ -111,6 +128,10 @@ public class Competition {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	
+	public void setSolde(boolean value) {
+		this.solde = value;
+	}
 
 	/**
 	 * Setter of the property <tt>nom</tt>
@@ -126,9 +147,29 @@ public class Competition {
 	 * @param paris  The paris to set.
 	 * @uml.property  name="paris"
 	 */
-	public void setParis(LinkedList<Pari> paris) {
-		this.paris = paris;
+	public void setParis() {
+		this.paris = new LinkedList<Pari>();
+	}
+	
+	public void addPari(Pari p) {
+		this.paris.add(p);
+	}
+	
+	public LinkedList<Pari> getParisVainqueurs(String vainqueur) {
+		LinkedList<Pari> paris = new LinkedList<Pari>();
+		for (Pari pari: this.getParis()) {
+			if (pari.getVainqueur().equals(vainqueur)) {
+				paris.add(pari);
+			}
+		}
+		return paris;
 	}
 
+	public LinkedList<String> getLinkedListCompetition() {
+		LinkedList<String> competition = new LinkedList<String>();
+		competition.add(getNom());
+		competition.add(getDate().toString());
+		return competition;
+	}
 
 }

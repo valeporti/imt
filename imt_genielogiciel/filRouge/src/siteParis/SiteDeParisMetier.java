@@ -134,7 +134,12 @@ public class SiteDeParisMetier {
 	 * @return la liste des compétiteurs de la  compétition.
 	 */
 	public LinkedList <String> consulterCompetiteurs(String competition) throws CompetitionException, CompetitionInexistanteException{
-		return new LinkedList <String> ();
+		
+		if (competition == null) throw new CompetitionException();
+		this.validateCompetitionName(competition);
+		if (!this.existingCompetition(competition)) throw new CompetitionInexistanteException();		
+		
+		return this.getCompetition(competition).getCompetitors();
 	}
 
 
@@ -149,7 +154,13 @@ public class SiteDeParisMetier {
 	 *  </ul>
 	 */
 	public LinkedList <LinkedList <String>> consulterCompetitions(){
-		return new LinkedList <LinkedList <String>>();
+		
+		LinkedList <LinkedList <String>> all_competitions = new LinkedList <LinkedList <String>>();
+		for (Competition c: this.getCompetitions()) {
+			if (!c.getSolde()) 
+				all_competitions.add(c.getLinkedListCompetition());
+		}
+		return all_competitions;
 	}
 
 
@@ -172,7 +183,14 @@ public class SiteDeParisMetier {
 	 *  </ul>
 	 */
 	public LinkedList <LinkedList <String>> consulterJoueurs(String passwordGestionnaire) throws MetierException {
-		return new LinkedList <LinkedList <String>>();
+		
+		this.validitePasswordGestionnaire(passwordGestionnaire);
+		LinkedList <LinkedList <String>> all_players = new LinkedList <LinkedList <String>>();
+		for (Player p: players) {
+			all_players.add(p.getLinkedListPlayer());
+		}
+		
+		return all_players;
 	}
 
 
@@ -200,7 +218,7 @@ public class SiteDeParisMetier {
 		this.validitePasswordGestionnaire(passwordGestionnaire);
 		if (!this.equalpassword(passwordGestionnaire)) throw new MetierException();
 		if (!this.existingPlayer(nom, prenom, pseudo)) throw new JoueurInexistantException();
-		if (sommeEnJetons <= 0) throw new CrediterException();
+		if (sommeEnJetons <= 0) throw new JoueurException();
 		
 		Player joueur = getExistingPlayer(nom, prenom, pseudo);
 		
@@ -244,11 +262,11 @@ public class SiteDeParisMetier {
 		this.validitePasswordGestionnaire(passwordGestionnaire);
 		if (!this.equalpassword(passwordGestionnaire)) throw new MetierException();
 		if (!this.existingPlayer(nom, prenom, pseudo)) throw new JoueurInexistantException();
-		if (sommeEnJetons <= 0) throw new DebiterException();
+		if (sommeEnJetons <= 0) throw new JoueurException();
 		
 		Player joueur = getExistingPlayer(nom, prenom, pseudo);
 		
-		if (joueur.getJetonsQuantity() < sommeEnJetons) throw new DebiterException();
+		if (joueur.getJetonsQuantity() < sommeEnJetons) throw new JoueurException();
 		
 		joueur.takeOutJetons(sommeEnJetons);
 		
@@ -305,6 +323,15 @@ public class SiteDeParisMetier {
 	}
 	
 	
+	public boolean existingPlayer (String pseudo, String pass) {
+		for (Player p: players) {
+			if (pseudo.equals(p.getPseudo()) && pass.equals(p.getPassword())) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
 	public boolean existingPlayer (String nom, String prenom, String pseudo) {
 		for (Player p: players) {
 			if (nom.equals(p.getNom()) && prenom.equals(p.getPrenom()) || pseudo.equals(p.getPseudo())) {
@@ -314,13 +341,14 @@ public class SiteDeParisMetier {
 		return false;
 	}
 	
-	public boolean existingPlayer (String pseudo, String pass) {
-		for (Player p: players) {
-			if (pseudo.equals(p.getPseudo()) && pass.equals(p.getPassword())) {
-				return true;
+	public Competition getCompetition(String competition) {
+		for (Competition c: competitions) {
+			//System.out.println("checking: " + c.getNom() + " == " +  competition );
+			if (competition.equals(c.getNom())) {
+				return c;
 			}
 		}
-		return false;
+		return null;
 	}
 	
 	/**
@@ -342,6 +370,15 @@ public class SiteDeParisMetier {
 	}
 	
 
+	public Player getPlayer(String pseudo, String password) {
+		for (Player p: players) {
+			if (pseudo.equals(p.getPseudo()) && password.equals(p.getPassword())) {
+				return p;
+			}
+		}
+		return null;
+	}
+	
 	public Player getPlayer(String nom, String prenom, String pseudo) {
 		for (Player p: players) {
 			if (nom.equals(p.getNom()) && prenom.equals(p.getPrenom()) || pseudo.equals(p.getPseudo())) {
@@ -351,15 +388,6 @@ public class SiteDeParisMetier {
 		return null;
 	}
 	
-	public Player getPlayer(String pseudo, String password) {
-		for (Player p: players) {
-			if (pseudo.equals(p.getPseudo()) && password.equals(p.getPassword())) {
-				return p;
-			}
-		}
-		return null;
-	}
-
 	/**
 	 * inscrire un joueur. 
 	 * 
@@ -393,7 +421,7 @@ public class SiteDeParisMetier {
 		
 		return new_password;
 	}
-	
+
 	public boolean isEmptyPlayers() { return players.size() == 0; }
 	
 	/**
@@ -422,12 +450,24 @@ public class SiteDeParisMetier {
 
     	if (pseudo == null) throw new JoueurException();
     	if (miseEnJetons < 0) throw new MetierException();
+    	if (validPlayerAlmost(pseudo, passwordJoueur)) throw new JoueurException();
     	if (!existingPlayer(pseudo, passwordJoueur)) throw new JoueurInexistantException();
+    	
     	
     	Player joueur = this.getPlayer(pseudo, passwordJoueur);
     	
     	if (!this.existingCompetition(competition)) throw new CompetitionInexistanteException();
     	
+    	Competition comp = this.getCompetition(competition);
+    	
+    	if (!comp.competiteurExistant(vainqueurEnvisage)) throw new CompetitionException();
+    	if (joueur.getJetonsQuantity() - miseEnJetons < 0) throw new JoueurException();
+    	
+    	Pari pari = new Pari(vainqueurEnvisage, miseEnJetons, joueur, comp);
+    	
+    	joueur.addPari(pari);
+    	joueur.takeOutJetons(miseEnJetons);
+    	comp.addPari(pari);
 	}
 	
 	/**
@@ -442,14 +482,10 @@ public class SiteDeParisMetier {
 	public void setPassword(String pass) {
 		this.passwordGestionnaire = pass;
 	}
-
+	
 	public void setPlayers() {
 		this.players = new LinkedList<Player>();
 	}
-
-
-
-
 
 	/**
 	 * solder une compétition vainqueur (compétition avec vainqueur).  
@@ -482,16 +518,58 @@ public class SiteDeParisMetier {
 	 * si la date de clôture de la compétition est dans le futur.
 	 * 
 	 */	
-	public void solderVainqueur(String competition, String vainqueur, String passwordGestionnaire) throws MetierException,  CompetitionInexistanteException, CompetitionException  {
-
+	public void solderVainqueur(String competition, String vainqueur, String passwordGestionnaire) throws MetierException, CompetitionInexistanteException, CompetitionException  {
+		
+		this.validitePasswordGestionnaire(passwordGestionnaire);
+		if (!this.existingCompetition(competition)) throw new CompetitionInexistanteException();
+	
+		Competition comp = this.getCompetition(competition);
+		
+		if (!comp.competiteurExistant(vainqueur)) throw new CompetitionException();
+		if (!comp.getDate().estDansLePasse()) throw new CompetitionException();
+		if (comp.getSolde()) throw new CompetitionInexistanteException();
+		
+		LinkedList<Pari> paris_vainqueurs = comp.getParisVainqueurs(vainqueur);
+		this.calculerMontantParPari(paris_vainqueurs, comp.getParis());
+		this.distribuerASolder(paris_vainqueurs);
+		comp.setSolde(true);
+		
 	}
+	
+	protected void distribuerASolder(LinkedList<Pari> paris_vainqueurs) {
+		for (Pari pari: paris_vainqueurs) {
+			pari.solder();
+		}
+	}
+	
+	protected long calculerMontantTotal(LinkedList<Pari> paris) {
+		long somme_totale = 0;
+		for (Pari pari: paris) {
+			somme_totale += pari.getQuantite();
+		}
+		return somme_totale;
+	}
+	
+	protected void calculerMontantParPari(LinkedList<Pari> paris_vainqueurs, LinkedList<Pari> paris) {
+		long somme_totale = this.calculerMontantTotal(paris);
+		long somme_sur_ce_competiteur = this.calculerMontantTotal(paris_vainqueurs);
+		for (Pari pari: paris_vainqueurs) {
+
+			// montant de sa mise * la somme des jetons misés pour cette compétition) / la somme des jetons
+			// misés sur ce compétiteur
+			long sa_mise = pari.getQuantite();
+			long total = sa_mise * somme_totale / somme_sur_ce_competiteur;
+			pari.setASolder(total);
+		}
+	}
+
 
 	protected void validateCompetiteurNom(String [] noms) throws CompetitionException {
 		for (String n : noms) {
 			if (n == null || n.length() < 4 || !n.matches("^[a-zA-Z]+$")) throw new CompetitionException();
 		}	
 	}
-	
+
 	protected void validateCompetiteurRepete(String [] noms) throws CompetitionException {
 		for (String n : noms) {
 			int count = 0;
@@ -524,6 +602,16 @@ public class SiteDeParisMetier {
 	    if (!passwordGestionnaire.matches("[0-9A-Za-z]{8,}")) throw new MetierException();
 	    if (this.passwordGestionnaire != null && !this.passwordGestionnaire.equals(passwordGestionnaire)) throw new MetierException();
 	}
+	
+	public boolean validPlayerAlmost (String pseudo, String pass) {
+		for (Player p: players) {
+			if ((pseudo.equals(p.getPseudo()) && !pass.equals(p.getPassword())) || (!pseudo.equals(p.getPseudo()) && pass.equals(p.getPassword()))) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
 
 }
 

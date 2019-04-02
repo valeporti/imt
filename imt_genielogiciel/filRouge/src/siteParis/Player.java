@@ -7,33 +7,40 @@ import java.util.UUID;
 
 public class Player extends User {
 	
-	private String passwordPlayer;
-	
 	/**
 	 * @uml.property  name="jetonsQuantity"
 	 */
-	private long jetonsQuantity; 
-
+	private long jetonsQuantity;
+	
 	/**
 	 * @uml.property   name="paris"
 	 * @uml.associationEnd   multiplicity="(0 -1)" inverse="player:siteParis.Pari"
 	 */
-	private LinkedList<Pari> paris;
+	private LinkedList<Pari> paris; 
+
+	private String passwordPlayer;
 
 	public Player(String nom, String prenom, String pseudo) {
 		this.setNom(nom);
 		this.setPrenom(prenom);
 		this.setPseudo(pseudo);
 		this.passwordPlayer = null;
+		this.setParis();
 	}
 
+	public long addJetons(long plus) {
+		long j = this.getJetonsQuantity();
+		this.setJetonsQuantity(j + plus);
+		return this.getJetonsQuantity();
+	}
+
+		
 	/**
 	 * @param quantity TODO
 	 */
 	public void competitionInscription(String competition, int quantity){
 	}
-
-		
+	
 	/**
 	 * Getter of the property <tt>jetonsQuantity</tt>
 	 * @return  Returns the jetonsQuantity.
@@ -41,18 +48,6 @@ public class Player extends User {
 	 */
 	public long getJetonsQuantity() {
 		return jetonsQuantity;
-	}
-	
-	public long addJetons(long plus) {
-		long j = this.getJetonsQuantity();
-		this.setJetonsQuantity(j + plus);
-		return this.getJetonsQuantity();
-	}
-
-	public long takeOutJetons(long minus) {
-		long j = this.getJetonsQuantity();
-		this.setJetonsQuantity(j - minus);
-		return this.getJetonsQuantity();
 	}
 
 	/**
@@ -64,15 +59,14 @@ public class Player extends User {
 		return paris;
 	}
 	
+	public void addPari(Pari p) {
+		this.paris.add(p);
+	}
+
 	public String getPassword() {
 		return passwordPlayer;
 	}
 	
-	public String setPassword() {
-		this.passwordPlayer = UUID.randomUUID().toString();
-		return this.passwordPlayer;
-	}
-
 	/**
 	 * Setter of the property <tt>jetonsQuantity</tt>
 	 * @param jetonsQuantity  The jetonsQuantity to set.
@@ -81,14 +75,45 @@ public class Player extends User {
 	public void setJetonsQuantity(long jetonsQuantity) {
 		this.jetonsQuantity = jetonsQuantity;
 	}
-
+	
 	/**
 	 * Setter of the property <tt>paris</tt>
 	 * @param paris  The paris to set.
 	 * @uml.property  name="paris"
 	 */
-	public void setParis(LinkedList<Pari> paris) {
-		this.paris = paris;
+	public void setParis() {
+		this.paris = new LinkedList<Pari>();
+	}
+
+	public String setPassword() {
+		this.passwordPlayer = UUID.randomUUID().toString();
+		return this.passwordPlayer;
+	}
+
+	public long takeOutJetons(long minus) {
+		long j = this.getJetonsQuantity();
+		this.setJetonsQuantity(j - minus);
+		return this.getJetonsQuantity();
+	}
+	
+	public LinkedList<String> getLinkedListPlayer() {
+		LinkedList<String> joueur = new LinkedList<String>();
+		joueur.add(getNom());
+		joueur.add(getPrenom());
+		joueur.add(getPseudo());
+		joueur.add(Long.toString(getJetonsQuantity()));
+		joueur.add(Long.toString(getJetonsInParis()));
+		return joueur;
+	}
+	
+	public long getJetonsInParis() {
+		long total = 0;
+		for (Pari p: this.getParis()) {
+			if (!p.getCompetition().getSolde()) {
+				total += p.getQuantite();
+			}
+		}
+		return total;
 	}
 
 }
