@@ -34,13 +34,16 @@ public class Player extends User {
 		return this.getJetonsQuantity();
 	}
 
-		
-	/**
-	 * @param quantity TODO
-	 */
-	public void competitionInscription(String competition, int quantity){
+	public boolean parisEnCours() {
+		for (Pari p: this.paris) {
+			// n'a pas été soldé 
+			if (!p.getCompetition().getSolde()) {
+				return true;
+			}
+		}
+		return false;
 	}
-	
+		
 	/**
 	 * Getter of the property <tt>jetonsQuantity</tt>
 	 * @return  Returns the jetonsQuantity.

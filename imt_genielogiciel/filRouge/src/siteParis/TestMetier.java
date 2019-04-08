@@ -317,10 +317,27 @@ public class TestMetier {
 			catch (Exception e) { 
 				System.out.println("désinscrire un joueur déjà retiré n'a pas levé l'exception JoueurInexistantException mais " + e.getClass().getName());
 			}
+			
+			// faire parier un joueur
+			siteDeParisMetier.ajouterCompetition(new String("ChampionnatDeFrance2020"), new DateFrancaise(4, 6, 2020, 15, 00), new String [] {new String("Lyon"), new String("Marseille"), "Paris", new String("Rennes"), new String("Brest"), "StEtienne", new String("Lille"), "Nancy", "Toulouse", "Auxerre"}, new String("ilesCaimans"));
+			siteDeParisMetier.crediterJoueur("Prou", "Bernard", "nanard", 80, "ilesCaimans");
+			siteDeParisMetier.miserVainqueur("nanard", passwdBernard, 50, "ChampionnatDeFrance2020", "Marseille");
+			
+			// désinscription incorrecte d'un joueur encore avec des paris sans solder
+			
+			try {
+				siteDeParisMetier.desinscrireJoueur(new String("Prou"), new String("Bernard"), new String("nanard"), new String("ilesCaimans"));
+				System.out.println("désinscrire un joueur encore avec des paris sans solder n'a pas levé d'exception");
+			}
+			catch (JoueurException e) { }
+			catch (Exception e) { 
+				System.out.println("désinscrire un joueur déjà retiré n'a pas levé l'exception JoueurException mais " + e.getClass().getName());
+			}
 
 		}
 		catch (Exception e) {
 			System.out.println("\n Exception imprévue : " + e);
+			System.out.println(e.getClass().getName());
 			e.printStackTrace();
 		}
 
@@ -537,16 +554,16 @@ public class TestMetier {
 			try {
 				siteDeParisMetier.crediterJoueur("Prou", "Bernard", "nanard", -2, "ilesCaimans");
 			} 
-			catch (JoueurException e) { }
+			catch (MetierException e) { }
 			catch (Exception e) { 
-				System.out.println("l'ajout d'une compétition avec somme négative n'a pas levé l'exception JoueurException mais " + e.getClass().getName());	
+				System.out.println("l'ajout d'une compétition avec somme négative n'a pas levé l'exception MetierException mais " + e.getClass().getName());	
 			}
 			try {
 				siteDeParisMetier.crediterJoueur("Prou", "Bernard", "nanard", 0, "ilesCaimans");
 			} 
-			catch (JoueurException e) { }
+			catch (MetierException e) { }
 			catch (Exception e) { 
-				System.out.println("l'ajout d'une compétition avec somme zero n'a pas levé l'exception JoueurException mais " + e.getClass().getName());	
+				System.out.println("l'ajout d'une compétition avec somme zero n'a pas levé l'exception MetierException mais " + e.getClass().getName());	
 			}
 			
 			siteDeParisMetier.crediterJoueur("Prou", "Bernard", "nanard", 30, "ilesCaimans");
@@ -564,16 +581,16 @@ public class TestMetier {
 			try {
 				siteDeParisMetier.debiterJoueur("Prou", "Bernard", "nanard", -2, "ilesCaimans");
 			} 
-			catch (JoueurException e) { }
+			catch (MetierException e) { }
 			catch (Exception e) { 
-				System.out.println("le crédit avec somme négative n'a pas levé l'exception JoueurException mais " + e.getClass().getName());	
+				System.out.println("le crédit avec somme négative n'a pas levé l'exception MetierException mais " + e.getClass().getName());	
 			}
 			try {
 				siteDeParisMetier.debiterJoueur("Prou", "Bernard", "nanard", 0, "ilesCaimans");
 			} 
-			catch (JoueurException e) { }
+			catch (MetierException e) { }
 			catch (Exception e) { 
-				System.out.println("le crédit avec somme zero n'a pas levé l'exception JoueurException mais " + e.getClass().getName());	
+				System.out.println("le crédit avec somme zero n'a pas levé l'exception MetierException mais " + e.getClass().getName());	
 			}
 			try {
 				siteDeParisMetier.debiterJoueur("Prou", "Bernard", "nanard", 100, "ilesCaimans");
@@ -655,9 +672,9 @@ public class TestMetier {
 				System.out.println("un competition ne pas existante n'a pas levé CompetitionInexistanteException mais " + e.getClass().getName());	
 			}
 			try {
-				siteDeParisMetier.miserVainqueur("pascal", passwdPascal, 50, "ChampionnatDeFrance2012", "Marseille");
+				siteDeParisMetier.miserVainqueur("pascal", passwdPascal, 50, "ChampionatDeFrance2012", "Marseille");
 			}
-			catch (CompetitionException e) { }
+			catch (CompetitionInexistanteException e) { }
 			catch (Exception e) { 
 				System.out.println("un competition ne pas existante n'a pas levé CompetitionInexistanteException mais " + e.getClass().getName());	
 			}
@@ -675,6 +692,35 @@ public class TestMetier {
 			catch (Exception e) { 
 				System.out.println("un joueur sans jetons suffisans n'a pas levé JoueurException mais " + e.getClass().getName());	
 			}
+			try {
+				siteDeParisMetier.miserVainqueur("pascal", passwdPascal, 30, "ChampionnatDeFrance2012", "M222arseille");
+			}
+			catch (CompetitionException e) { }
+			catch (Exception e) { 
+				System.out.println("une vainqueur pas valide n'a pas levé CompetitionException mais " + e.getClass().getName());	
+			}
+			try {
+				siteDeParisMetier.miserVainqueur("pascal", passwdPascal, 30, "ChampionnatDeFrance2012?", "Marseille");
+			}
+			catch (CompetitionException e) { }
+			catch (Exception e) { 
+				System.out.println("une competition pas valide n'a pas levé CompetitionException mais " + e.getClass().getName());	
+			}
+			
+			DateFrancaise.setDate(4, 6, 2012, 18, 10);
+			siteDeParisMetier.crediterJoueur("Prou", "Pascal", "pascal", 50, "ilesCaimans");
+			siteDeParisMetier.solderVainqueur(new String("ChampionnatDeFrance2012"),"Nancy", new String("ilesCaimans"));
+			
+			try {
+				siteDeParisMetier.miserVainqueur("pascal", passwdPascal, 10, "ChampionnatDeFrance2012", "Marseille");
+			}
+			catch (CompetitionException e) { }
+			catch (Exception e) { 
+				
+				System.out.println("une competition plus ouverte n'a pas levé CompetitionException mais " + e.getClass().getName());	
+			}
+			
+			
 			
 		}
 		catch (Exception e) {
@@ -814,8 +860,6 @@ public class TestMetier {
 
 			// ----- ICI DES ERREURES, AVANT CELA DOIT ETRE INFERIEUR ---- ON NAJOUTE JAMAIS 40 -------
 			try {
-				System.out.println("credit Bernard");
-				System.out.println(siteDeParisMetier.getPlayer(new String("Prou"), new String("Bernard"), new String("nanard")).getJetonsQuantity());
 				siteDeParisMetier.debiterJoueur(new String("Prou"), new String("Bernard"), new String("nanard"), 1789, new String("ilesCaimans"));
 			}
 			catch (JoueurException e) { 
@@ -828,8 +872,6 @@ public class TestMetier {
 			//  aure doit avoir un crédit de 785
 
 			try {
-				System.out.println("credit aure");
-				System.out.println(siteDeParisMetier.getPlayer(new String("Prou"), new String("Aureliane"), new String("aure")).getJetonsQuantity());
 				siteDeParisMetier.debiterJoueur(new String("Prou"), new String("Aureliane"), new String("aure"), 786, new String("ilesCaimans"));
 				System.out.println("le credit d'aure devrait être inférieur à 786, et l'exception JoueurException aurait dû être levée");
 			}

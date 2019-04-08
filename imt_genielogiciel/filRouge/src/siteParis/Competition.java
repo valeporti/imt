@@ -17,6 +17,9 @@ public class Competition {
 	 */
 	private DateFrancaise date;
 	
+	/**
+	 * @uml.property  name="solde"
+	 */
 	private boolean solde;
 
 	/**
@@ -35,6 +38,14 @@ public class Competition {
 	 */
 	private LinkedList<Pari> paris;
 	
+	/**
+	 * constructeur de <code>Competition</code>. 
+	 * 
+	 * @param nom Nom de la Compétition.   
+	 * @param dateCloture date de cloture. 
+	 * @param competiteurs liste de compétiteurs. 
+	 *  
+	 */
 	public Competition (String nom, DateFrancaise dateCloture, String [] competiteurs) {
 		this.setNom(nom);
 		this.setDate(dateCloture);
@@ -44,6 +55,12 @@ public class Competition {
 		this.setSolde(false);
 	}
 	
+	/**
+	 * Verifier l'existance d'un compétiteur dnas la liste
+	 * 
+	 * @param competiteur
+	 *  
+	 */
 	protected boolean competiteurExistant (String competiteur) {
 		for (String c: this.getCompetitors()) {
 			if (competiteur.equals(c)) {
@@ -89,6 +106,10 @@ public class Competition {
 		return nom;
 	}
 	
+	/**
+	 * Verifier si cette compétition a été soldée
+	 * 
+	 */
 	public boolean getSolde() {
 		return this.solde;
 	}
@@ -129,6 +150,11 @@ public class Competition {
 		this.description = description;
 	}
 	
+	/**
+	 * Setter of the property <tt>solde</tt>
+	 * @param value  La valeur de soldé.
+	 * @uml.property  name="solde"
+	 */
 	public void setSolde(boolean value) {
 		this.solde = value;
 	}
@@ -151,10 +177,22 @@ public class Competition {
 		this.paris = new LinkedList<Pari>();
 	}
 	
+	/**
+	 * Ajouter un pari
+	 * 
+	 * @param p pari à ajouter
+	 * 
+	 */
 	public void addPari(Pari p) {
 		this.paris.add(p);
 	}
 	
+	/**
+	 * Obtenir les Vainqueurs dans cette compétition à partir d'indiquer le vainqueur
+	 * 
+	 * @param vainqueur
+	 * 
+	 */
 	public LinkedList<Pari> getParisVainqueurs(String vainqueur) {
 		LinkedList<Pari> paris = new LinkedList<Pari>();
 		for (Pari pari: this.getParis()) {
@@ -165,6 +203,10 @@ public class Competition {
 		return paris;
 	}
 
+	/**
+	 * Obtenir en forme de liste, les competitions avec format Nom, Date
+	 * 
+	 */
 	public LinkedList<String> getLinkedListCompetition() {
 		LinkedList<String> competition = new LinkedList<String>();
 		competition.add(getNom());

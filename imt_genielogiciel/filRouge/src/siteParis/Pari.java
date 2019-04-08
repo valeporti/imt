@@ -25,8 +25,20 @@ public class Pari {
 	 */
 	private String vainqueur;
 	
+	/**
+	 * @uml.property  name="a_solder"
+	 */
 	private long a_solder;
 	
+	/**
+	 * constructeur de <code>Pari</code>. 
+	 * 
+	 * @param vainqueur Nom du copétiteur auquel on veut parier.   
+	 * @param quantite quantité de jetons apliqués . 
+	 * @param player joueur qui fait le pari. 
+	 * @param competition compétition auquelle le joueur pari. 
+	 *  
+	 */
 	public Pari (String vainqueur, long quantite, Player player, Competition competition) {
 		this.setCompetition(competition);
 		this.setPlayer(player);
@@ -53,6 +65,11 @@ public class Pari {
 		return player;
 	}
 	
+	/**
+	 * Getter of the property <tt>a_solder</tt>
+	 * @return  retourne la quantité à solder.
+	 * @uml.property  name="a_solder"
+	 */
 	public long getASolder() {
 		return a_solder;
 	}
@@ -75,6 +92,11 @@ public class Pari {
 		return vainqueur;
 	}
 	
+	/**
+	 * Setter of the property <tt>a_solder</tt>
+	 * @param quantite  La quantité a solde de cet pari.
+	 * @uml.property  name="a_solder"
+	 */
 	public void setASolder(long quantite) {
 		this.a_solder = quantite;
 	}
