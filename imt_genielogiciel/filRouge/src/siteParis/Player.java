@@ -18,8 +18,19 @@ public class Player extends User {
 	 */
 	private LinkedList<Pari> paris; 
 
+	/**
+	 * @uml.property  name="passwordPlayer"
+	 */
 	private String passwordPlayer;
 
+	/**
+	 * constructeur de <code>Player</code>. 
+	 * 
+	 * @param nom nom du joueur
+	 * @param prenom du joueur. 
+	 * @param pseudo du joueur. 
+	 *  
+	 */
 	public Player(String nom, String prenom, String pseudo) {
 		this.setNom(nom);
 		this.setPrenom(prenom);
@@ -28,12 +39,22 @@ public class Player extends User {
 		this.setParis();
 	}
 
+	/**
+	 * Ajouter des Jetons aux jetons existants
+	 * 
+	 * @param plus quantité de jetons
+	 *  
+	 */
 	public long addJetons(long plus) {
 		long j = this.getJetonsQuantity();
 		this.setJetonsQuantity(j + plus);
 		return this.getJetonsQuantity();
 	}
 
+	/**
+	 * Verifier si le joueur est instrit à des paris ouverts à présent
+	 *  
+	 */
 	public boolean parisEnCours() {
 		for (Pari p: this.paris) {
 			// n'a pas été soldé 
@@ -62,10 +83,20 @@ public class Player extends User {
 		return paris;
 	}
 	
+	/**
+	 * Ajouter un Pari associé au joueur
+	 * 
+	 * @param p Pari
+	 *  
+	 */
 	public void addPari(Pari p) {
 		this.paris.add(p);
 	}
 
+	/**
+	 * Obtenir le password du joueur
+	 *  
+	 */
 	public String getPassword() {
 		return passwordPlayer;
 	}
@@ -88,17 +119,31 @@ public class Player extends User {
 		this.paris = new LinkedList<Pari>();
 	}
 
+	/**
+	 * Setter of the property <tt>passwordPlayer</tt>
+	 * @uml.property  name="passwordPlayer"
+	 */
 	public String setPassword() {
 		this.passwordPlayer = UUID.randomUUID().toString();
 		return this.passwordPlayer;
 	}
 
+	/**
+	 * Enlever des jetons du joueur
+	 * 
+	 * @param minus Quantité à enlever
+	 *  
+	 */
 	public long takeOutJetons(long minus) {
 		long j = this.getJetonsQuantity();
 		this.setJetonsQuantity(j - minus);
 		return this.getJetonsQuantity();
 	}
 	
+	/**
+	 * Enlister les joueurs en suivant une structure Nom, Prenom, pseudo, jetons, jetons pariés
+	 *  
+	 */
 	public LinkedList<String> getLinkedListPlayer() {
 		LinkedList<String> joueur = new LinkedList<String>();
 		joueur.add(getNom());
@@ -109,6 +154,10 @@ public class Player extends User {
 		return joueur;
 	}
 	
+	/**
+	 * Obtenir si jamais, il y a des jetons dans des paris pas soldés
+	 * 
+	 */
 	public long getJetonsInParis() {
 		long total = 0;
 		for (Pari p: this.getParis()) {

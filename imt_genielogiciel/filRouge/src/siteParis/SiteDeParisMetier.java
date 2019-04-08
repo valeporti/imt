@@ -593,6 +593,8 @@ public class SiteDeParisMetier {
 		
 		this.validitePasswordGestionnaire(passwordGestionnaire);
 		if (!this.existingCompetition(competition)) throw new CompetitionInexistanteException();
+		this.validateCompetitionName(competition);
+		this.validateCompetiteurNom(new String[] {vainqueur});
 	
 		Competition comp = this.getCompetition(competition);
 		

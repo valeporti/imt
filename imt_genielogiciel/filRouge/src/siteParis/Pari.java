@@ -137,6 +137,10 @@ public class Pari {
 		this.vainqueur = vainqueur;
 	}
 	
+	/**
+	 * Assigner au joueur la quantité calculé 
+	 *  
+	 */
 	protected void solder() {
 		this.player.addJetons(this.getASolder());
 		this.setASolder(0);
