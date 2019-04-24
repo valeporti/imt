@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 extern int yylineno;
 extern char  yytext[];
@@ -8,8 +9,7 @@ yyerror(s) {
   printf( "Desole, une erreur a ete detectee : %s\n" , s); exit(1);
 }
 
-main() {
- 
+void main() {
   yyparse();
   printf("\nJ'ai fini!\n");
 }

@@ -1,268 +1,273 @@
-Terminaux inutilisés dans la grammaire
-
-   ERROR
-
-
-Grammaire
+Grammar
 
     0 $accept: sequence $end
 
     1 sequence: instruction RETURN sequence
     2         | RETURN
+    3         | ERROR
 
-    3 instruction: expr
+    4 instruction: expr
 
-    4 expr: expr PLUS terme
-    5     | expr MOINS terme
-    6     | terme
+    5 expr: expr PLUS terme
+    6     | expr MOINS terme
+    7     | terme
 
-    7 terme: terme FOIS facteur
-    8      | terme DIV facteur
-    9      | facteur
+    8 terme: terme FOIS facteur
+    9      | terme DIV facteur
+   10      | facteur
 
-   10 facteur: PAROU expr PARFER
-   11        | Nombre
+   11 facteur: PAROU expr PARFER
+   12        | Nombre
 
 
-Terminaux, suivis des règles où ils apparaissent
+Terminals, with rules where they appear
 
 $end (0) 0
 error (256)
-ERROR (258)
+ERROR (258) 3
 RETURN (259) 1 2
-Nombre (260) 11
-FOIS (261) 7
-DIV (262) 8
-PLUS (263) 4
-MOINS (264) 5
-PAROU (265) 10
-PARFER (266) 10
+Nombre (260) 12
+FOIS (261) 8
+DIV (262) 9
+PLUS (263) 5
+MOINS (264) 6
+PAROU (265) 11
+PARFER (266) 11
 
 
-Non-terminaux, suivis des règles où ils apparaissent
+Nonterminals, with rules where they appear
 
 $accept (12)
-    à gauche: 0
+    on left: 0
 sequence (13)
-    à gauche: 1 2, à droite: 0 1
+    on left: 1 2 3, on right: 0 1
 instruction (14)
-    à gauche: 3, à droite: 1
+    on left: 4, on right: 1
 expr (15)
-    à gauche: 4 5 6, à droite: 3 4 5 10
+    on left: 5 6 7, on right: 4 5 6 11
 terme (16)
-    à gauche: 7 8 9, à droite: 4 5 6 7 8
+    on left: 8 9 10, on right: 5 6 7 8 9
 facteur (17)
-    à gauche: 10 11, à droite: 7 8 9
+    on left: 11 12, on right: 8 9 10
 
 
-État 0
+State 0
 
     0 $accept: . sequence $end
 
-    RETURN  décalage et aller à l'état 1
-    Nombre  décalage et aller à l'état 2
-    PAROU   décalage et aller à l'état 3
+    ERROR   shift, and go to state 1
+    RETURN  shift, and go to state 2
+    Nombre  shift, and go to state 3
+    PAROU   shift, and go to state 4
 
-    sequence     aller à l'état 4
-    instruction  aller à l'état 5
-    expr         aller à l'état 6
-    terme        aller à l'état 7
-    facteur      aller à l'état 8
+    sequence     go to state 5
+    instruction  go to state 6
+    expr         go to state 7
+    terme        go to state 8
+    facteur      go to state 9
 
 
-État 1
+State 1
+
+    3 sequence: ERROR .
+
+    $default  reduce using rule 3 (sequence)
+
+
+State 2
 
     2 sequence: RETURN .
 
-    $défaut  réduction par utilisation de la règle 2 (sequence)
+    $default  reduce using rule 2 (sequence)
 
 
-État 2
+State 3
 
-   11 facteur: Nombre .
+   12 facteur: Nombre .
 
-    $défaut  réduction par utilisation de la règle 11 (facteur)
-
-
-État 3
-
-   10 facteur: PAROU . expr PARFER
-
-    Nombre  décalage et aller à l'état 2
-    PAROU   décalage et aller à l'état 3
-
-    expr     aller à l'état 9
-    terme    aller à l'état 7
-    facteur  aller à l'état 8
+    $default  reduce using rule 12 (facteur)
 
 
-État 4
+State 4
+
+   11 facteur: PAROU . expr PARFER
+
+    Nombre  shift, and go to state 3
+    PAROU   shift, and go to state 4
+
+    expr     go to state 10
+    terme    go to state 8
+    facteur  go to state 9
+
+
+State 5
 
     0 $accept: sequence . $end
 
-    $end  décalage et aller à l'état 10
+    $end  shift, and go to state 11
 
 
-État 5
+State 6
 
     1 sequence: instruction . RETURN sequence
 
-    RETURN  décalage et aller à l'état 11
+    RETURN  shift, and go to state 12
 
 
-État 6
+State 7
 
-    3 instruction: expr .
-    4 expr: expr . PLUS terme
-    5     | expr . MOINS terme
+    4 instruction: expr .
+    5 expr: expr . PLUS terme
+    6     | expr . MOINS terme
 
-    PLUS   décalage et aller à l'état 12
-    MOINS  décalage et aller à l'état 13
+    PLUS   shift, and go to state 13
+    MOINS  shift, and go to state 14
 
-    $défaut  réduction par utilisation de la règle 3 (instruction)
-
-
-État 7
-
-    6 expr: terme .
-    7 terme: terme . FOIS facteur
-    8      | terme . DIV facteur
-
-    FOIS  décalage et aller à l'état 14
-    DIV   décalage et aller à l'état 15
-
-    $défaut  réduction par utilisation de la règle 6 (expr)
+    $default  reduce using rule 4 (instruction)
 
 
-État 8
+State 8
 
-    9 terme: facteur .
+    7 expr: terme .
+    8 terme: terme . FOIS facteur
+    9      | terme . DIV facteur
 
-    $défaut  réduction par utilisation de la règle 9 (terme)
+    FOIS  shift, and go to state 15
+    DIV   shift, and go to state 16
 
-
-État 9
-
-    4 expr: expr . PLUS terme
-    5     | expr . MOINS terme
-   10 facteur: PAROU expr . PARFER
-
-    PLUS    décalage et aller à l'état 12
-    MOINS   décalage et aller à l'état 13
-    PARFER  décalage et aller à l'état 16
+    $default  reduce using rule 7 (expr)
 
 
-État 10
+State 9
+
+   10 terme: facteur .
+
+    $default  reduce using rule 10 (terme)
+
+
+State 10
+
+    5 expr: expr . PLUS terme
+    6     | expr . MOINS terme
+   11 facteur: PAROU expr . PARFER
+
+    PLUS    shift, and go to state 13
+    MOINS   shift, and go to state 14
+    PARFER  shift, and go to state 17
+
+
+State 11
 
     0 $accept: sequence $end .
 
-    $défaut  accepter
+    $default  accept
 
 
-État 11
+State 12
 
     1 sequence: instruction RETURN . sequence
 
-    RETURN  décalage et aller à l'état 1
-    Nombre  décalage et aller à l'état 2
-    PAROU   décalage et aller à l'état 3
+    ERROR   shift, and go to state 1
+    RETURN  shift, and go to state 2
+    Nombre  shift, and go to state 3
+    PAROU   shift, and go to state 4
 
-    sequence     aller à l'état 17
-    instruction  aller à l'état 5
-    expr         aller à l'état 6
-    terme        aller à l'état 7
-    facteur      aller à l'état 8
-
-
-État 12
-
-    4 expr: expr PLUS . terme
-
-    Nombre  décalage et aller à l'état 2
-    PAROU   décalage et aller à l'état 3
-
-    terme    aller à l'état 18
-    facteur  aller à l'état 8
+    sequence     go to state 18
+    instruction  go to state 6
+    expr         go to state 7
+    terme        go to state 8
+    facteur      go to state 9
 
 
-État 13
+State 13
 
-    5 expr: expr MOINS . terme
+    5 expr: expr PLUS . terme
 
-    Nombre  décalage et aller à l'état 2
-    PAROU   décalage et aller à l'état 3
+    Nombre  shift, and go to state 3
+    PAROU   shift, and go to state 4
 
-    terme    aller à l'état 19
-    facteur  aller à l'état 8
-
-
-État 14
-
-    7 terme: terme FOIS . facteur
-
-    Nombre  décalage et aller à l'état 2
-    PAROU   décalage et aller à l'état 3
-
-    facteur  aller à l'état 20
+    terme    go to state 19
+    facteur  go to state 9
 
 
-État 15
+State 14
 
-    8 terme: terme DIV . facteur
+    6 expr: expr MOINS . terme
 
-    Nombre  décalage et aller à l'état 2
-    PAROU   décalage et aller à l'état 3
+    Nombre  shift, and go to state 3
+    PAROU   shift, and go to state 4
 
-    facteur  aller à l'état 21
-
-
-État 16
-
-   10 facteur: PAROU expr PARFER .
-
-    $défaut  réduction par utilisation de la règle 10 (facteur)
+    terme    go to state 20
+    facteur  go to state 9
 
 
-État 17
+State 15
+
+    8 terme: terme FOIS . facteur
+
+    Nombre  shift, and go to state 3
+    PAROU   shift, and go to state 4
+
+    facteur  go to state 21
+
+
+State 16
+
+    9 terme: terme DIV . facteur
+
+    Nombre  shift, and go to state 3
+    PAROU   shift, and go to state 4
+
+    facteur  go to state 22
+
+
+State 17
+
+   11 facteur: PAROU expr PARFER .
+
+    $default  reduce using rule 11 (facteur)
+
+
+State 18
 
     1 sequence: instruction RETURN sequence .
 
-    $défaut  réduction par utilisation de la règle 1 (sequence)
+    $default  reduce using rule 1 (sequence)
 
 
-État 18
+State 19
 
-    4 expr: expr PLUS terme .
-    7 terme: terme . FOIS facteur
-    8      | terme . DIV facteur
+    5 expr: expr PLUS terme .
+    8 terme: terme . FOIS facteur
+    9      | terme . DIV facteur
 
-    FOIS  décalage et aller à l'état 14
-    DIV   décalage et aller à l'état 15
+    FOIS  shift, and go to state 15
+    DIV   shift, and go to state 16
 
-    $défaut  réduction par utilisation de la règle 4 (expr)
-
-
-État 19
-
-    5 expr: expr MOINS terme .
-    7 terme: terme . FOIS facteur
-    8      | terme . DIV facteur
-
-    FOIS  décalage et aller à l'état 14
-    DIV   décalage et aller à l'état 15
-
-    $défaut  réduction par utilisation de la règle 5 (expr)
+    $default  reduce using rule 5 (expr)
 
 
-État 20
+State 20
 
-    7 terme: terme FOIS facteur .
+    6 expr: expr MOINS terme .
+    8 terme: terme . FOIS facteur
+    9      | terme . DIV facteur
 
-    $défaut  réduction par utilisation de la règle 7 (terme)
+    FOIS  shift, and go to state 15
+    DIV   shift, and go to state 16
+
+    $default  reduce using rule 6 (expr)
 
 
-État 21
+State 21
 
-    8 terme: terme DIV facteur .
+    8 terme: terme FOIS facteur .
 
-    $défaut  réduction par utilisation de la règle 8 (terme)
+    $default  reduce using rule 8 (terme)
+
+
+State 22
+
+    9 terme: terme DIV facteur .
+
+    $default  reduce using rule 9 (terme)
