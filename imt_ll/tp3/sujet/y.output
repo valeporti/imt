@@ -1,0 +1,268 @@
+Terminaux inutilisés dans la grammaire
+
+   ERROR
+
+
+Grammaire
+
+    0 $accept: sequence $end
+
+    1 sequence: instruction RETURN sequence
+    2         | RETURN
+
+    3 instruction: expr
+
+    4 expr: expr PLUS terme
+    5     | expr MOINS terme
+    6     | terme
+
+    7 terme: terme FOIS facteur
+    8      | terme DIV facteur
+    9      | facteur
+
+   10 facteur: PAROU expr PARFER
+   11        | Nombre
+
+
+Terminaux, suivis des règles où ils apparaissent
+
+$end (0) 0
+error (256)
+ERROR (258)
+RETURN (259) 1 2
+Nombre (260) 11
+FOIS (261) 7
+DIV (262) 8
+PLUS (263) 4
+MOINS (264) 5
+PAROU (265) 10
+PARFER (266) 10
+
+
+Non-terminaux, suivis des règles où ils apparaissent
+
+$accept (12)
+    à gauche: 0
+sequence (13)
+    à gauche: 1 2, à droite: 0 1
+instruction (14)
+    à gauche: 3, à droite: 1
+expr (15)
+    à gauche: 4 5 6, à droite: 3 4 5 10
+terme (16)
+    à gauche: 7 8 9, à droite: 4 5 6 7 8
+facteur (17)
+    à gauche: 10 11, à droite: 7 8 9
+
+
+État 0
+
+    0 $accept: . sequence $end
+
+    RETURN  décalage et aller à l'état 1
+    Nombre  décalage et aller à l'état 2
+    PAROU   décalage et aller à l'état 3
+
+    sequence     aller à l'état 4
+    instruction  aller à l'état 5
+    expr         aller à l'état 6
+    terme        aller à l'état 7
+    facteur      aller à l'état 8
+
+
+État 1
+
+    2 sequence: RETURN .
+
+    $défaut  réduction par utilisation de la règle 2 (sequence)
+
+
+État 2
+
+   11 facteur: Nombre .
+
+    $défaut  réduction par utilisation de la règle 11 (facteur)
+
+
+État 3
+
+   10 facteur: PAROU . expr PARFER
+
+    Nombre  décalage et aller à l'état 2
+    PAROU   décalage et aller à l'état 3
+
+    expr     aller à l'état 9
+    terme    aller à l'état 7
+    facteur  aller à l'état 8
+
+
+État 4
+
+    0 $accept: sequence . $end
+
+    $end  décalage et aller à l'état 10
+
+
+État 5
+
+    1 sequence: instruction . RETURN sequence
+
+    RETURN  décalage et aller à l'état 11
+
+
+État 6
+
+    3 instruction: expr .
+    4 expr: expr . PLUS terme
+    5     | expr . MOINS terme
+
+    PLUS   décalage et aller à l'état 12
+    MOINS  décalage et aller à l'état 13
+
+    $défaut  réduction par utilisation de la règle 3 (instruction)
+
+
+État 7
+
+    6 expr: terme .
+    7 terme: terme . FOIS facteur
+    8      | terme . DIV facteur
+
+    FOIS  décalage et aller à l'état 14
+    DIV   décalage et aller à l'état 15
+
+    $défaut  réduction par utilisation de la règle 6 (expr)
+
+
+État 8
+
+    9 terme: facteur .
+
+    $défaut  réduction par utilisation de la règle 9 (terme)
+
+
+État 9
+
+    4 expr: expr . PLUS terme
+    5     | expr . MOINS terme
+   10 facteur: PAROU expr . PARFER
+
+    PLUS    décalage et aller à l'état 12
+    MOINS   décalage et aller à l'état 13
+    PARFER  décalage et aller à l'état 16
+
+
+État 10
+
+    0 $accept: sequence $end .
+
+    $défaut  accepter
+
+
+État 11
+
+    1 sequence: instruction RETURN . sequence
+
+    RETURN  décalage et aller à l'état 1
+    Nombre  décalage et aller à l'état 2
+    PAROU   décalage et aller à l'état 3
+
+    sequence     aller à l'état 17
+    instruction  aller à l'état 5
+    expr         aller à l'état 6
+    terme        aller à l'état 7
+    facteur      aller à l'état 8
+
+
+État 12
+
+    4 expr: expr PLUS . terme
+
+    Nombre  décalage et aller à l'état 2
+    PAROU   décalage et aller à l'état 3
+
+    terme    aller à l'état 18
+    facteur  aller à l'état 8
+
+
+État 13
+
+    5 expr: expr MOINS . terme
+
+    Nombre  décalage et aller à l'état 2
+    PAROU   décalage et aller à l'état 3
+
+    terme    aller à l'état 19
+    facteur  aller à l'état 8
+
+
+État 14
+
+    7 terme: terme FOIS . facteur
+
+    Nombre  décalage et aller à l'état 2
+    PAROU   décalage et aller à l'état 3
+
+    facteur  aller à l'état 20
+
+
+État 15
+
+    8 terme: terme DIV . facteur
+
+    Nombre  décalage et aller à l'état 2
+    PAROU   décalage et aller à l'état 3
+
+    facteur  aller à l'état 21
+
+
+État 16
+
+   10 facteur: PAROU expr PARFER .
+
+    $défaut  réduction par utilisation de la règle 10 (facteur)
+
+
+État 17
+
+    1 sequence: instruction RETURN sequence .
+
+    $défaut  réduction par utilisation de la règle 1 (sequence)
+
+
+État 18
+
+    4 expr: expr PLUS terme .
+    7 terme: terme . FOIS facteur
+    8      | terme . DIV facteur
+
+    FOIS  décalage et aller à l'état 14
+    DIV   décalage et aller à l'état 15
+
+    $défaut  réduction par utilisation de la règle 4 (expr)
+
+
+État 19
+
+    5 expr: expr MOINS terme .
+    7 terme: terme . FOIS facteur
+    8      | terme . DIV facteur
+
+    FOIS  décalage et aller à l'état 14
+    DIV   décalage et aller à l'état 15
+
+    $défaut  réduction par utilisation de la règle 5 (expr)
+
+
+État 20
+
+    7 terme: terme FOIS facteur .
+
+    $défaut  réduction par utilisation de la règle 7 (terme)
+
+
+État 21
+
+    8 terme: terme DIV facteur .
+
+    $défaut  réduction par utilisation de la règle 8 (terme)

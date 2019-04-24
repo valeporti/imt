@@ -1,0 +1,29 @@
+#________________________________________________________________
+#
+
+# Pour compiler romains on a besoin de lex.yy.o, y.tab.o et main.c
+# et pour le compiler la commande est : cc -o etc..
+
+romains: lex.yy.o y.tab.o main.c 
+	gcc -o romains main.c lex.yy.o y.tab.o -ll
+
+# lex.yy.o depend de lex.yy.c et de y.tab.h (declare en #include)
+lex.yy.o: lex.yy.c y.tab.h
+	gcc -c lex.yy.c
+
+y.tab.o: y.tab.c
+	gcc -c y.tab.c
+
+lex.yy.c: romains.l
+	flex romains.l
+
+y.tab.h y.tab.c: romains.y
+	bison -y -v -d romains.y
+
+# clean permet de nettoyer les fichiers .o
+clean : 
+	rm -f *.o
+
+# clean_all permet de supprimer tous les fichiers intermédiaires 
+clean_all : clean
+	rm -f y.tab.c y.tab.h y.output lex.yy.c

@@ -1,0 +1,35 @@
+# Fichier de construction (makefile) pour l'application calculette
+# Utilisation :
+# a) Pour la construction de la calculette :
+# make -f nomdecefichier
+#
+# b) Pour nettoyer le répertoire
+# make clean_all -f nomdecefichier
+#
+
+
+# calculette est la cible par défaut
+calculette: lex.yy.o y.tab.o main.c 
+	gcc -o calculette main.c lex.yy.o y.tab.o -ll
+
+lex.yy.o: lex.yy.c y.tab.h
+	gcc -c lex.yy.c
+
+y.tab.o: y.tab.c
+	gcc -c -g y.tab.c
+
+lex.yy.c: calculette.l
+	flex calculette.l
+
+y.tab.h y.tab.c: calculette.y
+	bison -y -v -d calculette.y
+
+# clean permet de nettoyer les fichiers .o
+clean : 
+	rm *.o
+
+# clean_all permet de supprimer tous les fichiers intermédiaires 
+clean_all : clean
+	rm y.tab.c ; rm y.tab.h ; rm y.output ; rm lex.yy.c
+
+
