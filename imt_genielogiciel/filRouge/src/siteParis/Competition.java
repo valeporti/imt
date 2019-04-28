@@ -23,11 +23,6 @@ public class Competition {
 	private boolean solde;
 
 	/**
-	 * @uml.property  name="description"
-	 */
-	private String description;
-
-	/**
 	 * @uml.property  name="nom"
 	 */
 	private String nom;
@@ -51,7 +46,6 @@ public class Competition {
 		this.setDate(dateCloture);
 		this.paris = new LinkedList<Pari>();
 		this.setCompetitors(competiteurs);
-		this.description = null;
 		this.setSolde(false);
 	}
 	
@@ -86,15 +80,6 @@ public class Competition {
 	 */
 	public DateFrancaise getDate() {
 		return date;
-	}
-
-	/**
-	 * Getter of the property <tt>description</tt>
-	 * @return  Returns the description.
-	 * @uml.property  name="description"
-	 */
-	public String getDescription() {
-		return description;
 	}
 
 	/**
@@ -141,15 +126,6 @@ public class Competition {
 		this.date = date;
 	}
 
-	/**
-	 * Setter of the property <tt>description</tt>
-	 * @param description  The description to set.
-	 * @uml.property  name="description"
-	 */
-	public void setDescription(String description) {
-		this.description = description;
-	}
-	
 	/**
 	 * Setter of the property <tt>solde</tt>
 	 * @param value  La valeur de soldé.

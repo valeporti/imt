@@ -139,6 +139,50 @@ public class SiteDeParisMetier {
 
 
 	/**
+	 * calculer le montant total a solder par pari.
+	 * en cas de non vainqueur choisi, le montant est redistribué à ceux ayant fait un pari 
+	 * 
+	 * @param paris les paris 
+	 * @param paris_vainqueurs les parisdes vainqueurs si existants
+	 */
+	protected void calculerMontantParPari(LinkedList<Pari> paris_vainqueurs, LinkedList<Pari> paris) {
+		long somme_totale = this.calculerMontantTotal(paris);
+		long somme_sur_ce_competiteur = this.calculerMontantTotal(paris_vainqueurs);
+		
+		if (paris_vainqueurs.isEmpty()) {
+			for (Pari pari: paris) {
+				// retourner
+				pari.setASolder(pari.getQuantite());
+			}
+		} else {
+			for (Pari pari: paris_vainqueurs) {
+				// montant de sa mise * la somme des jetons misés pour cette compétition) / la somme des jetons
+				// misés sur ce compétiteur
+				long sa_mise = pari.getQuantite();
+				long total = sa_mise * somme_totale / somme_sur_ce_competiteur;
+				pari.setASolder(total);
+			}
+		}
+	}
+
+
+
+	/**
+	 * calculer le montant total parié dans un ensemble de paris donné.
+	 * 
+	 * @param paris les paris 
+	 *  
+	 */
+	protected long calculerMontantTotal(LinkedList<Pari> paris) {
+		long somme_totale = 0;
+		for (Pari pari: paris) {
+			somme_totale += pari.getQuantite();
+		}
+		return somme_totale;
+	}
+
+
+	/**
 	 * connaître  la liste des noms des compétiteurs d'une compétition.  
 	 * 
 	 * @param competition   le nom de la compétition  
@@ -179,6 +223,9 @@ public class SiteDeParisMetier {
 	}
 
 
+	// Les méthodes avec mot de passe utilisateur
+
+
 	/** 
 	 * consulter les  joueurs.
 	 * 
@@ -208,6 +255,10 @@ public class SiteDeParisMetier {
 		return all_players;
 	}
 
+
+    
+
+	// Les méthodes sans mot de passe
 
 
 	/**
@@ -239,11 +290,7 @@ public class SiteDeParisMetier {
 		
 		joueur.addJetons(sommeEnJetons);
 		
-	}
-
-
-	// Les méthodes avec mot de passe utilisateur
-
+	} 
 
 	/**
 	 * débiter le compte en jetons d'un joueur du site de paris.
@@ -280,13 +327,7 @@ public class SiteDeParisMetier {
 		joueur.takeOutJetons(sommeEnJetons);
 		
 	}
-
-
-    
-
-	// Les méthodes sans mot de passe
-
-
+	
 	/**
 	 * supprimer un joueur. 
 	 * 
@@ -320,8 +361,20 @@ public class SiteDeParisMetier {
 		players.remove(p);
 		return jetons;
 		
-	} 
-
+	}
+	
+	/**
+	 * distribuer la quantité due à chaque competiteur.
+	 * 
+	 * @param paris_vainqueurs les paris qui ont choisi un vainqueur
+	 *  
+	 */
+	protected void distribuerASolder(LinkedList<Pari> paris_vainqueurs) {
+		for (Pari pari: paris_vainqueurs) {
+			pari.solder();
+		}
+	}
+	
 	/**
 	 * Verifier l'égalité d'un password introduit
 	 * 
@@ -379,6 +432,7 @@ public class SiteDeParisMetier {
 		return false;
 	}
 	
+
 	/**
 	 * Retourner la competition à partir de son nom
 	 * 
@@ -417,7 +471,6 @@ public class SiteDeParisMetier {
 		}
 		return null;
 	}
-	
 
 	/**
 	 * @return  Returns player indicated.
@@ -481,7 +534,7 @@ public class SiteDeParisMetier {
 		
 		return new_password;
 	}
-
+	
 	public boolean isEmptyPlayers() { return players.size() == 0; }
 	
 	/**
@@ -532,7 +585,7 @@ public class SiteDeParisMetier {
     	joueur.takeOutJetons(miseEnJetons);
     	comp.addPari(pari);
 	}
-	
+
 	/**
 	 * Setter of the property <tt>competition</tt>
 	 * @param competition  The competition to set.
@@ -557,7 +610,7 @@ public class SiteDeParisMetier {
 	public void setPlayers() {
 		this.players = new LinkedList<Player>();
 	}
-
+	
 	/**
 	 * solder une compétition vainqueur (compétition avec vainqueur).  
 	 * 
@@ -612,59 +665,6 @@ public class SiteDeParisMetier {
 		comp.setSolde(true);
 		
 	}
-	
-	/**
-	 * distribuer la quantité due à chaque competiteur.
-	 * 
-	 * @param paris_vainqueurs les paris qui ont choisi un vainqueur
-	 *  
-	 */
-	protected void distribuerASolder(LinkedList<Pari> paris_vainqueurs) {
-		for (Pari pari: paris_vainqueurs) {
-			pari.solder();
-		}
-	}
-	
-	/**
-	 * calculer le montant total parié dans un ensemble de paris donné.
-	 * 
-	 * @param paris les paris 
-	 *  
-	 */
-	protected long calculerMontantTotal(LinkedList<Pari> paris) {
-		long somme_totale = 0;
-		for (Pari pari: paris) {
-			somme_totale += pari.getQuantite();
-		}
-		return somme_totale;
-	}
-	
-	/**
-	 * calculer le montant total a solder par pari.
-	 * en cas de non vainqueur choisi, le montant est redistribué à ceux ayant fait un pari 
-	 * 
-	 * @param paris les paris 
-	 * @param paris_vainqueurs les parisdes vainqueurs si existants
-	 */
-	protected void calculerMontantParPari(LinkedList<Pari> paris_vainqueurs, LinkedList<Pari> paris) {
-		long somme_totale = this.calculerMontantTotal(paris);
-		long somme_sur_ce_competiteur = this.calculerMontantTotal(paris_vainqueurs);
-		
-		if (paris_vainqueurs.isEmpty()) {
-			for (Pari pari: paris) {
-				// retourner
-				pari.setASolder(pari.getQuantite());
-			}
-		} else {
-			for (Pari pari: paris_vainqueurs) {
-				// montant de sa mise * la somme des jetons misés pour cette compétition) / la somme des jetons
-				// misés sur ce compétiteur
-				long sa_mise = pari.getQuantite();
-				long total = sa_mise * somme_totale / somme_sur_ce_competiteur;
-				pari.setASolder(total);
-			}
-		}
-	}
 
 
 	/**
@@ -698,6 +698,19 @@ public class SiteDeParisMetier {
 	}
 	
 	/**
+	 * Valider le nom de la compétition
+	 * 
+	 * @param competition nom competition
+	 *  
+	 */
+	protected void validateCompetitionName(String competition) throws CompetitionException {
+		//System.out.println("checking: " + competition);
+		if (competition == null) throw new CompetitionException();
+		if (competition.length() < 4) throw new CompetitionException();
+		if (!competition.matches("^[a-zA-Z0-9]+$")) throw new CompetitionException();		
+	}
+	
+	/**
 	 * Valider l'information du joueur
 	 * 
 	 * @param nom
@@ -711,19 +724,6 @@ public class SiteDeParisMetier {
 		if (!nom.matches("^[a-zA-Z]+$") || !prenom.matches("^[a-zA-Z]+$")) throw new JoueurException();
 		if (!pseudo.matches("^[a-zA-Z]{4,}$")) throw new JoueurException();
 		
-	}
-	
-	/**
-	 * Valider le nom de la compétition
-	 * 
-	 * @param competition nom competition
-	 *  
-	 */
-	protected void validateCompetitionName(String competition) throws CompetitionException {
-		//System.out.println("checking: " + competition);
-		if (competition == null) throw new CompetitionException();
-		if (competition.length() < 4) throw new CompetitionException();
-		if (!competition.matches("^[a-zA-Z0-9]+$")) throw new CompetitionException();		
 	}
 	
 	/**
