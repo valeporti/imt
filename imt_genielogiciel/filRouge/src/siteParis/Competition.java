@@ -8,30 +8,29 @@ import java.util.Arrays;
 public class Competition {
 
 	/**
-	 * @uml.property  name="competitors"
+	 * Contient les competiteurs de la compétition
 	 */
 	private LinkedList<String> competitors;
 
 	/**
-	 * @uml.property  name="date"
+	 * Contient la date de la réalisation de la compétition
 	 */
 	private DateFrancaise date;
 	
 	/**
-	 * @uml.property  name="solde"
-	 */
-	private boolean solde;
-
-	/**
-	 * @uml.property  name="nom"
+	 * Contient le nom de la compétition
 	 */
 	private String nom;
 
 	/**
-	 * @uml.property   name="paris"
-	 * @uml.associationEnd   multiplicity="(0 -1)" inverse="competition:siteParis.Pari"
+	 * Contient la liste des paris associés à l'instance de Compétition
 	 */
 	private LinkedList<Pari> paris;
+
+	/**
+	 * Indique si la repartition des jetons liés à cette compétition ont été déjà repartis
+	 */
+	private boolean solde = false;
 	
 	/**
 	 * constructeur de <code>Competition</code>. 
@@ -46,111 +45,6 @@ public class Competition {
 		this.setDate(dateCloture);
 		this.paris = new LinkedList<Pari>();
 		this.setCompetitors(competiteurs);
-		this.setSolde(false);
-	}
-	
-	/**
-	 * Verifier l'existance d'un compétiteur dnas la liste
-	 * 
-	 * @param competiteur
-	 *  
-	 */
-	protected boolean competiteurExistant (String competiteur) {
-		for (String c: this.getCompetitors()) {
-			if (competiteur.equals(c)) {
-				return true;
-			}
-		}
-		return false;
-	}  
-
-	/**
-	 * Getter of the property <tt>competitors</tt>
-	 * @return  Returns the competitors.
-	 * @uml.property  name="competitors"
-	 */
-	public LinkedList<String> getCompetitors() {
-		return competitors;
-	}
-
-	/**
-	 * Getter of the property <tt>date</tt>
-	 * @return  Returns the date.
-	 * @uml.property  name="date"
-	 */
-	public DateFrancaise getDate() {
-		return date;
-	}
-
-	/**
-	 * Getter of the property <tt>nom</tt>
-	 * @return  Returns the nom.
-	 * @uml.property  name="nom"
-	 */
-	public String getNom() {
-		return nom;
-	}
-	
-	/**
-	 * Verifier si cette compétition a été soldée
-	 * 
-	 */
-	public boolean getSolde() {
-		return this.solde;
-	}
-
-	/**
-	 * Getter of the property <tt>paris</tt>
-	 * @return  Returns the paris.
-	 * @uml.property  name="paris"
-	 */
-	public LinkedList<Pari> getParis() {
-		return paris;
-	}
-
-	/**
-	 * Setter of the property <tt>competitors</tt>
-	 * @param competitors  The competitors to set.
-	 * @uml.property  name="competitors"
-	 */
-	public void setCompetitors(String[] competitors) {
-		this.competitors = new LinkedList(Arrays.asList(competitors));
-	}
-
-	/**
-	 * Setter of the property <tt>date</tt>
-	 * @param date  The date to set.
-	 * @uml.property  name="date"
-	 */
-	public void setDate(DateFrancaise date) {
-		this.date = date;
-	}
-
-	/**
-	 * Setter of the property <tt>solde</tt>
-	 * @param value  La valeur de soldé.
-	 * @uml.property  name="solde"
-	 */
-	public void setSolde(boolean value) {
-		this.solde = value;
-	}
-
-	/**
-	 * Setter of the property <tt>nom</tt>
-	 * @param nom  The nom to set.
-	 * @uml.property  name="nom"
-	 */
-	public void setNom(String nom) {
-		this.nom = nom;
-	}
-
-	/**
-	 * Setter of the property <tt>paris</tt>
-	 * @param paris  The paris to set.
-	 * @uml.property  name="paris"
-	 */
-	public void setParis() {
-		this.paris = new LinkedList<Pari>();
 	}
 	
 	/**
@@ -159,12 +53,25 @@ public class Competition {
 	 * @param p pari à ajouter
 	 * 
 	 */
-	public void addPari(Pari p) {
-		this.paris.add(p);
+	public void addPari(Pari p) { this.paris.add(p); }  
+	
+	/**
+	 * Vérifie l'existance d'un compétiteur dans la liste des compétiteurs de l'instance Compétition
+	 * 
+	 * @param competiteur
+	 *
+	 */
+	protected boolean competiteurExistant (String competiteur) {
+		for (String c: this.getCompetitors()) {
+			if (competiteur.equals(c)) {
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	/**
-	 * Obtenir les Vainqueurs dans cette compétition à partir d'indiquer le vainqueur
+	 * Obtenir les Paris vainqueurs dans cette compétition à partir du vainqueur indiqué
 	 * 
 	 * @param vainqueur
 	 * 
@@ -178,9 +85,9 @@ public class Competition {
 		}
 		return paris;
 	}
-
+	
 	/**
-	 * Obtenir en forme de liste, les competitions avec format Nom, Date
+	 * Obtenir dans une liste, les competitions avec format Nom, Date
 	 * 
 	 */
 	public LinkedList<String> getLinkedListCompetition() {
@@ -189,5 +96,29 @@ public class Competition {
 		competition.add(getDate().toString());
 		return competition;
 	}
+	
+	// ---- Getters ----
+
+	public LinkedList<String> getCompetitors() { return competitors; }
+
+	public DateFrancaise getDate() { return date; }
+	
+	public String getNom() { return nom; }
+	
+	public LinkedList<Pari> getParis() { return paris; }
+
+	public boolean getSolde() { return this.solde; }
+
+	// ---- Setters ----
+	
+	public void setCompetitors(String[] competitors) { this.competitors = new LinkedList(Arrays.asList(competitors)); }
+
+	public void setDate(DateFrancaise date) { this.date = date; }
+	
+	public void setNom(String nom) {this.nom = nom; }
+	
+	public void setParis() { this.paris = new LinkedList<Pari>(); }
+
+	public void setSolde(boolean value) { this.solde = value; }
 
 }

@@ -4,31 +4,29 @@ package siteParis;
 public class Pari {
 
 	/**
-	 * @uml.property  name="competition"
-	 * @uml.associationEnd  inverse="paris:siteParis.Competition"
+	 * Contient la compétition liée au pari instancié
 	 */
 	private Competition competition;
 
 	/**
-	 * @uml.property  name="player"
-	 * @uml.associationEnd  inverse="paris:siteParis.Player"
+	 * Contient le joueur lié au pari instancié
 	 */
 	private Player player;
 
 	/**
-	 * @uml.property  name="quantite"
+	 * Contient la quantité pariée
 	 */
 	private long quantite;
 
 	/**
-	 * @uml.property  name="vainqueur"
+	 * Contient le nom du vainqueur envisagé par le joueur
 	 */
 	private String vainqueur;
 	
 	/**
-	 * @uml.property  name="a_solder"
+	 * Contient la quantité à solder pour le pari instancié, par défaut, initialisé à 0
 	 */
-	private long a_solder;
+	private long a_solder = 0;
 	
 	/**
 	 * constructeur de <code>Pari</code>. 
@@ -44,101 +42,10 @@ public class Pari {
 		this.setPlayer(player);
 		this.setQuantite(quantite);
 		this.setVainqueur(vainqueur);
-		this.setASolder(0);
-	}
-
-	/**
-	 * Getter of the property <tt>competition</tt>
-	 * @return  Returns the competition.
-	 * @uml.property  name="competition"
-	 */
-	public Competition getCompetition() {
-		return competition;
-	}
-
-	/**
-	 * Getter of the property <tt>player</tt>
-	 * @return  Returns the player.
-	 * @uml.property  name="player"
-	 */
-	public Player getPlayer() {
-		return player;
 	}
 	
 	/**
-	 * Getter of the property <tt>a_solder</tt>
-	 * @return  retourne la quantité à solder.
-	 * @uml.property  name="a_solder"
-	 */
-	public long getASolder() {
-		return a_solder;
-	}
-
-	/**
-	 * Getter of the property <tt>quantite</tt>
-	 * @return  Returns the quantite.
-	 * @uml.property  name="quantite"
-	 */
-	public long getQuantite() {
-		return quantite;
-	}
-
-	/**
-	 * Getter of the property <tt>vainqueur</tt>
-	 * @return  Returns the vainqueur.
-	 * @uml.property  name="vainqueur"
-	 */
-	public String getVainqueur() {
-		return vainqueur;
-	}
-	
-	/**
-	 * Setter of the property <tt>a_solder</tt>
-	 * @param quantite  La quantité a solde de cet pari.
-	 * @uml.property  name="a_solder"
-	 */
-	public void setASolder(long quantite) {
-		this.a_solder = quantite;
-	}
-
-	/**
-	 * Setter of the property <tt>competition</tt>
-	 * @param competition  The competition to set.
-	 * @uml.property  name="competition"
-	 */
-	public void setCompetition(Competition competition) {
-		this.competition = competition;
-	}
-
-	/**
-	 * Setter of the property <tt>player</tt>
-	 * @param player  The player to set.
-	 * @uml.property  name="player"
-	 */
-	public void setPlayer(Player player) {
-		this.player = player;
-	}
-
-	/**
-	 * Setter of the property <tt>quantite</tt>
-	 * @param quantite  The quantite to set.
-	 * @uml.property  name="quantite"
-	 */
-	public void setQuantite(long quantite) {
-		this.quantite = quantite;
-	}
-
-	/**
-	 * Setter of the property <tt>vainqueur</tt>
-	 * @param vainqueur  The vainqueur to set.
-	 * @uml.property  name="vainqueur"
-	 */
-	public void setVainqueur(String vainqueur) {
-		this.vainqueur = vainqueur;
-	}
-	
-	/**
-	 * Assigner au joueur la quantité calculé 
+	 * Assigner au joueur la quantité calculé à lui solder lors de la repartition et reinitialiser la valeur
 	 *  
 	 */
 	protected void solder() {
@@ -146,4 +53,28 @@ public class Pari {
 		this.setASolder(0);
 	}
 
+	// ---- Getters -----
+	
+	public Competition getCompetition() { return competition; }
+
+	public Player getPlayer() { return player; }
+	
+	public long getASolder() { return a_solder; }
+
+	public long getQuantite() { return quantite; }
+
+	public String getVainqueur() { return vainqueur; }
+	
+	// ---- Setters -----
+	
+	public void setASolder(long quantite) { this.a_solder = quantite; }
+
+	public void setCompetition(Competition competition) { this.competition = competition; }
+
+	public void setPlayer(Player player) { this.player = player; }
+
+	public void setQuantite(long quantite) { this.quantite = quantite; }
+
+	public void setVainqueur(String vainqueur) { this.vainqueur = vainqueur; }
+	
 }
