@@ -258,7 +258,7 @@ public class SiteDeParisMetier {
 		
 		this.validitePasswordGestionnaire(passwordGestionnaire);
 		LinkedList <LinkedList <String>> all_players = new LinkedList <LinkedList <String>>();
-		for (Player p: players) {
+		for (Player p: this.getPlayers()) {
 			all_players.add(p.getLinkedListPlayer());
 		}
 		
@@ -363,12 +363,12 @@ public class SiteDeParisMetier {
 		this.validitePasswordGestionnaire(passwordGestionnaire);
 		if (!this.existingPlayer(nom, prenom, pseudo)) throw new JoueurInexistantException();
 		
-		Player p = this.getPlayer(nom, prenom, pseudo);
+		Player joueur = this.getPlayer(nom, prenom, pseudo);
 		
-		if (p.parisEnCours()) throw new JoueurException();
+		if (joueur.parisEnCours()) throw new JoueurException();
 		
-		long jetons =  p.getJetonsQuantity();
-		players.remove(p);
+		long jetons = joueur.getJetonsQuantity();
+		players.remove(joueur);
 		return jetons;
 		
 	}
@@ -400,7 +400,7 @@ public class SiteDeParisMetier {
 	 *  
 	 */
 	public boolean existingCompetition (String competition) {
-		for (Competition c: competitions) {
+		for (Competition c: this.getCompetitions()) {
 			if (competition.equals(c.getNom())) {
 				return true;
 			}
@@ -416,7 +416,7 @@ public class SiteDeParisMetier {
 	 *  
 	 */
 	public boolean existingPlayer (String pseudo, String pass) {
-		for (Player p: players) {
+		for (Player p: this.getPlayers()) {
 			if (pseudo.equals(p.getPseudo()) && pass.equals(p.getPassword())) {
 				return true;
 			}
@@ -433,7 +433,7 @@ public class SiteDeParisMetier {
 	 *  
 	 */
 	public boolean existingPlayer (String nom, String prenom, String pseudo) {
-		for (Player p: players) {
+		for (Player p: this.getPlayers()) {
 			if (nom.equals(p.getNom()) && prenom.equals(p.getPrenom()) || pseudo.equals(p.getPseudo())) {
 				return true;
 			}
@@ -449,8 +449,7 @@ public class SiteDeParisMetier {
 	 *  
 	 */
 	public Competition getCompetition(String competition) {
-		for (Competition c: competitions) {
-			//System.out.println("checking: " + c.getNom() + " == " +  competition );
+		for (Competition c: this.getCompetitions()) {
 			if (competition.equals(c.getNom())) {
 				return c;
 			}
@@ -467,7 +466,7 @@ public class SiteDeParisMetier {
 	 *  
 	 */
 	public Player getExistingPlayer (String nom, String prenom, String pseudo) {
-		for (Player p: players) {
+		for (Player p: this.getPlayers()) {
 			if (nom.equals(p.getNom()) && prenom.equals(p.getPrenom()) || pseudo.equals(p.getPseudo())) {
 				return p;
 			}
@@ -476,14 +475,13 @@ public class SiteDeParisMetier {
 	}
 
 	/**
-	 * @return  Returns player indicated.
-	 * @uml.property  name="getPlayer"
+	 * Retourne la coincidence d'un joueur à partir des paramètres pseudo et password
 	 * 
 	 * @param String pseudo
 	 * @param String password
 	 */
 	public Player getPlayer(String pseudo, String password) {
-		for (Player p: players) {
+		for (Player p: this.getPlayers()) {
 			if (pseudo.equals(p.getPseudo()) && password.equals(p.getPassword())) {
 				return p;
 			}
@@ -492,15 +490,14 @@ public class SiteDeParisMetier {
 	}
 	
 	/**
-	 * @return  Returns player indicated.
-	 * @uml.property  name="getPlayer"
+	 * Retourne la coincidence d'un joueur à partir des paramètres pseudo, nom et prénom
 	 * 
 	 * @param String pseudo
 	 * @param String prenom
 	 * @param String nom
 	 */
 	public Player getPlayer(String nom, String prenom, String pseudo) {
-		for (Player p: players) {
+		for (Player p: this.getPlayers()) {
 			if (nom.equals(p.getNom()) && prenom.equals(p.getPrenom()) || pseudo.equals(p.getPseudo())) {
 				return p;
 			}
@@ -712,7 +709,7 @@ public class SiteDeParisMetier {
 	protected void validitePasswordGestionnaire(String passwordGestionnaire) throws MetierException {
 	    if (passwordGestionnaire==null) throw new MetierException();
 	    if (!passwordGestionnaire.matches("[0-9A-Za-z]{8,}")) throw new MetierException();
-	    if (this.passwordGestionnaire != null && !this.passwordGestionnaire.equals(passwordGestionnaire)) throw new MetierException();
+	    if (this.getPasswordGestionnaire() != null && !this.getPasswordGestionnaire().equals(passwordGestionnaire)) throw new MetierException();
 	}
 	
 	/**
@@ -735,6 +732,9 @@ public class SiteDeParisMetier {
 	
 	public LinkedList<Competition> getCompetitions() { return competitions; }
 	
+	public LinkedList<Player> getPlayers() { return players; }
+	
+	public String getPasswordGestionnaire() { return passwordGestionnaire; }
 	
 	
 	// ---- Setters ----
