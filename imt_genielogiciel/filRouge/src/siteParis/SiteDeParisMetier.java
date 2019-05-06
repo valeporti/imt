@@ -323,9 +323,10 @@ public class SiteDeParisMetier {
 	 */
 
 	public void debiterJoueur(String nom, String prenom, String pseudo, long sommeEnJetons, String passwordGestionnaire) throws  MetierException, JoueurInexistantException, JoueurException, DebiterException {
-
+		
 		this.validatePlayerInfo(nom, prenom, pseudo);
 		this.validitePasswordGestionnaire(passwordGestionnaire);
+		
 		if (!this.equalpassword(passwordGestionnaire)) throw new MetierException();
 		if (!this.existingPlayer(nom, prenom, pseudo)) throw new JoueurInexistantException();
 		if (sommeEnJetons <= 0) throw new MetierException();
@@ -361,7 +362,7 @@ public class SiteDeParisMetier {
 		
 		this.validatePlayerInfo(nom, prenom, pseudo);
 		this.validitePasswordGestionnaire(passwordGestionnaire);
-		if (!this.existingPlayer(nom, prenom, pseudo)) throw new JoueurInexistantException();
+		if (!this.existingNomPrenomOuPseudo(nom, prenom, pseudo)) throw new JoueurInexistantException();
 		
 		Player joueur = this.getPlayer(nom, prenom, pseudo);
 		
@@ -415,7 +416,7 @@ public class SiteDeParisMetier {
 	 * @param pass joueur
 	 *  
 	 */
-	public boolean existingPlayer (String pseudo, String pass) {
+	public boolean existingPlayerPseudoPass (String pseudo, String pass) {
 		for (Player p: this.getPlayers()) {
 			if (pseudo.equals(p.getPseudo()) && pass.equals(p.getPassword())) {
 				return true;
@@ -433,6 +434,23 @@ public class SiteDeParisMetier {
 	 *  
 	 */
 	public boolean existingPlayer (String nom, String prenom, String pseudo) {
+		for (Player p: this.getPlayers()) {
+			if (nom.equals(p.getNom()) && prenom.equals(p.getPrenom()) && pseudo.equals(p.getPseudo())) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	/**
+	 * Verifier si'il y un un joueur avec soit le nom et prenom ou le pseudo déjà existant
+	 * 
+	 * @param nom joueur
+	 * @param prenom joueur
+	 * @param pseudo joueur
+	 *  
+	 */
+	public boolean existingNomPrenomOuPseudo(String nom, String prenom, String pseudo) {
 		for (Player p: this.getPlayers()) {
 			if (nom.equals(p.getNom()) && prenom.equals(p.getPrenom()) || pseudo.equals(p.getPseudo())) {
 				return true;
@@ -467,7 +485,7 @@ public class SiteDeParisMetier {
 	 */
 	public Player getExistingPlayer (String nom, String prenom, String pseudo) {
 		for (Player p: this.getPlayers()) {
-			if (nom.equals(p.getNom()) && prenom.equals(p.getPrenom()) || pseudo.equals(p.getPseudo())) {
+			if (nom.equals(p.getNom()) && prenom.equals(p.getPrenom()) && pseudo.equals(p.getPseudo())) {
 				return p;
 			}
 		}
@@ -526,7 +544,7 @@ public class SiteDeParisMetier {
 		this.validitePasswordGestionnaire(passwordGestionnaire);
 		this.validatePlayerInfo(nom, prenom, pseudo);
 		if (!this.equalpassword(passwordGestionnaire)) throw new MetierException();
-		if (this.existingPlayer(nom, prenom, pseudo)) throw new JoueurExistantException();
+		if (this.existingNomPrenomOuPseudo(nom, prenom, pseudo)) throw new JoueurExistantException();
 		
 		Player joueur = new Player(nom, prenom, pseudo);
 		addPlayer(joueur);
@@ -563,7 +581,7 @@ public class SiteDeParisMetier {
 
     	if (pseudo == null) throw new JoueurException();
     	if (validPlayerAlmost(pseudo, passwordJoueur)) throw new JoueurException();
-    	if (!existingPlayer(pseudo, passwordJoueur)) throw new JoueurInexistantException();
+    	if (!existingPlayerPseudoPass(pseudo, passwordJoueur)) throw new JoueurInexistantException();
     	
     	Player joueur = this.getPlayer(pseudo, passwordJoueur);
     	
@@ -576,6 +594,7 @@ public class SiteDeParisMetier {
     	if (miseEnJetons < 0) throw new MetierException();
     	if (!comp.competiteurExistant(vainqueurEnvisage)) throw new CompetitionException();
     	if (joueur.getJetonsQuantity() - miseEnJetons < 0) throw new JoueurException();
+    	//System.out.println(comp.getDate().estDansLePasse());
     	if (comp.getDate().estDansLePasse() || comp.getSolde()) throw new CompetitionException();
     	
     	Pari pari = new Pari(vainqueurEnvisage, miseEnJetons, joueur, comp);

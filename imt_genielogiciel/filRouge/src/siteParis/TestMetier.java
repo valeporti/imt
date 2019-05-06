@@ -552,18 +552,60 @@ public class TestMetier {
 
 			// CREDITER
 			try {
+				siteDeParisMetier.crediterJoueur("Prou", "Bernard", "nanard", 30, "ilesCaimanss");
+			} 
+			catch (MetierException e) { }
+			catch (Exception e) { 
+				System.out.println("le crédit d'un joueur avec password gestionnaire incorrecte " + e.getClass().getName());	
+			}
+			try {
+				siteDeParisMetier.crediterJoueur("Prou", "Bernard", "nanard", 30, "ilesCaimans'");
+			} 
+			catch (MetierException e) { }
+			catch (Exception e) { 
+				System.out.println("le crédit d'un joueur avec password gestionnaire incorrectes (') " + e.getClass().getName());	
+			}
+			try {
+				siteDeParisMetier.crediterJoueur("Prou", "Bernard", "nanard", 30, " ");
+			} 
+			catch (MetierException e) { }
+			catch (Exception e) { 
+				System.out.println("le crédit d'un joueur avec password gestionnaire incorrectes (espace) " + e.getClass().getName());	
+			}
+			try {
 				siteDeParisMetier.crediterJoueur("Prou", "Bernard", "nanard", -2, "ilesCaimans");
 			} 
 			catch (MetierException e) { }
 			catch (Exception e) { 
-				System.out.println("l'ajout d'une compétition avec somme négative n'a pas levé l'exception MetierException mais " + e.getClass().getName());	
+				System.out.println("le crédit d'un joueur avec somme négative n'a pas levé l'exception MetierException mais " + e.getClass().getName());	
 			}
 			try {
 				siteDeParisMetier.crediterJoueur("Prou", "Bernard", "nanard", 0, "ilesCaimans");
 			} 
 			catch (MetierException e) { }
 			catch (Exception e) { 
-				System.out.println("l'ajout d'une compétition avec somme zero n'a pas levé l'exception MetierException mais " + e.getClass().getName());	
+				System.out.println("le crédit d'un joueur avec somme zero n'a pas levé l'exception MetierException mais " + e.getClass().getName());	
+			}
+			try {
+				siteDeParisMetier.crediterJoueur("Proux", "Bernard", "nanard", 30, "ilesCaimans");
+			} 
+			catch (JoueurInexistantException e) { }
+			catch (Exception e) { 
+				System.out.println("le crédit d'un joueur nom invalide " + e.getClass().getName());	
+			}
+			try {
+				siteDeParisMetier.crediterJoueur("Prou", "Bernardo", "nanard", 30, "ilesCaimans");
+			} 
+			catch (JoueurInexistantException e) { }
+			catch (Exception e) { 
+				System.out.println("le crédit d'un joueur prenom invalide " + e.getClass().getName());	
+			}
+			try {
+				siteDeParisMetier.crediterJoueur("Prossu", "dddd", "nanardsd", 30, "ilesCaimans");
+			} 
+			catch (JoueurInexistantException e) { }
+			catch (Exception e) { 
+				System.out.println("le crédit d'un joueur inexistante " + e.getClass().getName());	
 			}
 			
 			siteDeParisMetier.crediterJoueur("Prou", "Bernard", "nanard", 30, "ilesCaimans");
@@ -579,18 +621,53 @@ public class TestMetier {
 			
 			// 	DEBITER
 			try {
+				siteDeParisMetier.debiterJoueur("Prou", "Bernard", "nanard", 30, "ilesCaimanss");
+			} 
+			catch (MetierException e) { }
+			catch (Exception e) { 
+				System.out.println("le débit avec password gestionaire invalide " + e.getClass().getName());	
+			}
+			try {
+				siteDeParisMetier.debiterJoueur("Prou", "Bernard", "nanard", 30, " ");
+			} 
+			catch (MetierException e) { }
+			catch (Exception e) { 
+				System.out.println("le débit avec password gestionaire invalide (espace) " + e.getClass().getName());	
+			}
+			try {
+				siteDeParisMetier.debiterJoueur("Prou", "Bernard", "nanard", 30, "ilesCaimans'");
+			} 
+			catch (MetierException e) { }
+			catch (Exception e) { 
+				System.out.println("le débit avec password gestionaire invalide (') " + e.getClass().getName());	
+			}
+			try {
+				siteDeParisMetier.debiterJoueur("Prou", "Bernard", "nanard", 30, "dsds");
+			} 
+			catch (MetierException e) { }
+			catch (Exception e) { 
+				System.out.println("le débit avec password gestionaire invalide (moins de 8) " + e.getClass().getName());	
+			}
+			try {
+				siteDeParisMetier.debiterJoueur("Prou", "Bernard", "nanard", 30, "ilesCaimanss");
+			} 
+			catch (MetierException e) { }
+			catch (Exception e) { 
+				System.out.println("le débit avec passzord gestionaire invalide " + e.getClass().getName());	
+			}
+			try {
 				siteDeParisMetier.debiterJoueur("Prou", "Bernard", "nanard", -2, "ilesCaimans");
 			} 
 			catch (MetierException e) { }
 			catch (Exception e) { 
-				System.out.println("le crédit avec somme négative n'a pas levé l'exception MetierException mais " + e.getClass().getName());	
+				System.out.println("le débit avec somme négative n'a pas levé l'exception MetierException mais " + e.getClass().getName());	
 			}
 			try {
 				siteDeParisMetier.debiterJoueur("Prou", "Bernard", "nanard", 0, "ilesCaimans");
 			} 
 			catch (MetierException e) { }
 			catch (Exception e) { 
-				System.out.println("le crédit avec somme zero n'a pas levé l'exception MetierException mais " + e.getClass().getName());	
+				System.out.println("le débit avec somme zero n'a pas levé l'exception MetierException mais " + e.getClass().getName());	
 			}
 			try {
 				siteDeParisMetier.debiterJoueur("Prou", "Bernard", "nanard", 100, "ilesCaimans");
@@ -599,11 +676,25 @@ public class TestMetier {
 			catch (Exception e) { 
 				System.out.println("Le débit d'une somme supérieure à l'existante n'a pas levé l'exception JoueurException mais " + e.getClass().getName());	
 			}
+			try {
+				siteDeParisMetier.debiterJoueur("Prou", "Bernardf", "nanard", 30, "ilesCaimans");
+			} 
+			catch (JoueurInexistantException e) { }
+			catch (Exception e) { 
+				System.out.println("Le débit d'un joueur avec nom incorrect " + e.getClass().getName());	
+			}
+			try {
+				siteDeParisMetier.debiterJoueur("Proud", "Bernardd", "nanardo", 30, "ilesCaimans");
+			} 
+			catch (JoueurInexistantException e) { }
+			catch (Exception e) { 
+				System.out.println("Le débit d'un joueur inexistant " + e.getClass().getName());	
+			}
 			
 			
 			siteDeParisMetier.debiterJoueur("Prou", "Bernard", "nanard", 30, "ilesCaimans");
 			if (joueur.getJetonsQuantity() != 30) {
-				System.out.println("l'ajout de jetons ne déclare pas bien la quantité");
+				System.out.println("le débit de jetons ne déclare pas bien la quantité");
 			}
 			
 		}
@@ -665,14 +756,14 @@ public class TestMetier {
 				System.out.println("un joueur ne pas existant n'a pas levé JoueurInexistantException mais " + e.getClass().getName());	
 			}
 			try {
-				siteDeParisMetier.miserVainqueur("pascal", passwdPascal, 50, "123test", "Marseille");
+				siteDeParisMetier.miserVainqueur("pascal", "badpassword", 50, "ChampionnatDeFrance2012", "Marseille");
 			}
-			catch (CompetitionInexistanteException e) { }
+			catch (JoueurException e) { }
 			catch (Exception e) { 
-				System.out.println("un competition ne pas existante n'a pas levé CompetitionInexistanteException mais " + e.getClass().getName());	
+				System.out.println("un joueur qvec password incorrecte " + e.getClass().getName());	
 			}
 			try {
-				siteDeParisMetier.miserVainqueur("pascal", passwdPascal, 50, "ChampionatDeFrance2012", "Marseille");
+				siteDeParisMetier.miserVainqueur("pascal", passwdPascal, 50, "123test", "Marseille");
 			}
 			catch (CompetitionInexistanteException e) { }
 			catch (Exception e) { 
@@ -700,6 +791,13 @@ public class TestMetier {
 				System.out.println("une vainqueur pas valide n'a pas levé CompetitionException mais " + e.getClass().getName());	
 			}
 			try {
+				siteDeParisMetier.miserVainqueur("pascal", passwdPascal, 30, "ChampionnatDeFrance2012", "--ujehe");
+			}
+			catch (CompetitionException e) { }
+			catch (Exception e) { 
+				System.out.println("une vainqueur nom invalide " + e.getClass().getName());	
+			}
+			try {
 				siteDeParisMetier.miserVainqueur("pascal", passwdPascal, 30, "ChampionnatDeFrance2012?", "Marseille");
 			}
 			catch (CompetitionException e) { }
@@ -707,7 +805,7 @@ public class TestMetier {
 				System.out.println("une competition pas valide n'a pas levé CompetitionException mais " + e.getClass().getName());	
 			}
 			
-			DateFrancaise.setDate(4, 6, 2012, 18, 10);
+			DateFrancaise.setDate(1, 1, 2013);
 			siteDeParisMetier.crediterJoueur("Prou", "Pascal", "pascal", 50, "ilesCaimans");
 			siteDeParisMetier.solderVainqueur(new String("ChampionnatDeFrance2012"),"Nancy", new String("ilesCaimans"));
 			
@@ -716,11 +814,8 @@ public class TestMetier {
 			}
 			catch (CompetitionException e) { }
 			catch (Exception e) { 
-				
 				System.out.println("une competition plus ouverte n'a pas levé CompetitionException mais " + e.getClass().getName());	
-			}
-			
-			
+			}			
 			
 		}
 		catch (Exception e) {
@@ -857,8 +952,6 @@ public class TestMetier {
 				System.out.println("le credit de bernard devrait être inférieur à 1790, et l'exception JoueurException aurait dû être levée mais c'est : " + e.getClass().getName());
 			}
 
-
-			// ----- ICI DES ERREURES, AVANT CELA DOIT ETRE INFERIEUR ---- ON NAJOUTE JAMAIS 40 -------
 			try {
 				siteDeParisMetier.debiterJoueur(new String("Prou"), new String("Bernard"), new String("nanard"), 1789, new String("ilesCaimans"));
 			}
@@ -868,8 +961,6 @@ public class TestMetier {
 			catch (Exception e) { 
 				System.out.println("le credit de bernard devrait être égal à 1789, et aucune exception n'aurait dû être levée mais c'est : " + e.getClass().getName());
 			}
-
-			//  aure doit avoir un crédit de 785
 
 			try {
 				siteDeParisMetier.debiterJoueur(new String("Prou"), new String("Aureliane"), new String("aure"), 786, new String("ilesCaimans"));
