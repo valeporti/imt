@@ -735,6 +735,27 @@ public class TestMetier {
 			siteDeParisMetier.crediterJoueur("Prou", "Pascal", "pascal", 50, "ilesCaimans");
 			
 			try {
+				siteDeParisMetier.miserVainqueur("pascal", null, 50, "ChampionnatDeFrance2012", "Marseille");
+			}
+			catch (JoueurException e) { }
+			catch (Exception e) { 
+				System.out.println("un joueur avec password invalide (null) n'a pas levé JoueurException mais " + e.getClass().getName());	
+			}
+			try {
+				siteDeParisMetier.miserVainqueur("pascal", "dsdsd*", 50, "ChampionnatDeFrance2012", "Marseille");
+			}
+			catch (JoueurException e) { }
+			catch (Exception e) { 
+				System.out.println("un joueur avec password invalide (caracteres bizarres) n'a pas levé JoueurException mais " + e.getClass().getName());	
+			}
+			try {
+				siteDeParisMetier.miserVainqueur("pascal", passwdMorgane, 50, "ChampionnatDeFrance2012", "Marseille");
+			}
+			catch (JoueurException e) { }
+			catch (Exception e) { 
+				System.out.println("un joueur mal initialisé (null) n'a pas levé JoueurException mais " + e.getClass().getName());	
+			}
+			try {
 				siteDeParisMetier.miserVainqueur(null, passwdPascal, 50, "ChampionnatDeFrance2012", "Marseille");
 			}
 			catch (JoueurException e) { }

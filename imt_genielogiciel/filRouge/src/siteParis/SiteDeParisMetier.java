@@ -579,7 +579,7 @@ public class SiteDeParisMetier {
 	 */
     public void miserVainqueur(String pseudo, String passwordJoueur, long miseEnJetons, String competition, String vainqueurEnvisage) throws MetierException, JoueurInexistantException, CompetitionInexistanteException, CompetitionException, JoueurException  {
 
-    	if (pseudo == null) throw new JoueurException();
+    	this.validatePlayerPassPseudo(passwordJoueur, pseudo);
     	if (validPlayerAlmost(pseudo, passwordJoueur)) throw new JoueurException();
     	if (!existingPlayerPseudoPass(pseudo, passwordJoueur)) throw new JoueurInexistantException();
     	
@@ -714,6 +714,22 @@ public class SiteDeParisMetier {
 	protected void validatePlayerInfo(String nom, String prenom, String pseudo) throws JoueurException {
 		if (nom == null || prenom == null || pseudo == null) throw new JoueurException();
 		if (!nom.matches("^[a-zA-Z]+$") || !prenom.matches("^[a-zA-Z]+$")) throw new JoueurException();
+		if (!pseudo.matches("^[a-zA-Z]{4,}$")) throw new JoueurException();
+	}
+	
+	/**
+	 * Valider l'information du joueur, juste pseudo et password
+	 * 
+	 * @param password
+	 * @param pseudo
+	 * 
+	 * @throws JoueurException   levée 
+	 * si le <code>password</code> ou <code>pseudo</code> sont invalides. 
+	 *  
+	 */
+	protected void validatePlayerPassPseudo(String password, String pseudo) throws JoueurException {
+		if (password == null || pseudo == null) throw new JoueurException();
+		if (!password.matches("^[-a-zA-Z0-9]{4,}$")) throw new JoueurException();
 		if (!pseudo.matches("^[a-zA-Z]{4,}$")) throw new JoueurException();
 	}
 	
