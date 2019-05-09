@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1e7ceeb3-da63-4929-98ab-9ce94126d788" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/filRouge/src/siteParis/TestMetier.java" beforeDir="false" afterPath="$PROJECT_DIR$/filRouge/src/siteParis/TestMetier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../imt_dl/final_proj/ex/character-level-cnn" beforeDir="false" afterPath="$PROJECT_DIR$/../imt_dl/final_proj/ex/character-level-cnn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../imt_dsc/ch2/explore_skeleton.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/../imt_dsc/ch2/explore_skeleton.ipynb" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,7 +22,7 @@
         <entry file="file://$PROJECT_DIR$/filRouge/src/siteParis/TestMetier.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="212">
-              <caret line="1134" column="12" selection-start-line="1134" selection-start-column="12" selection-end-line="1134" selection-end-column="12" />
+              <caret line="1454" column="12" selection-start-line="1454" selection-start-column="12" selection-end-line="1454" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -50,9 +51,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane" />
       <pane id="PackagesPane" />
       <pane id="Scope" />
-      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -97,7 +98,7 @@
   <component name="ToolWindowManager">
     <frame x="59" y="25" width="1861" height="1055" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2523416" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2550964" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -110,7 +111,7 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info active="true" anchor="bottom" id="TODO" order="6" visible="true" weight="0.3286638" />
+      <window_info anchor="bottom" id="TODO" order="6" visible="true" weight="0.32937366" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32937366" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
@@ -131,7 +132,7 @@
     <entry file="file://$PROJECT_DIR$/filRouge/src/siteParis/TestMetier.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="212">
-          <caret line="1134" column="12" selection-start-line="1134" selection-start-column="12" selection-end-line="1134" selection-end-column="12" />
+          <caret line="1454" column="12" selection-start-line="1454" selection-start-column="12" selection-end-line="1454" selection-end-column="12" />
         </state>
       </provider>
     </entry>
