@@ -730,7 +730,6 @@ public class TestMetier {
 			siteDeParisMetier.ajouterCompetition(new String("ChampionnatDeFrance2012"), new DateFrancaise(4, 6, 2012, 15, 00), new String [] {new String("Lyon"), new String("Marseille"), "Paris", new String("Rennes"), new String("Brest"), "StEtienne", new String("Lille"), "Nancy", "Toulouse", "Auxerre"}, new String("ilesCaimans"));
 			siteDeParisMetier.ajouterCompetition(new String("ChampionnatDeFrance2013"), new DateFrancaise(27, 6, 2013, 20, 00), new String [] {new String("Lyon"), new String("Nantes"), new String("Lens"), new String("Marseille"), "Paris", new String("Rennes"), "StEtienne", new String("Lille"), "Nancy", "Toulouse", }, new String("ilesCaimans"));
 			siteDeParisMetier.ajouterCompetition(new String("finaleRG2012"), new DateFrancaise(7, 6, 2012, 15, 00), new String [] {new String("Tsonga"), new String("Nadal")}, new String("ilesCaimans"));
-			// miserVainqueur(String pseudo, String passwordJoueur, long miseEnJetons, String competition, String vainqueurEnvisage)
 			
 			siteDeParisMetier.crediterJoueur("Prou", "Pascal", "pascal", 50, "ilesCaimans");
 			
@@ -1062,15 +1061,10 @@ public class TestMetier {
 			siteDeParisMetier.miserVainqueur(new String("fanfan"), passwdFrancoise, 30, new String("ChampionnatDeFrance2013"), new String("Rennes"));
 			siteDeParisMetier.miserVainqueur(new String("aure"), passwdAureliane, 48, new String("ChampionnatDeFrance2013"), new String("Nantes"));
 
-			//System.out.println("Bernard avant doit avoir 1419");
-			//System.out.println(siteDeParisMetier.getPlayer(new String("Prou"), new String("Bernard"), new String("nanard")).getJetonsQuantity());
-
 			// solder correctement les trois competitions
 
 			DateFrancaise.setDate(4, 6, 2012, 18, 10);
 			siteDeParisMetier.solderVainqueur(new String("ChampionnatDeFrance2012"),new String("Marseille"), new String("ilesCaimans"));
-			//System.out.println(siteDeParisMetier.getCompetition(new String("ChampionnatDeFrance2012")).getParis());
-			//System.out.println(siteDeParisMetier.getCompetition(new String("ChampionnatDeFrance2012")).getParisVainqueurs("Marseille").get(0).getPlayer().getJetonsQuantity());
 			DateFrancaise.setDate(7, 6, 2012, 18, 30);
 			siteDeParisMetier.solderVainqueur(new String("finaleRG2012"),new String("Tsonga"), new String("ilesCaimans"));
 			DateFrancaise.setDate(27, 6, 2013, 23, 00);
@@ -1081,9 +1075,7 @@ public class TestMetier {
 			//  nanard doit avoir une crédit de 1868
 
 			try {
-				//System.out.println(siteDeParisMetier.getPlayer(new String("Prou"), new String("Bernard"), new String("nanard")).getJetonsQuantity());
 				siteDeParisMetier.debiterJoueur(new String("Prou"), new String("Bernard"), new String("nanard"), 1869, new String("ilesCaimans"));
-				//System.out.println(siteDeParisMetier.getPlayer(new String("Prou"), new String("Bernard"), new String("nanard")).getJetonsQuantity());
 				System.out.println("le credit de bernard devrait être inférieur à 1869, et l'exception JoueurException aurait dû être levée");
 			}
 			catch (JoueurException e) { } 
@@ -1093,8 +1085,6 @@ public class TestMetier {
 
 
 			try {
-				//System.out.println("Bernard avant doit avoir new");
-				//System.out.println(siteDeParisMetier.getPlayer(new String("Prou"), new String("Bernard"), new String("nanard")).getJetonsQuantity());
 				siteDeParisMetier.debiterJoueur(new String("Prou"), new String("Bernard"), new String("nanard"), 1868, new String("ilesCaimans"));
 			}
 			catch (JoueurException e) { 

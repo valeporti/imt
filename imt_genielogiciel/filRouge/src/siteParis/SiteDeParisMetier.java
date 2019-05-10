@@ -103,22 +103,15 @@ public class SiteDeParisMetier {
 	 * @param competiteurs   les noms des différents compétiteurs de la compétition 
 	 * @param passwordGestionnaire  le password du gestionnaire du site 
 	 * 
-	 * @throws MetierException levée si le tableau des
-	 * compétiteurs n'est pas instancié, si le
-	 * <code>passwordGestionnaire</code> est invalide, si le
-	 * <code>passwordGestionnaire</code> est incorrect.
-	 * @throws CompetitionExistanteException levée si une compétition existe avec le même nom. 
-	 * @throws CompetitionException levée si le nom de la
-	 * compétition ou des compétiteurs sont invalides, si il y a
-	 * moins de 2 compétiteurs, si un des competiteurs n'est pas instancié,
-	 * si deux compétiteurs ont le même nom, si la date de clôture 
-	 * n'est pas instanciée ou est dépassée.
+	 * @throws MetierException
+	 * @throws CompetitionExistanteException 
+	 * @throws CompetitionException 
 	 */
 	public void ajouterCompetition(String competition, DateFrancaise dateCloture, String [] competiteurs, String passwordGestionnaire) throws MetierException, CompetitionExistanteException, CompetitionException  {
 
 		this.validateCompetitionInputs(competition, dateCloture, competiteurs);
 		this.validitePasswordGestionnaire(passwordGestionnaire);
-		if (!this.equalpassword(passwordGestionnaire)) throw new MetierException();
+		
 
 		Competition c = new Competition(competition, dateCloture, competiteurs);
 		this.addCompetition(c);
@@ -131,10 +124,17 @@ public class SiteDeParisMetier {
 	 * @param competition
 	 * @param dateCloture
 	 * @param competiteurs
-	 * @throws CompetitionException
-	 * @throws MetierException
-	 * @throws CompetitionExistanteException
+	 * 
+	 * @throws CompetitionExceptionl evée si le nom de la
+	 * compétition ou des compétiteurs sont invalides, si il y a
+	 * moins de 2 compétiteurs, si un des competiteurs n'est pas instancié,
+	 * si deux compétiteurs ont le même nom, si la date de clôture 
+	 * n'est pas instanciée ou est dépassée.
+	 * @throws MetierException levée si le tableau des
+	 * compétiteurs n'est pas instancié, si le
+	 * @throws CompetitionExistanteException levée si une compétition existe avec le même nom. 
 	 */
+	 
 	public void validateCompetitionInputs(String competition, DateFrancaise dateCloture, String [] competiteurs) throws CompetitionException, MetierException, CompetitionExistanteException {
 		if (competition == null || dateCloture == null) throw new CompetitionException();
 		if (competiteurs == null) throw new MetierException();
@@ -292,7 +292,7 @@ public class SiteDeParisMetier {
 
 		this.validatePlayerInfo(nom, prenom, pseudo);
 		this.validitePasswordGestionnaire(passwordGestionnaire);
-		if (!this.equalpassword(passwordGestionnaire)) throw new MetierException();
+
 		if (!this.existingPlayer(nom, prenom, pseudo)) throw new JoueurInexistantException();
 		if (sommeEnJetons <= 0) throw new MetierException();
 		
@@ -327,7 +327,6 @@ public class SiteDeParisMetier {
 		this.validatePlayerInfo(nom, prenom, pseudo);
 		this.validitePasswordGestionnaire(passwordGestionnaire);
 		
-		if (!this.equalpassword(passwordGestionnaire)) throw new MetierException();
 		if (!this.existingPlayer(nom, prenom, pseudo)) throw new JoueurInexistantException();
 		if (sommeEnJetons <= 0) throw new MetierException();
 		
@@ -543,7 +542,6 @@ public class SiteDeParisMetier {
 		
 		this.validitePasswordGestionnaire(passwordGestionnaire);
 		this.validatePlayerInfo(nom, prenom, pseudo);
-		if (!this.equalpassword(passwordGestionnaire)) throw new MetierException();
 		if (this.existingNomPrenomOuPseudo(nom, prenom, pseudo)) throw new JoueurExistantException();
 		
 		Player joueur = new Player(nom, prenom, pseudo);
@@ -594,7 +592,6 @@ public class SiteDeParisMetier {
     	if (miseEnJetons < 0) throw new MetierException();
     	if (!comp.competiteurExistant(vainqueurEnvisage)) throw new CompetitionException();
     	if (joueur.getJetonsQuantity() - miseEnJetons < 0) throw new JoueurException();
-    	//System.out.println(comp.getDate().estDansLePasse());
     	if (comp.getDate().estDansLePasse() || comp.getSolde()) throw new CompetitionException();
     	
     	Pari pari = new Pari(vainqueurEnvisage, miseEnJetons, joueur, comp);
