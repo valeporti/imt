@@ -15,15 +15,29 @@ type 'a lwp =
 | List of 'a list * 'a * 'a list
 
 let build_lwp = function 
-| [] -> Empty
+| [] -> Empty (* pourquoi?? Nous n'allons en réalité jamais avoir ce cas mais si l'on ne met ce cas là mais par exemple List([], Empty, []), le type est 'a lwp list -> 'a lwp lwp = <fun> *)
 | h::t -> List([], h, t);;
+
+(* V 2.0
+type 'a lwp = List of 'a list * 'a * 'a list;;
+
+let build_lwp = function 
+| [] -> failwith "Empty list"
+| h::t -> List([], h, t);;
+
+*)
 
 (* returns the current position element *)
 let current = function
 | Empty -> -1
 | List(h, p, t) -> p;;
 
-let mylist = build_lwp [4; 3; 3; 9; 3; 9];;
+(* V 2.0 
+let current = function
+| List(h, p, t) -> p;;
+*)
+
+let mylist = build_lwp [1; 2; 3; 4; 5; 6];;
 current mylist;;
 
 
@@ -51,13 +65,19 @@ let rec last_element = function
 let rec remove_last = function 
 | [] -> failwith "No last element to remove"
 | [just_one] -> []
-| first::rest_of_list -> first::(remove_last rest_of_list);;
+| first::rest_of_list -> first::(remove_last rest_of_list);; (* or [first]@(...) *)
 
 
 let move_right = function 
 | Empty -> failwith "Error in moving right"
 | List(left, pos, []) -> List(left, pos, [])
 | List(left, pos, right) -> List(left@[pos], get_first right, remove_first right);;
+
+(* V 2.0
+let move_right = function 
+| List (l, p, []) -> failwith "incorrect right move"
+| List (l, p, rh::rt) -> List(l@[p], rh, rt);; 
+*)
 
 (*
 let move_left = function 
@@ -72,4 +92,14 @@ let move_left = function
 | List([], pos, right) -> List([], pos, right)
 | List(left, pos, right) -> List(remove_last left, last_element left, (last_element left)::right);;
 
+let new_list = move_right mylist;;
+let new_list = move_right new_list;;
+let new_list = move_left new_list;;
+let new_list = move_left new_list;;
+
+(*
+commment on peut lire
+('a -> 'b) -> 'a list -> 'b list
+avec un arbre ?
+*)
 
