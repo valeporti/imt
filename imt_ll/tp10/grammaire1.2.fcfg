@@ -1,0 +1,14 @@
+% start S
+S -> NP VP
+NP -> DET[GENRE=?g] N[GENRE=?g] ADJ[GENRE=?g] | DET[GENRE=?g] N[GENRE=?g] 
+NPP -> PREP DET[GENRE=?g] N[GENRE=?g]
+VP -> VT NP | VTP NPP | VI
+DET[GENRE=fem] -> 'la' | 'une' 
+DET[GENRE=mas] -> 'le' | 'un'
+N[GENRE=fem] -> 'fille' | 'robe' 
+N[GENRE=mas] -> 'ami'
+VT -> 'porte'
+VI -> 'dort'
+VTP -> 'parle'
+ADJ -> 'rouge'
+PREP -> 'à'
