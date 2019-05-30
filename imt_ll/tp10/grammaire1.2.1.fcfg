@@ -1,0 +1,21 @@
+% start S
+S -> NP[QUANTITE=?q] VP[QUANTITE=?q]
+NP[QUANTITE=?q] -> DET[GENRE=?g, QUANTITE=?q] N[GENRE=?g, QUANTITE=?q] ADJ[GENRE=?g, QUANTITE=?q] | DET[GENRE=?g, QUANTITE=?q] N[GENRE=?g, QUANTITE=?q] 
+NPP[QUANTITE=?q] -> PREP DET[GENRE=?g, QUANTITE=?q] N[GENRE=?g, QUANTITE=?q]
+VP[QUANTITE=?q] -> VT[QUANTITE=?q] NP | VTP[QUANTITE=?q] NPP | VI[QUANTITE=?q]
+DET[GENRE=fem,QUANTITE=sing] -> 'la' | 'une' 
+DET[GENRE=mas,QUANTITE=sing] -> 'le' | 'un'
+DET[QUANTITE=plur] -> 'les' | 'des'
+N[GENRE=fem,QUANTITE=sing] -> 'fille' | 'robe' | 'amie'
+N[GENRE=fem,QUANTITE=plur] -> 'filles' | 'robes' | 'amies'
+N[GENRE=mas,QUANTITE=sing] -> 'ami'
+N[GENRE=mas,QUANTITE=plur] -> 'amis'
+VT[QUANTITE=sing] -> 'porte'
+VI[QUANTITE=sing] -> 'dort'
+VTP[QUANTITE=sing] -> 'parle'
+VT[QUANTITE=plur] -> 'portent'
+VI[QUANTITE=plur] -> 'dorment'
+VTP[QUANTITE=plur] -> 'parlent'
+ADJ[QUANTITE=sing] -> 'rouge'
+ADJ[QUANTITE=plur] -> 'rouges'
+PREP -> 'à'

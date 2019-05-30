@@ -19,5 +19,5 @@ NPP (noun phrase prepositional)
 sent = u"la fille parle à un ami".split()
 parser = nltk.load_parser("file:grammaire1.1.cfg")
 for tree in parser.parse(sent):
-	print tree
+	print(tree)
 	tree.draw()
