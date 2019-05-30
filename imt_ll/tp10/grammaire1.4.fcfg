@@ -1,0 +1,10 @@
+% start S
+
+S[SEM=<?suj(?vrb)>] -> NP[SEM=?suj] VP[SEM=?vrb]
+NP[SEM=?suj] -> N[SEM=?suj]
+N[SEM=<\A.A(alice)>] -> 'Alice' 
+N[SEM=<\B.B(gerald)>] -> 'Gerald'
+VP[SEM=?vrb] -> IV[SEM=?vrb]
+VP[SEM=<?vrb(?nom)>] -> TV[SEM=?vrb] NP[SEM=?nom]
+IV[SEM=<\x.dort(x)>] -> 'dort'
+TV[SEM=<\P x.P(\y.aime(x, y))>] -> 'aime'
