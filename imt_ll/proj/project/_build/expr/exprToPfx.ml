@@ -12,7 +12,7 @@ let rec generate = function
 (* 5.2 *)
 let rec generate = function
   | Const c -> [Push c]
-  | Binop(Badd,e1,e2) -> [Push e2; Push e1; Add] 
+  | Binop(Badd,e1,e2) -> [Push e2 Push e1 Add] 
   | Binop(Bsub,e1,e2) -> [Push e2 Push e1 Sub]
   | Binop(Bmul,e1,e2) -> [Push e2 Push e1 Mul]
   | Binop(Bdiv,e1,e2) -> [Push e2 Push e1 Div]
