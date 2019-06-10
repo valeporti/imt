@@ -1,6 +1,11 @@
 (* Entry point of the program, should contain your main function: here it is
  named parse_eval, it is the function provided after question 6.1 *)
 
+let rec print_list_of_expr = function 
+| [] -> ()
+| e::l -> print_string (PfxAst.string_of_command e) ; print_string "\n" ; print_list_of_expr l
+
+
 (* The main function *)
 let parse_eval file =
   print_string ("File "^file^" is being treated!\n");
@@ -10,6 +15,8 @@ let parse_eval file =
     begin
       try
         let expr_prog = ExprParser.expression ExprLexer.token lexbuf in
+        print_string "Length list: "; print_int (List.length (ExprToPfx.generate expr_prog)); print_string "\n";
+        print_list_of_expr (ExprToPfx.generate expr_prog);
         let pfx_prog = 0, ExprToPfx.generate expr_prog in
         print_endline (PfxAst.string_of_program pfx_prog);
          PfxEval.eval_program pfx_prog []

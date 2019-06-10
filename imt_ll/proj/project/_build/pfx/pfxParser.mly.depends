@@ -1,2 +1,0 @@
-pfx/pfxParser.ml: Lexing PfxAst
-pfx/pfxParser.mli: Lexing PfxAst

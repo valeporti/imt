@@ -12,7 +12,7 @@ let try_this str =
 			done
 		with
 			| Exit -> print_string "ended string\n"; 
-			|_ -> print_string "exiting\n"; exit 0;
+			|_ -> print_string "error detected!!\n"; exit 0;
 	end
 
 let _ = 

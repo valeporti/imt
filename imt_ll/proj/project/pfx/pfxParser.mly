@@ -8,7 +8,7 @@
 (**************
  * The tokens *
  **************)
-%token Ppush Padd Psub Pmul Pdiv Pmod
+
 (* enter tokens here, they should begin with %token *)
 %token EOF
 %token <int> INT

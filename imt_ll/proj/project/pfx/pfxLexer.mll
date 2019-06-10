@@ -25,12 +25,13 @@ rule token = parse
   | integer as nb           { mk_int nb (Location.curr lexbuf)}
   (* commands  *)
   (***** TO COMPLETE *****)
-  | "Add" { Padd }
-  | "Sub" { Psub }
-  | "Mul" { Pmul }
-  | "Div" { Pdiv }
-  | "Mod" { Pmod }
-  | "Push" { Ppush }
+  | "Add" { PLUS }
+  | "Sub" { MINUS }
+  | "Mul" { TIMES }
+  | "Div" { DIV }
+  | "Mod" { MOD }
+  | "Push" { PUSH }
+  | "Pop" { POP }
   (* illegal characters *)
   | _ as c  {
       raise (Location.Error(Printf.sprintf "Illegal character '%c': " c, Location.curr lexbuf))

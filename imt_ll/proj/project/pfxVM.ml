@@ -9,7 +9,7 @@ let parse_eval file =
   print_string ("File "^file^" is being treated!\n");
   try  	
     let input_file = open_in file in
-    let lexbuf = Lexing.from_channel "Push 0" in
+    let lexbuf = Lexing.from_channel input_file in
     begin
       try
         let pfx_prog = PfxParser.program PfxLexer.token lexbuf in
