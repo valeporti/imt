@@ -4,10 +4,16 @@ module MenhirBasics = struct
   exception Error
   
   type token = 
+    | Psub
+    | Ppush
+    | Pmul
+    | Pmod
+    | Pdiv
+    | Padd
     | INT of (
 # 14 "pfx/pfxParser.mly"
        (int)
-# 11 "pfx/pfxParser.ml"
+# 17 "pfx/pfxParser.ml"
   )
     | EOF
   
@@ -34,7 +40,7 @@ and _menhir_state
   (* Ocaml code here*)
 
 
-# 38 "pfx/pfxParser.ml"
+# 44 "pfx/pfxParser.ml"
 
 let rec _menhir_discard : _menhir_env -> _menhir_env =
   fun _menhir_env ->
@@ -51,7 +57,7 @@ let rec _menhir_discard : _menhir_env -> _menhir_env =
 and program : (Lexing.lexbuf -> token) -> Lexing.lexbuf -> (
 # 22 "pfx/pfxParser.mly"
        (PfxAst.program)
-# 55 "pfx/pfxParser.ml"
+# 61 "pfx/pfxParser.ml"
 ) =
   fun lexer lexbuf ->
     let _menhir_env = let _tok = Obj.magic () in
@@ -77,24 +83,24 @@ and program : (Lexing.lexbuf -> token) -> Lexing.lexbuf -> (
             let (_menhir_stack, (i : (
 # 14 "pfx/pfxParser.mly"
        (int)
-# 81 "pfx/pfxParser.ml"
+# 87 "pfx/pfxParser.ml"
             ))) = _menhir_stack in
             let _2 = () in
             let _v : (
 # 22 "pfx/pfxParser.mly"
        (PfxAst.program)
-# 87 "pfx/pfxParser.ml"
+# 93 "pfx/pfxParser.ml"
             ) = 
 # 32 "pfx/pfxParser.mly"
                    ( i,[] )
-# 91 "pfx/pfxParser.ml"
+# 97 "pfx/pfxParser.ml"
              in
             let _menhir_stack = Obj.magic _menhir_stack in
             let _menhir_stack = Obj.magic _menhir_stack in
             let (_1 : (
 # 22 "pfx/pfxParser.mly"
        (PfxAst.program)
-# 98 "pfx/pfxParser.ml"
+# 104 "pfx/pfxParser.ml"
             )) = _v in
             Obj.magic _1
         | _ ->
@@ -111,9 +117,9 @@ and program : (Lexing.lexbuf -> token) -> Lexing.lexbuf -> (
 # 34 "pfx/pfxParser.mly"
   
 
-# 115 "pfx/pfxParser.ml"
+# 121 "pfx/pfxParser.ml"
 
 # 233 "/home/valeporti/.opam/system/lib/menhir/standard.mly"
   
 
-# 120 "pfx/pfxParser.ml"
+# 126 "pfx/pfxParser.ml"

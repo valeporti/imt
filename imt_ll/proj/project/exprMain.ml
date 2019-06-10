@@ -18,6 +18,7 @@ let parse_eval file =
          print_string "Syntax error: ";
          Location.print (Location.curr lexbuf)
       | Location.Error(e,l) ->
+	 print_string "Location Error: ";
          print_string e;
          Location.print l
     end;

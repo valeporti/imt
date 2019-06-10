@@ -1,5 +1,7 @@
 {
-  open PfxParser
+  type token =
+    | EOF | PLUS | MINUS | TIMES | DIV | MOD | PUSH | POP
+    | INT of int | IDENT of string
 
   let mk_int nb loc =
     try INT (int_of_string nb)
@@ -25,12 +27,13 @@ rule token = parse
   | integer as nb           { mk_int nb (Location.curr lexbuf)}
   (* commands  *)
   (***** TO COMPLETE *****)
-  | "Add" { Padd }
-  | "Sub" { Psub }
-  | "Mul" { Pmul }
-  | "Div" { Pdiv }
-  | "Mod" { Pmod }
-  | "Push" { Ppush }
+  | "Add" { PLUS }
+  | "Sub" { MINUS }
+  | "Mul" { TIMES }
+  | "Div" { DIV }
+  | "Mod" { MOD }
+  | "Push" { PUSH }
+  | "Pop" { POP }
   (* illegal characters *)
   | _ as c  {
       raise (Location.Error(Printf.sprintf "Illegal character '%c': " c, Location.curr lexbuf))

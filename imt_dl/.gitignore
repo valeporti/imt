@@ -1,3 +1,4 @@
 *.zip
 final_proj/data/*
 final_proj/ex/character-level-cnn/*
+*.png

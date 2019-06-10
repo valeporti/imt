@@ -17,14 +17,14 @@ type program = int * command list
   | DefineMe -> "to be done" *)
 
 let rec string_of_command = function
-  | Pop -> "Pop"
-	| Push i -> "Push of "^(string_of_int i)
-	| Swap -> "Swap"
-	| Add -> "Add"
-	| Sub -> "Sub"
-	| Mul -> "Mul"
-	| Div -> "Div"
-	| Rem -> "Rem"
+| Pop -> "Pop"
+| Push i -> "Push of "^(string_of_int i)
+| Swap -> "Swap"
+| Add -> "Add"
+| Sub -> "Sub"
+| Mul -> "Mul"
+| Div -> "Div"
+| Rem -> "Rem"
 
 let string_of_commands cmds = String.concat " " (List.map string_of_command cmds)
 

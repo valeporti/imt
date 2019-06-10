@@ -2,6 +2,12 @@
 (* The type of tokens. *)
 
 type token = 
+  | Psub
+  | Ppush
+  | Pmul
+  | Pmod
+  | Pdiv
+  | Padd
   | INT of (int)
   | EOF
 
