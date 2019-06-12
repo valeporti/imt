@@ -4,6 +4,7 @@
   let mk_int nb loc =
     try INT (int_of_string nb)
     with Failure _ -> raise (Location.Error(Printf.sprintf "Illegal integer '%s': " nb,loc))
+  (* before there was some LexingII.Error(.... *)
 }
 
 let newline = (['\n' '\r'] | "\r\n")
@@ -33,9 +34,12 @@ rule token = parse
   | "%"      { MOD }
   | "("      { LPAR }
   | ")"      { RPAR }
+  (* For function support *)
+  | "fun"    { FUN }
+  | "->"     { RA }
   (* identifiers *)
   | ident as id { IDENT id }
   (* illegal characters *)
   | _ as c  { raise (Location.Error(Printf.sprintf "Illegal character '%c': " c, Location.curr lexbuf)) }
-
+    
 

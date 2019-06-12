@@ -25,7 +25,8 @@ let try_this file =
 					print_string e;
 					Location.print l;
 				| _ -> print_string "Non Covered Error Detected!\n"; exit 0;
-		end
+		end;
+		close_in (input_file)
 	with Sys_error s ->
     print_endline ("Can't find file '" ^ file ^ "'")
 

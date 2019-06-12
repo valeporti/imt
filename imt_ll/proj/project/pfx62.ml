@@ -15,7 +15,8 @@ let try_this file =
 			with
 				| Exit -> print_string "ended string in file\n"; 
 				|_ -> print_string "error detected!!\n"; exit 0;
-		end
+		end;
+		close_in (input_file)
 	with Sys_error s ->
     print_endline ("Can't find file '" ^ file ^ "'")
 
