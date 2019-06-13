@@ -31,6 +31,6 @@ let parse_eval file =
 (* Here we add the parsing of the command line and link to the main function *)
 let _ =
   (* functionn to register arguments *)
-  let register_arg i = args := !args@[Int i] in (* first just [i] *)
+  let register_arg i = args := !args@[Int i] in
   (* each option -a INTEGER is considered as an argument *)
   Arg.parse ["-a",Arg.Int register_arg,"integer argument"] parse_eval ""

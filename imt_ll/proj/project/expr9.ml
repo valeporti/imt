@@ -1,26 +1,31 @@
 (* Entry point of the program, should contain your main function: here it is
  named parse_eval, it is the function provided after question 6.1 *)
 
-(* The arguments, initially empty *)
-let args = ref []
+let rec print_list_of_expr = function 
+| [] -> ()
+| e::l -> print_string (PfxAst.string_of_command e) ; print_string "\n" ; print_list_of_expr l
+
 
 (* The main function *)
 let parse_eval file =
   print_string ("File "^file^" is being treated!\n");
-  try  	
+  try
     let input_file = open_in file in
     let lexbuf = Lexing.from_channel input_file in
     begin
       try
-        Location.init lexbuf file;
-        let pfx_prog = PfxParser.program PfxLexer.token lexbuf in
-          print_endline (PfxAst.string_of_program pfx_prog);
-          PfxEval.eval_program pfx_prog !args
+        let expr_prog = ExprParser.expression ExprLexer.token lexbuf in
+        print_string "Length list: "; print_int (List.length (ExprToPfx.generate expr_prog)); print_string "\n";
+        print_list_of_expr (ExprToPfx.generate expr_prog);
+        let pfx_prog = 0, ExprToPfx.generate expr_prog in
+        print_endline (PfxAst.string_of_program pfx_prog);
+        PfxEval.eval_program pfx_prog []
       with
       | PfxParser.Error ->
          print_string "Syntax error: ";
          Location.print (Location.curr lexbuf)
       | Location.Error(e,l) ->
+	       print_string "Location Error: ";
          print_string e;
          Location.print l
     end;
@@ -30,7 +35,4 @@ let parse_eval file =
 
 (* Here we add the parsing of the command line and link to the main function *)
 let _ =
-  (* functionn to register arguments *)
-  let register_arg i = args := !args@[Int i] in (* first just [i] *)
-  (* each option -a INTEGER is considered as an argument *)
-  Arg.parse ["-a",Arg.Int register_arg,"integer argument"] parse_eval ""
+  Arg.parse [] parse_eval ""

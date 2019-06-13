@@ -33,9 +33,10 @@ rule token = parse
   | "Push" { PUSH }
   | "Pop" { POP }
   (* For function support *)
-  | "Exec" { EXEC }
-  | "Get" { GET } 
-  | "Seq" { SEQ }
+  | "[" { LBRA }
+  | "]" { RBRA }
+  | "exec" { EXEC }
+  | "get" { GET } 
   (* illegal characters *)
   | _ as c  {
       raise (Location.Error(Printf.sprintf "Illegal character '%c': " c, Location.curr lexbuf))

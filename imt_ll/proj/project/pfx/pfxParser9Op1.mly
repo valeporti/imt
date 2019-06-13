@@ -11,7 +11,7 @@
 
 (* enter tokens here, they should begin with %token *)
 %token EOF PLUS MINUS TIMES DIV MOD PUSH POP
-%token EXEC GET SEQ
+%token EXEC GET LBRA RBRA
 %token <int> INT
 
 
@@ -38,13 +38,13 @@ args:
 | i=INT { i }
 
 instructions:
-| t=instructions q=command { t@q }
-| q=command { q }
+| t=instructions q=command { t@[q] }
+| q=command { [q] }
 
 command:
-| q=base { [q] }
-| v=value { [v] }
-| SEQ s=instructions EXEC { [Q s]@[Exec] }
+| q=base { q }
+| v=value { v }
+| LBRA s=instructions RBRA { Q s }
 
 value:
 | PUSH c=INT { Push c }
@@ -56,6 +56,7 @@ base:
 | DIV     { Div }
 | MOD     { Rem }
 | POP     { Pop }
+| EXEC    { Exec }
 | GET     { Get }
 
 %%

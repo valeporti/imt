@@ -8,6 +8,12 @@ type command =
 | Mul
 | Div
 | Rem
+(* Functions Support *) 
+| Q of command list (* it could be (Q) or [] -- Executable sequence *)
+| Exec
+| Get
+| Int of int (* We need this to homologate stack list types *)
+
 
 type program = int * command list
 
@@ -25,6 +31,11 @@ let rec string_of_command = function
 | Mul -> "Mul"
 | Div -> "Div"
 | Rem -> "Rem"
+(* Function Support *)
+| Q q -> "Executable Sequence: ["^(String.concat " " (List.map string_of_command q))^"]"
+| Exec -> "Execute"
+| Get -> "Get"
+| Int i -> "Int of "^(string_of_int i)
 
 let string_of_commands cmds = String.concat " " (List.map string_of_command cmds)
 
