@@ -13,6 +13,7 @@ let print_tk = function
 | DIV -> print_string "Div"
 | PUSH -> print_string "Push"
 | POP -> print_string "Pop"
+| SWAP -> print_string "Swap"
 | EOF -> print_string "EOF"
 | INT i -> print_string ("INT: "^(string_of_int i))
 

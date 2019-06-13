@@ -32,5 +32,6 @@ let parse_eval file =
 let _ =
   (* functionn to register arguments *)
   let register_arg i = args := !args@[Int i] in (* first just [i] *)
+  print_string (PfxAst.string_of_commands !args);
   (* each option -a INTEGER is considered as an argument *)
   Arg.parse ["-a",Arg.Int register_arg,"integer argument"] parse_eval ""

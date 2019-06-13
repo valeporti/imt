@@ -32,6 +32,7 @@ rule token = parse
   | "Mod" { MOD }
   | "Push" { PUSH }
   | "Pop" { POP }
+  | "Swap" { SWAP }
   (* For function support *)
   | "Exec" { EXEC }
   | "Get" { GET } 

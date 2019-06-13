@@ -95,11 +95,11 @@ let rec generate =
   | Binop(op,e1,e2) -> 
 		begin
 			match op with
-			| Badd -> (generate e2)@(generate e1)@[Add]
+			| Badd -> (generate e1)@(generate e2)@[Add]
 			| Bsub -> (generate e2)@(generate e1)@[Sub]
-			| Bmul -> (generate e2)@(generate e1)@[Mul]
-			| Bdiv -> (generate e2)@(generate e1)@[Div]
-			| Bmod -> (generate e2)@(generate e1)@[Rem]
+			| Bmul -> (generate e1)@(generate e2)@[Mul]
+			| Bdiv -> (generate e1)@(generate e2)@[Div]
+			| Bmod -> (generate e1)@(generate e2)@[Div]
 		end		
   | Uminus e -> (generate e)@(generate (Const 0))@[Sub]
   (* Function Support *)

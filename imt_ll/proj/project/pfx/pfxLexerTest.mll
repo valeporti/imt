@@ -1,6 +1,6 @@
 {
   type token =
-    | EOF | PLUS | MINUS | TIMES | DIV | MOD | PUSH | POP
+    | EOF | PLUS | MINUS | TIMES | DIV | MOD | PUSH | POP | SWAP
     | INT of int | IDENT of string
 
   let mk_int nb loc =
@@ -34,6 +34,7 @@ rule token = parse
   | "Mod" { MOD }
   | "Push" { PUSH }
   | "Pop" { POP }
+  | "Swap" { SWAP }
   (* illegal characters *)
   | _ as c  {
       raise (Location.Error(Printf.sprintf "Illegal character '%c': " c, Location.curr lexbuf))

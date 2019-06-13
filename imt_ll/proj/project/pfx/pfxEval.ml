@@ -31,8 +31,8 @@ let step state =
   | Add::q, (Int i)::(Int j)::s -> Ok (q, [Int (i + j)]@s)
   | Sub::q, (Int i)::(Int j)::s -> Ok (q, [Int (i - j)]@s)
   | Mul::q, (Int i)::(Int j)::s -> Ok (q, [Int (i * j)]@s)
-  | Div::q, (Int i)::(Int j)::s -> Ok (q, [Int (i / j)]@s)
-  | Rem::q, (Int i)::(Int j)::s -> Ok (q, [Int (i mod j)]@s)
+  | Div::q, (Int i)::(Int j)::s -> if (j != 0) then Ok (q, [Int (i / j)]@s) else Error("Division by zero", state)
+  | Rem::q, (Int i)::(Int j)::s -> if (j != 0) then Ok (q, [Int (i mod j)]@s) else Error("Remainder by zero", state)
   (* Question 9, executable sequence, exec, get -> function and application support *)
   | Q(ins)::q, s -> Ok (q, [Q ins]@s)
   | Exec::q, exe::s ->
@@ -67,6 +67,7 @@ let eval_program (numargs, cmds) args =
     | Error(msg,s) -> printf "Raised error %s in state %s\n" msg (string_of_state s)
   else printf "Raised error \nMismatch between expected and actual number of args\n"
 
+(*let insert_args cmds args = match cmds, args with*)
 
 (*
 PRINTING VALUES VERSION OF step

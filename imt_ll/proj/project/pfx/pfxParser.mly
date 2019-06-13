@@ -10,7 +10,7 @@
  **************)
 
 (* enter tokens here, they should begin with %token *)
-%token EOF PLUS MINUS TIMES DIV MOD PUSH POP
+%token EOF PLUS MINUS TIMES DIV MOD PUSH POP SWAP
 %token EXEC GET SEQ
 %token <int> INT
 
@@ -57,5 +57,6 @@ base:
 | MOD     { Rem }
 | POP     { Pop }
 | GET     { Get }
+| SWAP    { Swap }
 
 %%
