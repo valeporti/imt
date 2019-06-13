@@ -1,2 +1,3 @@
-*/_build/*
-./proj/project/_build/*
+_build/*
+/proj/project/_build
+
