@@ -8,6 +8,8 @@
 %token <string> IDENT
 (* For function support *)
 %token FUN RA
+(* For let support *)
+%token LET IN
 
 %start < ExprAst.expression > expression
 
@@ -29,6 +31,7 @@ expr:
   (* For function support *)
   | FUN id=IDENT RA e=expr %prec FUN   { Fun(id,e) }
   | e1=simple_expr e2=simple_expr      { App(e1,e2) }
+  (* Let Support *)
 
 simple_expr:
   | LPAR e=expr RPAR           { e }
