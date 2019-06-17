@@ -24,7 +24,7 @@ type program = int * command list
 
 let rec string_of_command = function
 | Pop -> "Pop"
-| Push i -> "Push of "^(string_of_int i)
+| Push i -> "Push "^(string_of_int i)
 | Swap -> "Swap"
 | Add -> "Add"
 | Sub -> "Sub"
@@ -32,10 +32,10 @@ let rec string_of_command = function
 | Div -> "Div"
 | Rem -> "Rem"
 (* Function Support *)
-| Q q -> "Executable Sequence: ["^(String.concat " " (List.map string_of_command q))^"]"
-| Exec -> "Execute"
+| Q q -> "Seq ["^(String.concat " " (List.map string_of_command q))^"]" (*"Executable Sequence: ["^(String.concat " " (List.map string_of_command q))^"]"*)
+| Exec -> "Exec"
 | Get -> "Get"
-| Int i -> "Int of "^(string_of_int i)
+| Int i -> "Int "^(string_of_int i)
 
 let string_of_commands cmds = String.concat " " (List.map string_of_command cmds)
 

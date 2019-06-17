@@ -15,8 +15,7 @@ let string_of_state (cmds,stack) =
     (sprintf " with stack %s" (string_of_stack stack))
 
 (* Question 4.2 *)
-(*)
-let step state =
+let steppp state =
   match state with
   | [], _ -> Error("Nothing to step", state)
   | (Pop|Exec)::_, [] -> Error("Nothing in pile", state)
@@ -47,7 +46,6 @@ let step state =
         if List.length s <= i then Error("Stack not large enough for Get("^(string_of_int i)^")", state)
         else Ok(q, [List.nth s ((List.length s) - i - 1)]@s) (* Read the stack from right to left *) 
       end
-*)      
 
 
 (* PRINTING VALUES VERSION OF step *)

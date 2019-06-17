@@ -7,7 +7,7 @@ type expression =
   | App of expression * expression
   | Fun of string * expression
   (* For Let Suppor *)
-  | Let of expression
+  | Let of string * expression
 
 (* Free variables support *)
 type free_v =
@@ -24,8 +24,19 @@ let rec string_of_expr exp =
   (* For function support *)
   | App(e1,e2) -> (string_of_expr e1)^" "^(string_of_expr e2)
   | Fun(v,e) -> "fun "^v^" -> "^(string_of_expr e)
-  | Let e -> "Let "^(string_of_expr e)
+  | Let(v, e1) -> "let "^v^" = "^(string_of_expr e1)^" in "
 
-let rec string_of_fvl = function
-| [] -> ""
+let string_of_e exp =
+  match exp with
+  | Const c -> string_of_int c
+  | Var v -> v
+  | Binop(op, e1, e2) -> "(Binop)"
+  | Uminus e -> "( - Uminus )"
+  (* For function support *)
+  | App(e1,e2) -> "App("^(string_of_expr e1)^", "^(string_of_expr e2)^")"
+  | Fun(v,e) -> "fun "^v^" -> "^(string_of_expr e)
+  | Let(v, e1) -> "let "^v^" = "^(string_of_expr e1)^" in "
+
+let rec string_of_env = function
+| [] -> "EMP\n"
 | (Fv(s), Pos(p))::t -> "( "^(s)^", "^(string_of_int p)^" ) || "^(string_of_fvl t)^"\n"

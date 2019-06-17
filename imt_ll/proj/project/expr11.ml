@@ -5,6 +5,8 @@ let rec print_list_of_expr = function
 | [] -> ()
 | e::l -> print_string (PfxAst.string_of_command e) ; print_string "\n" ; print_list_of_expr l
 
+let print_list_of_prog p = ExprAst.string_of_e p; print_string "\n" 
+
 
 (* The main function *)
 let parse_eval file =
@@ -15,8 +17,12 @@ let parse_eval file =
     begin
       try
         let expr_prog = ExprParser.expression ExprLexer.token lexbuf in
-        (*print_string "Length list: "; print_int (List.length (ExprToPfx.generateV3 0 0 [] expr_prog)); print_string "\n";
-        print_list_of_expr (ExprToPfx.generateV3 0 0 [] expr_prog);*)
+        (*
+        print_string "Length list: "; print_int (List.length (ExprToPfx.generateV3 0 0 [] expr_prog)); print_string "\n";
+        print_string "-----------\n";
+        print_list_of_prog (ExprToPfx.generateV3pp 0 0 [] expr_prog);
+        print_string "-----------\n";
+        *)
         let pfx_prog = 0, (ExprToPfx.generateV3 0 0 [] expr_prog) in
         print_endline (PfxAst.string_of_program pfx_prog);
         PfxEval.eval_program pfx_prog []

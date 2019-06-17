@@ -14,6 +14,7 @@ let main () =
     let file_fun_lambda_simp_expr = "./tests/ttfunsimp" in
     let file_fun_lambda_comp_expr = "./tests/ttfun" in
     let file_fun_lambda_comp_expr2 = "./tests/ttfuncomp2" in
+    let file_fun_lambda_comp_expr3 = "./tests/ttfun3" in
       print_string " ---- OK Test For the ExprToPfx, Q 5 ( 3+2-(4/2) = 3 )----\n";
       TestFun.five file_expr_test; 
       print_string " ---- OK Test For the Lexer, Q 6.1 ('0 Push 2 Push 3 Add') ----\n";
@@ -32,12 +33,14 @@ let main () =
       TestFun.eight file_fun_9_pfx []; 
       print_string " ---- OK Test For the Parser, Q 10.1 (\\x.x+1)(2) = 3 ----\n";
       TestFun.eight file_fun_lamda_pfx []; 
-      print_string " ---- OK Easy Test For generateV2, Q 10.3 (\\x.x+1)(2) = 3 ----\n";
+      print_string " ---- OK Test For generateV2, Q 10.3 (\\x.x+1)(2) = 3 ----\n";
       TestFun.ten file_fun_lambda_simp_expr []; 
-      print_string " ---- OK Complicated Test 1 For generateV2, Q 10.3 (fun y -> (fun x->(20-x))(6) + y)(7) = 21  ----\n";
+      print_string " ---- OK Test 1 For generateV2, Q 10.3 (fun y -> (fun x->(20-x))(6) + y)(7) = 21  ----\n";
       TestFun.ten file_fun_lambda_comp_expr []; 
-      print_string " ---- OK Complicated Test 2 For generateV2, Q 10.3 (fun y -> (fun x->(4*x))(6) / y)(2) = 12  ----\n";
+      print_string " ---- OK Test 2 For generateV2, Q 10.3 (fun y -> (fun x->(4*x))(6) / y)(2) = 12  ----\n";
       TestFun.ten file_fun_lambda_comp_expr2 []; 
+      print_string " ---- OK Test 2 For generateV2, Q 10.3 ((fun y -> (fun x->(x+1))(2) + y)((fun x -> x*3)((fun x -> 3 + x)(2)))) = 18  ----\n";
+      TestFun.ten file_fun_lambda_comp_expr3 []; 
   with
     | _ -> print_string "Error on tests"
   

@@ -8,7 +8,7 @@ type expression =
   | App of expression * expression
   | Fun of string * expression
   (* For Let Suppor *)
-  | Let of expression
+  | Let of string * expression
 
 (* Free variables support *)
 type free_v =
@@ -18,4 +18,6 @@ type free_v =
 (* Converting an expression to a string for printing *)
 val string_of_expr : expression -> string
 
-val string_of_fvl : (free_v * free_v) list -> string
+val string_of_env : (free_v * free_v) list -> string
+
+val string_of_e : expression -> string

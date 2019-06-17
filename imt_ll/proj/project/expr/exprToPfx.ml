@@ -21,6 +21,7 @@ let rec generate = function
   | Uminus e -> [-e]
   | Var v -> failwith "Not yet supported"
 *)
+
 let soi i = string_of_int i
 
 (*
@@ -48,47 +49,65 @@ let rec getFV p n l = match l with
     else getFV p n tl
   end
 
-let rec generateV3 t p fvl = (* t-for inner positions, p- for general position, fvl - free variables list *)  
+let rec generateV3pp t p env = (* t-for inner positions, p- for general position, env - free variables list *)  
+  function
+  | Const c -> [Push c]
+  | Binop(op,e1,e2) -> 
+		begin
+      match op with
+      (* []@[]@[] -> pos+1 pos+1 and pos-1 *)
+			| Badd -> (generateV3pp (t+1) (p+1) env e1)@(generateV3pp (t+1) (p+1) env e2)@[Add]
+			| Bsub -> (generateV3pp (t+1) (p+1) env e1)@(generateV3pp (t+1) (p+1) env e2)@[Sub]
+			| Bmul -> (generateV3pp (t+1) (p+1) env e1)@(generateV3pp (t+1) (p+1) env e2)@[Mul]
+			| Bdiv -> (generateV3pp (t+1) (p+1) env e1)@(generateV3pp (t+1) (p+1) env e2)@[Div]
+			| Bmod -> (generateV3pp (t+1) (p+1) env e1)@(generateV3pp (t+1) (p+1) env e2)@[Rem]
+		end		
+  | Uminus e -> (generateV3pp (t+1) (p+1) env e)@(generateV3pp (t+1) (p+1) env (Const 0))@[Sub]
+  (* Function Support *)
+  | App(e1, e2) -> (generateV3pp t p env e2)@(generateV3pp t p env e1)
+  | Fun(v, e) -> [Q (generateV3pp 0 p ([((Fv v), (Pos (p-t)))]@env) e)]@[Exec]@[Swap]@[Pop]
+  | Var v -> [Push (getFV p v env)]@[Get]
+  | Let (v, e) -> (generateV3pp 0 p ([((Fv v), (Pos (p-t)))]@env) e)
+
+let rec generateV3 t p env = (* t-for inner positions, p- for general position, env - free variables list *)  
   function
   | Const c -> print_string ("Push "^(soi c)^"("^(soi t)^"+1,"^(soi p)^"+1)\n"); [Push c]
   | Binop(op,e1,e2) -> 
 		begin
       match op with
       (* []@[]@[] -> pos+1 pos+1 and pos-1 *)
-			| Badd -> print_string ("Add ("^(soi t)^"+1,"^(soi p)^"+1)\n"); (generateV3 (t+1) (p+1) fvl e1)@(generateV3 (t+1) (p+1) fvl e2)@[Add]
-			| Bsub -> print_string ("Sub ("^(soi t)^"+1,"^(soi p)^"+1)\n"); (generateV3 (t+1) (p+1) fvl e1)@(generateV3 (t+1) (p+1) fvl e2)@[Sub]
-			| Bmul -> print_string ("Mul ("^(soi t)^"+1,"^(soi p)^"+1)\n"); (generateV3 (t+1) (p+1) fvl e1)@(generateV3 (t+1) (p+1) fvl e2)@[Mul]
-			| Bdiv -> print_string ("Div ("^(soi t)^"+1,"^(soi p)^"+1)\n"); (generateV3 (t+1) (p+1) fvl e1)@(generateV3 (t+1) (p+1) fvl e2)@[Div]
-			| Bmod -> print_string ("Mod ("^(soi t)^"+1,"^(soi p)^"+1)\n"); (generateV3 (t+1) (p+1) fvl e1)@(generateV3 (t+1) (p+1) fvl e2)@[Rem]
+			| Badd -> print_string ("Add ("^(soi t)^"+1,"^(soi p)^"+1)\n"); (generateV3 (t+1) (p+1) env e1)@(generateV3 (t+1) (p+1) env e2)@[Add]
+			| Bsub -> print_string ("Sub ("^(soi t)^"+1,"^(soi p)^"+1)\n"); (generateV3 (t+1) (p+1) env e1)@(generateV3 (t+1) (p+1) env e2)@[Sub]
+			| Bmul -> print_string ("Mul ("^(soi t)^"+1,"^(soi p)^"+1)\n"); (generateV3 (t+1) (p+1) env e1)@(generateV3 (t+1) (p+1) env e2)@[Mul]
+			| Bdiv -> print_string ("Div ("^(soi t)^"+1,"^(soi p)^"+1)\n"); (generateV3 (t+1) (p+1) env e1)@(generateV3 (t+1) (p+1) env e2)@[Div]
+			| Bmod -> print_string ("Mod ("^(soi t)^"+1,"^(soi p)^"+1)\n"); (generateV3 (t+1) (p+1) env e1)@(generateV3 (t+1) (p+1) env e2)@[Rem]
 		end		
-  | Uminus e -> (generateV3 (t+1) (p+1) fvl e)@(generateV3 (t+1) (p+1) fvl (Const 0))@[Sub]
+  | Uminus e -> (generateV3 (t+1) (p+1) env e)@(generateV3 (t+1) (p+1) env (Const 0))@[Sub]
   (* Function Support *)
-  | App(e1, e2) -> 
-    print_string ("App ("^(soi t)^","^(soi p)^")\n"); 
-    (generateV3 t p fvl e2)@(generateV3 t p fvl e1)
-  (* begin
-      match e1, e2 with 
-      (* Handle simple App(\x.e , expression) *)
-      | Fun(v, e), _ -> 
-        print_string ("Fun ("^(soi t)^"+1,"^(soi p)^"+1)\n"); 
-        (generateV3 t p fvl e2)@(generateV3 t p fvl e)
-      (* Means, that we don't have a direct function definition in the expression but sub application *)
-      (*| e, Const c -> print_string "CO1!\n"; [Push c]@[Q (generateV3 0 p fvl e)]@[Exec]@[Swap]@[Pop]*)
-      | _ , Const c -> print_string ("ConstApp "^(soi c)^"\n"); [Push c]@[Q (generateV3 0 p fvl e1)]@[Exec]@[Swap]@[Pop]
-      | _, _ -> 
-        print_string ("Other ("^(soi t)^"+1,"^(soi p)^"+1)\n"); 
-        (generateV3 (t+1) (p+1) fvl e1)@(generateV3 (t+1) (p+1) fvl e2)
-    end *)
+  | App(e1, e2) ->
+    begin
+      match e1, e2 with
+      | _, Let(v, e) -> print_string ("LetApp "^v^" ("^(string_of_expr e)^")\n"); (generateV3 t p env e2)@(generateV3 t (p+1) ([((Fv v), (Pos (p-t)))]@env) e1)@[Swap]@[Pop]
+      | _, _ -> print_string ("App ("^(soi t)^","^(soi p)^")\n"); (generateV3 t p env e2)@(generateV3 t p env e1)
+    end
   | Fun(v, e) -> 
     print_string ("Fun ("^(soi 0)^","^(soi p)^")\n"); 
-    [Q (generateV3 0 p ([((Fv v), (Pos (p-t)))]@fvl) e)]@[Exec]@[Swap]@[Pop]
+    [Q (generateV3 0 p ([((Fv v), (Pos (p-t)))]@env) e)]@[Exec]@[Swap]@[Pop]
   | Var v -> 
     print_string ("Var "^v^" Push("^(soi p)^"-"^(soi t)^")\n"); 
-    print_string (soi (getFV p v fvl)); 
+    print_string (soi (getFV p v env)); 
     print_string "\n"; 
-    print_string (string_of_fvl fvl);
-    [Push (getFV p v fvl)]@[Get]
-
+    print_string (string_of_env env);
+    [Push (getFV p v env)]@[Get]
+  | Let (v, e) -> 
+    print_string ("Let "^v^" ("^(string_of_expr e)^")\n");
+    print_string (string_of_env env);
+    print_string "\n"; 
+    print_string (soi (List.length(env)));
+    print_string "\n"; 
+    (*[Push (getFV p v env)]@[Get]*)
+    (generateV3 0 p env e)
+    (*(generateV3 0 p ([((Fv v), (Pos (p-t)))]@env) e)*)
 
 let rec generateV2 t p = (* t-for inner positions, p- for general position *)  
   function
