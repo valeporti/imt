@@ -15,6 +15,11 @@ let main () =
     let file_fun_lambda_comp_expr = "./tests/ttfun" in
     let file_fun_lambda_comp_expr2 = "./tests/ttfuncomp2" in
     let file_fun_lambda_comp_expr3 = "./tests/ttfun3" in
+    let file_let_1 = "./tests/ttlet" in
+    let file_let_2 = "./tests/ttlet2" in
+    let file_let_3 = "./tests/ttlet3" in
+    let file_let2_1 = "./tests/tttentwo" in
+    let file_let2_2 = "./tests/tttenten" in
       print_string " ---- OK Test For the ExprToPfx, Q 5 ( 3+2-(4/2) = 3 )----\n";
       TestFun.five file_expr_test; 
       print_string " ---- OK Test For the Lexer, Q 6.1 ('0 Push 2 Push 3 Add') ----\n";
@@ -39,8 +44,18 @@ let main () =
       TestFun.ten file_fun_lambda_comp_expr []; 
       print_string " ---- OK Test 2 For generateV2, Q 10.3 (fun y -> (fun x->(4*x))(6) / y)(2) = 12  ----\n";
       TestFun.ten file_fun_lambda_comp_expr2 []; 
-      print_string " ---- OK Test 2 For generateV2, Q 10.3 ((fun y -> (fun x->(x+1))(2) + y)((fun x -> x*3)((fun x -> 3 + x)(2)))) = 18  ----\n";
+      print_string " ---- OK Test 3 For generateV2, Q 10.3 ((fun y -> (fun x->(x+1))(2) + y)((fun x -> x*3)((fun x -> 3 + x)(2)))) = 18  ----\n";
       TestFun.ten file_fun_lambda_comp_expr3 []; 
+      print_string " ---- OK Test 1 For generateV3, Q 11.2 \n\tlet x = 2 in \n\tlet y = 3 in\n\tlet z = x + y in\n\tz  \n\t= 5----\n";
+      TestFun.eleven file_let_1 [];
+      print_string " ---- OK Test 2 For generateV3, Q 11.2 \n\tlet x = ((fun x -> x+2)(2)) in \n\tlet y = (7+7) in\n\t((fun z -> x + y + z)(2))  \n\t= 20 ----\n";
+      TestFun.eleven file_let_2 [];
+      print_string " ---- OK Test 3 For generateV3, Q 11.2 \n\t(fun u -> u + 2)\n\t(\n\tlet x = ((fun v -> v+2)(2)) in \n\tlet y = (7+7) in\n\t((fun z -> x + y + z)(2))\n\t)  \n\t= 22 ----\n";
+      TestFun.eleven file_let_3 [];
+      print_string " ---- OK Test 3 For generateV3, Q 11.2 ((fun x -> fun y -> (x - y)) 12) 8 = 4 ----\n";
+      TestFun.eleven file_let2_1 [];
+      print_string " ---- OK Test 3 For generateV3, Q 11.2 \n\t(\n\t(\n\t(\n\t(\n\tfun x -> fun y -> fun z -> fun m -> (x - y + (z * m))\n\t) 2\n\t) ((fun n -> n + 2)(1))\n\t) 12\n\t)\n\t= 35 ----\n";
+      TestFun.eleven file_let2_2 [];
   with
     | _ -> print_string "Error on tests"
   

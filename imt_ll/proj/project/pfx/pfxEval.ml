@@ -15,7 +15,7 @@ let string_of_state (cmds,stack) =
     (sprintf " with stack %s" (string_of_stack stack))
 
 (* Question 4.2 *)
-let steppp state =
+let step state =
   match state with
   | [], _ -> Error("Nothing to step", state)
   | (Pop|Exec)::_, [] -> Error("Nothing in pile", state)
@@ -50,7 +50,7 @@ let steppp state =
 
 (* PRINTING VALUES VERSION OF step *)
 
-let step state =
+let steppp state =
   match state with
   | [], _ -> Error("Nothing to step", state)
   | (Pop|Exec)::_, [] -> Error("Nothing in pile", state)

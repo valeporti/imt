@@ -125,8 +125,8 @@ let ten file args =
     begin
       try
         let expr_prog = ExprParser.expression ExprLexer.token lexbuf in
-        print_string "Length list: "; print_int (List.length (ExprToPfx.generateV2 0 0 expr_prog)); print_string "\n";
-        print_list_of_expr (ExprToPfx.generateV2 0 0 expr_prog);
+        (*print_string "Length list: "; print_int (List.length (ExprToPfx.generateV2 0 0 expr_prog)); print_string "\n";
+        print_list_of_expr (ExprToPfx.generateV2 0 0 expr_prog);*)
         let pfx_prog = 0, (ExprToPfx.generateV2 0 0 expr_prog) in
         print_endline (PfxAst.string_of_program pfx_prog);
         PfxEval.eval_program pfx_prog []
@@ -138,6 +138,32 @@ let ten file args =
 	       print_string "Location Error: ";
          print_string e;
          Location.print l
+    end;
+    close_in (input_file)
+  with Sys_error s ->
+    print_endline ("Can't find file '" ^ file ^ "'")
+  
+let eleven file args =
+  print_string ("File "^file^" is being treated!\n");
+  try
+    let input_file = open_in file in
+    let lexbuf = Lexing.from_channel input_file in
+    begin
+      try
+        let expr_prog = ExprParser.expression ExprLexer.token lexbuf in
+        (*print_string "Length list: "; print_int (List.length (ExprToPfx.generateV3 0 0 [] expr_prog)); print_string "\n";
+        print_list_of_expr (ExprToPfx.generateV3 0 0 [] expr_prog);*)
+        let pfx_prog = 0, (ExprToPfx.generateV3 0 0 [] expr_prog) in
+        print_endline (PfxAst.string_of_program pfx_prog);
+        PfxEval.eval_program pfx_prog []
+      with
+      | PfxParser.Error ->
+          print_string "Syntax error: ";
+          Location.print (Location.curr lexbuf)
+      | Location.Error(e,l) ->
+          print_string "Location Error: ";
+          print_string e;
+          Location.print l
     end;
     close_in (input_file)
   with Sys_error s ->

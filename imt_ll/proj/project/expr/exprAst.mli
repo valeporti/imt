@@ -11,13 +11,14 @@ type expression =
   | Let of string * expression
 
 (* Free variables support *)
-type free_v =
+type env_v =
+  | Empty
   | Fv of string
   | Pos of int
 
 (* Converting an expression to a string for printing *)
 val string_of_expr : expression -> string
 
-val string_of_env : (free_v * free_v) list -> string
+val string_of_env : (env_v * env_v) list -> string
 
 val string_of_e : expression -> string

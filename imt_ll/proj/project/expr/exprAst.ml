@@ -10,7 +10,8 @@ type expression =
   | Let of string * expression
 
 (* Free variables support *)
-type free_v =
+type env_v =
+  | Empty
   | Fv of string
   | Pos of int
 
@@ -39,4 +40,5 @@ let string_of_e exp =
 
 let rec string_of_env = function
 | [] -> "EMP\n"
-| (Fv(s), Pos(p))::t -> "( "^(s)^", "^(string_of_int p)^" ) || "^(string_of_fvl t)^"\n"
+| (Empty, Pos(p))::t -> "( Empty, "^(string_of_int p)^" ) || "^(string_of_env t)^"\n"
+| (Fv(s), Pos(p))::t -> "( "^(s)^", "^(string_of_int p)^" ) || "^(string_of_env t)^"\n"
