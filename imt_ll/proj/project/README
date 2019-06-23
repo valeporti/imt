@@ -1,16 +1,18 @@
 AUTHORS
 -------
 
-- NAME1
-- NAME2
-…
+- TORRES SANCHEZ Jhonatan Leonardo
+- PORTILLO GALVAN Valentín
 
 ===============
 
 Description of the project
 --------------------------
 
-This μ-project is a very simple compiler…
+This project is the final project for the "ELU 610 - Langages et Logique" cursus. 
+Here, you will see the developement of a compilator based on a stack logic.
+We use as compiler that uses the Expr language and transforms it to Pfx logic, so the stack language.
+
 
 ===============
 
@@ -39,7 +41,7 @@ How to…
 
 …execute and test?
 
-  ocamlbuild main.byte -- TESTFILE.pfx
+  ocamlbuild tests.byte --
 
 
 ===============
@@ -65,22 +67,37 @@ project
 │   ├── exprEval.ml
 │   ├── exprEval.mli
 │   ├── exprLexer.mll
-│   ├── exprParser.mli
 │   ├── exprParser.mly
-│   ├── exprToPfx.ml               <- To edit
+│   ├── exprToPfx.ml 
 │   └── exprToPfx.mli
 ├── exprMain.ml: main file for the expr compiler
-├── expr_fun: the expr parser for section 7
-│   ├── exprAst.ml
-│   ├── exprAst.mli
-│   ├── exprLexer.mll
-│   └── exprParser.mly
+├── expr9.ml: main file for the expr compiler until question 9
+├── expr10.ml: main file for the expr compiler until question 10
+├── expr11.ml: main file for expr compiler until question 11
+├── expr_nofun: contains the expr files before adding functional properties
+│   ├── exprAstNoFunc.ml
+│   ├── exprAstNoFunc.mli
+│   ├── exprLexerNoFun.mll
+│   └── exprParserNoFun.mly
+├── help_expr.ml: file with functions to help the printing of results and understanding
+├── helpers.ml: file with functions helping the pfxLexerTest.mll to print tokens
 ├── pfx: the pfx VM
-│   ├── pfxAst.ml                  <- To edit
-│   ├── pfxEval.ml                 <- To edit
-│   ├── pfxLexer.mll               <- To edit
-│   └── pfxParser.mly              <- To edit
+│   ├── pfxAst.ml               
+│   ├── pfxEval.ml
+|   ├── pfxEval9Op1.ml (developing another option for the Pfx evaluation, just a not fully developed 2nd option)                 
+|   ├── pfxEvalBef9.ml (maintained available the version of evaluation before the 9nth question)
+│   ├── pfxLexer.mll 
+|   ├── pfxLexer9Op1.mll (Another option for the Pfx Lexer, just a not fully developed 2nd option)               
+|   ├── PfxLexerTest.mll (The lexer for the question 9, so not yet connected with the parser)
+│   ├── pfxParser.mly     
+|   ├── pfxParser.old.mly (maintained available the version of the Parser before its modification) 
+│   └── pfxParser9Op1.mly (first version of pfx Parser, working but not ideal)        
 ├── pfxVM.ml: main file for the pfx VM
+├── pfx61.ml: main file for the pfx VM until question 6.1
+├── pfx62.ml: main file for the pfx VM until question 6.2
+├── pfx7.ml: main file for the pfx VM until question 7
+├── pfx8.ml: main file for the pfx VM until question 8
+├── pfx9.ml: main file for the pfx VM until question 9
 ├── tests: tests starting by err raise errors !!! You should add more tests !!!
 │   ├── err_prog0.pfx
 │   ├── err_prog1.pfx
@@ -90,7 +107,24 @@ project
 │   ├── ok_example_from_lecture0.pfx
 │   ├── ok_example_from_lecture1.pfx
 │   ├── ok_prog.pfx
-│   └── ok_second.pfx
+│   ├── ok_second.pfx
+│   ├── tp          (test pfx)
+│   ├── tpargs      (test pfx with arguments)
+│   ├── tpfff       (test pfx with executing sequence and get values of variables)
+│   ├── tpfun       (test pfx with executing sequence)
+│   ├── tpten       (test pfx with executing sequence)
+│   ├── tt          (test expr)
+│   ├── ttfun       (test expr with function)
+│   ├── ttfun3      (test expr with function complicated level 3)
+│   ├── ttfuncomp2  (test expr with function complicated level 2)
+│   ├── ttfunsimp   (test expr with function complicated level 1)
+│   ├── ttlet       (test expr grabbing let)
+│   ├── ttlet2      (test expr with let complicated level 2)
+│   ├── ttlet3      (test expr with let complicated level 3)
+│   ├── tttenten    (test expr with free variables complicated level 3)
+│   └── tttentwo    (test expr with free variables simple)
+├── testFun.ml: file containing the different functions for each question in the TP.
+├── tests.ml: file containing the information of the different tests
 └── utils
     ├── location.ml: module offering a data type for a location in a file
     └── location.mli
@@ -100,39 +134,34 @@ project
 Progress
 --------
 
-- We stopped at question 10.1 (proof of derivation)
-- There is still a bug in question 8.3 (new version of generate function)
-- …
+- We stopped at the 9th section "extensions".
+- We proposed a different approach for the let and the issue of having arguments far from the assigned variable
 
 ===============
 
 Know bugs and issues
 --------------------
 
-- We were not able to manage xxx…
-- Compiler fails when xxx…
-- …
+- 
 
 ===============
 
 Helpful resources
 -----------------
 
-- we used Stack Overflow to solve the problem of xxx :
-  https://stackoverflow/xxxxxxi
-  https://stackoverflow/yyyyyy
-- someone on GitHub provided an interesting example very similar to the answer of the question x.y : https://github.com/xxxx
-- …
+- To understand beter what was asked for the functional part:
+  https://crypto.stanford.edu/~blynn/lambda/
+  https://cs242.stanford.edu/f18/lectures/01-2-lambda-calculus.html
 
 ===============
 
 Difficulties
 ------------
 
-- team programming: having to use a VCS such as git and avoiding conflicts
 - thinking functional
 - changing habits by using an unknown language
-- Not a single difficulty: the project was so easy that my 8-old brother did it
-  completely; the Ocaml language is so nice I enjoyed the project, …
-- …
+- understanding the instructions 
+(not very clear, it would have been good to have more examples for testing to use them as a guide)
+- Could have been of help to tell explicitly (even if in the ocaml cheetset are the instructions, 
+we didn't related it to our tp) how to run some tests and from which point we should be able to test
 

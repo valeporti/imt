@@ -66,7 +66,7 @@ let rec generateV2 t p = (* t-for inner positions, p- for general position *)
   | Binop(op,e1,e2) -> 
 		begin
       match op with
-      (* []@[]@[] -> pos+1 pos+1 and pos-1 *)
+      (* []@[]@[] -> pos+1 pos+1 0 *)
 			| Badd -> (generateV2 (t+1) (p+1) e1)@(generateV2 (t+1) (p+1) e2)@[Add]
 			| Bsub -> (generateV2 (t+1) (p+1) e1)@(generateV2 (t+1) (p+1) e2)@[Sub]
 			| Bmul -> (generateV2 (t+1) (p+1) e1)@(generateV2 (t+1) (p+1) e2)@[Mul]
@@ -124,7 +124,7 @@ let rec generate = function
 (* ----------------------------- PRINT RESULTS VERSIONS ---------------------------------------------------- *)
 
 (* Generate V3 Print version *)
-let rec generateV3pp t p env = (* t-for inner positions, p- for general position, env - free variables list *)  
+let rec generateV3pp t p env = (* t-for inner positions, p- for general position, env - variables list *)  
   function
   | Const c -> print_string ("Push "^(soi c)^"("^(soi t)^"+1,"^(soi p)^"+1)\n"); [Push c]
   | Binop(op,e1,e2) -> 

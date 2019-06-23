@@ -1,1 +1,1 @@
-0 Push 2 Seq Push 0 Get Push 1 Add Exec
+0 Push 2 Seq Push 0 Get Push 1 Add Exec Swap Pop

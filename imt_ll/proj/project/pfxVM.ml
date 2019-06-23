@@ -12,6 +12,8 @@ let parse_eval file =
     let lexbuf = Lexing.from_channel input_file in
     begin
       try
+        (* Initialize Location errors *)
+				Location.init lexbuf file;
         let pfx_prog = PfxParser.program PfxLexer.token lexbuf in
          PfxEval.eval_program pfx_prog !args
       with
@@ -29,6 +31,6 @@ let parse_eval file =
 (* Here we add the parsing of the command line and link to the main function *)
 let _ =
   (* functionn to register arguments *)
-  let register_arg i = args := !args@[i] in
+  let register_arg i = args := !args@[Int i] in
   (* each option -a INTEGER is considered as an argument *)
   Arg.parse ["-a",Arg.Int register_arg,"integer argument"] parse_eval ""

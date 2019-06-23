@@ -48,7 +48,31 @@ let step state =
       end
 
 
-(* PRINTING VALUES VERSION OF step *)
+
+
+let eval_program (numargs, cmds) args =
+  let rec execute = function
+    | [], []    -> Ok None
+    (* | [], v::_  -> Ok (Some v) *)
+    | [], (Int v)::_  -> Ok (Some v)
+    | state ->
+       begin
+         match step state with
+         | Ok s    -> execute s
+         | Error e -> Error e
+       end
+  in
+  if numargs = List.length args then
+    match execute (cmds,args) with
+    | Ok None -> printf "No result\n"
+    | Ok(Some result) -> printf "= %i\n" result
+    | Error(msg,s) -> printf "Raised error %s in state %s\n" msg (string_of_state s)
+  else printf "Raised error \nMismatch between expected and actual number of args\n"
+
+
+
+(* ------------------- PRINTING VALUES VERSION OF step ------------------- *)
+(* ------------------- See how the stack behaves ------------------- *)
 
 let steppp state =
   match state with
@@ -87,17 +111,17 @@ let steppp state =
         else Ok(q, [List.nth s ((List.length s) - i - 1)]@s) (* Read the stack from right to left *) 
       end
 
-let eval_program (numargs, cmds) args =
+let eval_program_pp (numargs, cmds) args =
   let rec execute = function
     | [], []    -> Ok None
     (* | [], v::_  -> Ok (Some v) *)
     | [], (Int v)::_  -> Ok (Some v)
     | state ->
-       begin
-         match step state with
-         | Ok s    -> execute s
-         | Error e -> Error e
-       end
+        begin
+          match steppp state with
+          | Ok s    -> execute s
+          | Error e -> Error e
+        end
   in
   if numargs = List.length args then
     match execute (cmds,args) with
@@ -105,7 +129,6 @@ let eval_program (numargs, cmds) args =
     | Ok(Some result) -> printf "= %i\n" result
     | Error(msg,s) -> printf "Raised error %s in state %s\n" msg (string_of_state s)
   else printf "Raised error \nMismatch between expected and actual number of args\n"
-
 (*let insert_args cmds args = match cmds, args with*)
 
 

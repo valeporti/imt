@@ -124,6 +124,7 @@ let ten file args =
     let lexbuf = Lexing.from_channel input_file in
     begin
       try
+        Location.init lexbuf file;
         let expr_prog = ExprParser.expression ExprLexer.token lexbuf in
         (*print_string "Length list: "; print_int (List.length (ExprToPfx.generateV2 0 0 expr_prog)); print_string "\n";
         print_list_of_expr (ExprToPfx.generateV2 0 0 expr_prog);*)
@@ -150,6 +151,7 @@ let eleven file args =
     let lexbuf = Lexing.from_channel input_file in
     begin
       try
+        Location.init lexbuf file;
         let expr_prog = ExprParser.expression ExprLexer.token lexbuf in
         (*print_string "Length list: "; print_int (List.length (ExprToPfx.generateV3 0 0 [] expr_prog)); print_string "\n";
         print_list_of_expr (ExprToPfx.generateV3 0 0 [] expr_prog);*)
