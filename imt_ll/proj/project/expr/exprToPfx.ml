@@ -82,8 +82,6 @@ let rec generateV2 t p = (* t-for inner positions, p- for general position *)
   | Var v -> [Push (p-t)]@[Get]
 
 let rec generate = 
-  (*let sumOne x = x + 1 in
-  let pos = -1 in*)
   function
   | Const c -> [Push c]
   | Binop(op,e1,e2) -> 
@@ -100,6 +98,7 @@ let rec generate =
   | App(e1, e2) -> failwith "First Generate Version does not support App"
   | Fun(v, e) -> failwith "First Generate Version does not support Fun"
   | Var v -> failwith "First Generate Version does not support Var"
+  | Let(v, e) -> failwith "First Generate Version does not support Let"
 
 (*
 let rec generate = function

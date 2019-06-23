@@ -6,7 +6,7 @@ type expression =
   (* For function support *)
   | App of expression * expression
   | Fun of string * expression
-  (* For Let Suppor *)
+  (* For Let Support *)
   | Let of string * expression
 
 (* Free variables support *)
