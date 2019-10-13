@@ -1,0 +1,6 @@
+(fun u -> u + 2)
+(
+let x = ((fun v -> v+2)(2)) in 
+let y = (7+7) in
+((fun z -> x + y + z)(2))
+)
