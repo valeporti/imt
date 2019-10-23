@@ -1,0 +1,27 @@
+
+** Conflict (shift/reduce) in state 14.
+** Tokens involved: TIMES PLUS MOD MINUS DIV
+** The following explanations concentrate on token TIMES.
+** This state is reached from expression after reading:
+
+value expr 
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+expression 
+expr EOF 
+(?)
+
+** In state 14, looking ahead at TIMES, shifting is permitted
+** because of the following sub-derivation:
+
+value expr 
+      expr . TIMES expr 
+
+** In state 14, looking ahead at TIMES, reducing production
+** expr -> value expr 
+** is permitted because of the following sub-derivation:
+
+expr TIMES expr // lookahead token appears
+value expr . 

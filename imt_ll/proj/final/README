@@ -1,0 +1,149 @@
+AUTHORS
+-------
+
+- TORRES SANCHEZ Jhonatan Leonardo
+- PORTILLO GALVAN Valentín
+
+===============
+
+Description of the project
+--------------------------
+
+This project is the final project for the "ELU 610 - Langages et Logique" cursus. 
+Here, you will see the developement of a compilator based on a stack logic.
+We use as compiler that uses the Expr language and transforms it to Pfx logic, so the stack language.
+
+
+===============
+
+Sources
+-------
+
+Git repository: https://redmine-df.telecom-bretagne.eu/git/compilateur_expr_pfx
+
+
+===============
+
+How to…
+-------
+
+…retrieve the sources?
+
+  git clone https://redmine-df.telecom-bretagne.eu/git/compilateur_expr_pfx
+
+…compile?
+
+  ocamlbuild exprMain.byte -- file_name           
+  ocamlbuild exprMainPrint.byte -- file_name        * Print all steps
+  ocamlbuild pfxVM.byte -- file_name
+  ocamlbuild pfxVMPrint.byte -- file_name           * Print all steps
+
+…execute and test?
+
+  ocamlbuild tests.byte --
+
+===============
+
+Structure of the project
+------------------------
+
+The project is organized as following:
+
+Explain here the organization of your project, what is the use of each file or
+group of files, etc.
+
+You may also show the file tree as the following example:
+
+project
+├── README
+├── _tags: configuration file for ocamlbuild
+├── expr: the expr compiler
+│   ├── binOp.ml
+│   ├── binOp.mli
+│   ├── exprAst.ml
+│   ├── exprAst.mli
+│   ├── exprEval.ml
+│   ├── exprEval.mli
+│   ├── exprLexer.mll
+│   ├── exprParser.mly
+│   ├── exprToPfx.ml 
+│   └── exprToPfx.mli
+├── exprMain.ml: main file for the expr compiler
+├── exprMainPrint.ml: main file for the expr compiler printing all steps (tokens, transformation, evaluation)
+├── help_expr.ml: file with functions to help the printing of results and understanding
+├── helpers.ml: file with functions helping the pfxLexerTest.mll to print tokens
+├── pfx: the pfx VM
+│   ├── pfxAst.ml               
+│   ├── pfxEval.ml
+│   ├── pfxLexer.mll               
+|   ├── PfxLexerTest.mll (The lexer for the question 9, so not yet connected with the parser)
+│   └── pfxParser.mly            
+├── pfxVM.ml: main file for the pfx VM
+├── pfxVMPrint.ml: main file for the pfx VM printing all steps (tokens, transformation, evaluation)
+├── tests: tests starting by err raise errors !!! You should add more tests !!!
+│   ├── err_prog0.pfx
+│   ├── err_prog1.pfx
+│   ├── ok_first.pfx
+│   ├── ok_1arg.pfx
+│   ├── ok_2args.pfx
+│   ├── ok_example_from_lecture0.pfx
+│   ├── ok_example_from_lecture1.pfx
+│   ├── ok_prog.pfx
+│   ├── ok_second.pfx
+│   ├── tp          (test pfx)
+│   ├── tpargs      (test pfx with arguments)
+│   ├── tpfff       (test pfx with executing sequence and get values of variables)
+│   ├── tpfun       (test pfx with executing sequence)
+│   ├── tpten       (test pfx with executing sequence)
+│   ├── tt          (test expr)
+│   ├── ttfun       (test expr with function)
+│   ├── ttfun3      (test expr with function complicated level 3)
+│   ├── ttfuncomp2  (test expr with function complicated level 2)
+│   ├── ttfunsimp   (test expr with function complicated level 1)
+│   ├── ttlet       (test expr grabbing let)
+│   ├── ttlet2      (test expr with let complicated level 2)
+│   ├── ttlet3      (test expr with let complicated level 3)
+│   ├── tttenten    (test expr with free variables complicated level 3)
+│   └── tttentwo    (test expr with free variables simple)
+├── testFun.ml: file containing the different functions for each question in the TP.
+├── tests.ml: file containing the information of the different tests
+└── utils
+    ├── location.ml: module offering a data type for a location in a file
+    └── location.mli
+
+===============
+
+Progress
+--------
+
+- We stopped at the 9th section "extensions".
+- We proposed a different approach for the let and the issue of having arguments far from the assigned variable
+
+===============
+
+Know bugs and issues
+--------------------
+
+- 
+
+===============
+
+Helpful resources
+-----------------
+
+- To understand beter what was asked for the functional part:
+  https://crypto.stanford.edu/~blynn/lambda/
+  https://cs242.stanford.edu/f18/lectures/01-2-lambda-calculus.html
+
+===============
+
+Difficulties
+------------
+
+- thinking functional
+- changing habits by using an unknown language
+- understanding the instructions 
+(not very clear, it would have been good to have more examples for testing to use them as a guide)
+- Could have been of help to tell explicitly (even if in the ocaml cheetset are the instructions, 
+we didn't related it to our tp) how to run some tests and from which point we should be able to test
+
