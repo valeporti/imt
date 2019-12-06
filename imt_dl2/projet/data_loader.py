@@ -50,10 +50,11 @@ class DataLoader():
             imgs_A, imgs_B = [], []
             for img in batch:
                 img = self.imread(img)
+                # as in the training images, each file has both images, we separate them
                 h, w, _ = img.shape
-                half_w = int(w/2)
-                img_A = img[:, :half_w, :]
-                img_B = img[:, half_w:, :]
+                half_w = int(w/2) # images are separated by the middle
+                img_A = img[:, :half_w, :] # left of the image we have the real photo
+                img_B = img[:, half_w:, :] # right of it, we have the facade shape
 
                 img_A = scipy.misc.imresize(img_A, self.img_res)
                 img_B = scipy.misc.imresize(img_B, self.img_res)
@@ -68,7 +69,7 @@ class DataLoader():
             imgs_A = np.array(imgs_A)/127.5 - 1.
             imgs_B = np.array(imgs_B)/127.5 - 1.
 
-            yield imgs_A, imgs_B
+            yield imgs_A, imgs_B # photo, facade
 
 
     def imread(self, path):

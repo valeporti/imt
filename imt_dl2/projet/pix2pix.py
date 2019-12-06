@@ -1,6 +1,7 @@
 from __future__ import print_function, division
 import scipy
 
+import keras
 from keras.datasets import mnist
 from keras_contrib.layers.normalization.instancenormalization import InstanceNormalization
 from keras.layers import Input, Dense, Reshape, Flatten, Dropout, Concatenate
@@ -19,9 +20,9 @@ import os
 class Pix2Pix():
     def __init__(self):
         # Input shape
-        self.img_rows = 256
-        self.img_cols = 256
-        self.channels = 3
+        self.img_rows = 256 # "y" size of the image
+        self.img_cols = 256 # "x" size of the image
+        self.channels = 3 # RGB (3 of depth)
         self.img_shape = (self.img_rows, self.img_cols, self.channels)
 
         # Configure data loader
@@ -30,11 +31,11 @@ class Pix2Pix():
                                       img_res=(self.img_rows, self.img_cols))
 
         # Calculate output shape of D (PatchGAN)
-        patch = int(self.img_rows / 2**4)
-        self.disc_patch = (patch, patch, 1)
+        patch = int(self.img_rows / 2**4) # 256 / 16 = 16
+        self.disc_patch = (patch, patch, 1) # size of the kernel/patch on the output
 
         # Number of filters in the first layer of G and D
-        self.gf = 64
+        self.gf = 64 # first and last layer of the Generator
         self.df = 64
 
         optimizer = Adam(0.0002, 0.5)
@@ -43,7 +44,7 @@ class Pix2Pix():
         self.discriminator = self.build_discriminator()
         self.discriminator.compile(loss='mse',
             optimizer=optimizer,
-            metrics=['accuracy'])
+            metrics=['accuracy']) # with no metrics, it gives just one scalar as expected, the training loss, with metrics, second value is the accuracy
 
         #-------------------------
         # Construct Computational
@@ -55,24 +56,28 @@ class Pix2Pix():
         #print(self.generator.summary())
 
         # Input images and their conditioning images
-        img_A = Input(shape=self.img_shape)
-        img_B = Input(shape=self.img_shape)
+        img_A = Input(shape=self.img_shape) # photo
+        img_B = Input(shape=self.img_shape) # facade
 
         # By conditioning on B generate a fake version of A
-        fake_A = self.generator(img_B)
-        print('fakeA')
-        print(fake_A)
+        fake_A = self.generator(img_B) # Generator model with input layer applied
 
         # For the combined model we will only train the generator
         self.discriminator.trainable = False
+        #print(self.discriminator.summary())
 
         # Discriminators determines validity of translated images / condition pairs
         valid = self.discriminator([fake_A, img_B])
-
-        self.combined = Model(inputs=[img_A, img_B], outputs=[valid, fake_A])
+    
+        # ( inputs=[ Input_layer_photo, Input_layer_facade ], outputs=[ discriminator_model, generator_model ] )
+        self.combined = Model(inputs=[img_A, img_B], outputs=[valid, fake_A]) # Connects Input + Generator + Discriminator (just trains the generator)
         self.combined.compile(loss=['mse', 'mae'],
                               loss_weights=[1, 100],
-                              optimizer=optimizer)
+                              optimizer=optimizer,
+                              metrics=['accuracy']) # with no metrics, it gives 3 scalar values, with metrics, it returns 5
+        #print(self.combined.summary())
+        keras.utils.plot_model(self.combined, show_shapes=True, dpi=64)
+        
         print("---end")
 
     def build_generator(self):
@@ -115,12 +120,7 @@ class Pix2Pix():
         u4 = deconv2d(u3, d3, self.gf*4)
         u5 = deconv2d(u4, d2, self.gf*2)
         u6 = deconv2d(u5, d1, self.gf)
-
-        u7 = UpSampling2D(size=2)(u6)
-        output_img = Conv2D(self.channels, kernel_size=4, strides=1, padding='same', activation='tanh')(u7)
-
-        return Model(d0, output_img)
-
+compile
     def build_discriminator(self):
 
         def d_layer(layer_input, filters, f_size=4, bn=True):
@@ -151,7 +151,8 @@ class Pix2Pix():
         start_time = datetime.datetime.now()
 
         # Adversarial loss ground truths
-        valid = np.ones((batch_size,) + self.disc_patch)
+        # We pass ones for the good ones, and zeros for the "should be fake" ones
+        valid = np.ones((batch_size,) + self.disc_patch) # shape: (batch, patch) -> (batch, 16,16,1)
         fake = np.zeros((batch_size,) + self.disc_patch)
 
         for epoch in range(epochs):
@@ -162,26 +163,30 @@ class Pix2Pix():
                 # ---------------------
 
                 # Condition on B and generate a translated version
-                fake_A = self.generator.predict(imgs_B)
+                fake_A = self.generator.predict(imgs_B) # img_B is our facade
 
                 # Train the discriminators (original images = real / generated = Fake)
-                d_loss_real = self.discriminator.train_on_batch([imgs_A, imgs_B], valid)
-                d_loss_fake = self.discriminator.train_on_batch([fake_A, imgs_B], fake)
-                d_loss = 0.5 * np.add(d_loss_real, d_loss_fake)
+                # train_on_batch(x -> train data, y -> target data)
+                d_loss_real = self.discriminator.train_on_batch([imgs_A, imgs_B], valid) # imgs_A: photo, imgs_B: facade -> what it should be, REAL
+                d_loss_fake = self.discriminator.train_on_batch([fake_A, imgs_B], fake) # fake_A: image generated, imgs_B: facade -> compare with generated, FAKE
+                d_loss = 0.5 * np.add(d_loss_real, d_loss_fake) # mean of both errors
 
                 # -----------------
                 #  Train Generator
                 # -----------------
 
                 # Train the generators
+                # Rappel : ( inputs=[ Input_layer_photo, Input_layer_facade ], outputs=[ discriminator_model, generator_model ] )
                 g_loss = self.combined.train_on_batch([imgs_A, imgs_B], [valid, imgs_A])
-
+                #print(d_loss_real)
+                #print(d_loss)
+                #print(g_loss)
                 elapsed_time = datetime.datetime.now() - start_time
                 # Plot the progress
-                print ("[Epoch %d/%d] [Batch %d/%d] [D loss: %f, acc: %3d%%] [G loss: %f, acc: %3d%%] time: %s" % (epoch, epochs,
+                print ("[Epoch %d/%d] [Batch %d/%d] [D loss: %f, acc: %3d%%] [G loss: %f] time: %s" % (epoch, epochs,
                                                                         batch_i, self.data_loader.n_batches,
                                                                         d_loss[0], 100*d_loss[1],
-                                                                        g_loss[0], 100*g_loss[1],
+                                                                        g_loss[0], # we obtain 3 values for training loss (and 2 for accuracy if we assign that accuracy)
                                                                         elapsed_time))
 
                 # If at save interval => save generated image samples
