@@ -53,7 +53,7 @@ class Pix2Pix():
 
         # Build the generator
         self.generator = self.build_generator()
-        #print(self.generator.summary())
+        print(self.generator.summary())
 
         # Input images and their conditioning images
         img_A = Input(shape=self.img_shape) # photo
@@ -64,7 +64,7 @@ class Pix2Pix():
 
         # For the combined model we will only train the generator
         self.discriminator.trainable = False
-        #print(self.discriminator.summary())
+        print(self.discriminator.summary())
 
         # Discriminators determines validity of translated images / condition pairs
         valid = self.discriminator([fake_A, img_B])
@@ -76,7 +76,7 @@ class Pix2Pix():
                               optimizer=optimizer,
                               metrics=['accuracy']) # with no metrics, it gives 3 scalar values, with metrics, it returns 5
         #print(self.combined.summary())
-        keras.utils.plot_model(self.combined, show_shapes=True, dpi=64)
+        #keras.utils.plot_model(self.combined, show_shapes=True, dpi=64)
         
         print("---end")
 
@@ -117,6 +117,14 @@ class Pix2Pix():
         u1 = deconv2d(d7, d6, self.gf*8)
         u2 = deconv2d(u1, d5, self.gf*8)
         u3 = deconv2d(u2, d4, self.gf*8)
+        u4 = deconv2d(u3, d3, self.gf*4)
+        u5 = deconv2d(u4, d2, self.gf*2)
+        u6 = deconv2d(u5, d1, self.gf)
+
+        u7 = UpSampling2D(size=2)(u6)
+        output_img = Conv2D(self.channels, kernel_size=4, strides=1, padding='same', activation='tanh')(u7)
+
+        return Model(d0, output_img)
 
     def build_discriminator(self):
 
