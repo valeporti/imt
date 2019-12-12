@@ -117,10 +117,7 @@ class Pix2Pix():
         u1 = deconv2d(d7, d6, self.gf*8)
         u2 = deconv2d(u1, d5, self.gf*8)
         u3 = deconv2d(u2, d4, self.gf*8)
-        u4 = deconv2d(u3, d3, self.gf*4)
-        u5 = deconv2d(u4, d2, self.gf*2)
-        u6 = deconv2d(u5, d1, self.gf)
-compile
+
     def build_discriminator(self):
 
         def d_layer(layer_input, filters, f_size=4, bn=True):
