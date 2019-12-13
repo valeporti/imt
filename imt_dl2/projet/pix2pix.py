@@ -35,8 +35,8 @@ class Pix2Pix():
         self.disc_patch = (patch, patch, 1) # size of the kernel/patch on the output
 
         # Number of filters in the first layer of G and D
-        self.gf = 64 # first and last layer of the Generator
-        self.df = 64
+        self.gf = 128 # first and last layer of the Generator
+        self.df = 128
 
         optimizer = Adam(0.0002, 0.5)
 
@@ -53,7 +53,7 @@ class Pix2Pix():
 
         # Build the generator
         self.generator = self.build_generator()
-        print(self.generator.summary())
+        #print(self.generator.summary())
 
         # Input images and their conditioning images
         img_A = Input(shape=self.img_shape) # photo
@@ -64,7 +64,7 @@ class Pix2Pix():
 
         # For the combined model we will only train the generator
         self.discriminator.trainable = False
-        print(self.discriminator.summary())
+        #print(self.discriminator.summary())
 
         # Discriminators determines validity of translated images / condition pairs
         valid = self.discriminator([fake_A, img_B])
@@ -75,7 +75,7 @@ class Pix2Pix():
                               loss_weights=[1, 100],
                               optimizer=optimizer,
                               metrics=['accuracy']) # with no metrics, it gives 3 scalar values, with metrics, it returns 5
-        #print(self.combined.summary())
+        print(self.combined.summary())
         #keras.utils.plot_model(self.combined, show_shapes=True, dpi=64)
         
         print("---end")
@@ -225,4 +225,4 @@ class Pix2Pix():
 
 if __name__ == '__main__':
     gan = Pix2Pix()
-    gan.train(epochs=200, batch_size=20, sample_interval=200)
+    gan.train(epochs=10, batch_size=20, sample_interval=200)
