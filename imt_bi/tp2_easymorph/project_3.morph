@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Version="16" AppVersion="4.2.1.4" UseCustomFileNameForPdfExport="false" ShowPageBorders="true" DefaultModuleName="Main">
+  <Modules>
+    <Module Name="Main" AutoRun="true" SelectedTabName="Tab 1">
+      <Tabs>
+        <Tab Name="Tab 1" IncludeInReport="true">
+          <ModelObjects>
+            <Table Name="Imported table 1" Left="74" Top="36" Width="871" Height="358" IsMinimized="false" IsReportObjectRemoved="false" ActiveActionIndex="0">
+              <Actions>
+                <ImportDelimitedTextAction DecimalSeparator="Comma" ShowParsingErrors="false" IgnoreQuoting="false" AddColumnsWhenRowsHaveMoreValuesThanHeaders="false" ColumnsDontHaveHeaders="false" LoadAllColumns="true">
+                  <MetaColumns>
+                    <MetaColumn OriginalName="CD_STATION" Width="119" />
+                  </MetaColumns>
+                  <InputFileDefinition Mode="MultipleSelect" IncludeFilePaths="false">
+                    <FolderPath Value="D:\MSC3\BI\ETL_EasyMorph\data_pesticides" Type="Path" />
+                    <FileNames>
+                      <Item>ma_qp_fm_ttres_pesteso_2007.csv</Item>
+                      <Item>ma_qp_fm_ttres_pesteso_2008.csv</Item>
+                      <Item>ma_qp_fm_ttres_pesteso_2009.csv</Item>
+                      <Item>ma_qp_fm_ttres_pesteso_2010.csv</Item>
+                      <Item>ma_qp_fm_ttres_pesteso_2011.csv</Item>
+                      <Item>ma_qp_fm_ttres_pesteso_2012.csv</Item>
+                    </FileNames>
+                  </InputFileDefinition>
+                  <SkipLines Value="0" Type="Number" />
+                  <MaxLines Value="0" Type="Number" />
+                  <Separator SeparatorType="Semicolon" />
+                  <Encoding EncodingType="ANSI" CodePage="1252" />
+                </ImportDelimitedTextAction>
+              </Actions>
+            </Table>
+          </ModelObjects>
+          <ReportObjects />
+        </Tab>
+      </Tabs>
+      <Parameters />
+    </Module>
+  </Modules>
+  <DataConnectors />
+  <PageSetup Size="Letter" Orientation="Landscape" Margin="Narrow" />
+  <Resources />
+</Project>

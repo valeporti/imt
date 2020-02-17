@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Version="16" AppVersion="4.2.1.4" UseCustomFileNameForPdfExport="false" ShowPageBorders="true" DefaultModuleName="Main">
+  <Modules>
+    <Module Name="Main" AutoRun="true" SelectedTabName="Tab 1">
+      <Tabs>
+        <Tab Name="Tab 1" IncludeInReport="true">
+          <ModelObjects>
+            <Table Name="pesticides.csv" Left="140" Top="111" Width="500" Height="300" IsMinimized="false" IsReportObjectRemoved="false" ActiveActionIndex="5">
+              <Actions>
+                <ImportDelimitedTextAction DecimalSeparator="Point" ShowParsingErrors="false" IgnoreQuoting="false" AddColumnsWhenRowsHaveMoreValuesThanHeaders="false" ColumnsDontHaveHeaders="false" LoadAllColumns="true">
+                  <InputFileDefinition Mode="Single">
+                    <FileName Value="D:\MSC3\BI\ETL_EasyMorph\data_pesticides\pesticides.csv" Type="Path" />
+                  </InputFileDefinition>
+                  <SkipLines Value="0" Type="Number" />
+                  <MaxLines Value="0" Type="Number" />
+                  <Separator SeparatorType="Semicolon" />
+                  <Encoding EncodingType="UTF7" />
+                </ImportDelimitedTextAction>
+                <EnumerateRowsAction EnumerateInGroups="false" />
+                <RenameColumnsAction>
+                  <Names>
+                    <NamePair Name1="RowNo" Name2="pesticide_key" />
+                    <NamePair Name1="CD_PARAMETRE" Name2="code_sandre" />
+                    <NamePair Name1="LB_PARAMETRE" Name2="libelle_pesticide" />
+                    <NamePair Name1="CODE_FAMILLE" Name2="code_famille" />
+                    <NamePair Name1="NORME_DCE" Name2="norme_dce" />
+                    <NamePair Name1="STATUT" Name2="statut" />
+                    <NamePair Name1="DATE_NA_USAGE" Name2="date_retrait" />
+                  </Names>
+                </RenameColumnsAction>
+                <RemoveColumnsAction>
+                  <ColumnNames>
+                    <Item>CODE_CAS</Item>
+                    <Item>FORMULEB</Item>
+                    <Item>METABOLITE</Item>
+                    <Item>NOM_PARAM2</Item>
+                    <Item>NOM_PARENT</Item>
+                    <Item>PARENT</Item>
+                  </ColumnNames>
+                </RemoveColumnsAction>
+                <ReorderColumnsAction>
+                  <PositionRules>
+                    <ColumnPositionRule ColumnName="norme_dce" Position="AfterColumn" AfterColumnName="code_famille" />
+                  </PositionRules>
+                </ReorderColumnsAction>
+                <ExportDelimitedTextAction DecimalSeparator="Point" WrapTextMode="Auto" DontWriteColumnHeaders="false" PreserveFormatting="false" ExportFileMode="Create" DontWriteBom="false" FileExistsOption="Overwrite">
+                  <FileName Value="data_pesticides\dim_pesticide.csv" Type="Path" />
+                  <Separator SeparatorType="Comma" />
+                  <Encoding EncodingType="UTF8" />
+                </ExportDelimitedTextAction>
+              </Actions>
+            </Table>
+          </ModelObjects>
+          <ReportObjects />
+        </Tab>
+      </Tabs>
+      <Parameters />
+    </Module>
+  </Modules>
+  <DataConnectors />
+  <PageSetup Size="Letter" Orientation="Landscape" Margin="Narrow" />
+  <Resources />
+</Project>

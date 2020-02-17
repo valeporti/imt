@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Version="16" AppVersion="4.2.1.4" UseCustomFileNameForPdfExport="false" ShowPageBorders="true" DefaultModuleName="Main">
+  <Modules>
+    <Module Name="Main" AutoRun="true" SelectedTabName="Tab 1">
+      <Tabs>
+        <Tab Name="Tab 1" IncludeInReport="true">
+          <ModelObjects>
+            <Table Name="departments_regions_france_2016.csv" Left="527" Top="0" Width="500" Height="300" IsMinimized="false" IsReportObjectRemoved="false" ActiveActionIndex="2">
+              <Actions>
+                <ImportDelimitedTextAction DecimalSeparator="Point" ShowParsingErrors="false" IgnoreQuoting="false" AddColumnsWhenRowsHaveMoreValuesThanHeaders="false" ColumnsDontHaveHeaders="false" LoadAllColumns="true">
+                  <InputFileDefinition Mode="Single">
+                    <FileName Value="D:\MSC3\BI\ETL_EasyMorph\data_pesticides\departments_regions_france_2016.csv" Type="Path" />
+                  </InputFileDefinition>
+                  <SkipLines Value="0" Type="Number" />
+                  <MaxLines Value="0" Type="Number" />
+                  <Separator SeparatorType="Comma" />
+                  <Encoding EncodingType="UTF8" />
+                </ImportDelimitedTextAction>
+                <ConvertDataTypesAction Conversion="EverythingToText" NumberFormat="NoFormat" FailureOption="KeepOriginal">
+                  <ColumnNames>
+                    <Item>departmentCode</Item>
+                  </ColumnNames>
+                </ConvertDataTypesAction>
+                <ReplaceColumnsAction>
+                  <Columns>
+                    <NameExpressionPair Name="departmentCode">
+                      <Expression Value="upper([departmentCode])" Type="Expression" />
+                    </NameExpressionPair>
+                  </Columns>
+                </ReplaceColumnsAction>
+              </Actions>
+            </Table>
+            <Table Name="stations_sage.csv" Left="23" Top="245" Width="500" Height="274" IsMinimized="false" IsReportObjectRemoved="false" ActiveActionIndex="0">
+              <Actions>
+                <ImportDelimitedTextAction DecimalSeparator="Point" ShowParsingErrors="false" IgnoreQuoting="false" AddColumnsWhenRowsHaveMoreValuesThanHeaders="false" ColumnsDontHaveHeaders="false" LoadAllColumns="true">
+                  <InputFileDefinition Mode="Single">
+                    <FileName Value="D:\MSC3\BI\ETL_EasyMorph\data_pesticides\stations_sage.csv" Type="Path" />
+                  </InputFileDefinition>
+                  <SkipLines Value="0" Type="Number" />
+                  <MaxLines Value="0" Type="Number" />
+                  <Separator SeparatorType="Semicolon" />
+                  <Encoding EncodingType="UTF8" />
+                </ImportDelimitedTextAction>
+              </Actions>
+            </Table>
+            <Table Name="stations.csv" Left="0" Top="0" Width="500" Height="296" IsMinimized="false" IsReportObjectRemoved="false" ActiveActionIndex="10">
+              <Actions>
+                <ImportDelimitedTextAction DecimalSeparator="Point" ShowParsingErrors="false" IgnoreQuoting="false" AddColumnsWhenRowsHaveMoreValuesThanHeaders="false" ColumnsDontHaveHeaders="false" LoadAllColumns="true">
+                  <InputFileDefinition Mode="Single">
+                    <FileName Value="D:\MSC3\BI\ETL_EasyMorph\data_pesticides\stations.csv" Type="Path" />
+                  </InputFileDefinition>
+                  <SkipLines Value="0" Type="Number" />
+                  <MaxLines Value="0" Type="Number" />
+                  <Separator SeparatorType="Semicolon" />
+                  <Encoding EncodingType="ASCII" />
+                </ImportDelimitedTextAction>
+                <SelectionFilterAction ColumnName="X_FICT_L93" RemoveSelectedValues="true">
+                  <Cells>
+                    <C T="n" V="0" />
+                  </Cells>
+                </SelectionFilterAction>
+                <MergeAction SecondTableName="stations_coord.csv" SecondTableExists="false" MergeMode="LeftJoin">
+                  <Columns>
+                    <Item>lat</Item>
+                    <Item>long</Item>
+                  </Columns>
+                  <MatchingColumns>
+                    <NamePair Name1="CD_STATION" Name2="CD_STATION" />
+                  </MatchingColumns>
+                </MergeAction>
+                <ConvertDataTypesAction Conversion="EverythingToText" NumberFormat="NoFormat" FailureOption="KeepOriginal">
+                  <ColumnNames>
+                    <Item>NUM_DEP</Item>
+                  </ColumnNames>
+                </ConvertDataTypesAction>
+                <MergeAction SecondTableName="departments_regions_france_2016.csv" SecondTableExists="true" MergeMode="LeftJoin">
+                  <Columns>
+                    <Item>departmentName</Item>
+                    <Item>regionCode</Item>
+                    <Item>regionName</Item>
+                  </Columns>
+                  <MatchingColumns>
+                    <NamePair Name1="NUM_DEP" Name2="departmentCode" />
+                  </MatchingColumns>
+                </MergeAction>
+                <MergeAction SecondTableName="stations_sage.csv" SecondTableExists="true" MergeMode="LeftJoin">
+                  <Columns>
+                    <Item>Code</Item>
+                    <Item>lat</Item>
+                    <Item>long</Item>
+                    <Item>NOM</Item>
+                  </Columns>
+                  <MatchingColumns>
+                    <NamePair Name1="CD_STATION" Name2="CD_STATION" />
+                  </MatchingColumns>
+                </MergeAction>
+                <EnumerateRowsAction EnumerateInGroups="false">
+                  <MetaColumns>
+                    <MetaColumn OriginalName="RowNo" />
+                  </MetaColumns>
+                </EnumerateRowsAction>
+                <RenameColumnsAction>
+                  <Names>
+                    <NamePair Name1="RowNo" Name2="station_key" />
+                    <NamePair Name1="CD_STATION" Name2="code_station" />
+                    <NamePair Name1="NOM" Name2="nom_sage" />
+                    <NamePair Name1="NOM_COM" Name2="nom_commune" />
+                    <NamePair Name1="NUM_COM" Name2="code_insee_commune" />
+                    <NamePair Name1="departmentName" Name2="nom_department" />
+                    <NamePair Name1="NUM_DEP" Name2="numero_department" />
+                    <NamePair Name1="regionName" Name2="nom_region" />
+                    <NamePair Name1="lat" Name2="latitude" />
+                    <NamePair Name1="long" Name2="longitude" />
+                    <NamePair Name1="ALTITUDE" Name2="altitude" />
+                    <NamePair Name1="PROFONDEUR_MAXI_POINT" Name2="profondeur" />
+                    <NamePair Name1="Code" Name2="code_sage" />
+                  </Names>
+                </RenameColumnsAction>
+                <SelectColumnsAction>
+                  <ColumnNames>
+                    <Item>altitude</Item>
+                    <Item>code_insee_commune</Item>
+                    <Item>code_sage</Item>
+                    <Item>code_station</Item>
+                    <Item>latitude</Item>
+                    <Item>longitude</Item>
+                    <Item>nom_commune</Item>
+                    <Item>nom_department</Item>
+                    <Item>nom_region</Item>
+                    <Item>nom_sage</Item>
+                    <Item>numero_department</Item>
+                    <Item>profondeur</Item>
+                    <Item>station_key</Item>
+                  </ColumnNames>
+                </SelectColumnsAction>
+                <ReorderColumnsAction>
+                  <PositionRules>
+                    <ColumnPositionRule ColumnName="nom_sage" Position="AfterColumn" AfterColumnName="code_station" />
+                    <ColumnPositionRule ColumnName="code_sage" Position="AfterColumn" AfterColumnName="nom_sage" />
+                    <ColumnPositionRule ColumnName="nom_commune" Position="AfterColumn" AfterColumnName="code_sage" />
+                    <ColumnPositionRule ColumnName="numero_department" Position="AfterColumn" AfterColumnName="nom_commune" />
+                    <ColumnPositionRule ColumnName="code_insee_commune" Position="AfterColumn" AfterColumnName="nom_commune" />
+                    <ColumnPositionRule ColumnName="nom_department" Position="AfterColumn" AfterColumnName="code_insee_commune" />
+                    <ColumnPositionRule ColumnName="nom_region" Position="AfterColumn" AfterColumnName="numero_department" />
+                    <ColumnPositionRule ColumnName="longitude" Position="AfterColumn" AfterColumnName="nom_region" />
+                    <ColumnPositionRule ColumnName="latitude" Position="AfterColumn" AfterColumnName="longitude" />
+                  </PositionRules>
+                </ReorderColumnsAction>
+                <ExportDelimitedTextAction DecimalSeparator="Point" WrapTextMode="Auto" DontWriteColumnHeaders="false" PreserveFormatting="false" ExportFileMode="Create" DontWriteBom="false" FileExistsOption="Overwrite">
+                  <FileName Value="data_pesticides\dim_station.csv" Type="Path" />
+                  <Separator SeparatorType="Comma" />
+                  <Encoding EncodingType="UTF8" />
+                </ExportDelimitedTextAction>
+              </Actions>
+            </Table>
+          </ModelObjects>
+          <ReportObjects />
+        </Tab>
+      </Tabs>
+      <Parameters />
+    </Module>
+  </Modules>
+  <DataConnectors />
+  <PageSetup Size="Letter" Orientation="Landscape" Margin="Narrow" />
+  <Resources />
+</Project>
