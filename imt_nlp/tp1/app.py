@@ -1,6 +1,8 @@
 # import flask dependencies
 from flask import Flask, request, make_response, jsonify
 import pprint as pp
+import contexts
+import sys
 
 # initialize the flask app
 app = Flask(__name__)
@@ -21,26 +23,24 @@ def results():
     # return a fulfillment response
     return {'fulfillmentText': u'La pizza qui vous intéresse est : '+str(action)}
 
-def getIntent( req ):
-  return req.get('queryResult').get('intent').get('displayName')
-
-def getOutputContexts( req ):
-  return req.get('queryResult').get('outputContexts')
-
-def determineIntent():
-  req = request.get_json()
-  intent = getIntent( req )
-  
-
 
 # create a route for webhook
 @app.route('/webhook', methods=['POST', 'GET'])
 def webhook():
     # return response
-    print('req')
-    pp.pprint(request.get_json())
+    try:
+      cntxt = contexts.Context( request )    
+      response = cntxt.buildResponse()
+      pp.pprint(response)
+      return  make_response(jsonify( response ))
+      #return make_response(jsonify(results()))
+    except Exception as e:
+      #e = sys.exc_info()[0]
+      #print(f'-- ERROR --')
+      #print(sys.exc_info()[1])
+      pp.pprint( request.get_json() )
+      raise
     
-    return make_response(jsonify(results()))
 
 # run the app
 if __name__ == '__main__':
