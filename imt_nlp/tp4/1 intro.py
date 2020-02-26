@@ -1,0 +1,27 @@
+import z3
+
+Humain = z3.DeclareSort('Humain')
+Socrate = z3.Const('Socrate', Humain)
+is_Mortel = z3.Function('is_Mortel',Humain,z3.BoolSort())
+is_Humain = z3.Function('is_Humain',Humain,z3.BoolSort())
+s = z3.Solver()
+x = z3.Const('x', Humain)
+s.add(z3.ForAll(x,z3.Implies(is_Humain(x),is_Mortel(x))))
+s.add(is_Humain(Socrate))
+s.add(z3.Not(is_Mortel(Socrate)))
+print(s.check())
+
+
+print('-----')
+z3.set_param(proof=True)
+Humain = z3.DeclareSort('Humain')
+Socrate = z3.Const('Socrate', Humain)
+is_Mortel = z3.Function('is_Mortel',Humain,z3.BoolSort())
+is_Humain = z3.Function('is_Humain',Humain,z3.BoolSort())
+s = z3.Solver()
+x, y, z = z3.Consts('x y z', Humain)
+s.add(z3.ForAll(x,z3.Implies(is_Humain(x),is_Mortel(x))))
+s.add(is_Humain(Socrate))
+s.add(is_Mortel(Socrate))
+print(s.check())
+print(s.model())
