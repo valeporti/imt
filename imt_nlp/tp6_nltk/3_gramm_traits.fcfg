@@ -1,0 +1,21 @@
+% start S
+
+S -> NP[NOMBRE=?n] VP[NOMBRE=?n]
+NP[NOMBRE=?n] -> DET[GENRE=?g, NOMBRE=?n] N[GENRE=?g, NOMBRE=?n] ADJ[GENRE=?g, NOMBRE=?n] | DET[GENRE=?g, NOMBRE=?n] N[GENRE=?g, NOMBRE=?n]
+VP[NOMBRE=?n] -> TV[NOMBRE=?n] NP | IV[NOMBRE=?n] | TVP[NOMBRE=?n] PNP
+PNP[NOMBRE=?n] -> PREP NP[NOMBRE=?n]
+DET[GENRE=fem, NOMBRE=sin] -> 'la' | 'une'
+DET[GENRE=mas, NOMBRE=sin] -> 'le' | 'un'
+DET[GENRE=fem, NOMBRE=plu] -> 'les' | 'des'
+DET[GENRE=mas, NOMBRE=plu] -> 'les' | 'des'
+N[GENRE=fem, NOMBRE=sin] -> 'fille' | 'robe' | 'amie'
+N[GENRE=fem, NOMBRE=plu] -> 'filles' | 'robes' | 'amies'
+N[GENRE=mas, NOMBRE=sin] -> 'ami'
+ADJ[GENRE=fem, NOMBRE=sin] -> 'rouge'
+ADJ[GENRE=mas, NOMBRE=sin] -> 'rouge'
+PREP -> 'à'
+TV[NOMBRE=sin] -> 'porte'
+TV[NOMBRE=plu] -> 'portent'
+TVP[NOMBRE=sin] -> 'parle'
+TVP[NOMBRE=plu] -> 'parlent'
+IV[NOMBRE=sin] -> 'dort' | 'parle'

@@ -4,3 +4,6 @@
 /tp2/*.png
 /tp2/*.svg
 /tp1/intents/__pycache__/*
+/tp5_rasa/examples/*
+__pycache__/
+tp5_rasa/rasa-assist/
