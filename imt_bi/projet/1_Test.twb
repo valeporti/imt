@@ -1,0 +1,1329 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20194.20.0125.0835                               -->
+<workbook locale='fr_FR' original-version='18.1' source-build='2019.4.3 (20194.20.0125.0835)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <SheetIdentifierTracking ignorable='true' predowngraded='true' />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='Actions_Facts' inline='true' name='federated.1mi64tb00mafoh15ihq8d04p1uil' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='Actions_Facts' name='textscan.1bvmbaq1xhacx51c2ke490qvwa1x'>
+            <connection class='textscan' directory='D:/code/learn/imt/imt_bi/projet/files' filename='Actions_Facts.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation join='inner' type='join'>
+          <clause type='join'>
+            <expression op='='>
+              <expression op='[Consommation_Facts.csv].[Id_resource]' />
+              <expression op='[resource.csv].[Id]' />
+            </expression>
+          </clause>
+          <relation join='inner' type='join'>
+            <clause type='join'>
+              <expression op='='>
+                <expression op='[Actions_Facts.csv].[id_type_action]' />
+                <expression op='[Type_Actions.csv].[id]' />
+              </expression>
+            </clause>
+            <relation join='inner' type='join'>
+              <clause type='join'>
+                <expression op='='>
+                  <expression op='[Consommation_Facts.csv].[Id_date]' />
+                  <expression op='[date.csv].[Id]' />
+                </expression>
+              </clause>
+              <relation join='inner' type='join'>
+                <clause type='join'>
+                  <expression op='='>
+                    <expression op='[localisation.csv].[Id]' />
+                    <expression op='[Consommation_Facts.csv].[Id_localisation]' />
+                  </expression>
+                </clause>
+                <relation join='inner' type='join'>
+                  <clause type='join'>
+                    <expression op='='>
+                      <expression op='[Actions_Facts.csv].[id_date_fin]' />
+                      <expression op='[date_fin.csv].[Id]' />
+                    </expression>
+                  </clause>
+                  <relation join='inner' type='join'>
+                    <clause type='join'>
+                      <expression op='='>
+                        <expression op='[Actions_Facts.csv].[id_localisation]' />
+                        <expression op='[localisation.csv].[Id]' />
+                      </expression>
+                    </clause>
+                    <relation join='inner' type='join'>
+                      <clause type='join'>
+                        <expression op='='>
+                          <expression op='[Actions_Facts.csv].[id_date_debut]' />
+                          <expression op='[date_debut.csv].[Id]' />
+                        </expression>
+                      </clause>
+                      <relation connection='textscan.1bvmbaq1xhacx51c2ke490qvwa1x' name='Actions_Facts.csv' table='[Actions_Facts#csv]' type='table'>
+                        <columns character-set='windows-1252' header='yes' locale='es_MX' separator=','>
+                          <column datatype='integer' name='ID' ordinal='0' />
+                          <column datatype='string' name='Nom' ordinal='1' />
+                          <column datatype='string' name='Description' ordinal='2' />
+                          <column datatype='integer' name='Coût (€)' ordinal='3' />
+                          <column datatype='real' name='Empreinte_CO2 (Tonnes)' ordinal='4' />
+                          <column datatype='integer' name='id_type_action' ordinal='5' />
+                          <column datatype='string' name='Nom du Responsable' ordinal='6' />
+                          <column datatype='string' name='Titre Correspondant' ordinal='7' />
+                          <column datatype='integer' name='id_date_debut' ordinal='8' />
+                          <column datatype='integer' name='id_date_fin' ordinal='9' />
+                          <column datatype='integer' name='Jour début' ordinal='10' />
+                          <column datatype='integer' name='Jour fin' ordinal='11' />
+                          <column datatype='integer' name='id_localisation' ordinal='12' />
+                        </columns>
+                      </relation>
+                      <relation connection='textscan.1bvmbaq1xhacx51c2ke490qvwa1x' name='date_debut.csv' table='[date#csv]' type='table'>
+                        <columns character-set='UTF-8' header='yes' locale='es_MX' separator=';'>
+                          <column datatype='integer' name='Id' ordinal='0' />
+                          <column datatype='integer' name='Year' ordinal='1' />
+                          <column datatype='integer' name='Month' ordinal='2' />
+                        </columns>
+                      </relation>
+                    </relation>
+                    <relation connection='textscan.1bvmbaq1xhacx51c2ke490qvwa1x' name='localisation.csv' table='[localisation#csv]' type='table'>
+                      <columns character-set='UTF-8' header='yes' locale='es_MX' separator=';'>
+                        <column datatype='integer' name='Id' ordinal='0' />
+                        <column datatype='string' name='Nom' ordinal='1' />
+                        <column datatype='integer' name='Parent_id' ordinal='2' />
+                      </columns>
+                    </relation>
+                  </relation>
+                  <relation connection='textscan.1bvmbaq1xhacx51c2ke490qvwa1x' name='date_fin.csv' table='[date#csv]' type='table'>
+                    <columns character-set='UTF-8' header='yes' locale='es_MX' separator=';'>
+                      <column datatype='integer' name='Id' ordinal='0' />
+                      <column datatype='integer' name='Year' ordinal='1' />
+                      <column datatype='integer' name='Month' ordinal='2' />
+                    </columns>
+                  </relation>
+                </relation>
+                <relation connection='textscan.1bvmbaq1xhacx51c2ke490qvwa1x' name='Consommation_Facts.csv' table='[Consommation_Facts#csv]' type='table'>
+                  <columns character-set='UTF-8' header='yes' locale='es_MX' separator=';'>
+                    <column datatype='integer' name='Id_localisation' ordinal='0' />
+                    <column datatype='integer' name='Id_date' ordinal='1' />
+                    <column datatype='integer' name='Id_resource' ordinal='2' />
+                    <column datatype='real' name='Consommation_ecole' ordinal='3' />
+                    <column datatype='real' name='Consommation_totale' ordinal='4' />
+                    <column datatype='real' name='Montant_total_HT' ordinal='5' />
+                    <column datatype='real' name='Montant_total_TTC' ordinal='6' />
+                  </columns>
+                </relation>
+              </relation>
+              <relation connection='textscan.1bvmbaq1xhacx51c2ke490qvwa1x' name='date.csv' table='[date#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='es_MX' separator=';'>
+                  <column datatype='integer' name='Id' ordinal='0' />
+                  <column datatype='integer' name='Year' ordinal='1' />
+                  <column datatype='integer' name='Month' ordinal='2' />
+                </columns>
+              </relation>
+            </relation>
+            <relation connection='textscan.1bvmbaq1xhacx51c2ke490qvwa1x' name='Type_Actions.csv' table='[Type_Actions#csv]' type='table'>
+              <columns character-set='windows-1252' header='yes' locale='es_MX' separator=','>
+                <column datatype='integer' name='id' ordinal='0' />
+                <column datatype='string' name='Nom' ordinal='1' />
+              </columns>
+            </relation>
+          </relation>
+          <relation connection='textscan.1bvmbaq1xhacx51c2ke490qvwa1x' name='resource.csv' table='[resource#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='es_MX' separator=';'>
+              <column datatype='integer' name='Id' ordinal='0' />
+              <column datatype='string' name='Nom' ordinal='1' />
+              <column datatype='string' name='Unité' ordinal='2' />
+            </columns>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[Consommation_ecole]' value='[Consommation_Facts.csv].[Consommation_ecole]' />
+          <map key='[Consommation_totale]' value='[Consommation_Facts.csv].[Consommation_totale]' />
+          <map key='[Coût (€)]' value='[Actions_Facts.csv].[Coût (€)]' />
+          <map key='[Description]' value='[Actions_Facts.csv].[Description]' />
+          <map key='[Empreinte_CO2 (Tonnes)]' value='[Actions_Facts.csv].[Empreinte_CO2 (Tonnes)]' />
+          <map key='[ID]' value='[Actions_Facts.csv].[ID]' />
+          <map key='[Id (date.csv1)]' value='[date_fin.csv].[Id]' />
+          <map key='[Id (date.csv2)]' value='[date.csv].[Id]' />
+          <map key='[Id (localisation.csv)]' value='[localisation.csv].[Id]' />
+          <map key='[Id (resource.csv)]' value='[resource.csv].[Id]' />
+          <map key='[Id]' value='[date_debut.csv].[Id]' />
+          <map key='[Id_date]' value='[Consommation_Facts.csv].[Id_date]' />
+          <map key='[Id_localisation]' value='[Consommation_Facts.csv].[Id_localisation]' />
+          <map key='[Id_resource]' value='[Consommation_Facts.csv].[Id_resource]' />
+          <map key='[Jour début]' value='[Actions_Facts.csv].[Jour début]' />
+          <map key='[Jour fin]' value='[Actions_Facts.csv].[Jour fin]' />
+          <map key='[Montant_total_HT]' value='[Consommation_Facts.csv].[Montant_total_HT]' />
+          <map key='[Montant_total_TTC]' value='[Consommation_Facts.csv].[Montant_total_TTC]' />
+          <map key='[Month (date.csv1)]' value='[date_fin.csv].[Month]' />
+          <map key='[Month (date.csv2)]' value='[date.csv].[Month]' />
+          <map key='[Month]' value='[date_debut.csv].[Month]' />
+          <map key='[Nom (Type_Actions.csv)]' value='[Type_Actions.csv].[Nom]' />
+          <map key='[Nom (localisation.csv)]' value='[localisation.csv].[Nom]' />
+          <map key='[Nom (resource.csv)]' value='[resource.csv].[Nom]' />
+          <map key='[Nom du Responsable]' value='[Actions_Facts.csv].[Nom du Responsable]' />
+          <map key='[Nom]' value='[Actions_Facts.csv].[Nom]' />
+          <map key='[Parent_id]' value='[localisation.csv].[Parent_id]' />
+          <map key='[Titre Correspondant]' value='[Actions_Facts.csv].[Titre Correspondant]' />
+          <map key='[Unité]' value='[resource.csv].[Unité]' />
+          <map key='[Year (date.csv1)]' value='[date_fin.csv].[Year]' />
+          <map key='[Year (date.csv2)]' value='[date.csv].[Year]' />
+          <map key='[Year]' value='[date_debut.csv].[Year]' />
+          <map key='[id]' value='[Type_Actions.csv].[id]' />
+          <map key='[id_date_debut]' value='[Actions_Facts.csv].[id_date_debut]' />
+          <map key='[id_date_fin]' value='[Actions_Facts.csv].[id_date_fin]' />
+          <map key='[id_localisation]' value='[Actions_Facts.csv].[id_localisation]' />
+          <map key='[id_type_action]' value='[Actions_Facts.csv].[id_type_action]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Actions_Facts.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;windows-1252&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;es&quot;</attribute>
+              <attribute datatype='string' name='debit-close-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='debit-open-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;es_MX&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>ID</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[ID]</local-name>
+            <parent-name>[Actions_Facts.csv]</parent-name>
+            <remote-alias>ID</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Nom</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Nom]</local-name>
+            <parent-name>[Actions_Facts.csv]</parent-name>
+            <remote-alias>Nom</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Description</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Description]</local-name>
+            <parent-name>[Actions_Facts.csv]</parent-name>
+            <remote-alias>Description</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Coût (€)</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Coût (€)]</local-name>
+            <parent-name>[Actions_Facts.csv]</parent-name>
+            <remote-alias>Coût (€)</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Empreinte_CO2 (Tonnes)</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Empreinte_CO2 (Tonnes)]</local-name>
+            <parent-name>[Actions_Facts.csv]</parent-name>
+            <remote-alias>Empreinte_CO2 (Tonnes)</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>id_type_action</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[id_type_action]</local-name>
+            <parent-name>[Actions_Facts.csv]</parent-name>
+            <remote-alias>id_type_action</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Nom du Responsable</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Nom du Responsable]</local-name>
+            <parent-name>[Actions_Facts.csv]</parent-name>
+            <remote-alias>Nom du Responsable</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Titre Correspondant</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Titre Correspondant]</local-name>
+            <parent-name>[Actions_Facts.csv]</parent-name>
+            <remote-alias>Titre Correspondant</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>id_date_debut</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[id_date_debut]</local-name>
+            <parent-name>[Actions_Facts.csv]</parent-name>
+            <remote-alias>id_date_debut</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>id_date_fin</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[id_date_fin]</local-name>
+            <parent-name>[Actions_Facts.csv]</parent-name>
+            <remote-alias>id_date_fin</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Jour début</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Jour début]</local-name>
+            <parent-name>[Actions_Facts.csv]</parent-name>
+            <remote-alias>Jour début</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Jour fin</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Jour fin]</local-name>
+            <parent-name>[Actions_Facts.csv]</parent-name>
+            <remote-alias>Jour fin</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>id_localisation</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[id_localisation]</local-name>
+            <parent-name>[Actions_Facts.csv]</parent-name>
+            <remote-alias>id_localisation</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[date_debut.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;es&quot;</attribute>
+              <attribute datatype='string' name='debit-close-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='debit-open-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;;&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;es_MX&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Id]</local-name>
+            <parent-name>[date_debut.csv]</parent-name>
+            <remote-alias>Id</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Year]</local-name>
+            <parent-name>[date_debut.csv]</parent-name>
+            <remote-alias>Year</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Month</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Month]</local-name>
+            <parent-name>[date_debut.csv]</parent-name>
+            <remote-alias>Month</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[localisation.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;es&quot;</attribute>
+              <attribute datatype='string' name='debit-close-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='debit-open-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;;&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;es_MX&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Id (localisation.csv)]</local-name>
+            <parent-name>[localisation.csv]</parent-name>
+            <remote-alias>Id</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Nom</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Nom (localisation.csv)]</local-name>
+            <parent-name>[localisation.csv]</parent-name>
+            <remote-alias>Nom</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Parent_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Parent_id]</local-name>
+            <parent-name>[localisation.csv]</parent-name>
+            <remote-alias>Parent_id</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[date_fin.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;es&quot;</attribute>
+              <attribute datatype='string' name='debit-close-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='debit-open-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;;&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;es_MX&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Id (date.csv1)]</local-name>
+            <parent-name>[date_fin.csv]</parent-name>
+            <remote-alias>Id</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Year (date.csv1)]</local-name>
+            <parent-name>[date_fin.csv]</parent-name>
+            <remote-alias>Year</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Month</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Month (date.csv1)]</local-name>
+            <parent-name>[date_fin.csv]</parent-name>
+            <remote-alias>Month</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Consommation_Facts.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;es&quot;</attribute>
+              <attribute datatype='string' name='debit-close-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='debit-open-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;;&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;es_MX&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Id_localisation</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Id_localisation]</local-name>
+            <parent-name>[Consommation_Facts.csv]</parent-name>
+            <remote-alias>Id_localisation</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Id_date</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Id_date]</local-name>
+            <parent-name>[Consommation_Facts.csv]</parent-name>
+            <remote-alias>Id_date</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Id_resource</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Id_resource]</local-name>
+            <parent-name>[Consommation_Facts.csv]</parent-name>
+            <remote-alias>Id_resource</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Consommation_ecole</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Consommation_ecole]</local-name>
+            <parent-name>[Consommation_Facts.csv]</parent-name>
+            <remote-alias>Consommation_ecole</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Consommation_totale</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Consommation_totale]</local-name>
+            <parent-name>[Consommation_Facts.csv]</parent-name>
+            <remote-alias>Consommation_totale</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Montant_total_HT</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Montant_total_HT]</local-name>
+            <parent-name>[Consommation_Facts.csv]</parent-name>
+            <remote-alias>Montant_total_HT</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Montant_total_TTC</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[Montant_total_TTC]</local-name>
+            <parent-name>[Consommation_Facts.csv]</parent-name>
+            <remote-alias>Montant_total_TTC</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[date.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;es&quot;</attribute>
+              <attribute datatype='string' name='debit-close-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='debit-open-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;;&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;es_MX&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Id (date.csv2)]</local-name>
+            <parent-name>[date.csv]</parent-name>
+            <remote-alias>Id</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Year (date.csv2)]</local-name>
+            <parent-name>[date.csv]</parent-name>
+            <remote-alias>Year</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Month</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Month (date.csv2)]</local-name>
+            <parent-name>[date.csv]</parent-name>
+            <remote-alias>Month</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Type_Actions.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;windows-1252&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;es&quot;</attribute>
+              <attribute datatype='string' name='debit-close-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='debit-open-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;es_MX&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[id]</local-name>
+            <parent-name>[Type_Actions.csv]</parent-name>
+            <remote-alias>id</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Nom</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Nom (Type_Actions.csv)]</local-name>
+            <parent-name>[Type_Actions.csv]</parent-name>
+            <remote-alias>Nom</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[resource.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;es&quot;</attribute>
+              <attribute datatype='string' name='debit-close-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='debit-open-char'>&quot;&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;;&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;es_MX&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Id (resource.csv)]</local-name>
+            <parent-name>[resource.csv]</parent-name>
+            <remote-alias>Id</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Nom</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Nom (resource.csv)]</local-name>
+            <parent-name>[resource.csv]</parent-name>
+            <remote-alias>Nom</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Unité</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Unité]</local-name>
+            <parent-name>[resource.csv]</parent-name>
+            <remote-alias>Unité</remote-alias>
+            <ordinal>36</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LES_RES' />
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='date_debut' datatype='date' name='[Calculation_1242993522587496452]' role='dimension' type='ordinal'>
+        <calculation class='tableau' formula='MAKEDATE( [Year], [Month], [Jour début] )' />
+      </column>
+      <column caption='start' datatype='integer' name='[Calculation_1242993522623344649]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='INDEX()'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='index_3' datatype='integer' name='[Calculation_1242993522632028174]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='INDEX()%3'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
+      <column caption='date_debut_cond' datatype='date' name='[Calculation_1242993522635132944]' role='dimension' type='ordinal'>
+        <calculation class='tableau' formula='IF [Year (date.csv2)] == [Year] AND [Month (date.csv2)] == [Month] THEN [Calculation_1242993522587496452]&#13;&#10;END' />
+      </column>
+      <column caption='test2' datatype='integer' name='[Calculation_737182989821427715]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='// Issue: because of the join, the actions are repeated, so, the sum of it is repeated too&#13;&#10;&#13;&#10;0' />
+      </column>
+      <column datatype='real' name='[Consommation_totale]' role='measure' type='quantitative' />
+      <column datatype='integer' name='[ID]' role='dimension' type='ordinal' />
+      <column caption='Id (date_fin)' datatype='integer' name='[Id (date.csv1)]' role='dimension' type='ordinal' />
+      <column caption='Id (date_cons)' datatype='integer' name='[Id (date.csv2)]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[Id (localisation.csv)]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[Id (resource.csv)]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' caption='Id (date_debut)' datatype='integer' name='[Id]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[Id_date]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[Id_localisation]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[Id_resource]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[Jour début]' role='dimension' type='ordinal' />
+      <column aggregation='Sum' datatype='integer' name='[Jour fin]' role='dimension' type='ordinal' />
+      <column caption='Month (date_fin)' datatype='integer' name='[Month (date.csv1)]' role='dimension' type='quantitative' />
+      <column caption='Month (date_cons)' datatype='integer' name='[Month (date.csv2)]' role='dimension' type='quantitative' />
+      <column aggregation='Sum' caption='Month (date_debut)' datatype='integer' name='[Month]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column aggregation='Sum' datatype='integer' name='[Parent_id]' role='dimension' type='ordinal' />
+      <column caption='Year (date_fin)' datatype='integer' name='[Year (date.csv1)]' role='dimension' type='quantitative' />
+      <column caption='Year (date_cons)' datatype='integer' name='[Year (date.csv2)]' role='dimension' type='quantitative' />
+      <column aggregation='Sum' caption='Year (date_debut)' datatype='integer' name='[Year]' role='dimension' type='ordinal' />
+      <column caption='date_fin' datatype='date' name='[date_debut (copie)_1242993522587881477]' role='dimension' type='ordinal'>
+        <calculation class='tableau' formula='MAKEDATE([Year (date.csv1)], [Month (date.csv1)], [Jour fin] )' />
+      </column>
+      <column caption='test1' datatype='integer' name='[date_debut_cond (copie)_1242993522644287507]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='IF [Year (date.csv2)] == [Year] AND [Month (date.csv2)] == [Month] THEN 0&#13;&#10;END' />
+      </column>
+      <column caption='date_cons' datatype='date' name='[date_fin (copie)_1242993522588065798]' role='dimension' type='ordinal'>
+        <calculation class='tableau' formula='MAKEDATE( [Year (date.csv2)], [Month (date.csv2)], 1 )' />
+      </column>
+      <column datatype='integer' name='[id]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[id_date_debut]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[id_date_fin]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[id_localisation]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[id_type_action]' role='dimension' type='ordinal' />
+      <column-instance column='[Consommation_totale]' derivation='Attribute' name='[attr:Consommation_totale:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[date_debut_cond (copie)_1242993522644287507]' derivation='Attribute' name='[attr:date_debut_cond (copie)_1242993522644287507:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Consommation_totale]' derivation='Count' name='[cnt:Consommation_totale:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[date_debut_cond (copie)_1242993522644287507]' derivation='Count' name='[cnt:date_debut_cond (copie)_1242993522644287507:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Consommation_totale]' derivation='Min' name='[min:Consommation_totale:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_1242993522587496452]' derivation='MY' name='[my:Calculation_1242993522587496452:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[Consommation_totale]' derivation='None' name='[none:Consommation_totale:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[date_debut_cond (copie)_1242993522644287507]' derivation='None' name='[none:date_debut_cond (copie)_1242993522644287507:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Consommation_totale]' derivation='Sum' name='[sum:Consommation_totale:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[date_debut_cond (copie)_1242993522644287507]' derivation='Sum' name='[sum:date_debut_cond (copie)_1242993522644287507:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[Calculation_1242993522632028174]' derivation='User' name='[usr:Calculation_1242993522632028174:qk]' pivot='key' type='quantitative'>
+        <table-calc ordering-type='Rows' />
+      </column-instance>
+      <layout dim-ordering='alphabetic' dim-percentage='0.622593' measure-ordering='alphabetic' measure-percentage='0.377407' show-structure='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[my:Calculation_1242993522587496452:ok]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>2017</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>201710</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>201709</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>201708</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.1mi64tb00mafoh15ihq8d04p1uil].[attr:Consommation_totale:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.1mi64tb00mafoh15ihq8d04p1uil].[cnt:Consommation_totale:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.1mi64tb00mafoh15ihq8d04p1uil].[min:Consommation_totale:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.1mi64tb00mafoh15ihq8d04p1uil].[none:Consommation_totale:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.1mi64tb00mafoh15ihq8d04p1uil].[sum:Consommation_totale:qk]&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;[federated.1mi64tb00mafoh15ihq8d04p1uil].[attr:date_debut_cond (copie)_1242993522644287507:qk]&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;[federated.1mi64tb00mafoh15ihq8d04p1uil].[cnt:date_debut_cond (copie)_1242993522644287507:qk]&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;[federated.1mi64tb00mafoh15ihq8d04p1uil].[none:date_debut_cond (copie)_1242993522644287507:qk]&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;[federated.1mi64tb00mafoh15ihq8d04p1uil].[sum:date_debut_cond (copie)_1242993522644287507:qk]&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;[federated.1mi64tb00mafoh15ihq8d04p1uil].[sum:Consommation_totale:qk]:1&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.1mi64tb00mafoh15ihq8d04p1uil].[sum:Calculation_1242993522640105490:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.1mi64tb00mafoh15ihq8d04p1uil]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.1mi64tb00mafoh15ihq8d04p1uil].[usr:Calculation_1242993522632028174:qk]&quot;</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;France&quot;' />
+      </semantic-values>
+      <date-options start-of-week='monday' />
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='actions_au_fil_du_temps'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Actions_Facts' name='federated.1mi64tb00mafoh15ihq8d04p1uil' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1mi64tb00mafoh15ihq8d04p1uil'>
+            <column caption='date_debut' datatype='date' name='[Calculation_1242993522587496452]' role='dimension' type='ordinal'>
+              <calculation class='tableau' formula='MAKEDATE( [Year], [Month], [Jour début] )' />
+            </column>
+            <column datatype='real' name='[Consommation_totale]' role='measure' type='quantitative' />
+            <column aggregation='Sum' datatype='integer' name='[Jour début]' role='dimension' type='ordinal' />
+            <column caption='Month (date_cons)' datatype='integer' name='[Month (date.csv2)]' role='dimension' type='quantitative' />
+            <column aggregation='Sum' caption='Month (date_debut)' datatype='integer' name='[Month]' role='dimension' type='ordinal' />
+            <column caption='Year (date_cons)' datatype='integer' name='[Year (date.csv2)]' role='dimension' type='quantitative' />
+            <column aggregation='Sum' caption='Year (date_debut)' datatype='integer' name='[Year]' role='dimension' type='ordinal' />
+            <column caption='date_cons' datatype='date' name='[date_fin (copie)_1242993522588065798]' role='dimension' type='ordinal'>
+              <calculation class='tableau' formula='MAKEDATE( [Year (date.csv2)], [Month (date.csv2)], 1 )' />
+            </column>
+            <column-instance column='[Consommation_totale]' derivation='Sum' name='[sum:Consommation_totale:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Calculation_1242993522587496452]' derivation='Month-Trunc' name='[tmn:Calculation_1242993522587496452:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[date_fin (copie)_1242993522588065798]' derivation='Month-Trunc' name='[tmn:date_fin (copie)_1242993522588065798:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.1mi64tb00mafoh15ihq8d04p1uil].[tmn:Calculation_1242993522587496452:qk]' field-type='quantitative' fold='true' scope='cols' synchronized='true' type='space' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <encodings>
+              <color column='[federated.1mi64tb00mafoh15ihq8d04p1uil].[:Measure Names]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.1mi64tb00mafoh15ihq8d04p1uil].[tmn:date_fin (copie)_1242993522588065798:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <encodings>
+              <color column='[federated.1mi64tb00mafoh15ihq8d04p1uil].[:Measure Names]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='3' selection-relaxation-option='selection-relaxation-allow' x-axis-name='[federated.1mi64tb00mafoh15ihq8d04p1uil].[tmn:Calculation_1242993522587496452:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Circle' />
+            <encodings>
+              <color column='[federated.1mi64tb00mafoh15ihq8d04p1uil].[:Measure Names]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1mi64tb00mafoh15ihq8d04p1uil].[sum:Consommation_totale:qk]</rows>
+        <cols>([federated.1mi64tb00mafoh15ihq8d04p1uil].[tmn:date_fin (copie)_1242993522588065798:qk] + [federated.1mi64tb00mafoh15ihq8d04p1uil].[tmn:Calculation_1242993522587496452:qk])</cols>
+      </table>
+      <simple-id uuid='{C6158702-EA44-4BBC-923B-F33AA4C2A4DA}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='44'>
+    <window class='worksheet' maximized='true' name='actions_au_fil_du_temps'>
+      <cards>
+        <edge name='left'>
+          <strip size='230'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='30'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='170'>
+            <card pane-specification-id='2' param='[federated.1mi64tb00mafoh15ihq8d04p1uil].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1mi64tb00mafoh15ihq8d04p1uil].[:Measure Names]</field>
+            <field>[federated.1mi64tb00mafoh15ihq8d04p1uil].[mn:date_fin (copie)_1242993522588065798:ok]</field>
+            <field>[federated.1mi64tb00mafoh15ihq8d04p1uil].[my:Calculation_1242993522587496452:ok]</field>
+            <field>[federated.1mi64tb00mafoh15ihq8d04p1uil].[my:Calculation_1242993522635132944:ok]</field>
+            <field>[federated.1mi64tb00mafoh15ihq8d04p1uil].[my:date_fin (copie)_1242993522588065798:ok]</field>
+            <field>[federated.1mi64tb00mafoh15ihq8d04p1uil].[my:date_fin (copie)_1242993522588065798:qk]</field>
+            <field>[federated.1mi64tb00mafoh15ihq8d04p1uil].[none:Nom:nk]</field>
+            <field>[federated.1mi64tb00mafoh15ihq8d04p1uil].[none:date_fin (copie)_1242993522588065798:qk]</field>
+            <field>[federated.1mi64tb00mafoh15ihq8d04p1uil].[tmn:Calculation_1242993522587496452:qk]</field>
+            <field>[federated.1mi64tb00mafoh15ihq8d04p1uil].[yr:Calculation_1242993522587496452:ok]</field>
+            <field>[federated.1mi64tb00mafoh15ihq8d04p1uil].[yr:Calculation_1242993522587496452:qk]</field>
+            <field>[federated.1mi64tb00mafoh15ihq8d04p1uil].[yr:Calculation_1242993522635132944:ok]</field>
+            <field>[federated.1mi64tb00mafoh15ihq8d04p1uil].[yr:date_debut (copie)_1242993522587881477:ok]</field>
+            <field>[federated.1mi64tb00mafoh15ihq8d04p1uil].[yr:date_fin (copie)_1242993522588065798:ok]</field>
+          </color-one-way>
+        </highlight>
+        <default-map-tool-selection tool='2' />
+      </viewpoint>
+      <simple-id uuid='{894F5201-6E78-4491-A3AA-6A5CC6245F4F}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='384' name='actions_au_fil_du_temps' width='384'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>
