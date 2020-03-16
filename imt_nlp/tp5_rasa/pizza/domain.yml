@@ -1,0 +1,37 @@
+intents:
+  - greet
+  - goodbye
+  - order_pizza
+  - inform
+
+entities:
+  - pizza_quantity
+  - pizza_size
+  - pizza_type
+
+actions:
+  - utter_greet
+  - utter_goodbye
+  - respond_inform
+
+responses:
+  utter_greet:
+    - text: "Hey! How can I help?"
+
+  utter_order:
+    - text: "Ok, What type of pizza would you like?"
+    - text: "Sure, What size of pizza would you like?"
+    - text: "Ok, How many pizzas would you like?"
+  
+  utter_goodbye:
+    - text: "Ba bye!"
+  
+  utter_get_size:
+    - text: "Which size would you like?"
+  
+  utter_get_quantity:
+    - text: "How many would you like?"
+  
+  utter_get_type:
+    - text: "which types woud you like?"
+
