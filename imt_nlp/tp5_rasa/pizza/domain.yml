@@ -14,6 +14,14 @@ actions:
   - utter_goodbye
   - respond_inform
 
+slots: 
+  pizza_quantity:
+    type: float
+  pizza_size:
+    type: text
+  pizza_type:
+    type: text
+
 responses:
   utter_greet:
     - text: "Hey! How can I help?"
@@ -26,12 +34,12 @@ responses:
   utter_goodbye:
     - text: "Ba bye!"
   
-  utter_get_size:
+  utter_ask_pizza_size:
     - text: "Which size would you like?"
   
-  utter_get_quantity:
+  utter_ask_pizza_quantity:
     - text: "How many would you like?"
   
-  utter_get_type:
-    - text: "which types woud you like?"
+  utter_ask_pizza_type:
+    - text: "Which types woud you like?"
 

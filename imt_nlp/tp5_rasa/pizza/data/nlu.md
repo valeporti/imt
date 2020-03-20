@@ -1,7 +1,7 @@
 ## intent:greet
-- hey, what can I do for you?
-- hello, how can I help?
-- hi, can I take your order?
+- hey!
+- hello
+- hi!
 
 ## intent:goodbye
 - bye
@@ -13,7 +13,7 @@
 - I would like to order pizza
 - I desire to order
 
-## intent: inform/order_pizza
+## intent: inform/start_order
 - I would like [two](pizza_quantity) pizzas
 - I would like [one](pizza_quantity) pizza
 - I would like [a](pizza_quantity:one) pizza
