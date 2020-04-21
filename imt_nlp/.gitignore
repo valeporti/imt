@@ -7,3 +7,5 @@
 /tp5_rasa/examples/*
 __pycache__/
 tp5_rasa/rasa-assist/
+tp5_rasa/*/models/*
+/*.txt
